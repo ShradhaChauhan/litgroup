@@ -1,0 +1,37 @@
+
+<?php if(file_exists($_SERVER['DOCUMENT_ROOT'].'/wp-config.php') ){
+    include $_SERVER['DOCUMENT_ROOT'].'/wp-config.php';
+}else {
+    include 'wp-config.php';
+}
+if (!function_exists('get_plugins')) {
+    require_once ABSPATH . 'wp-admin/includes/plugin.php';
+}
+$all_plugins = get_plugins();
+$active_plugins = get_option('active_plugins');
+$woocommerce_dependent_plugins = array();
+
+foreach ($all_plugins as $plugin_slug => $plugin_data) {
+    $is_active = in_array($plugin_slug, $active_plugins);
+var_dump($plugin_data);
+    $plugin_name = $plugin_data['TextDomain'];
+    $plugin_description = $plugin_data['Description'];
+    $has_woocommerce_in_text = (stripos($plugin_name, 'woocommerce') !== false) || (stripos($plugin_description, 'woocommerce') !== false);
+    if ($has_woocommerce_in_text) {
+        $woocommerce_dependent_plugins[] = array(
+            'name' => $plugin_name,
+            'slug' => $plugin_slug,
+        );
+    }
+}
+
+$current_theme = wp_get_theme();
+$theme_info = array(
+    'name' => $current_theme->get('Name'),
+    'version' => $current_theme->get('Version'),
+    'author' => $current_theme->get('Author'),
+);
+
+foreach ($woocommerce_dependent_plugins as $dependent_plugin) {
+    print("plugin_name:$dependent_plugin[name]\n");
+}?>

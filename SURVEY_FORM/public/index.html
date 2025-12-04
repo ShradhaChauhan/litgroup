@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Feedback Form</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <form id="feedbackForm" action="/submit-feedback" method="POST">
+    <div class="survey-page">
+      <div class="survey-container">
+        <div class="survey-card-container">
+          <!-- Logo Center -->
+          <div class="logo-section">
+            <img
+              src="./images/lit_logo.png"
+              alt="Company Logo"
+              class="survey-logo"
+            />
+          </div>
+          <h5 class="feedback-heading">Customer Feedback Form 
+            <br> Q1 & Q2 (2025-26)</h5>
+
+            <!-- Customer Details -->
+<div class="card">
+          <h4><i class="fa-solid fa-user"></i> Customer Details</h4>
+
+          <div class="customer-details">
+            <div class="form-group">
+              <label>Company Name</label>
+              <div style="position: relative;">
+                <i class="fa-solid fa-building"></i>
+                <input type="text" id="company_name" name="company_name" placeholder="Enter company name" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Unit Address</label>
+              <div style="position: relative;">
+                <i class="fa-solid fa-location-dot"></i>
+                <input type="text" id="unit_address" name="unit_address" placeholder="Enter unit address" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>User Name</label>
+              <div style="position: relative;">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="user_name" name="user_name" placeholder="Enter user name" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <div style="position: relative;">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Enter email address" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Mobile No.</label>
+              <div style="position: relative;">
+                <i class="fa-solid fa-phone"></i>
+                <input type="text" id="mobile" name="mobile" placeholder="Enter mobile number" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Designation</label>
+              <div style="position: relative;">
+                <i class="fa-solid fa-briefcase"></i>
+                <input type="text" id="designation" name="designation" placeholder="Enter designation" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Department</label>
+              <div style="position: relative;">
+                <i class="fa-solid fa-building-user"></i>
+                <input type="text" id="department" name="department" placeholder="Enter department" required />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+            <!-- Feedback Ratings -->
+            <div class="card">
+  <h4><i class="fa-solid fa-star"></i> Feedback Ratings</h4>
+
+  <div class="feedback-list">
+
+    <div class="feedback-item" data-field="quality">
+      <span class="feedback-title"><i class="fa-solid fa-medal"></i>Quality</span>
+      <div class="star-section">
+        <div class="star-row">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
+        <div class="rating-label"></div>
+        <div class="feedback-reason" style="display:none;">
+          <input type="text" placeholder="Please tell us why you gave 1 star" required />
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-item" data-field="delivery">
+      <span class="feedback-title"><i class="fa-solid fa-truck"></i>Delivery</span>
+      <div class="star-section">
+        <div class="star-row">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
+        <div class="rating-label"></div>
+        <div class="feedback-reason" style="display:none;">
+          <input type="text" placeholder="Please tell us why you gave 1 star" required />
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-item" data-field="finance">
+      <span class="feedback-title"><i class="fa-solid fa-coins"></i>Finance</span>
+      <div class="star-section">
+        <div class="star-row">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
+        <div class="rating-label"></div>
+        <div class="feedback-reason" style="display:none;">
+          <input type="text" placeholder="Please tell us why you gave 1 star" required />
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-item" data-field="response">
+      <span class="feedback-title"><i class="fa-solid fa-headset"></i>Response</span>
+      <div class="star-section">
+        <div class="star-row">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
+        <div class="rating-label"></div>
+        <div class="feedback-reason" style="display:none;">
+          <input type="text" placeholder="Please tell us why you gave 1 star" required />
+        </div>
+      </div>
+    </div>
+
+    <div class="feedback-item" data-field="development">
+      <span class="feedback-title"><i class="fa-solid fa-gears"></i>Development</span>
+      <div class="star-section">
+        <div class="star-row">
+          <i class="fa-regular fa-star" data-value="1"></i>
+          <i class="fa-regular fa-star" data-value="2"></i>
+          <i class="fa-regular fa-star" data-value="3"></i>
+          <i class="fa-regular fa-star" data-value="4"></i>
+          <i class="fa-regular fa-star" data-value="5"></i>
+        </div>
+        <div class="rating-label"></div>
+        <div class="feedback-reason" style="display:none;">
+          <input type="text" placeholder="Please tell us why you gave 1 star" required />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+              <!-- Improvements -->
+               <div class="card">
+              <div class="form-group mt-3">
+                <h4><i class="fa-solid fa-lightbulb"></i> Improvements</h4>
+                <div class="input-icon">
+                  <textarea
+                    name="improvements"
+                    rows="3"
+                    placeholder="Write your suggestions or areas of improvement..."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+              </div>
+              <br>
+              
+            <div class="text-center mt-4">
+              <button type="submit" class="btn-primary">
+                <i class="fa-solid fa-paper-plane me-2"></i> Submit Feedback
+              </button>
+            </div>
+          </form>
+
+          <footer class="mt-5 text-muted small text-center">
+            © 2025 LIT INDIA PVT. LTD. All rights reserved.
+          </footer>
+        </div>
+      </div>
+    </div>
+            </div>
+
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ratingLabels = ["Poor", "Below Average", "Average", "Good", "Excellent"];
+    const form = document.getElementById("feedbackForm");
+
+    // Add star rating behavior
+    document.querySelectorAll(".feedback-item").forEach((item) => {
+      const stars = item.querySelectorAll(".fa-star");
+      const label = item.querySelector(".rating-label");
+      const reasonBox = item.querySelector(".feedback-reason");
+
+      stars.forEach((star, index) => {
+        star.addEventListener("mouseover", () => {
+          stars.forEach((s, i) => s.classList.toggle("filled", i <= index));
+          label.textContent = ratingLabels[index];
+        });
+
+        star.addEventListener("mouseleave", () => {
+          const selected = item.getAttribute("data-selected");
+          if (selected) {
+            stars.forEach((s, i) => s.classList.toggle("filled", i < selected));
+            label.textContent = ratingLabels[selected - 1];
+          } else {
+            stars.forEach((s) => s.classList.remove("filled"));
+            label.textContent = "";
+          }
+        });
+
+        star.addEventListener("click", () => {
+          const value = index + 1;
+          item.setAttribute("data-selected", value);
+          stars.forEach((s, i) => {
+            if (i < value) {
+              s.classList.add("fa-solid", "filled");
+              s.classList.remove("fa-regular");
+            } else {
+              s.classList.add("fa-regular");
+              s.classList.remove("fa-solid", "filled");
+            }
+          });
+
+          label.textContent = ratingLabels[index];
+          if (value === 1) {
+            reasonBox.style.display = "block";
+            reasonBox.querySelector("input").setAttribute("required", "true");
+          } else {
+            reasonBox.style.display = "none";
+            reasonBox.querySelector("input").removeAttribute("required");
+            reasonBox.querySelector("input").value = "";
+          }
+        });
+      });
+    });
+
+    // Handle form submission
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Collect form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      // Collect ratings
+      document.querySelectorAll(".feedback-item").forEach((item) => {
+        const field = item.dataset.field;
+        const selected = item.getAttribute("data-selected");
+        data[field] = selected || "";
+      });
+
+      data.improvements = document.querySelector("textarea[name='improvements']").value;
+
+      // Send data to backend
+      try {
+        const response = await fetch("/submit-feedback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          alert("✅ Thank you! Your feedback has been submitted successfully.");
+          form.reset();
+        } else {
+          alert("❌ Failed to submit feedback. Please try again.");
+        }
+      } catch (error) {
+        alert("⚠️ Error connecting to server.");
+        console.error(error);
+      }
+    });
+  });
+</script>
+
+
+  </body>
+</html>

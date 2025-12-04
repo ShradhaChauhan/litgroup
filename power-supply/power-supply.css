@@ -1,0 +1,814 @@
+/* Power Supply Page Styles */
+
+/* Hero Section */
+.ac-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    overflow: hidden;
+    padding: 130px 5% 80px;
+    background-image: url('./images/20w Adapter.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Add media query for large screens to make image more prominent */
+@media (min-width: 1400px) {
+    .ac-hero {
+        min-height: 90vh;
+        padding: 180px 5% 140px;
+        align-items: center;
+    }
+}
+
+.ac-hero-content {
+    position: relative;
+    max-width: 650px;
+    z-index: 2;
+    margin: 0;
+    text-align: left;
+    padding-left: 5%;
+    padding-bottom: 30px;
+}
+
+.ac-hero .hero-badge {
+    display: inline-block;
+    background-color: rgba(31, 98, 204, 0.1);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+.ac-hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.ac-hero-content p {
+    font-size: 18px;
+    color: var(--light-text);
+    max-width: 500px;
+    margin: 0 0 30px;
+    line-height: 1.6;
+}
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: flex-start;
+}
+
+.hero-feature-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 10px 15px;
+    border-radius: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hero-feature-item i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.hero-feature-item span {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Media Queries */
+@media (max-width: 1100px) {
+    .ac-hero {
+        padding: 120px 40px 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ac-hero {
+        padding: 8rem 1.5rem 4rem;
+        flex-direction: column;
+        text-align: center;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .ac-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.92);
+        z-index: 1;
+    }
+    
+    .ac-hero-content {
+        max-width: 100%;
+        padding-left: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        animation: fadeInUp 0.8s ease-out;
+        text-align: center;
+    }
+    
+    .ac-hero .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.9rem;
+        margin-bottom: 1.25rem;
+        letter-spacing: 0.3px;
+    }
+    
+    .ac-hero-content h1 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.5px;
+        text-align: center;
+    }
+    
+    .ac-hero-content p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1.75rem;
+        max-width: 100%;
+        text-align: justify;
+    }
+    
+    .hero-features {
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-feature-item {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    
+    .ac-hero-content .btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 576px) {
+    .ac-hero {
+        padding: 7rem 1.25rem 3.5rem;
+        min-height: 80vh;
+    }
+    
+    .ac-hero::before {
+        background: rgba(255, 255, 255, 0.95);
+    }
+    
+    .ac-hero .hero-badge {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .ac-hero-content {
+        text-align: center;
+    }
+    
+    .ac-hero-content h1 {
+        font-size: 2.25rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+        letter-spacing: -0.3px;
+        text-align: center;
+    }
+    
+    .ac-hero-content p {
+        font-size: 1rem;
+        line-height: 1.55;
+        margin-bottom: 1.5rem;
+        text-align: justify;
+    }
+    
+    .hero-features {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1.75rem;
+    }
+    
+    .hero-feature-item {
+        padding: 0.45rem 0.9rem;
+        font-size: 0.8rem;
+    }
+    
+    .ac-hero-content .btn {
+        width: 100%;
+        padding: 0.9rem 1.5rem;
+    }
+}
+
+/* Tablet optimizations (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .ac-hero {
+        padding: 130px 4% 80px;
+    }
+    
+    .ac-hero-content {
+        max-width: 600px;
+    }
+    
+    .ac-hero-content h1 {
+        font-size: 42px;
+    }
+    
+    .ac-hero-content p {
+        font-size: 17px;
+    }
+    
+    .remote-variants {
+        padding: 60px 4%;
+    }
+    
+    .variants-content h2 {
+        font-size: 32px;
+    }
+    
+    .design-features .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ac-hero-content h1 {
+        font-size: 28px;
+    }
+}
+
+/* Remote Variants Section */
+.remote-variants {
+    padding: 80px 5%;
+    background-color: #f9f9f9;
+}
+
+.variants-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.variants-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.variants-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.variants-content .accent-text {
+    color: var(--primary-color);
+}
+
+.variants-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--light-text);
+    margin-bottom: 20px;
+}
+
+.wavy-divider {
+    margin: 30px 0;
+    max-width: 100px;
+}
+
+.design-features {
+    flex: 1;
+    min-width: 300px;
+}
+
+.design-features h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.design-features .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.feature-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-circle img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    background-color: #aaaaaacf;
+}
+
+.feature-circle:hover img {
+    transform: scale(1.05);
+}
+
+.feature-circle h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--dark-color);
+    max-width: 160px;
+}
+
+/* Media Queries for Remote Variants Section */
+@media (max-width: 992px) {
+    .variants-container {
+        flex-direction: column;
+    }
+    
+    .variants-content, .design-features {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .variants-content {
+        text-align: center;
+    }
+    
+    .variants-content h2 {
+        text-align: center;
+    }
+    
+    .variants-content p {
+        text-align: justify;
+    }
+}
+
+@media (max-width: 576px) {
+    .remote-variants {
+        padding: 60px 20px;
+    }
+    
+    .variants-content {
+        text-align: center;
+    }
+    
+    .variants-content h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+    
+    .variants-content p {
+        text-align: justify;
+    }
+    
+    .design-features .features-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .feature-circle img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .video-background{
+        width: 100%;
+    }
+}
+
+/* Add media query for large screens to make content more prominent */
+@media (min-width: 1400px) {
+    .ac-hero-content {
+        max-width: 750px;
+    }
+    
+    .ac-hero-content h1 {
+        font-size: 58px;
+        margin-bottom: 30px;
+    }
+    
+    .ac-hero-content p {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .hero-features {
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+    
+    .hero-feature-item {
+        padding: 12px 20px;
+    }
+    
+    .hero-feature-item i {
+        font-size: 18px;
+        margin-right: 12px;
+    }
+    
+    .hero-feature-item span {
+        font-size: 16px;
+    }
+    
+    .btn.primary {
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Image Carousel Section */
+.image-carousel-section {
+    padding: 80px 5%;
+    background-color: var(--background);
+    position: relative;
+    overflow: hidden;
+}
+
+.image-carousel-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.image-carousel-section .section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.image-carousel-section .section-header p {
+    font-size: 16px;
+    color: var(--light-text);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #f9fafb;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.carousel-slide {
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    max-width: 100%;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+.carousel-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(31, 98, 204, 0.3);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn-prev {
+    left: 20px;
+}
+
+.carousel-btn-next {
+    right: 20px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-dot:hover {
+    background-color: var(--primary-light);
+    transform: scale(1.2);
+}
+
+.carousel-dot.active {
+    background-color: var(--primary-color);
+    width: 32px;
+    border-radius: 6px;
+}
+
+/* Responsive Design for Carousel */
+@media (max-width: 992px) {
+    .image-carousel-section {
+        padding: 60px 4%;
+    }
+    
+    .image-carousel-section .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .carousel-slide {
+        padding: 30px 15px;
+    }
+    
+    .carousel-slide img {
+        max-height: 400px;
+    }
+    
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .carousel-btn-prev {
+        left: 15px;
+    }
+    
+    .carousel-btn-next {
+        right: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .image-carousel-section {
+        padding: 50px 3%;
+    }
+    
+    .image-carousel-section .section-header {
+        margin-bottom: 2rem;
+    }
+    
+    .image-carousel-section .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .image-carousel-section .section-header p {
+        font-size: 14px;
+    }
+    
+    .carousel-slide {
+        min-width: 100%;
+        padding: 20px;
+    }
+    
+    .carousel-slide img {
+        max-height: 300px;
+        padding: 15px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .carousel-btn-prev {
+        left: 10px;
+    }
+    
+    .carousel-btn-next {
+        right: 10px;
+    }
+    
+    .carousel-dots {
+        margin-top: 20px;
+        gap: 10px;
+    }
+    
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .carousel-dot.active {
+        width: 24px;
+    }
+}
+
+@media (max-width: 576px) {
+    .image-carousel-section {
+        padding: 40px 2%;
+    }
+    
+    .image-carousel-section .section-header h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    
+    .image-carousel-section .section-header p {
+        font-size: 13px;
+    }
+    
+    .carousel-slide {
+        min-width: 100%;
+        padding: 15px;
+    }
+    
+    .carousel-slide img {
+        max-height: 250px;
+        padding: 10px;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+    
+    .carousel-btn-prev {
+        left: 8px;
+    }
+    
+    .carousel-btn-next {
+        right: 8px;
+    }
+    
+    .carousel-dots {
+        margin-top: 15px;
+        gap: 8px;
+    }
+    
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .carousel-dot.active {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-slide img {
+        max-height: 200px;
+    }
+    
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+    }
+}
+
+/* Mobile Hero Image - Bottom to Top Animation */
+.mobile-hero-image {
+    display: none; /* Hidden on desktop by default */
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.mobile-hero-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.mobile-hero-image.animate img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes slideUpFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Show only on mobile devices */
+@media (max-width: 768px) {
+    .mobile-hero-image {
+        display: block;
+    }
+}
+
+
+
+
