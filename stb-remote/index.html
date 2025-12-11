@@ -23,8 +23,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <title>STB TV Remote OEM Supplier India | Custom Set-Top Box Controls - LIT Group</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="stb-tv-remote.css" />
   <link rel="stylesheet" href="product-styles.css" />
@@ -89,572 +91,422 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </nav>
 
+  <!-- Scroll Container for Snap Scrolling -->
+  <div class="scroll-snap-container">
   <!-- Hero Section -->
-  <section class="stb-hero">
-    <div class="stb-hero-content">
-      <span class="hero-badge">Premium Entertainment Control</span>
-  
-      <h1>
-        Advanced <span class="accent-text">STB Remotes</span>
-      </h1>
-  
-      <img src="images/STB TV Remote 3/STB Concept 3.png" alt="STB Concept" class="hero-mobile-image">
-  
-      <p>
-        Precision-engineered set-top box controls with intuitive design  
-        and cutting-edge functionality for seamless entertainment.
-      </p>
-  
-      <div class="hero-features">
-        <div class="hero-feature-item"><i class="fas fa-tv"></i> Universal Compatibility</div>
-        <div class="hero-feature-item"><i class="fas fa-signal"></i> Extended Range</div>
-        <div class="hero-feature-item"><i class="fas fa-battery-full"></i> Long Battery Life</div>
+  <section class="stb-hero scroll-snap-section">
+    <div class="hero-bg-premium relative overflow-hidden" id="hero-background-container">
+      <!-- Ambient floating shapes for premium depth -->
+      <div class="hero-floating-shape shape-1"></div>
+      <div class="hero-floating-shape shape-2"></div>
+      <div class="hero-floating-shape shape-3"></div>
+      <!-- Three.js Interactive Background Canvas will be inserted here -->
+      
+      <!-- Content Container - t4h Style Layout -->
+      <div class="relative z-10 hero-content-wrapper-t4h">
+        <!-- Top Center: Main Headline -->
+        <div class="hero-headline-top">
+          <div class="hero-wavy-line"></div>
+          <h1 class="hero-headline-t4h">
+            Invisible innovation <br />
+Effortless navigation
+          </h1>
+        </div>
+    
+        <!-- Bottom Section: Image Left + Text Right -->
+        <div class="hero-bottom-section">
+          <!-- Left: Remote Images -->
+          <div class="hero-left-remotes">
+            <div class="hero-image-container-t4h">
+              <div class="hero-blob-wrap" aria-hidden="true">
+                <div class="hero-ambient"></div>
+                <svg class="hero-blob" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMid slice"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <filter id="bblur" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="40" result="b"/>
+                      <feColorMatrix type="matrix" values="1 0 0 0 0
+                                                               0.97 0 0 0 0
+                                                               0.94 0 0 0 0
+                                                               0 0 0 0.7 0" in="b"/>
+                    </filter>
+                    <linearGradient id="gb" x1="0" x2="1">
+                      <stop offset="0%" stop-color="rgba(255,255,255,0.55)"/>
+                      <stop offset="50%" stop-color="rgba(245,237,227,0.42)"/>
+                      <stop offset="100%" stop-color="rgba(255,255,255,0.55)"/>
+                    </linearGradient>
+                  </defs>
+      
+                  <path d="M0,120 C120,180 280,200 420,175 C560,150 740,160 900,180 C1040,200 1200,150 1200,120 
+                           L1200,240 L0,240 Z"
+                    fill="url(#gb)" filter="url(#bblur)"/>
+                </svg>
+              </div>
+              <img src="images/STB Concept 1.bip.3500.png" alt="STB Remote" class="remote-image-t4h" />
+            </div>
+          </div>
+    
+          <!-- Right: Subheadline + CTA -->
+          <div class="hero-right-column">
+            <p class="hero-subheadline-t4h">
+              Engineered with precision, comfort, and intelligent features, our STB remotes deliver a superior navigation experience for IPTV, cable, and next-generation entertainment ecosystems.
+            </p>
+            <a href="#stb-remotes" class="hero-cta-t4h">Learn More</a>
+          </div>
+        </div>
       </div>
-  
-      <a href="#stb-remotes" class="btn primary">Explore Remotes</a>
-    </div>
-  
-    <div class="stb-hero-remote">
     </div>
   </section>
   
 
-  <!-- STB Remote Variants Section -->
-  <section class="remote-variants">
-    <div class="variants-container">
-      <div class="variants-content">
-        <h2>
-          Premium STB Controls
-          <span class="accent-text">with Advanced Technology</span>
-        </h2>
+  <!-- Premium Hero Content Section - First Scroll -->
+  <section class="premium-hero-section scroll-snap-section">
+    <!-- Premium Background Elements -->
+    <div class="premium-bg-shapes">
+      <div class="bg-shape shape-1"></div>
+      <div class="bg-shape shape-2"></div>
+      <div class="bg-shape shape-3"></div>
+    </div>
 
-        <p>
+    <div class="premium-hero-container">
+      <!-- Two Column Layout: Image Left, Text Right -->
+      <div class="premium-hero-layout">
+        <!-- Left: Image -->
+        <div class="premium-hero-image-wrapper">
+          <img src="images/Recycled Plastic.png" 
+               alt="Premium STB Remote with Sustainability Features" 
+               class="premium-hero-image" />
+        </div>
+        
+        <!-- Right: Content -->
+        <div class="premium-hero-content-wrapper">
+        <h2 class="premium-headline">
+          Premium STB Controls<br />
+          <span class="premium-accent">for Modern Entertainment</span>
+        </h2>
+        <p class="premium-description">
           LIT Group specializes in creating exceptional STB remote controls
           that prioritize user convenience and seamless entertainment management. Our
           innovative solutions are designed for compatibility with all major
           set-top box systems and DTH services.
         </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <p>
-          Our flagship remotes feature intuitive interfaces with dedicated
-          channel buttons, quick access keys, and smart navigation controls.
-          The premium models integrate seamlessly with modern set-top boxes
-          while our standard versions offer reliable operation with
-          enhanced durability.
-        </p>
+  <!-- Design Features Section - Second Scroll -->
+  <section class="premium-features-section next-section scroll-snap-section">
+    <!-- Premium Background Elements -->
+    <div class="premium-bg-shapes">
+      <div class="bg-shape shape-1"></div>
+      <div class="bg-shape shape-2"></div>
+      <div class="bg-shape shape-3"></div>
+    </div>
 
-        <p>
-          Each remote is manufactured using high-quality materials including
-          impact-resistant polymers, premium circuit components, and
-          energy-efficient designs that extend battery life.
-        </p>
+    <div class="premium-container">
+      <!-- Features Grid -->
+      <div class="premium-features-section-header">
+        <h2 class="premium-features-title">Design Features</h2>
+      </div>
+      
+      <!-- Desktop Grid View -->
+      <div class="premium-features-grid">
+        <div class="premium-feature-card" data-animate="left" data-index="0">
+          <div class="feature-image-wrapper">
+            <img src="images/Design Features/STB Concept 2.3507.png" alt="Premium Finish" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Premium Finish</h3>
+          <p class="feature-description">High-quality materials with refined textures for a sophisticated look and feel.</p>
+        </div>
 
-        <p>
-          Our commitment to quality is reflected in our use of
-          certified components and user-friendly designs that enhance
-          viewing experience while maximizing reliability.
-        </p>
+        <div class="premium-feature-card" data-animate="left" data-index="1">
+          <div class="feature-image-wrapper">
+            <img src="images/Design Features/STB Concept 3.3506.png" alt="Modern Aesthetics" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Modern Aesthetics</h3>
+          <p class="feature-description">Sleek design that complements contemporary entertainment setups.</p>
+        </div>
 
-        <div class="wavy-divider">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
+        <div class="premium-feature-card" data-animate="right" data-index="2">
+          <div class="feature-image-wrapper">
+            <img src="images/Design Features/STB Concept 3.3513.png" alt="Durable Construction" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Durable Construction</h3>
+          <p class="feature-description">Built with robust materials to withstand daily use and maintain reliability.</p>
+        </div>
+
+        <div class="premium-feature-card" data-animate="right" data-index="3">
+          <div class="feature-image-wrapper">
+            <img src="images/Design Features/STB Concept 4.3504.png" alt="Enhanced Functionality" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Enhanced Functionality</h3>
+          <p class="feature-description">Advanced features and smart controls for seamless entertainment management.</p>
         </div>
       </div>
 
-      <div class="design-features">
-        <h2>Design features</h2>
-
-        <div class="features-grid">
-          <div class="feature-circle">
-            <img src="images/STB TV Remote 1/STB Concept 1.bip.3342.png" alt="Ergonomic Design" />
-            <h4>Ergonomic and user-friendly design</h4>
+      <!-- Mobile Carousel View -->
+      <div class="features-carousel-container">
+        <button class="features-carousel-btn features-carousel-arrow features-carousel-arrow-left" aria-label="Previous feature">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="features-carousel-track">
+          <div class="premium-feature-card features-carousel-card" data-feature-index="0">
+            <div class="feature-image-wrapper">
+              <img src="images/Design Features/STB Concept 2.3507.png" alt="Premium Finish" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Premium Finish</h3>
+            <p class="feature-description">High-quality materials with refined textures for a sophisticated look and feel.</p>
           </div>
 
-          <div class="feature-circle">
-            <img src="images/STB TV Remote 2/STB Concept 2.33490.png" alt="Quick Access" />
-            <h4>Quick access buttons</h4>
+          <div class="premium-feature-card features-carousel-card" data-feature-index="1">
+            <div class="feature-image-wrapper">
+              <img src="images/Design Features/STB Concept 3.3506.png" alt="Modern Aesthetics" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Modern Aesthetics</h3>
+            <p class="feature-description">Sleek design that complements contemporary entertainment setups.</p>
           </div>
 
-          <div class="feature-circle">
-            <img src="images/STB TV Remote 3/STB Concept 3.33551.png" alt="Premium Finish" />
-            <h4>Premium button finishes</h4>
+          <div class="premium-feature-card features-carousel-card" data-feature-index="2">
+            <div class="feature-image-wrapper">
+              <img src="images/Design Features/STB Concept 4.3503.png" alt="Durable Construction" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Durable Construction</h3>
+            <p class="feature-description">Built with robust materials to withstand daily use and maintain reliability.</p>
           </div>
 
-          <div class="feature-circle">
-            <img src="images/STB TV Remote 5/STB Concept 5.3362.png" alt="Durable Build" />
-            <h4>Durable construction</h4>
+          <div class="premium-feature-card features-carousel-card" data-feature-index="3">
+            <div class="feature-image-wrapper">
+              <img src="images/Design Features/STB Concept 4.3504.png" alt="Enhanced Functionality" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Enhanced Functionality</h3>
+            <p class="feature-description">Advanced features and smart controls for seamless entertainment management.</p>
+          </div>
+        </div>
+        
+        <button class="features-carousel-btn features-carousel-arrow features-carousel-arrow-right" aria-label="Next feature">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STB Remotes Collection Section -->
+  <section class="stb-collection-section scroll-snap-section">
+    <div class="collection-container">
+      <h2 class="collection-title">Our STB Remotes Collection</h2>
+      
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-arrow carousel-arrow-left" aria-label="Previous cards">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="carousel-track">
+          <!-- Original 7 Cards -->
+          <!-- Card 1 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB TV Remote 1/STB Concept 1.bip.3342.png" alt="STB Remote 1" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB Remote 1</h3>
+              <p class="collection-card-subtitle">Premium Control</p>
+            </div>
+    </div>
+
+          <!-- Card 2 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB TV Remote 2/STB Concept 2.3349.png" alt="STB Remote 2" class="collection-card-image" />
+        </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB Remote 2</h3>
+              <p class="collection-card-subtitle">Smart Navigation</p>
+            </div>
+      </div>
+
+          <!-- Card 3 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB TV Remote 3/STB Concept 3.3355.png" alt="STB Remote 3" class="collection-card-image" />
+        </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB Remote 3</h3>
+              <p class="collection-card-subtitle">Advanced Features</p>
+            </div>
+      </div>
+
+          <!-- Card 4 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB TV Remote 4/STB Concept 4.3422.png" alt="STB Remote 4" class="collection-card-image" />
+        </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB Remote 4</h3>
+              <p class="collection-card-subtitle">Modern Design</p>
+            </div>
+      </div>
+
+          <!-- Card 5 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB TV Remote 5/STB Concept 5.3361.png" alt="STB Remote 5" class="collection-card-image" />
+        </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB Remote 5</h3>
+              <p class="collection-card-subtitle">Ergonomic Control</p>
+            </div>
+      </div>
+
+          <!-- Card 6 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB TV Remote 6/Smart TV Remote 4.3434.png" alt="STB Remote 6" class="collection-card-image" />
+        </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB Remote 6</h3>
+              <p class="collection-card-subtitle">Smart Integration</p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB TV Remote 7/Remote 2.3416.png" alt="STB Remote 7" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB Remote 7</h3>
+              <p class="collection-card-subtitle">Ultimate Experience</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-btn carousel-arrow carousel-arrow-right" aria-label="Next cards">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Remote Details Modal -->
+  <div class="remote-modal" id="remoteModal">
+    <div class="remote-modal-backdrop"></div>
+    <div class="remote-modal-content">
+      <button class="remote-modal-close" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="remote-modal-body">
+        <div class="remote-modal-image-section">
+          <img id="modalRemoteImage" src="" alt="" class="modal-remote-image" />
+        </div>
+        <div class="remote-modal-info-section">
+          <h2 id="modalRemoteTitle" class="modal-remote-title"></h2>
+          <p id="modalRemoteSubtitle" class="modal-remote-subtitle"></p>
+          <div id="modalRemoteDescription" class="modal-remote-description"></div>
+          <div class="modal-remote-specs">
+            <h3 class="specs-title">Specifications</h3>
+            <div id="modalRemoteSpecs" class="specs-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Our Clients Section -->
+  <section class="clients-section scroll-snap-section">
+    <div class="clients-container">
+      <div class="clients-header">
+        <h2 class="clients-title">Our Trusted Clients</h2>
+        <p class="clients-subtitle">We work with world's leading brands and manufacturers</p>
+      </div>
+      
+      <div class="clients-logos-wrapper">
+        <div class="clients-logos-grid">
+          <div class="client-logo-item">
+            <img src="../images/Logos/samsung.png" alt="Samsung" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/voltas-logo.png" alt="Voltas" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/mi.png" alt="Xiaomi" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Havells_Logo.svg.png" alt="Havells" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Reliance_Jio_Logo.svg.png" alt="Jio" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/skyworth-color-logo.svg" alt="Skyworth" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/paytm.png" alt="Paytm" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/1200px-Blue_Star_primary_logo.png" alt="Blue Star" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Godrej_Logo.svg.png" alt="Godrej" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/daikin logo.png" alt="Daikin" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/carrier logo.png" alt="Carrier" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/philips logo.png" alt="Philips" class="client-logo" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="stb-remotes" class="products-section">
-    <div class="section-header">
-      <h2>Premium STB Remote Collection</h2>
-      <p>
-        Discover our reliable and technologically advanced set-top box remote control
-        solutions
-      </p>
-    </div>
-
-    <!-- STB Remote Model 1 -->
-    <div class="product-detail-parent product-1">
-      <div class="product-detail-image-parent">
-        <div class="product-detail-full-size-image">
-          <img src="images/STB TV Remote 1/STB Concept 1.bip.3342.png" alt="STB Remote Model 1" class="active-image"
-            id="product1-main-image" />
-        </div>
-        <div class="product-detail-image-slider">
-          <img src="images/STB TV Remote 1/STB Concept 1.bip.3342.png" alt="Model 1 View 1" class="slider-image active"
-            onclick="changeImage('product1-main-image', this.src)" />
-          <img src="images/STB TV Remote 1/STB Concept 1.bip.3343.png" alt="Model 1 View 2" class="slider-image"
-            onclick="changeImage('product1-main-image', this.src)" />
-          <img src="images/STB TV Remote 1/STB Concept 1.bip.3344.png" alt="Model 1 View 3" class="slider-image"
-            onclick="changeImage('product1-main-image', this.src)" />
-          <!-- <img src="images/STB TV Remote 1/STB Concept 1.bip.3345.png" alt="Model 1 View 4" class="slider-image"
-            onclick="changeImage('product1-main-image', this.src)" /> -->
-          <img src="images/STB TV Remote 1/STB Concept 1.bip.3346.png" alt="Model 1 View 5" class="slider-image"
-            onclick="changeImage('product1-main-image', this.src)" />
-          <!-- <img src="images/STB TV Remote 1/STB Concept 1.bip.3347.png" alt="Model 1 View 6" class="slider-image"
-            onclick="changeImage('product1-main-image', this.src)" /> -->
-          <img src="images/STB TV Remote 1/STB Concept 1.bip.3348.png" alt="Model 1 View 7" class="slider-image"
-            onclick="changeImage('product1-main-image', this.src)" />
-        </div>
-      </div>
-      <div class="product-details-content">
-        <h1>STB-100</h1>
-        <p class="product-specs">
-          High-quality STB remote with ergonomic design, featuring dedicated
-          channel buttons, volume controls, navigation keys, and quick access
-          buttons for seamless set-top box control.
-        </p>
-
-        <div class="wavy-line">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
-        </div>
-
-        <h3>Product Features:</h3>
-
-        <div class="product-features">
-          <div class="feature-item">
-            <span>Dedicated channel and volume control buttons</span>
-          </div>
-          <div class="feature-item">
-            <span>Extended range up to 15+ meters</span>
-          </div>
-          <div class="feature-item">
-            <span>Quick access buttons for favorite channels</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STB Remote Model 2 -->
-    <div class="product-detail-parent product-2">
-      <div class="product-detail-image-parent">
-        <div class="product-detail-full-size-image">
-          <img src="images/STB TV Remote 2/STB Concept 2.3349.png" alt="STB Remote Model 2" class="active-image"
-            id="product2-main-image" />
-        </div>
-        <div class="product-detail-image-slider">
-          <img src="images/STB TV Remote 2/STB Concept 2.3349.png" alt="Model 2 View 1" class="slider-image active"
-            onclick="changeImage('product2-main-image', this.src)" />
-          <img src="images/STB TV Remote 2/STB Concept 2.3350.png" alt="Model 2 View 2" class="slider-image"
-            onclick="changeImage('product2-main-image', this.src)" />
-          <img src="images/STB TV Remote 2/STB Concept 2.3351.png" alt="Model 2 View 3" class="slider-image"
-            onclick="changeImage('product2-main-image', this.src)" />
-          <!-- <img src="images/STB TV Remote 2/STB Concept 2.3352.png" alt="Model 2 View 4" class="slider-image"
-            onclick="changeImage('product2-main-image', this.src)" /> -->
-          <img src="images/STB TV Remote 2/STB Concept 2.3353.png" alt="Model 2 View 5" class="slider-image"
-            onclick="changeImage('product2-main-image', this.src)" />
-          <img src="images/STB TV Remote 2/STB Concept 2.3354.png" alt="Model 2 View 6" class="slider-image"
-            onclick="changeImage('product2-main-image', this.src)" />
-        </div>
-      </div>
-      <div class="product-details-content">
-        <h1>STB-200</h1>
-        <p class="product-specs">
-          Advanced STB remote control with enhanced navigation; Improved
-          signal transmission with extended range; Compact design for easy handling
-          and comfortable use.
-        </p>
-
-        <div class="wavy-line">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
-        </div>
-
-        <h3>Product Features:</h3>
-
-        <div class="product-features">
-          <div class="feature-item">
-            <span>Enhanced IR signal transmission for better range</span>
-          </div>
-          <div class="feature-item">
-            <span>Intuitive button layout for easy navigation</span>
-          </div>
-          <div class="feature-item">
-            <span>Compatible with all major DTH and cable set-top boxes</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STB Remote Model 3 -->
-    <div class="product-detail-parent product-3">
-      <div class="product-detail-image-parent">
-        <div class="product-detail-full-size-image">
-          <img src="images/STB TV Remote 3/STB Concept 3.3355.png" alt="STB Remote Model 3" class="active-image"
-            id="product3-main-image" />
-        </div>
-        <div class="product-detail-image-slider">
-          <img src="images/STB TV Remote 3/STB Concept 3.3355.png" alt="Model 3 View 1" class="slider-image active"
-            onclick="changeImage('product3-main-image', this.src)" />
-          <img src="images/STB TV Remote 3/STB Concept 3.3356.png" alt="Model 3 View 2" class="slider-image"
-            onclick="changeImage('product3-main-image', this.src)" />
-          <img src="images/STB TV Remote 3/STB Concept 3.3357.png" alt="Model 3 View 3" class="slider-image"
-            onclick="changeImage('product3-main-image', this.src)" />
-          <img src="images/STB TV Remote 3/STB Concept 3.3358.png" alt="Model 3 View 4" class="slider-image"
-            onclick="changeImage('product3-main-image', this.src)" />
-          <img src="images/STB TV Remote 3/STB Concept 3.3359.png" alt="Model 3 View 5" class="slider-image"
-            onclick="changeImage('product3-main-image', this.src)" />
-        </div>
-      </div>
-      <div class="product-details-content">
-        <h1>STB-300</h1>
-        <p class="product-specs">
-          Premium STB remote control with advanced features; Enhanced user interface
-          with intuitive navigation; Robust design for long-lasting performance.
-        </p>
-
-        <div class="wavy-line">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
-        </div>
-
-        <h3>Product Features:</h3>
-
-        <div class="product-features">
-          <div class="feature-item">
-            <span>Premium design with enhanced button layout</span>
-          </div>
-          <div class="feature-item">
-            <span>Superior signal strength for reliable operation</span>
-          </div>
-          <div class="feature-item">
-            <span>Optimized power consumption for extended battery life</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STB Remote Model 4 -->
-    <div class="product-detail-parent product-4">
-      <div class="product-detail-image-parent">
-        <div class="product-detail-full-size-image">
-          <img src="images/STB TV Remote 4/STB Concept 4.3422.png" alt="STB Remote Model 4" class="active-image"
-            id="product4-main-image" />
-        </div>
-        <div class="product-detail-image-slider">
-          <img src="images/STB TV Remote 4/STB Concept 4.3422.png" alt="Model 4 View 1" class="slider-image active"
-            onclick="changeImage('product4-main-image', this.src)" />
-          <img src="images/STB TV Remote 4/STB Concept 4.3423.png" alt="Model 4 View 2" class="slider-image"
-            onclick="changeImage('product4-main-image', this.src)" />
-          <img src="images/STB TV Remote 4/STB Concept 4.3424.png" alt="Model 4 View 3" class="slider-image"
-            onclick="changeImage('product4-main-image', this.src)" />
-          <img src="images/STB TV Remote 4/STB Concept 4.3425.png" alt="Model 4 View 4" class="slider-image"
-            onclick="changeImage('product4-main-image', this.src)" />
-          <img src="images/STB TV Remote 4/STB Concept 4.3426.png" alt="Model 4 View 5" class="slider-image"
-            onclick="changeImage('product4-main-image', this.src)" />
-        </div>
-      </div>
-      <div class="product-details-content">
-        <h1>STB-400</h1>
-        <p class="product-specs">
-          Modern STB remote control with sleek design and enhanced functionality;
-          Optimized button layout for intuitive navigation; Reliable performance
-          with extended battery life.
-        </p>
-
-        <div class="wavy-line">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
-        </div>
-
-        <h3>Product Features:</h3>
-
-        <div class="product-features">
-          <div class="feature-item">
-            <span>Sleek modern design with ergonomic grip</span>
-          </div>
-          <div class="feature-item">
-            <span>Enhanced IR range for reliable operation</span>
-          </div>
-          <div class="feature-item">
-            <span>Compatible with all major set-top box brands</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STB Remote Model 5 -->
-    <div class="product-detail-parent product-5">
-      <div class="product-detail-image-parent">
-        <div class="product-detail-full-size-image">
-          <img src="images/STB TV Remote 5/STB Concept 5.3361.png" alt="STB Remote Model 5" class="active-image"
-            id="product5-main-image" />
-        </div>
-        <div class="product-detail-image-slider">
-          <img src="images/STB TV Remote 5/STB Concept 5.3361.png" alt="Model 5 View 1" class="slider-image active"
-            onclick="changeImage('product5-main-image', this.src)" />
-          <img src="images/STB TV Remote 5/STB Concept 5.3362.png" alt="Model 5 View 2" class="slider-image"
-            onclick="changeImage('product5-main-image', this.src)" />
-          <img src="images/STB TV Remote 5/STB Concept 5.3363.png" alt="Model 5 View 3" class="slider-image"
-            onclick="changeImage('product5-main-image', this.src)" />
-          <img src="images/STB TV Remote 5/STB Concept 5.3364.png" alt="Model 5 View 4" class="slider-image"
-            onclick="changeImage('product5-main-image', this.src)" />
-          <img src="images/STB TV Remote 5/STB Concept 5.3365.png" alt="Model 5 View 5" class="slider-image"
-            onclick="changeImage('product5-main-image', this.src)" />          
-        </div>
-      </div>
-      <div class="product-details-content">
-        <h1>STB-500</h1>
-        <p class="product-specs">
-          High-end STB remote control with cutting-edge technology; Superior build quality
-          with premium materials; Advanced functionality for modern set-top box systems.
-        </p>
-
-        <div class="wavy-line">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
-        </div>
-
-        <h3>Product Features:</h3>
-
-        <div class="product-features">
-          <div class="feature-item">
-            <span>Advanced IR technology for maximum compatibility</span>
-          </div>
-          <div class="feature-item">
-            <span>Premium materials for durability and comfort</span>
-          </div>
-          <div class="feature-item">
-            <span>Smart button configuration for enhanced user experience</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STB Remote Model 6 -->
-    <div class="product-detail-parent product-6">
-      <div class="product-detail-image-parent">
-        <div class="product-detail-full-size-image">
-          <img src="images/STB TV Remote 6/Smart TV Remote 4.3434.png" alt="STB Remote Model 6" class="active-image"
-            id="product6-main-image" />
-        </div>
-        <div class="product-detail-image-slider">
-          <img src="images/STB TV Remote 6/Smart TV Remote 4.3434.png" alt="Model 6 View 1" class="slider-image active"
-            onclick="changeImage('product6-main-image', this.src)" />
-          <img src="images/STB TV Remote 6/Smart TV Remote 4.3435.png" alt="Model 6 View 2" class="slider-image"
-            onclick="changeImage('product6-main-image', this.src)" />
-          <img src="images/STB TV Remote 6/Smart TV Remote 4.3436.png" alt="Model 6 View 3" class="slider-image"
-            onclick="changeImage('product6-main-image', this.src)" />
-          <img src="images/STB TV Remote 6/Smart TV Remote 4.3437.png" alt="Model 6 View 4" class="slider-image"
-            onclick="changeImage('product6-main-image', this.src)" />
-          <img src="images/STB TV Remote 6/Smart TV Remote 4.3438.png" alt="Model 6 View 5" class="slider-image"
-            onclick="changeImage('product6-main-image', this.src)" />
-        </div>
-      </div>
-      <div class="product-details-content">
-        <h1>STB-600</h1>
-        <p class="product-specs">
-          Advanced STB remote control with smart features; Premium build quality
-          with intuitive interface; Enhanced compatibility for modern entertainment systems.
-        </p>
-
-        <div class="wavy-line">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
-        </div>
-
-        <h3>Product Features:</h3>
-
-        <div class="product-features">
-          <div class="feature-item">
-            <span>Smart button configuration for enhanced usability</span>
-          </div>
-          <div class="feature-item">
-            <span>Premium materials ensuring long-lasting durability</span>
-          </div>
-          <div class="feature-item">
-            <span>Optimized power management for extended battery life</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STB Remote Model 7 -->
-    <div class="product-detail-parent product-7">
-      <div class="product-detail-image-parent">
-        <div class="product-detail-full-size-image">
-          <img src="images/STB TV Remote 7/Remote 2.3416.png" alt="STB Remote Model 7" class="active-image"
-            id="product7-main-image" />
-        </div>
-        <div class="product-detail-image-slider">
-          <img src="images/STB TV Remote 7/Remote 2.3416.png" alt="Model 7 View 1" class="slider-image active"
-            onclick="changeImage('product7-main-image', this.src)" />
-          <img src="images/STB TV Remote 7/Remote 2.3418.png" alt="Model 7 View 2" class="slider-image"
-            onclick="changeImage('product7-main-image', this.src)" />
-          <img src="images/STB TV Remote 7/Remote 2.3419.png" alt="Model 7 View 3" class="slider-image"
-            onclick="changeImage('product7-main-image', this.src)" />
-          <img src="images/STB TV Remote 7/Remote 2.3420.png" alt="Model 7 View 4" class="slider-image"
-            onclick="changeImage('product7-main-image', this.src)" />
-          <img src="images/STB TV Remote 7/Remote 2.3421.png" alt="Model 7 View 5" class="slider-image"
-            onclick="changeImage('product7-main-image', this.src)" />
-        </div>
-      </div>
-      <div class="product-details-content">
-        <h1>STB-700</h1>
-        <p class="product-specs">
-          High-performance STB remote control with cutting-edge technology;
-          Superior signal transmission capabilities; Designed for seamless integration
-          with modern set-top box systems.
-        </p>
-
-        <div class="wavy-line">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
-        </div>
-
-        <h3>Product Features:</h3>
-
-        <div class="product-features">
-          <div class="feature-item">
-            <span>Advanced IR technology for maximum compatibility</span>
-          </div>
-          <div class="feature-item">
-            <span>Robust construction for reliable daily use</span>
-          </div>
-          <div class="feature-item">
-            <span>User-friendly interface with intuitive controls</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="features">
-    <div class="section-header">
-      <h2>STB Remote Features</h2>
-      <p>Cutting-edge technology for superior set-top box control</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-tv"></i>
-        </div>
-        <h3>Universal Compatibility</h3>
-        <p>Works with all major DTH and cable set-top box brands.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-signal"></i>
-        </div>
-        <h3>Extended Range</h3>
-        <p>Long-range IR transmission for reliable control from distance.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-keyboard"></i>
-        </div>
-        <h3>Quick Access</h3>
-        <p>Dedicated buttons for favorite channels and functions.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-battery-full"></i>
-        </div>
-        <h3>Long Battery Life</h3>
-        <p>Energy-efficient design for extended battery performance.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-hand-pointer"></i>
-        </div>
-        <h3>Ergonomic Design</h3>
-        <p>Comfortable grip and intuitive button placement.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta">
-    <div class="cta-content">
-      <h2>Need a Custom STB Remote Solution?</h2>
-      <p>
+  <!-- Get in Touch Section -->
+  <section class="get-in-touch-section scroll-snap-section">
+    <div class="get-in-touch-container">
+      <div class="get-in-touch-content">
+        <h2 class="get-in-touch-title">Ready to Transform Your Entertainment Experience?</h2>
+        <p class="get-in-touch-subtitle">
         Contact us for custom set-top box remote control solutions
         tailored to your specific requirements
       </p>
-      <a href="../contact/" class="btn glow">Get in Touch</a>
+        <a href="http://127.0.0.1:5500/contact/" class="get-in-touch-btn">
+          <span class="btn-shine"></span>
+          <span>Get in Touch</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer scroll-snap-section">
     <div class="footer-container">
       <div class="footer-grid">
         <div class="footer-column">
           <div class="footer-logo-container">
-            <img src="../images/logo.png" alt="LIT Group Logo" class="footer-logo" />
+            <img
+              src="../images/logo.png"
+              alt="LIT Group Logo"
+              class="footer-logo"
+            />
           </div>
-          <p>Premium remote controls for modern entertainment</p>
+          <p>Premium remote controls for modern living</p>
           <div class="social-links">
-            <a href="https://x.com/litgroupindia" target="_blank"><img src="../images/icons/twitter (1).png"
-                alt="" /></a>
-            <a href="https://www.linkedin.com/company/litgroupindia/" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/litgroupindia" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/litgroupindia" target="_blank"
+              ><img src="../images/icons/twitter (1).png" alt=""
+            /></a>
+            <a
+              href="https://www.linkedin.com/company/litgroupindia/"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://www.instagram.com/litgroupindia" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </div>
         </div>
 
@@ -665,7 +517,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="../smart-remote/">Smart Remotes</a></li>
             <li><a href="../fan-remotes/">Fan Remotes</a></li>
             <li><a href="../power-supply/">Power Supply</a></li>
-            <li><a href="../stb-remote/">STB Remote</a></li>
+            <li><a href="../stb-remote/">STB Remotes</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -679,11 +531,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>Company</h4>
           <ul>
             <li><a href="../about/">About Us</a></li>
+            <!-- <li><a href="#">Careers</a></li> -->
+            <!-- <li><a href="#">Blog</a></li> -->
             <li><a href="../contact/">Contact</a></li>
             <li><a href="../feedback/">Feedback</a></li>
             <li><a href="https://litpayments.in/" target="_blank" rel="noopener">Payments</a></li>
           </ul>
         </div>
+
+        <!-- <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Technical Support</a></li>
+            <li><a href="#">User Manuals</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div> -->
 
         <div class="footer-column">
           <h4>Contact Us</h4>
@@ -693,16 +557,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <a href="mailto:contact@litgroup.in">contact@litgroup.in</a>
             </li>
             <li>
-              <a href="https://www.google.com/maps/place/LIT+India+Private+Limited+(Unit-2)/@28.5539358,77.4042305,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef751054616b:0x63de60f43bdde662!8m2!3d28.5539311!4d77.4068054!16s%2Fg%2F11vmb3f29y?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
-                target="_blank">A-124, Sector 80, Noida, INDIA</a>
+              <a
+                href="https://www.google.com/maps/place/LIT+India+Private+Limited+(Unit-2)/@28.5539358,77.4042305,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef751054616b:0x63de60f43bdde662!8m2!3d28.5539311!4d77.4068054!16s%2Fg%2F11vmb3f29y?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                target="_blank"
+                >A-124, Sector 80, Noida, INDIA</a
+              >
             </li>
             <li>
-              <a href="https://www.google.co.in/maps/place/LIT+Plasto+Tech/@28.5548696,77.4086868,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef128b41db1d:0xcb4f69d333df667f!8m2!3d28.5548649!4d77.4112617!16s%2Fg%2F11lkskrb8l?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank">A-31, Sector 80 Noida, INDIA</a>
+              <a
+                href="https://www.google.co.in/maps/place/LIT+Plasto+Tech/@28.5548696,77.4086868,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef128b41db1d:0xcb4f69d333df667f!8m2!3d28.5548649!4d77.4112617!16s%2Fg%2F11lkskrb8l?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                >A-31, Sector 80 Noida, INDIA</a
+              >
             </li>
             <li>
-              <a href="https://www.google.com/maps/place/LIT+India+Private+Limited/@28.5308343,77.4205149,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce8df9ef585bf:0x34b92ab17d559b03!8m2!3d28.5308296!4d77.4230898!16s%2Fg%2F11bbrl6hwg?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank">B-52, Sector 88, Noida, INDIA</a>
+              <a
+                href="https://www.google.com/maps/place/LIT+India+Private+Limited/@28.5308343,77.4205149,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce8df9ef585bf:0x34b92ab17d559b03!8m2!3d28.5308296!4d77.4230898!16s%2Fg%2F11bbrl6hwg?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                >B-52, Sector 88, Noida, INDIA</a
+              >
             </li>
           </ul>
         </div>
@@ -732,14 +605,1190 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="footer-bottom">
                   <p>&copy; <script>document.write(new Date().getFullYear())</script> LIT Group. All rights reserved.</p>
-
       </div>
     </div>
   </footer>
+  </div>
+  <!-- End Scroll Container -->
 
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="../script.js"></script>
   <script src="stb-tv-remote.js"></script>
   <script src="../acproduct/product-script.js"></script>
+  <script src="HeroBackground.js"></script>
+  
+  <!-- Smooth Section Glide Scroll -->
+  <script>
+    /* ====== JavaScript: Smooth section glide ====== */
+    (function () {
+      // Configuration
+      const DURATION = 900; // animation duration in ms (tune: 700-1200)
+      const QUIET_PERIOD = 80; // ignore small wheel spikes under this delta threshold
+      const DEBOUNCE = 300; // don't accept another section change for this ms while animating
+      const EASING = function (t) { // easeInOutCubic
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      };
+
+      // Get scroll container and sections
+      const scrollContainer = document.querySelector('.scroll-snap-container');
+      if (!scrollContainer) return;
+
+      const sections = Array.from(document.querySelectorAll('.scroll-snap-section'));
+      if (!sections.length) return;
+
+      // Utilities
+      const now = () => performance.now();
+      function animateScroll(startY, endY, duration, cb) {
+        const startTime = now();
+        function frame() {
+          const t = Math.min(1, (now() - startTime) / duration);
+          const eased = EASING(t);
+          scrollContainer.scrollTop = Math.round(startY + (endY - startY) * eased);
+          if (t < 1) {
+            requestId = requestAnimationFrame(frame);
+          } else {
+            cb && cb();
+          }
+        }
+        let requestId = requestAnimationFrame(frame);
+        return () => cancelAnimationFrame(requestId); // returns cancel function
+      }
+
+      // Find sections and helper functions
+      function getNearestSectionIndex(scrollY) {
+        let bestIdx = 0;
+        let bestDiff = Infinity;
+        sections.forEach((s, i) => {
+          const rect = s.getBoundingClientRect();
+          const containerRect = scrollContainer.getBoundingClientRect();
+          const top = scrollContainer.scrollTop + (rect.top - containerRect.top);
+          const diff = Math.abs(top - scrollY);
+          if (diff < bestDiff) {
+            bestDiff = diff;
+            bestIdx = i;
+          }
+        });
+        return bestIdx;
+      }
+
+      // State
+      let isAnimating = false;
+      let lastActionTime = 0;
+      let cancelAnimation = null;
+
+      // Core function to scroll to section index with soft glide
+      function scrollToSection(index) {
+        index = Math.max(0, Math.min(sections.length - 1, index));
+        const rect = sections[index].getBoundingClientRect();
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const destTop = scrollContainer.scrollTop + (rect.top - containerRect.top);
+        const currentScroll = scrollContainer.scrollTop;
+        if (Math.abs(currentScroll - destTop) < 2) return; // already there
+        if (cancelAnimation) cancelAnimation();
+        isAnimating = true;
+        lastActionTime = Date.now();
+        cancelAnimation = animateScroll(currentScroll, destTop, DURATION, () => {
+          isAnimating = false;
+          cancelAnimation = null;
+        });
+      }
+
+      // Determine next/prev based on current scroll position
+      function goNext() {
+        const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
+        const nextIndex = Math.min(sections.length - 1, currentIndex + 1);
+        if (nextIndex !== currentIndex) scrollToSection(nextIndex);
+      }
+      function goPrev() {
+        const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
+        const prevIndex = Math.max(0, currentIndex - 1);
+        if (prevIndex !== currentIndex) scrollToSection(prevIndex);
+      }
+
+      // Wheel/trackpad handling — translate vertical scroll impulses into section changes
+      let wheelTimeout;
+      scrollContainer.addEventListener('wheel', function (e) {
+        // If user is currently touching / dragging or we are animating, ignore small deltas
+        if (isAnimating) {
+          // allow user override: if they attempt a strong scroll, cancel animation and let native scroll
+          if (Math.abs(e.deltaY) > 120) {
+            if (cancelAnimation) cancelAnimation();
+            isAnimating = false;
+            cancelAnimation = null;
+          } else {
+            e.preventDefault();
+            return;
+          }
+        }
+        // Prevent default tiny jittering
+        if (Math.abs(e.deltaY) < QUIET_PERIOD) return;
+
+        e.preventDefault();
+        clearTimeout(wheelTimeout);
+        wheelTimeout = setTimeout(() => {
+          // Determine direction
+          if (e.deltaY > 0) {
+            // down
+            if (Date.now() - lastActionTime > DEBOUNCE) goNext();
+          } else {
+            // up
+            if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
+          }
+        }, 10);
+      }, { passive: false });
+
+      // Keyboard support (PageDown/PageUp, Arrow keys, Home/End)
+      window.addEventListener('keydown', function (e) {
+        if (isAnimating) return;
+        if (['ArrowDown','PageDown'].includes(e.code)) {
+          e.preventDefault();
+          goNext();
+        } else if (['ArrowUp','PageUp'].includes(e.code)) {
+          e.preventDefault();
+          goPrev();
+        } else if (e.code === 'Home') {
+          e.preventDefault();
+          scrollToSection(0);
+        } else if (e.code === 'End') {
+          e.preventDefault();
+          scrollToSection(sections.length - 1);
+        }
+      });
+
+      // Touch handling: simple swipe detection
+      let touchStartY = null;
+      let touchStartTime = 0;
+      scrollContainer.addEventListener('touchstart', function (e) {
+        if (e.touches && e.touches.length === 1) {
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+          if (cancelAnimation) { cancelAnimation(); isAnimating = false; cancelAnimation = null; } // allow user override
+        }
+      }, { passive: true });
+
+      scrollContainer.addEventListener('touchend', function (e) {
+        if (touchStartY === null) return;
+        const dy = (e.changedTouches[0].clientY - touchStartY);
+        const dt = Date.now() - touchStartTime;
+        const velocity = Math.abs(dy / dt);
+        touchStartY = null;
+        // small swipe threshold
+        if (Math.abs(dy) < 30 && velocity < 0.15) return;
+        if (dy < 0) {
+          // swipe up => next
+          if (Date.now() - lastActionTime > DEBOUNCE) goNext();
+        } else {
+          if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
+        }
+      }, { passive: true });
+
+      // If user performs manual scroll (scrollbar/trackpad) while animating, cancel animation to allow manual control
+      let manualScrollTimeout;
+      scrollContainer.addEventListener('scroll', function () {
+        if (isAnimating) {
+          clearTimeout(manualScrollTimeout);
+          manualScrollTimeout = setTimeout(() => {
+            // if user hasn't interacted recently, allow auto animations again
+          }, 250);
+        }
+      }, { passive: true });
+
+      // Recalculate on resize (section heights may change)
+      window.addEventListener('resize', function () {
+        // optional: snap to nearest section to avoid being mid-way
+        const idx = getNearestSectionIndex(scrollContainer.scrollTop);
+        setTimeout(() => scrollToSection(idx), 120);
+      });
+
+      // Optional: if page loads and not at top, snap to nearest section smoothly
+      window.addEventListener('load', function () {
+        const idx = getNearestSectionIndex(scrollContainer.scrollTop);
+        setTimeout(() => scrollToSection(idx), 200);
+      });
+
+      // Section Focus Behavior - Visual focus when section enters viewport
+      (function() {
+        // IntersectionObserver to detect when section is centered (50% of viewport)
+        const observerOptions = {
+          root: scrollContainer,
+          rootMargin: '-25% 0px -25% 0px', // Trigger when section occupies 50% of viewport (centered)
+          threshold: [0, 0.3, 0.5, 0.7, 1.0] // Multiple thresholds for smoother transitions
+        };
+
+        let currentActiveIndex = 0;
+
+        const observer = new IntersectionObserver((entries) => {
+          // Find the entry with the highest intersection ratio
+          let maxRatio = 0;
+          let activeEntry = null;
+
+          entries.forEach(entry => {
+            if (entry.intersectionRatio > maxRatio) {
+              maxRatio = entry.intersectionRatio;
+              activeEntry = entry;
+            }
+          });
+
+          // If we have an active entry with significant visibility, activate it
+          if (activeEntry && activeEntry.intersectionRatio > 0.3) {
+            // Remove active class from all sections
+            sections.forEach((section, index) => {
+              section.classList.remove('section-active');
+              if (section === activeEntry.target) {
+                currentActiveIndex = index;
+              }
+            });
+            // Add active class to current section
+            activeEntry.target.classList.add('section-active');
+          }
+        }, observerOptions);
+
+        // Observe all sections
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+
+        // Set initial active section (first section)
+        if (sections.length > 0) {
+          sections[0].classList.add('section-active');
+          currentActiveIndex = 0;
+        }
+
+        // Also handle scroll events for immediate feedback
+        scrollContainer.addEventListener('scroll', () => {
+          const scrollTop = scrollContainer.scrollTop;
+          const sectionHeight = window.innerHeight;
+          const newActiveIndex = Math.round(scrollTop / sectionHeight);
+          
+          if (newActiveIndex !== currentActiveIndex && newActiveIndex >= 0 && newActiveIndex < sections.length) {
+            sections.forEach(section => {
+              section.classList.remove('section-active');
+            });
+            sections[newActiveIndex].classList.add('section-active');
+            currentActiveIndex = newActiveIndex;
+          }
+        }, { passive: true });
+      })();
+
+      // Accessibility note: ensure focusable content inside sections remains accessible; this script avoids stealing focus.
+    })();
+  </script>
+  
+  <!-- Scroll-triggered animations for feature cards -->
+  <script>
+    (function() {
+      // Wait for DOM to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAnimations);
+      } else {
+        initAnimations();
+      }
+
+      function initAnimations() {
+        const featureCards = document.querySelectorAll('.premium-feature-card[data-animate]');
+        
+        if (featureCards.length === 0) return;
+
+        // IntersectionObserver options - trigger when 20% of element is visible
+        const observerOptions = {
+          threshold: 0.2,
+          rootMargin: '0px'
+        };
+
+        // Track if animation has been triggered to ensure it only happens once
+        let hasAnimated = false;
+
+        // Create observer
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !hasAnimated) {
+              hasAnimated = true;
+              
+              // Animate all cards with staggered delay based on data-index
+              featureCards.forEach((card) => {
+                const index = parseInt(card.getAttribute('data-index')) || 0;
+                const delay = index * 0.1; // 0.1s stagger between each card
+                
+                setTimeout(() => {
+                  card.classList.add('animate-in');
+                }, delay * 1000);
+              });
+              
+              // Unobserve all cards after animation triggers
+              featureCards.forEach(card => {
+                observer.unobserve(card);
+              });
+            }
+          });
+        }, observerOptions);
+
+        // Observe each card individually
+        featureCards.forEach(card => {
+          observer.observe(card);
+        });
+      }
+    })();
+  </script>
+  
+  <!-- Apple-Style Horizontal Scrolling Carousel Script -->
+  <script>
+    (function() {
+      const carouselContainer = document.querySelector('.carousel-container');
+      const carouselTrack = document.querySelector('.carousel-track');
+      const leftArrow = document.querySelector('.carousel-arrow-left');
+      const rightArrow = document.querySelector('.carousel-arrow-right');
+      const allCards = document.querySelectorAll('.carousel-card[data-original="true"]');
+      
+      if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
+      
+      // Constants
+      const ORIGINAL_CARD_COUNT = 7;
+      const CARD_GAP = 24;
+      const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)'; // Apple easing
+      const SCROLL_DURATION = 600; // Smooth scroll duration in ms
+      
+      // State
+      let cardWidth = 0;
+      let totalCardWidth = 0;
+      let currentScrollPosition = 0;
+      let isScrolling = false;
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartScroll = 0;
+      let velocity = 0;
+      let lastScrollTime = 0;
+      let lastScrollPosition = 0;
+      let animationFrameId = null;
+      
+      // Get original cards (not clones)
+      const originalCards = Array.from(allCards).slice(0, ORIGINAL_CARD_COUNT);
+      
+      // Calculate card width dynamically
+      function calculateCardWidth() {
+        if (originalCards.length === 0) return;
+        const firstCard = originalCards[0];
+        const cardRect = firstCard.getBoundingClientRect();
+        cardWidth = cardRect.width;
+        totalCardWidth = cardWidth + CARD_GAP;
+        return totalCardWidth;
+      }
+      
+      // Setup infinite loop: Clone cards at start and end
+      function setupInfiniteLoop() {
+        // Remove any existing clones
+        const existingClones = carouselTrack.querySelectorAll('[data-clone]');
+        existingClones.forEach(clone => clone.remove());
+        
+        // Clone original cards to end
+        originalCards.forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('data-clone', 'end');
+          carouselTrack.appendChild(clone);
+        });
+        
+        // Clone original cards to start (in reverse)
+        originalCards.slice().reverse().forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('data-clone', 'start');
+          carouselTrack.insertBefore(clone, carouselTrack.firstChild);
+        });
+        
+        // Calculate card width
+        calculateCardWidth();
+        
+        // Set initial position to start of original cards
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        currentScrollPosition = startClonesWidth;
+        carouselTrack.style.transition = 'none';
+        carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+        void carouselTrack.offsetWidth; // Force reflow
+        carouselTrack.style.transition = '';
+      }
+      
+      // Apple easing function (cubic-bezier(0.22, 0.61, 0.36, 1))
+      function easeInOutCubic(t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+      
+      // Smooth scroll animation helper
+      function smoothScrollTo(targetPosition, duration = SCROLL_DURATION) {
+        if (isScrolling) return;
+        
+        const startPosition = currentScrollPosition;
+        const distance = targetPosition - startPosition;
+        const startTime = performance.now();
+        
+        isScrolling = true;
+        
+        function animate(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          // Apple easing
+          const eased = easeInOutCubic(progress);
+          
+          currentScrollPosition = startPosition + (distance * eased);
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          
+          if (progress < 1) {
+            animationFrameId = requestAnimationFrame(animate);
+          } else {
+            isScrolling = false;
+            checkInfiniteLoop();
+            updateGradientFades();
+          }
+        }
+        
+        animationFrameId = requestAnimationFrame(animate);
+      }
+      
+      // Check and reset infinite loop position
+      function checkInfiniteLoop() {
+        if (totalCardWidth === 0) return;
+        
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const endClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        
+        // If scrolled past end clones, reset to start of original set
+        if (currentScrollPosition >= startClonesWidth + originalSetWidth + endClonesWidth) {
+          carouselTrack.style.transition = 'none';
+          currentScrollPosition = startClonesWidth;
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth; // Force reflow
+          carouselTrack.style.transition = '';
+        }
+        // If scrolled before start clones, reset to end of original set
+        else if (currentScrollPosition < startClonesWidth) {
+          carouselTrack.style.transition = 'none';
+          currentScrollPosition = startClonesWidth + originalSetWidth;
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth; // Force reflow
+          carouselTrack.style.transition = '';
+        }
+      }
+      
+      // Update gradient fade visibility
+      function updateGradientFades() {
+        if (totalCardWidth === 0) return;
+        
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        
+        if (currentScrollPosition <= startClonesWidth + 10) {
+          carouselContainer.classList.add('at-start');
+        } else {
+          carouselContainer.classList.remove('at-start');
+        }
+        
+        if (currentScrollPosition >= startClonesWidth + originalSetWidth - 10) {
+          carouselContainer.classList.add('at-end');
+        } else {
+          carouselContainer.classList.remove('at-end');
+        }
+      }
+      
+      // Scroll by one card width
+      function scrollByCard(direction) {
+        if (isScrolling || totalCardWidth === 0) return;
+        
+        const targetPosition = currentScrollPosition + (direction * totalCardWidth);
+        smoothScrollTo(targetPosition);
+      }
+      
+      // Arrow button handlers
+      leftArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollByCard(-1);
+      });
+      
+      rightArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollByCard(1);
+      });
+      
+      // Trackpad/Mouse wheel horizontal scrolling
+      let wheelTimeout;
+      let wheelAccumulator = 0;
+      
+      carouselContainer.addEventListener('wheel', (e) => {
+        // Only handle horizontal scroll or Shift + vertical scroll
+        const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+        const isShiftPressed = e.shiftKey;
+        
+        if (isHorizontal || isShiftPressed) {
+          e.preventDefault();
+          
+          const delta = isHorizontal ? e.deltaX : e.deltaY;
+          wheelAccumulator += delta;
+          
+          // Debounce wheel events
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            if (isScrolling || totalCardWidth === 0) {
+              wheelAccumulator = 0;
+              return;
+            }
+            
+            // Scroll by card increments based on accumulated delta
+            const cardIncrements = Math.round(wheelAccumulator / 100);
+            if (cardIncrements !== 0) {
+              const targetPosition = currentScrollPosition + (cardIncrements * totalCardWidth);
+              smoothScrollTo(targetPosition, 400);
+              wheelAccumulator = 0;
+            }
+          }, 50);
+        }
+      }, { passive: false });
+      
+      // Touch/Drag scrolling with inertia
+      let touchStartX = 0;
+      let touchStartScroll = 0;
+      let isTouching = false;
+      
+      carouselTrack.addEventListener('touchstart', (e) => {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+        isScrolling = false;
+        isTouching = true;
+        touchStartX = e.touches[0].clientX;
+        touchStartScroll = currentScrollPosition;
+      }, { passive: true });
+      
+      carouselTrack.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        e.preventDefault();
+        
+        const touchX = e.touches[0].clientX;
+        const deltaX = touchStartX - touchX;
+        currentScrollPosition = touchStartScroll + deltaX;
+        carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+        carouselTrack.style.transition = 'none';
+        
+        // Calculate velocity for inertia
+        const now = performance.now();
+        velocity = (currentScrollPosition - lastScrollPosition) / (now - lastScrollTime || 1);
+        lastScrollPosition = currentScrollPosition;
+        lastScrollTime = now;
+      }, { passive: false });
+      
+      carouselTrack.addEventListener('touchend', () => {
+        if (!isTouching) return;
+        isTouching = false;
+        
+        // Apply inertia
+        if (Math.abs(velocity) > 0.5) {
+          const inertiaDistance = velocity * 200; // Inertia multiplier
+          const targetPosition = currentScrollPosition + inertiaDistance;
+          smoothScrollTo(targetPosition, 400);
+        } else {
+          // Snap to nearest card
+          if (totalCardWidth > 0) {
+            const nearestCardPosition = Math.round(currentScrollPosition / totalCardWidth) * totalCardWidth;
+            smoothScrollTo(nearestCardPosition);
+          }
+        }
+        
+        checkInfiniteLoop();
+        updateGradientFades();
+        velocity = 0;
+      }, { passive: true });
+      
+      // Mouse drag scrolling
+      carouselTrack.addEventListener('mousedown', (e) => {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+        isScrolling = false;
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartScroll = currentScrollPosition;
+        carouselContainer.style.cursor = 'grabbing';
+        e.preventDefault();
+      });
+      
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        const deltaX = dragStartX - e.clientX;
+        currentScrollPosition = dragStartScroll + deltaX;
+        carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+        carouselTrack.style.transition = 'none';
+        
+        // Calculate velocity
+        const now = performance.now();
+        velocity = (currentScrollPosition - lastScrollPosition) / (now - lastScrollTime || 1);
+        lastScrollPosition = currentScrollPosition;
+        lastScrollTime = now;
+      });
+      
+      document.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        carouselContainer.style.cursor = 'grab';
+        
+        // Apply inertia
+        if (Math.abs(velocity) > 0.5) {
+          const inertiaDistance = velocity * 200;
+          const targetPosition = currentScrollPosition + inertiaDistance;
+          smoothScrollTo(targetPosition, 400);
+        } else {
+          // Snap to nearest card
+          if (totalCardWidth > 0) {
+            const nearestCardPosition = Math.round(currentScrollPosition / totalCardWidth) * totalCardWidth;
+            smoothScrollTo(nearestCardPosition);
+          }
+        }
+        
+        checkInfiniteLoop();
+        updateGradientFades();
+        velocity = 0;
+      });
+      
+      // Initialize after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(() => {
+            setupInfiniteLoop();
+            updateGradientFades();
+          }, 100);
+        });
+      } else {
+        setTimeout(() => {
+          setupInfiniteLoop();
+          updateGradientFades();
+        }, 100);
+      }
+      
+      // Handle resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          calculateCardWidth();
+          const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+          currentScrollPosition = startClonesWidth;
+          carouselTrack.style.transition = 'none';
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth;
+          carouselTrack.style.transition = '';
+          updateGradientFades();
+        }, 100);
+      });
+    })();
+  </script>
+
+  <!-- Features Carousel Script -->
+  <script>
+    (function() {
+      const featuresCarouselContainer = document.querySelector('.features-carousel-container');
+      const featuresCarouselTrack = document.querySelector('.features-carousel-track');
+      const featuresLeftArrow = document.querySelector('.features-carousel-arrow-left');
+      const featuresRightArrow = document.querySelector('.features-carousel-arrow-right');
+      const featuresCards = document.querySelectorAll('.features-carousel-card');
+      
+      if (!featuresCarouselContainer || !featuresCarouselTrack || !featuresLeftArrow || !featuresRightArrow || featuresCards.length === 0) return;
+      
+      let currentFeatureIndex = 0;
+      const totalFeatures = featuresCards.length;
+      let isTransitioning = false;
+      const TRANSITION_DURATION = 600;
+      let autoSlideInterval = null;
+      let userInactivityTimeout = null;
+      let isPaused = false;
+      const autoSlideDelay = 3000; // 3 seconds
+      const inactivityDelay = 2000; // 2 seconds
+      
+      // Check if carousel is visible (mobile view)
+      function isCarouselVisible() {
+        const style = window.getComputedStyle(featuresCarouselContainer);
+        return style.display !== 'none';
+      }
+      
+      // Calculate card width (each card is 100% of container)
+      function getCardWidth() {
+        if (!isCarouselVisible()) return 0;
+        return featuresCarouselContainer.offsetWidth || featuresCarouselContainer.clientWidth;
+      }
+      
+      // Update carousel position
+      function updateFeaturesCarouselPosition() {
+        if (!isCarouselVisible()) return;
+        const cardWidth = getCardWidth();
+        if (cardWidth === 0) return;
+        const gap = 20; // Gap from CSS
+        const translateX = -(currentFeatureIndex * (cardWidth + gap));
+        featuresCarouselTrack.style.transform = `translate3d(${translateX}px, 0, 0)`;
+      }
+      
+      // Set track width
+      function setFeaturesTrackWidth() {
+        if (!isCarouselVisible()) return;
+        const cardWidth = getCardWidth();
+        if (cardWidth === 0) return;
+        const gap = 20; // Gap between cards from CSS
+        const totalWidth = (cardWidth * totalFeatures) + (gap * (totalFeatures - 1));
+        featuresCarouselTrack.style.width = `${totalWidth}px`;
+      }
+      
+      // Next feature
+      function nextFeature() {
+        if (isTransitioning || !isCarouselVisible()) return;
+        
+        isTransitioning = true;
+        currentFeatureIndex = (currentFeatureIndex + 1) % totalFeatures;
+        updateFeaturesCarouselPosition();
+        
+        setTimeout(() => {
+          isTransitioning = false;
+        }, TRANSITION_DURATION);
+      }
+      
+      // Previous feature
+      function prevFeature() {
+        if (isTransitioning || !isCarouselVisible()) return;
+        
+        isTransitioning = true;
+        currentFeatureIndex = (currentFeatureIndex - 1 + totalFeatures) % totalFeatures;
+        updateFeaturesCarouselPosition();
+        
+        setTimeout(() => {
+          isTransitioning = false;
+        }, TRANSITION_DURATION);
+      }
+      
+      // Start auto sliding
+      function startAutoSlide() {
+        if (autoSlideInterval || !isCarouselVisible()) return;
+        autoSlideInterval = setInterval(() => {
+          if (!isPaused && isCarouselVisible()) {
+            nextFeature();
+          }
+        }, autoSlideDelay);
+      }
+      
+      // Stop auto sliding
+      function stopAutoSlide() {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+          autoSlideInterval = null;
+        }
+      }
+      
+      // Pause auto sliding
+      function pauseAutoSlide() {
+        isPaused = true;
+        stopAutoSlide();
+      }
+      
+      // Resume auto sliding after inactivity
+      function resumeAutoSlideAfterInactivity() {
+        if (userInactivityTimeout) {
+          clearTimeout(userInactivityTimeout);
+        }
+        userInactivityTimeout = setTimeout(() => {
+          isPaused = false;
+          if (isCarouselVisible()) {
+            startAutoSlide();
+          }
+        }, inactivityDelay);
+      }
+      
+      // Handle user interaction
+      function handleUserInteraction() {
+        pauseAutoSlide();
+        resumeAutoSlideAfterInactivity();
+      }
+      
+      // Arrow button handlers
+      featuresLeftArrow.addEventListener('click', () => {
+        prevFeature();
+        handleUserInteraction();
+      });
+      
+      featuresRightArrow.addEventListener('click', () => {
+        nextFeature();
+        handleUserInteraction();
+      });
+      
+      // Pause on hover (for desktop/tablet)
+      featuresCarouselContainer.addEventListener('mouseenter', () => {
+        pauseAutoSlide();
+      });
+      
+      // Resume on mouse leave
+      featuresCarouselContainer.addEventListener('mouseleave', () => {
+        isPaused = false;
+        if (isCarouselVisible()) {
+          startAutoSlide();
+        }
+      });
+      
+      // Touch swipe support
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      featuresCarouselContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        handleUserInteraction();
+      }, { passive: true });
+      
+      featuresCarouselContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        const threshold = 50;
+        
+        if (Math.abs(diff) > threshold) {
+          if (diff > 0) {
+            nextFeature();
+          } else {
+            prevFeature();
+          }
+          handleUserInteraction();
+        }
+      }, { passive: true });
+      
+      // Pause on pointer down
+      featuresCarouselContainer.addEventListener('pointerdown', handleUserInteraction);
+      
+      // Handle window resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          if (isCarouselVisible()) {
+            setFeaturesTrackWidth();
+            updateFeaturesCarouselPosition();
+            // Restart auto-slide if it was stopped
+            if (!autoSlideInterval) {
+              startAutoSlide();
+            }
+          } else {
+            // Stop auto-slide if carousel is hidden
+            stopAutoSlide();
+          }
+        }, 100);
+      });
+      
+      // Initialize on load and after a short delay to ensure DOM is ready
+      function initializeCarousel() {
+        if (isCarouselVisible()) {
+          setFeaturesTrackWidth();
+          featuresCarouselTrack.style.transition = 'transform 0.6s ease-in-out';
+          updateFeaturesCarouselPosition();
+          // Start auto-slide
+          startAutoSlide();
+        } else {
+          // Stop auto-slide if not visible
+          stopAutoSlide();
+        }
+      }
+      
+      // Initialize immediately if visible, otherwise wait
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeCarousel);
+      } else {
+        initializeCarousel();
+      }
+      
+      // Also initialize after a short delay to handle any layout shifts
+      setTimeout(initializeCarousel, 100);
+    })();
+  </script>
+
+  <!-- Remote Modal JavaScript -->
+  <script>
+    (function() {
+      // Remote data with specifications and descriptions
+      const remoteData = {
+        'STB Remote 1': {
+          image: 'images/STB TV Remote 1/STB Concept 1.bip.3342.png',
+          title: 'STB Remote 1',
+          subtitle: 'Premium Control',
+          description: 'Experience premium entertainment control with our flagship STB Remote 1. Designed for seamless navigation and intuitive operation, this remote combines elegant aesthetics with advanced functionality to enhance your viewing experience.',
+          specs: [
+            { label: 'Range', value: 'Up to 15 meters' },
+            { label: 'Battery', value: '2x AAA (included)' },
+            { label: 'Compatibility', value: 'Universal DTH/Cable' },
+            { label: 'Buttons', value: '45+ programmable' },
+            { label: 'Material', value: 'Premium ABS plastic' },
+            { label: 'Weight', value: '85g' }
+          ]
+        },
+        'STB Remote 2': {
+          image: 'images/STB TV Remote 2/STB Concept 2.3349.png',
+          title: 'STB Remote 2',
+          subtitle: 'Smart Navigation',
+          description: 'Navigate your entertainment with intelligent precision. STB Remote 2 features smart button mapping and ergonomic design, making it the perfect companion for modern set-top boxes and streaming devices.',
+          specs: [
+            { label: 'Range', value: 'Up to 12 meters' },
+            { label: 'Battery', value: '2x AAA (included)' },
+            { label: 'Compatibility', value: 'Universal DTH/Cable' },
+            { label: 'Buttons', value: '38+ programmable' },
+            { label: 'Material', value: 'High-grade plastic' },
+            { label: 'Weight', value: '78g' }
+          ]
+        },
+        'STB Remote 3': {
+          image: 'images/STB TV Remote 3/STB Concept 3.3355.png',
+          title: 'STB Remote 3',
+          subtitle: 'Advanced Features',
+          description: 'Unlock advanced control capabilities with STB Remote 3. Featuring enhanced button layout and premium build quality, this remote delivers superior performance for demanding entertainment setups.',
+          specs: [
+            { label: 'Range', value: 'Up to 18 meters' },
+            { label: 'Battery', value: '2x AAA (included)' },
+            { label: 'Compatibility', value: 'Universal DTH/Cable' },
+            { label: 'Buttons', value: '52+ programmable' },
+            { label: 'Material', value: 'Premium ABS + rubber' },
+            { label: 'Weight', value: '92g' }
+          ]
+        },
+        'STB Remote 4': {
+          image: 'images/STB TV Remote 4/STB Concept 4.3422.png',
+          title: 'STB Remote 4',
+          subtitle: 'Modern Design',
+          description: 'Embrace contemporary design with STB Remote 4. Its sleek profile and modern aesthetics complement any entertainment center while delivering reliable, responsive control for all your viewing needs.',
+          specs: [
+            { label: 'Range', value: 'Up to 14 meters' },
+            { label: 'Battery', value: '2x AAA (included)' },
+            { label: 'Compatibility', value: 'Universal DTH/Cable' },
+            { label: 'Buttons', value: '42+ programmable' },
+            { label: 'Material', value: 'Matte finish plastic' },
+            { label: 'Weight', value: '80g' }
+          ]
+        },
+        'STB Remote 5': {
+          image: 'images/STB TV Remote 5/STB Concept 5.3361.png',
+          title: 'STB Remote 5',
+          subtitle: 'Ergonomic Control',
+          description: 'Designed for comfort and ease of use, STB Remote 5 features an ergonomic shape that fits naturally in your hand. Experience extended viewing sessions without fatigue, thanks to its thoughtfully crafted design.',
+          specs: [
+            { label: 'Range', value: 'Up to 16 meters' },
+            { label: 'Battery', value: '2x AAA (included)' },
+            { label: 'Compatibility', value: 'Universal DTH/Cable' },
+            { label: 'Buttons', value: '48+ programmable' },
+            { label: 'Material', value: 'Ergonomic ABS' },
+            { label: 'Weight', value: '88g' }
+          ]
+        },
+        'STB Remote 6': {
+          image: 'images/STB TV Remote 6/Smart TV Remote 4.3434.png',
+          title: 'STB Remote 6',
+          subtitle: 'Smart Integration',
+          description: 'Seamlessly integrate with your smart entertainment ecosystem. STB Remote 6 offers intelligent connectivity and intuitive controls, making it the perfect bridge between traditional and modern viewing experiences.',
+          specs: [
+            { label: 'Range', value: 'Up to 20 meters' },
+            { label: 'Battery', value: '2x AAA (included)' },
+            { label: 'Compatibility', value: 'Universal + Smart TV' },
+            { label: 'Buttons', value: '55+ programmable' },
+            { label: 'Material', value: 'Premium composite' },
+            { label: 'Weight', value: '95g' }
+          ]
+        },
+        'STB Remote 7': {
+          image: 'images/STB TV Remote 7/Remote 2.3416.png',
+          title: 'STB Remote 7',
+          subtitle: 'Ultimate Experience',
+          description: 'The pinnacle of remote control engineering. STB Remote 7 combines cutting-edge technology with luxurious design, delivering the ultimate control experience for discerning entertainment enthusiasts.',
+          specs: [
+            { label: 'Range', value: 'Up to 25 meters' },
+            { label: 'Battery', value: '2x AAA (included)' },
+            { label: 'Compatibility', value: 'Universal + Premium' },
+            { label: 'Buttons', value: '60+ programmable' },
+            { label: 'Material', value: 'Premium metal + plastic' },
+            { label: 'Weight', value: '105g' }
+          ]
+        }
+      };
+
+      const modal = document.getElementById('remoteModal');
+      const modalBackdrop = document.querySelector('.remote-modal-backdrop');
+      const modalClose = document.querySelector('.remote-modal-close');
+      const modalImage = document.getElementById('modalRemoteImage');
+      const modalTitle = document.getElementById('modalRemoteTitle');
+      const modalSubtitle = document.getElementById('modalRemoteSubtitle');
+      const modalDescription = document.getElementById('modalRemoteDescription');
+      const modalSpecs = document.getElementById('modalRemoteSpecs');
+
+      // Get all collection cards (including clones)
+      const collectionCards = document.querySelectorAll('.collection-card');
+
+      // Function to open modal
+      function openModal(remoteName) {
+        const data = remoteData[remoteName];
+        if (!data) return;
+
+        // Populate modal content
+        modalImage.src = data.image;
+        modalImage.alt = data.title;
+        modalTitle.textContent = data.title;
+        modalSubtitle.textContent = data.subtitle;
+        modalDescription.textContent = data.description;
+
+        // Populate specifications
+        modalSpecs.innerHTML = '';
+        data.specs.forEach(spec => {
+          const specItem = document.createElement('div');
+          specItem.className = 'spec-item';
+          specItem.innerHTML = `
+            <div class="spec-label">${spec.label}</div>
+            <div class="spec-value">${spec.value}</div>
+          `;
+          modalSpecs.appendChild(specItem);
+        });
+
+        // Prevent background scrolling
+        const scrollContainer = document.querySelector('.scroll-snap-container');
+        if (scrollContainer) {
+          // Save current scroll position
+          scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
+          
+          // Lock the scroll container
+          scrollContainer.style.overflow = 'hidden';
+          scrollContainer.style.position = 'fixed';
+          scrollContainer.style.width = '100%';
+          scrollContainer.style.height = '100vh';
+          scrollContainer.style.top = `-${scrollContainer.scrollTop}px`;
+          scrollContainer.style.left = '0';
+          scrollContainer.style.right = '0';
+        }
+        document.body.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.height = '100vh';
+        document.body.style.top = '0';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        
+        // Prevent any scroll events
+        document.addEventListener('wheel', preventBackgroundScroll, { passive: false });
+        document.addEventListener('touchmove', preventBackgroundScroll, { passive: false });
+        
+        // Show modal with animation
+        modal.classList.add('active');
+      }
+
+      // Prevent background scroll function
+      function preventBackgroundScroll(e) {
+        // Only prevent if scrolling outside modal
+        if (!e.target.closest('.remote-modal-content')) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      }
+
+      // Function to close modal
+      function closeModal() {
+        modal.classList.remove('active');
+        
+        // Remove scroll prevention listeners
+        document.removeEventListener('wheel', preventBackgroundScroll);
+        document.removeEventListener('touchmove', preventBackgroundScroll);
+        
+        // Restore background scrolling
+        const scrollContainer = document.querySelector('.scroll-snap-container');
+        if (scrollContainer) {
+          const savedScrollTop = scrollContainer.dataset.scrollTop;
+          scrollContainer.style.overflow = '';
+          scrollContainer.style.position = '';
+          scrollContainer.style.width = '';
+          scrollContainer.style.height = '';
+          scrollContainer.style.top = '';
+          scrollContainer.style.left = '';
+          scrollContainer.style.right = '';
+          
+          // Restore scroll position
+          if (savedScrollTop) {
+            scrollContainer.scrollTop = parseInt(savedScrollTop);
+            delete scrollContainer.dataset.scrollTop;
+          }
+        }
+        document.body.classList.remove('modal-open');
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.height = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+      }
+
+      // Add click handlers to all cards
+      collectionCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+          // Don't open modal if clicking on carousel arrows
+          if (e.target.closest('.carousel-btn')) return;
+          
+          const titleElement = card.querySelector('.collection-card-title');
+          if (titleElement) {
+            const remoteName = titleElement.textContent.trim();
+            openModal(remoteName);
+          }
+        });
+      });
+
+      // Close modal handlers
+      if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+      }
+
+      if (modalBackdrop) {
+        modalBackdrop.addEventListener('click', closeModal);
+      }
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      // Prevent scroll propagation from modal to background
+      const modalBody = document.querySelector('.remote-modal-body');
+      const modalInfoSection = document.querySelector('.remote-modal-info-section');
+      
+      if (modalBody) {
+        modalBody.addEventListener('wheel', (e) => {
+          e.stopPropagation();
+        }, { passive: false });
+        
+        modalBody.addEventListener('touchmove', (e) => {
+          e.stopPropagation();
+        }, { passive: false });
+      }
+
+      if (modalInfoSection) {
+        modalInfoSection.addEventListener('wheel', (e) => {
+          e.stopPropagation();
+        }, { passive: false });
+        
+        modalInfoSection.addEventListener('touchmove', (e) => {
+          e.stopPropagation();
+        }, { passive: false });
+      }
+
+      // Prevent backdrop from scrolling
+      if (modalBackdrop) {
+        modalBackdrop.addEventListener('wheel', (e) => {
+          e.preventDefault();
+        }, { passive: false });
+        
+        modalBackdrop.addEventListener('touchmove', (e) => {
+          e.preventDefault();
+        }, { passive: false });
+      }
+    })();
+  </script>
 </body>
 
 </html>

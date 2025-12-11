@@ -183,18 +183,84 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animate hero features on load
-    const heroFeatures = document.querySelectorAll('.hero-feature-item');
-    heroFeatures.forEach((feature, index) => {
-        feature.style.opacity = '0';
-        feature.style.transform = 'translateX(-20px)';
-        
-        setTimeout(() => {
-            feature.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            feature.style.opacity = '1';
-            feature.style.transform = 'translateX(0)';
-        }, 800 + (index * 200));
-    });
+    // Premium hero animations - fade in and slide up with stagger
+    const animateHeroElements = () => {
+        // Animate badge
+        const heroBadge = document.querySelector('.hero-badge');
+        if (heroBadge) {
+            heroBadge.style.opacity = '0';
+            heroBadge.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                heroBadge.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                heroBadge.style.opacity = '1';
+                heroBadge.style.transform = 'translateY(0)';
+            }, 100);
+        }
+
+        // Animate heading
+        const heroHeading = document.querySelector('.stb-hero-content h1');
+        if (heroHeading) {
+            heroHeading.style.opacity = '0';
+            heroHeading.style.transform = 'translateY(30px)';
+            setTimeout(() => {
+                heroHeading.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                heroHeading.style.opacity = '1';
+                heroHeading.style.transform = 'translateY(0)';
+            }, 200);
+        }
+
+        // Animate paragraph
+        const heroParagraph = document.querySelector('.stb-hero-content p');
+        if (heroParagraph) {
+            heroParagraph.style.opacity = '0';
+            heroParagraph.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                heroParagraph.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                heroParagraph.style.opacity = '1';
+                heroParagraph.style.transform = 'translateY(0)';
+            }, 300);
+        }
+
+        // Animate feature badges with 30ms stagger
+        const heroFeatures = document.querySelectorAll('.hero-feature-item');
+        heroFeatures.forEach((feature, index) => {
+            feature.style.opacity = '0';
+            feature.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                feature.style.transition = 'opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                feature.style.opacity = '1';
+                feature.style.transform = 'translateY(0)';
+            }, 400 + (index * 30)); // 30ms stagger
+        });
+
+        // Animate button
+        const heroButton = document.querySelector('.premium-btn');
+        if (heroButton) {
+            heroButton.style.opacity = '0';
+            heroButton.style.transform = 'translateY(20px) scale(0.95)';
+            setTimeout(() => {
+                heroButton.style.transition = 'opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+                heroButton.style.opacity = '1';
+                heroButton.style.transform = 'translateY(0) scale(1)';
+            }, 500);
+        }
+
+        // Animate remote image with subtle entrance
+        const remoteImage = document.querySelector('.remote-image-premium');
+        if (remoteImage) {
+            remoteImage.style.opacity = '0';
+            remoteImage.style.transform = 'translateY(40px) scale(0.95)';
+            setTimeout(() => {
+                remoteImage.style.transition = 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1)';
+                remoteImage.style.opacity = '1';
+                remoteImage.style.transform = 'translateY(0) scale(1)';
+            }, 600);
+        }
+    };
+
+    // Initialize hero animations
+    animateHeroElements();
     
     // Set up product image cycling and effects
     function setupProductImages() {

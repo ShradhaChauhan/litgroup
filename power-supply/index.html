@@ -89,107 +89,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </nav>
 
+  <!-- Scroll Container for Snap Scrolling -->
+  <div class="scroll-snap-container">
   <!-- Hero Section -->
-  <section class="ac-hero">
-    <div class="ac-hero-content">
-      <span class="hero-badge">Reliable Power Solutions</span>
-      <h1>Advanced <span class="accent-text">Power Supply</span></h1>
-      <!-- Mobile Hero Image -->
-      <div class="mobile-hero-image">
-        <img src="images/30w 1c 1usb.2775.png" alt="30W Power Supply" />
+  <section class="stb-hero scroll-snap-section">
+    <div class="hero-bg-premium relative overflow-hidden" id="hero-background-container">
+      <!-- Ambient floating shapes for premium depth -->
+      <div class="hero-floating-shape shape-1"></div>
+      <div class="hero-floating-shape shape-2"></div>
+      <div class="hero-floating-shape shape-3"></div>
+      
+      <!-- Content Container - t4h Style Layout -->
+      <div class="relative z-10 hero-content-wrapper-t4h">
+        <!-- Top Center: Main Headline -->
+        <div class="hero-headline-top">
+          <div class="hero-wavy-line"></div>
+          <h1 class="hero-headline-t4h">
+            Invisible power <br />
+Effortless reliability
+          </h1>
+        </div>
+    
+        <!-- Bottom Section: Image Left + Text Right -->
+        <div class="hero-bottom-section">
+          <!-- Left: Power Supply Image -->
+          <div class="hero-left-remotes">
+            <div class="hero-image-container-t4h">
+              <div class="hero-blob-wrap" aria-hidden="true">
+                <div class="hero-ambient"></div>
+                <svg class="hero-blob" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMid slice"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <filter id="bblur" x="-50%" y="-50%" width="200%" height="200%">
+                      <feGaussianBlur stdDeviation="40" result="b"/>
+                      <feColorMatrix type="matrix" values="1 0 0 0 0
+                                                               0.97 0 0 0 0
+                                                               0.94 0 0 0 0
+                                                               0 0 0 0.7 0" in="b"/>
+                    </filter>
+                    <linearGradient id="gb" x1="0" x2="1">
+                      <stop offset="0%" stop-color="rgba(255,255,255,0.55)"/>
+                      <stop offset="50%" stop-color="rgba(245,237,227,0.42)"/>
+                      <stop offset="100%" stop-color="rgba(255,255,255,0.55)"/>
+                    </linearGradient>
+                  </defs>
+      
+                  <path d="M0,120 C120,180 280,200 420,175 C560,150 740,160 900,180 C1040,200 1200,150 1200,120 
+                           L1200,240 L0,240 Z"
+                    fill="url(#gb)" filter="url(#bblur)"/>
+                </svg>
+              </div>
+              <img src="images/30w 1c 1usb.2775.png" alt="Power Supply" class="remote-image-t4h" />
+            </div>
+          </div>
+    
+          <!-- Right: Subheadline + CTA -->
+          <div class="hero-right-column">
+            <p class="hero-subheadline-t4h">
+              Engineered with precision, safety, and intelligent power management, our adapters deliver ultra-efficient performance for mobile devices, smart electronics, and next-generation hardware ecosystems.
+            </p>
+            <a href="#power-supplies" class="hero-cta-t4h">Learn More</a>
+          </div>
+        </div>
       </div>
-      <p>
-        Precision-engineered power supply solutions with high efficiency design
-        and cutting-edge technology
-      </p>
-      <div class="hero-features">
-        <div class="hero-feature-item">
-          <i class="fas fa-bolt"></i>
-          <span>High Efficiency</span>
-        </div>
-        <div class="hero-feature-item">
-          <i class="fas fa-shield-alt"></i>
-          <span>Safety Certified</span>
-        </div>
-        <div class="hero-feature-item">
-          <i class="fas fa-leaf"></i>
-          <span>Energy Efficient</span>
-        </div>
-      </div>
-      <a href="#power-supplies" class="btn primary">Explore Products</a>
     </div>
   </section>
 
-  <!-- Power Supply Variants Section -->
-  <section class="remote-variants">
-    <div class="variants-container">
-      <div class="variants-content">
-        <h2>
-          Premium Power Solutions
-          <span class="accent-text">with Advanced Technology</span>
-        </h2>
+  <!-- Premium Hero Content Section - First Scroll -->
+  <section class="premium-hero-section scroll-snap-section">
+    <!-- Premium Background Elements -->
+    <div class="premium-bg-shapes">
+      <div class="bg-shape shape-1"></div>
+      <div class="bg-shape shape-2"></div>
+      <div class="bg-shape shape-3"></div>
+    </div>
 
-        <p>
+    <div class="premium-hero-container">
+      <!-- Two Column Layout: Image Left, Text Right -->
+      <div class="premium-hero-layout">
+        <!-- Left: Image -->
+        <div class="premium-hero-image-wrapper">
+          <img src="images/30w 1c 1usb.2775.png" 
+               alt="Premium Power Supply with Advanced Technology" 
+               class="premium-hero-image" />
+        </div>
+        
+        <!-- Right: Content -->
+        <div class="premium-hero-content-wrapper">
+        <h2 class="premium-headline">
+          Premium Power Solutions<br />
+          <span class="premium-accent">with Advanced Technology</span>
+        </h2>
+        <p class="premium-description">
           LIT Group specializes in creating exceptional power supply solutions
           that prioritize reliability, efficiency, and safety. Our
           innovative solutions are designed for compatibility with various
           electronic devices and applications.
         </p>
-
-        <p>
-          Our flagship power supplies feature high efficiency ratings, compact designs,
-          and smart protection mechanisms. The premium models integrate seamlessly with
-          modern electronics while our standard versions offer reliable operation with
-          enhanced durability.
-        </p>
-
-        <p>
-          Each power supply is manufactured using high-quality components including
-          premium transformers, efficient circuit designs, and robust protection circuits
-          that ensure long-lasting performance.
-        </p>
-
-        <p>
-          Our commitment to quality is reflected in our use of certified components
-          and energy-efficient designs that reduce environmental impact while maximizing
-          reliability.
-        </p>
-
-        <div class="wavy-divider">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
         </div>
       </div>
-
-      <!-- <div class="design-features">
-        <h2>Design features</h2>
-
-        <div class="features-grid">
-          <div class="feature-circle">
-            <img src="../images/charger.1962.png" alt="Compact Design" />
-            <h4>Compact and efficient design</h4>
-          </div>
-
-          <div class="feature-circle">
-            <img src="../images/All charger.1972.png" alt="Safety Features" />
-            <h4>Advanced safety protection</h4>
-          </div>
-
-          <div class="feature-circle">
-            <img src="../images/charger.1962.png" alt="Premium Components" />
-            <h4>Premium quality components</h4>
-          </div>
-
-          <div class="feature-circle">
-            <img src="../images/All charger.1972.png" alt="Energy Efficient" />
-            <h4>Energy-efficient operation</h4>
-          </div>
-        </div>
-      </div> -->
     </div>
   </section>
 
@@ -302,107 +300,293 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div> -->
   <!-- </section> -->
 
-  <!-- Image Carousel Section -->
-  <section class="image-carousel-section">
-    <div class="section-header">
-      <h2>Our Power Supply Collection</h2>
-      <p>Explore our range of high-quality power supply solutions</p>
+  <!-- Design Features Section - Second Scroll -->
+  <section class="premium-features-section next-section scroll-snap-section">
+    <!-- Premium Background Elements -->
+    <div class="premium-bg-shapes">
+      <div class="bg-shape shape-1"></div>
+      <div class="bg-shape shape-2"></div>
+      <div class="bg-shape shape-3"></div>
     </div>
-    <div class="carousel-container">
-      <div class="carousel-wrapper">
-        <button class="carousel-btn carousel-btn-prev" aria-label="Previous image">
+
+    <div class="premium-container">
+      <!-- Features Grid -->
+      <div class="premium-features-section-header">
+        <h2 class="premium-features-title">Design Features</h2>
+      </div>
+      
+      <!-- Desktop Grid View -->
+      <div class="premium-features-grid">
+        <div class="premium-feature-card" data-animate="left" data-index="0">
+          <div class="feature-image-wrapper">
+            <img src="images/30w 1c 1usb.2775.png" alt="High Efficiency" class="feature-image" />
+          </div>
+          <h3 class="feature-title">High Efficiency</h3>
+          <p class="feature-description">Optimized design for maximum power conversion efficiency and reduced energy waste.</p>
+        </div>
+
+        <div class="premium-feature-card" data-animate="left" data-index="1">
+          <div class="feature-image-wrapper">
+            <img src="images/20w Adapter.png" alt="Safety Protection" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Safety Protection</h3>
+          <p class="feature-description">Multiple protection circuits for safe and reliable operation in all conditions.</p>
+        </div>
+
+        <div class="premium-feature-card" data-animate="right" data-index="2">
+          <div class="feature-image-wrapper">
+            <img src="images/65w C type.bip.3476.png" alt="Compact Design" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Compact Design</h3>
+          <p class="feature-description">Space-saving design without compromising performance or reliability.</p>
+        </div>
+
+        <div class="premium-feature-card" data-animate="right" data-index="3">
+          <div class="feature-image-wrapper">
+            <img src="images/30w Usb -A.2771.png" alt="Energy Efficient" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Energy Efficient</h3>
+          <p class="feature-description">Low standby power consumption for reduced energy costs and environmental impact.</p>
+        </div>
+      </div>
+
+      <!-- Mobile Carousel View -->
+      <div class="features-carousel-container">
+        <button class="features-carousel-btn features-carousel-arrow features-carousel-arrow-left" aria-label="Previous feature">
           <i class="fas fa-chevron-left"></i>
         </button>
-        <div class="carousel-track" id="carouselTrack">
-          <!-- Images will be dynamically loaded here -->
+        
+        <div class="features-carousel-track">
+          <div class="premium-feature-card features-carousel-card" data-feature-index="0">
+            <div class="feature-image-wrapper">
+              <img src="images/30w 1c 1usb.2775.png" alt="High Efficiency" class="feature-image" />
+            </div>
+            <h3 class="feature-title">High Efficiency</h3>
+            <p class="feature-description">Optimized design for maximum power conversion efficiency and reduced energy waste.</p>
+          </div>
+
+          <div class="premium-feature-card features-carousel-card" data-feature-index="1">
+            <div class="feature-image-wrapper">
+              <img src="images/20w Adapter.png" alt="Safety Protection" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Safety Protection</h3>
+            <p class="feature-description">Multiple protection circuits for safe and reliable operation in all conditions.</p>
+          </div>
+
+          <div class="premium-feature-card features-carousel-card" data-feature-index="2">
+            <div class="feature-image-wrapper">
+              <img src="images/65w C type.bip.3476.png" alt="Compact Design" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Compact Design</h3>
+            <p class="feature-description">Space-saving design without compromising performance or reliability.</p>
+          </div>
+
+          <div class="premium-feature-card features-carousel-card" data-feature-index="3">
+            <div class="feature-image-wrapper">
+              <img src="images/30w Usb -A.2771.png" alt="Energy Efficient" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Energy Efficient</h3>
+            <p class="feature-description">Low standby power consumption for reduced energy costs and environmental impact.</p>
+          </div>
         </div>
-        <button class="carousel-btn carousel-btn-next" aria-label="Next image">
+        
+        <button class="features-carousel-btn features-carousel-arrow features-carousel-arrow-right" aria-label="Next feature">
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
-      <div class="carousel-dots" id="carouselDots">
-        <!-- Dots will be dynamically generated here -->
+    </div>
+  </section>
+
+  <!-- Power Supply Collection Section -->
+  <section class="stb-collection-section scroll-snap-section">
+    <div class="collection-container">
+      <h2 class="collection-title">Our Power Supply Collection</h2>
+      
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-arrow carousel-arrow-left" aria-label="Previous cards">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="carousel-track">
+          <!-- Card 1 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/30w 1c 1usb.2775.png" alt="30W Power Supply" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">30W Power Supply</h3>
+              <p class="collection-card-subtitle">USB-C Fast Charging</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/20w Adapter.png" alt="20W Power Supply" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">20W Power Supply</h3>
+              <p class="collection-card-subtitle">Compact Design</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/65w C type.bip.3476.png" alt="65W Power Supply" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">65W Power Supply</h3>
+              <p class="collection-card-subtitle">High Power Output</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/30w Usb -A.2771.png" alt="30W USB-A Power Supply" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">30W USB-A</h3>
+              <p class="collection-card-subtitle">Universal Compatibility</p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/20w & 25w Adapter.bip.3021.png" alt="25W Power Supply" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">25W Power Supply</h3>
+              <p class="collection-card-subtitle">Balanced Performance</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/Adopter 65w 2c 1A.bip.3475.png" alt="65W Dual Port" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">65W Dual Port</h3>
+              <p class="collection-card-subtitle">Multi-Device Charging</p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/30w 1c 1usb 01.3462.png" alt="30W Premium" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">30W Premium</h3>
+              <p class="collection-card-subtitle">Advanced Technology</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-btn carousel-arrow carousel-arrow-right" aria-label="Next cards">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="section-header">
-      <h2>Power Supply Features</h2>
-      <p>Cutting-edge technology for superior power management</p>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-bolt"></i>
-        </div>
-        <h3>High Efficiency</h3>
-        <p>Optimized design for maximum power conversion efficiency.</p>
+  <!-- Our Clients Section -->
+  <section class="clients-section scroll-snap-section">
+    <div class="clients-container">
+      <div class="clients-header">
+        <h2 class="clients-title">Our Trusted Clients</h2>
+        <p class="clients-subtitle">We work with world's leading brands and manufacturers</p>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-shield-alt"></i>
+      
+      <div class="clients-logos-wrapper">
+        <div class="clients-logos-grid">
+          <div class="client-logo-item">
+            <img src="../images/Logos/samsung.png" alt="Samsung" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/voltas-logo.png" alt="Voltas" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/mi.png" alt="Xiaomi" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Havells_Logo.svg.png" alt="Havells" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Reliance_Jio_Logo.svg.png" alt="Jio" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/skyworth-color-logo.svg" alt="Skyworth" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/paytm.png" alt="Paytm" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/1200px-Blue_Star_primary_logo.png" alt="Blue Star" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Godrej_Logo.svg.png" alt="Godrej" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/daikin logo.png" alt="Daikin" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/carrier logo.png" alt="Carrier" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/philips logo.png" alt="Philips" class="client-logo" />
+          </div>
         </div>
-        <h3>Safety Protection</h3>
-        <p>Multiple protection circuits for safe and reliable operation.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-thermometer-half"></i>
-        </div>
-        <h3>Thermal Management</h3>
-        <p>Advanced cooling design for optimal temperature control.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-leaf"></i>
-        </div>
-        <h3>Energy Efficient</h3>
-        <p>Low standby power consumption for reduced energy costs.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <i class="fas fa-compress-arrows-alt"></i>
-        </div>
-        <h3>Compact Design</h3>
-        <p>Space-saving design without compromising performance.</p>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta">
-    <div class="cta-content">
-      <h2>Need a Custom Power Supply Solution?</h2>
-      <p>
+  <!-- Get in Touch Section -->
+  <section class="get-in-touch-section scroll-snap-section">
+    <div class="get-in-touch-container">
+      <div class="get-in-touch-content">
+        <h2 class="get-in-touch-title">Ready to Power Your Next Project?</h2>
+        <p class="get-in-touch-subtitle">
         Contact us for custom power supply solutions
         tailored to your specific requirements
       </p>
-      <a href="../contact/" class="btn glow">Get in Touch</a>
+        <a href="../contact/" class="get-in-touch-btn">
+          <span class="btn-shine"></span>
+          <span>Get in Touch</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer scroll-snap-section">
     <div class="footer-container">
       <div class="footer-grid">
         <div class="footer-column">
           <div class="footer-logo-container">
-            <img src="../images/logo.png" alt="LIT Group Logo" class="footer-logo" />
+            <img
+              src="../images/logo.png"
+              alt="LIT Group Logo"
+              class="footer-logo"
+            />
           </div>
           <p>Premium power solutions for modern electronics</p>
           <div class="social-links">
-            <a href="https://x.com/litgroupindia" target="_blank"><img src="../images/icons/twitter (1).png"
-                alt="" /></a>
-            <a href="https://www.linkedin.com/company/litgroupindia/" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/litgroupindia" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/litgroupindia" target="_blank"
+              ><img src="../images/icons/twitter (1).png" alt=""
+            /></a>
+            <a
+              href="https://www.linkedin.com/company/litgroupindia/"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://www.instagram.com/litgroupindia" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
           </div>
         </div>
 
@@ -427,11 +611,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h4>Company</h4>
           <ul>
             <li><a href="../about/">About Us</a></li>
+            <!-- <li><a href="#">Careers</a></li> -->
+            <!-- <li><a href="#">Blog</a></li> -->
             <li><a href="../contact/">Contact</a></li>
             <li><a href="../feedback/">Feedback</a></li>
             <li><a href="https://litpayments.in/" target="_blank" rel="noopener">Payments</a></li>
           </ul>
         </div>
+
+        <!-- <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Technical Support</a></li>
+            <li><a href="#">User Manuals</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div> -->
 
         <div class="footer-column">
           <h4>Contact Us</h4>
@@ -441,16 +637,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <a href="mailto:contact@litgroup.in">contact@litgroup.in</a>
             </li>
             <li>
-              <a href="https://www.google.com/maps/place/LIT+India+Private+Limited+(Unit-2)/@28.5539358,77.4042305,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef751054616b:0x63de60f43bdde662!8m2!3d28.5539311!4d77.4068054!16s%2Fg%2F11vmb3f29y?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
-                target="_blank">A-124, Sector 80, Noida, INDIA</a>
+              <a
+                href="https://www.google.com/maps/place/LIT+India+Private+Limited+(Unit-2)/@28.5539358,77.4042305,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef751054616b:0x63de60f43bdde662!8m2!3d28.5539311!4d77.4068054!16s%2Fg%2F11vmb3f29y?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                target="_blank"
+                >A-124, Sector 80, Noida, INDIA</a
+              >
             </li>
             <li>
-              <a href="https://www.google.co.in/maps/place/LIT+Plasto+Tech/@28.5548696,77.4086868,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef128b41db1d:0xcb4f69d333df667f!8m2!3d28.5548649!4d77.4112617!16s%2Fg%2F11lkskrb8l?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank">A-31, Sector 80 Noida, INDIA</a>
+              <a
+                href="https://www.google.co.in/maps/place/LIT+Plasto+Tech/@28.5548696,77.4086868,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef128b41db1d:0xcb4f69d333df667f!8m2!3d28.5548649!4d77.4112617!16s%2Fg%2F11lkskrb8l?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                >A-31, Sector 80 Noida, INDIA</a
+              >
             </li>
             <li>
-              <a href="https://www.google.com/maps/place/LIT+India+Private+Limited/@28.5308343,77.4205149,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce8df9ef585bf:0x34b92ab17d559b03!8m2!3d28.5308296!4d77.4230898!16s%2Fg%2F11bbrl6hwg?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank">B-52, Sector 88, Noida, INDIA</a>
+              <a
+                href="https://www.google.com/maps/place/LIT+India+Private+Limited/@28.5308343,77.4205149,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce8df9ef585bf:0x34b92ab17d559b03!8m2!3d28.5308296!4d77.4230898!16s%2Fg%2F11bbrl6hwg?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                >B-52, Sector 88, Noida, INDIA</a
+              >
             </li>
           </ul>
         </div>
@@ -480,14 +685,651 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="footer-bottom">
                   <p>&copy; <script>document.write(new Date().getFullYear())</script> LIT Group. All rights reserved.</p>
-
       </div>
     </div>
   </footer>
+  </div>
+  <!-- End Scroll Container -->
 
   <script src="../script.js"></script>
   <script src="power-supply.js"></script>
   <script src="../acproduct/product-script.js"></script>
+  
+  <!-- Smooth Section Glide Scroll -->
+  <script>
+    /* ====== JavaScript: Smooth section glide ====== */
+    (function () {
+      // Configuration
+      const DURATION = 900; // animation duration in ms (tune: 700-1200)
+      const QUIET_PERIOD = 80; // ignore small wheel spikes under this delta threshold
+      const DEBOUNCE = 300; // don't accept another section change for this ms while animating
+      const EASING = function (t) { // easeInOutCubic
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      };
+
+      // Get scroll container and sections
+      const scrollContainer = document.querySelector('.scroll-snap-container');
+      if (!scrollContainer) {
+        console.warn('Scroll container not found, using normal scroll');
+        return;
+      }
+
+      const sections = Array.from(document.querySelectorAll('.scroll-snap-section'));
+      if (!sections.length) {
+        console.warn('No scroll sections found, using normal scroll');
+        return;
+      }
+      
+      // Ensure scroll container is scrollable
+      scrollContainer.style.height = '100vh';
+      scrollContainer.style.overflowY = 'auto';
+      
+      // Debug: Log container info
+      console.log('Scroll container initialized:', {
+        height: scrollContainer.offsetHeight,
+        scrollHeight: scrollContainer.scrollHeight,
+        sections: sections.length
+      });
+
+      // Utilities
+      const now = () => performance.now();
+      function animateScroll(startY, endY, duration, cb) {
+        const startTime = now();
+        function frame() {
+          const t = Math.min(1, (now() - startTime) / duration);
+          const eased = EASING(t);
+          scrollContainer.scrollTop = Math.round(startY + (endY - startY) * eased);
+          if (t < 1) {
+            requestId = requestAnimationFrame(frame);
+          } else {
+            cb && cb();
+          }
+        }
+        let requestId = requestAnimationFrame(frame);
+        return () => cancelAnimationFrame(requestId); // returns cancel function
+      }
+
+      // Find sections and helper functions
+      function getNearestSectionIndex(scrollY) {
+        let bestIdx = 0;
+        let bestDiff = Infinity;
+        sections.forEach((s, i) => {
+          const rect = s.getBoundingClientRect();
+          const containerRect = scrollContainer.getBoundingClientRect();
+          const top = scrollContainer.scrollTop + (rect.top - containerRect.top);
+          const diff = Math.abs(top - scrollY);
+          if (diff < bestDiff) {
+            bestDiff = diff;
+            bestIdx = i;
+          }
+        });
+        return bestIdx;
+      }
+
+      // State
+      let isAnimating = false;
+      let lastActionTime = 0;
+      let cancelAnimation = null;
+
+      // Core function to scroll to section index with soft glide
+      function scrollToSection(index) {
+        index = Math.max(0, Math.min(sections.length - 1, index));
+        const rect = sections[index].getBoundingClientRect();
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const destTop = scrollContainer.scrollTop + (rect.top - containerRect.top);
+        const currentScroll = scrollContainer.scrollTop;
+        if (Math.abs(currentScroll - destTop) < 2) return; // already there
+        if (cancelAnimation) cancelAnimation();
+        isAnimating = true;
+        lastActionTime = Date.now();
+        cancelAnimation = animateScroll(currentScroll, destTop, DURATION, () => {
+          isAnimating = false;
+          cancelAnimation = null;
+        });
+      }
+
+      // Determine next/prev based on current scroll position
+      function goNext() {
+        const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
+        const nextIndex = Math.min(sections.length - 1, currentIndex + 1);
+        if (nextIndex !== currentIndex) scrollToSection(nextIndex);
+      }
+      function goPrev() {
+        const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
+        const prevIndex = Math.max(0, currentIndex - 1);
+        if (prevIndex !== currentIndex) scrollToSection(prevIndex);
+      }
+
+      // Wheel/trackpad handling — translate vertical scroll impulses into section changes
+      let wheelTimeout;
+      scrollContainer.addEventListener('wheel', function (e) {
+        // If user is currently touching / dragging or we are animating, ignore small deltas
+        if (isAnimating) {
+          // allow user override: if they attempt a strong scroll, cancel animation and let native scroll
+          if (Math.abs(e.deltaY) > 120) {
+            if (cancelAnimation) cancelAnimation();
+            isAnimating = false;
+            cancelAnimation = null;
+            // Allow normal scroll
+            return;
+          } else {
+            e.preventDefault();
+            return;
+          }
+        }
+        // Prevent default tiny jittering - but allow larger scrolls
+        if (Math.abs(e.deltaY) < QUIET_PERIOD) {
+          // Allow small scrolls to pass through for fine control
+          return;
+        }
+
+        e.preventDefault();
+        clearTimeout(wheelTimeout);
+        wheelTimeout = setTimeout(() => {
+          // Determine direction
+          if (e.deltaY > 0) {
+            // down
+            if (Date.now() - lastActionTime > DEBOUNCE) goNext();
+          } else {
+            // up
+            if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
+          }
+        }, 10);
+      }, { passive: false });
+
+      // Keyboard support (PageDown/PageUp, Arrow keys, Home/End)
+      window.addEventListener('keydown', function (e) {
+        if (isAnimating) return;
+        if (['ArrowDown','PageDown'].includes(e.code)) {
+          e.preventDefault();
+          goNext();
+        } else if (['ArrowUp','PageUp'].includes(e.code)) {
+          e.preventDefault();
+          goPrev();
+        } else if (e.code === 'Home') {
+          e.preventDefault();
+          scrollToSection(0);
+        } else if (e.code === 'End') {
+          e.preventDefault();
+          scrollToSection(sections.length - 1);
+        }
+      });
+
+      // Touch handling: simple swipe detection
+      let touchStartY = null;
+      let touchStartTime = 0;
+      scrollContainer.addEventListener('touchstart', function (e) {
+        if (e.touches && e.touches.length === 1) {
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+          if (cancelAnimation) { cancelAnimation(); isAnimating = false; cancelAnimation = null; } // allow user override
+        }
+      }, { passive: true });
+
+      scrollContainer.addEventListener('touchend', function (e) {
+        if (touchStartY === null) return;
+        const dy = (e.changedTouches[0].clientY - touchStartY);
+        const dt = Date.now() - touchStartTime;
+        const velocity = Math.abs(dy / dt);
+        touchStartY = null;
+        // small swipe threshold
+        if (Math.abs(dy) < 30 && velocity < 0.15) return;
+        if (dy < 0) {
+          // swipe up => next
+          if (Date.now() - lastActionTime > DEBOUNCE) goNext();
+        } else {
+          if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
+        }
+      }, { passive: true });
+
+      // If user performs manual scroll (scrollbar/trackpad) while animating, cancel animation to allow manual control
+      let manualScrollTimeout;
+      scrollContainer.addEventListener('scroll', function () {
+        if (isAnimating) {
+          clearTimeout(manualScrollTimeout);
+          manualScrollTimeout = setTimeout(() => {
+            // if user hasn't interacted recently, allow auto animations again
+          }, 250);
+        }
+      }, { passive: true });
+
+      // Recalculate on resize (section heights may change)
+      window.addEventListener('resize', function () {
+        // optional: snap to nearest section to avoid being mid-way
+        const idx = getNearestSectionIndex(scrollContainer.scrollTop);
+        setTimeout(() => scrollToSection(idx), 120);
+      });
+
+      // Optional: if page loads and not at top, snap to nearest section smoothly
+      window.addEventListener('load', function () {
+        const idx = getNearestSectionIndex(scrollContainer.scrollTop);
+        setTimeout(() => scrollToSection(idx), 200);
+      });
+
+      // Section Focus Behavior - Visual focus when section enters viewport
+      (function() {
+        // IntersectionObserver to detect when section is centered (50% of viewport)
+        const observerOptions = {
+          root: scrollContainer,
+          rootMargin: '-25% 0px -25% 0px', // Trigger when section occupies 50% of viewport (centered)
+          threshold: [0, 0.3, 0.5, 0.7, 1.0] // Multiple thresholds for smoother transitions
+        };
+
+        let currentActiveIndex = 0;
+
+        const observer = new IntersectionObserver((entries) => {
+          // Find the entry with the highest intersection ratio
+          let maxRatio = 0;
+          let activeEntry = null;
+
+          entries.forEach(entry => {
+            if (entry.intersectionRatio > maxRatio) {
+              maxRatio = entry.intersectionRatio;
+              activeEntry = entry;
+            }
+          });
+
+          // If we have an active entry with significant visibility, activate it
+          if (activeEntry && activeEntry.intersectionRatio > 0.3) {
+            // Remove active class from all sections
+            sections.forEach((section, index) => {
+              section.classList.remove('section-active');
+              if (section === activeEntry.target) {
+                currentActiveIndex = index;
+              }
+            });
+            // Add active class to current section
+            activeEntry.target.classList.add('section-active');
+          }
+        }, observerOptions);
+
+        // Observe all sections
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+
+        // Set initial active section (first section)
+        if (sections.length > 0) {
+          sections[0].classList.add('section-active');
+          currentActiveIndex = 0;
+        }
+
+        // Also handle scroll events for immediate feedback
+        scrollContainer.addEventListener('scroll', () => {
+          const scrollTop = scrollContainer.scrollTop;
+          const sectionHeight = window.innerHeight;
+          const newActiveIndex = Math.round(scrollTop / sectionHeight);
+          
+          if (newActiveIndex !== currentActiveIndex && newActiveIndex >= 0 && newActiveIndex < sections.length) {
+            sections.forEach(section => {
+              section.classList.remove('section-active');
+            });
+            sections[newActiveIndex].classList.add('section-active');
+            currentActiveIndex = newActiveIndex;
+          }
+        }, { passive: true });
+      })();
+
+      // Accessibility note: ensure focusable content inside sections remains accessible; this script avoids stealing focus.
+    })();
+
+    // Collection Carousel JavaScript
+    (function() {
+      const carouselContainer = document.querySelector('.stb-collection-section .carousel-container');
+      const carouselTrack = document.querySelector('.stb-collection-section .carousel-track');
+      const leftArrow = document.querySelector('.stb-collection-section .carousel-arrow-left');
+      const rightArrow = document.querySelector('.stb-collection-section .carousel-arrow-right');
+      const allCards = document.querySelectorAll('.stb-collection-section .carousel-card[data-original="true"]');
+      
+      if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
+      
+      const ORIGINAL_CARD_COUNT = 7;
+      const CARD_GAP = 24;
+      const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
+      const SCROLL_DURATION = 600;
+      
+      let cardWidth = 0;
+      let totalCardWidth = 0;
+      let currentScrollPosition = 0;
+      let isScrolling = false;
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartScroll = 0;
+      let velocity = 0;
+      let lastScrollTime = 0;
+      let lastScrollPosition = 0;
+      let animationFrameId = null;
+      
+      const originalCards = Array.from(allCards).slice(0, ORIGINAL_CARD_COUNT);
+      
+      function calculateCardWidth() {
+        if (originalCards.length === 0) return;
+        const firstCard = originalCards[0];
+        const cardRect = firstCard.getBoundingClientRect();
+        cardWidth = cardRect.width;
+        totalCardWidth = cardWidth + CARD_GAP;
+        return totalCardWidth;
+      }
+      
+      function setupInfiniteLoop() {
+        const existingClones = carouselTrack.querySelectorAll('[data-clone]');
+        existingClones.forEach(clone => clone.remove());
+        
+        originalCards.forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('data-clone', 'end');
+          carouselTrack.appendChild(clone);
+        });
+        
+        originalCards.slice().reverse().forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('data-clone', 'start');
+          carouselTrack.insertBefore(clone, carouselTrack.firstChild);
+        });
+        
+        calculateCardWidth();
+        
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        currentScrollPosition = startClonesWidth;
+        carouselTrack.style.transition = 'none';
+        carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+        void carouselTrack.offsetWidth;
+        carouselTrack.style.transition = '';
+      }
+      
+      function easeInOutCubic(t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+      
+      function smoothScrollTo(targetPosition, duration = SCROLL_DURATION) {
+        if (isScrolling) return;
+        
+        const startPosition = currentScrollPosition;
+        const distance = targetPosition - startPosition;
+        const startTime = performance.now();
+        
+        isScrolling = true;
+        
+        function animate(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          const eased = easeInOutCubic(progress);
+          
+          currentScrollPosition = startPosition + (distance * eased);
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          
+          if (progress < 1) {
+            animationFrameId = requestAnimationFrame(animate);
+          } else {
+            isScrolling = false;
+            checkInfiniteLoop();
+            updateGradientFades();
+          }
+        }
+        
+        animationFrameId = requestAnimationFrame(animate);
+      }
+      
+      function checkInfiniteLoop() {
+        if (totalCardWidth === 0) return;
+        
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const endClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        
+        if (currentScrollPosition >= startClonesWidth + originalSetWidth + endClonesWidth) {
+          carouselTrack.style.transition = 'none';
+          currentScrollPosition = startClonesWidth;
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth;
+          carouselTrack.style.transition = '';
+        }
+        else if (currentScrollPosition < startClonesWidth) {
+          carouselTrack.style.transition = 'none';
+          currentScrollPosition = startClonesWidth + originalSetWidth;
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth;
+          carouselTrack.style.transition = '';
+        }
+      }
+      
+      function updateGradientFades() {
+        if (totalCardWidth === 0) return;
+        
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        
+        if (currentScrollPosition <= startClonesWidth + 10) {
+          carouselContainer.classList.add('at-start');
+        } else {
+          carouselContainer.classList.remove('at-start');
+        }
+        
+        if (currentScrollPosition >= startClonesWidth + originalSetWidth - 10) {
+          carouselContainer.classList.add('at-end');
+        } else {
+          carouselContainer.classList.remove('at-end');
+        }
+      }
+      
+      function scrollByCard(direction) {
+        if (isScrolling || totalCardWidth === 0) return;
+        
+        const targetPosition = currentScrollPosition + (direction * totalCardWidth);
+        smoothScrollTo(targetPosition);
+      }
+      
+      leftArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollByCard(-1);
+      });
+      
+      rightArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollByCard(1);
+      });
+      
+      let wheelTimeout;
+      let wheelAccumulator = 0;
+      
+      carouselContainer.addEventListener('wheel', (e) => {
+        const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+        const isShiftPressed = e.shiftKey;
+        
+        if (isHorizontal || isShiftPressed) {
+          e.preventDefault();
+          
+          const delta = isHorizontal ? e.deltaX : e.deltaY;
+          wheelAccumulator += delta;
+          
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            if (isScrolling || totalCardWidth === 0) {
+              wheelAccumulator = 0;
+              return;
+            }
+            
+            const cardIncrements = Math.round(wheelAccumulator / 100);
+            if (cardIncrements !== 0) {
+              const targetPosition = currentScrollPosition + (cardIncrements * totalCardWidth);
+              smoothScrollTo(targetPosition, 400);
+              wheelAccumulator = 0;
+            }
+          }, 50);
+        }
+      }, { passive: false });
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(() => {
+            setupInfiniteLoop();
+            updateGradientFades();
+          }, 100);
+        });
+      } else {
+        setTimeout(() => {
+          setupInfiniteLoop();
+          updateGradientFades();
+        }, 100);
+      }
+      
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          calculateCardWidth();
+          const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+          currentScrollPosition = startClonesWidth;
+          carouselTrack.style.transition = 'none';
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth;
+          carouselTrack.style.transition = '';
+          updateGradientFades();
+        }, 100);
+      });
+    })();
+
+    // Features Carousel JavaScript (Mobile)
+    (function() {
+      const featuresCarouselContainer = document.querySelector('.features-carousel-container');
+      const featuresCarouselTrack = document.querySelector('.features-carousel-track');
+      const featuresLeftArrow = document.querySelector('.features-carousel-arrow-left');
+      const featuresRightArrow = document.querySelector('.features-carousel-arrow-right');
+      const featuresCards = document.querySelectorAll('.features-carousel-card');
+      
+      if (!featuresCarouselContainer || !featuresCarouselTrack || !featuresLeftArrow || !featuresRightArrow || featuresCards.length === 0) return;
+      
+      let currentFeatureIndex = 0;
+      const totalFeatures = featuresCards.length;
+      let isTransitioning = false;
+      const TRANSITION_DURATION = 600;
+      
+      function isCarouselVisible() {
+        const style = window.getComputedStyle(featuresCarouselContainer);
+        return style.display !== 'none';
+      }
+      
+      function getCardWidth() {
+        if (!isCarouselVisible()) return 0;
+        return featuresCarouselContainer.offsetWidth || featuresCarouselContainer.clientWidth;
+      }
+      
+      function updateFeaturesCarouselPosition() {
+        if (!isCarouselVisible()) return;
+        const cardWidth = getCardWidth();
+        if (cardWidth === 0) return;
+        const gap = 20;
+        const translateX = -(currentFeatureIndex * (cardWidth + gap));
+        featuresCarouselTrack.style.transform = `translate3d(${translateX}px, 0, 0)`;
+      }
+      
+      function setFeaturesTrackWidth() {
+        if (!isCarouselVisible()) return;
+        const cardWidth = getCardWidth();
+        if (cardWidth === 0) return;
+        const gap = 20;
+        const totalWidth = (cardWidth * totalFeatures) + (gap * (totalFeatures - 1));
+        featuresCarouselTrack.style.width = `${totalWidth}px`;
+      }
+      
+      function nextFeature() {
+        if (isTransitioning || !isCarouselVisible()) return;
+        
+        isTransitioning = true;
+        currentFeatureIndex = (currentFeatureIndex + 1) % totalFeatures;
+        updateFeaturesCarouselPosition();
+        
+        setTimeout(() => {
+          isTransitioning = false;
+        }, TRANSITION_DURATION);
+      }
+      
+      function prevFeature() {
+        if (isTransitioning || !isCarouselVisible()) return;
+        
+        isTransitioning = true;
+        currentFeatureIndex = (currentFeatureIndex - 1 + totalFeatures) % totalFeatures;
+        updateFeaturesCarouselPosition();
+        
+        setTimeout(() => {
+          isTransitioning = false;
+        }, TRANSITION_DURATION);
+      }
+      
+      featuresLeftArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        prevFeature();
+      });
+      
+      featuresRightArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        nextFeature();
+      });
+      
+      function initializeFeaturesCarousel() {
+        if (isCarouselVisible()) {
+          setFeaturesTrackWidth();
+          updateFeaturesCarouselPosition();
+        }
+      }
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(initializeFeaturesCarousel, 100);
+        });
+      } else {
+        setTimeout(initializeFeaturesCarousel, 100);
+      }
+      
+      window.addEventListener('resize', () => {
+        setTimeout(initializeFeaturesCarousel, 100);
+      });
+    })();
+
+    // Feature Cards Animation
+    (function() {
+      const featureCards = document.querySelectorAll('.premium-feature-card[data-animate]');
+      
+      if (featureCards.length === 0) return;
+
+      const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px'
+      };
+
+      let hasAnimated = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            
+            featureCards.forEach((card) => {
+              const index = parseInt(card.getAttribute('data-index')) || 0;
+              const delay = index * 0.1;
+              
+              setTimeout(() => {
+                card.classList.add('animate-in');
+              }, delay * 1000);
+            });
+            
+            featureCards.forEach(card => {
+              observer.unobserve(card);
+            });
+          }
+        });
+      }, observerOptions);
+
+      featureCards.forEach(card => {
+        observer.observe(card);
+      });
+    })();
+  </script>
 </body>
 
 </html>
