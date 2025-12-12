@@ -90,8 +90,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </nav>
 
+  <!-- Scroll Container for Snap Scrolling -->
+  <div class="scroll-snap-container">
   <!-- Hero Section -->
-  <section class="ac-hero">
+  <section class="ac-hero scroll-snap-section">
     <div class="video-background">
       <video autoplay muted >
         <source src="videos/lloyed remote.2396.mp4" type="video/mp4" preload="auto" />
@@ -124,82 +126,398 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- Remote Variants Section -->
-  <section class="remote-variants">
-    <div class="variants-container">
-      <div class="variants-content">
-        <h2>
-          Premium HVAC Controls
-          <span class="accent-text">with Advanced Technology</span>
-        </h2>
+  <!-- Premium Hero Content Section - First Scroll -->
+  <section class="premium-hero-section scroll-snap-section">
+    <!-- Premium Background Elements -->
+    <div class="premium-bg-shapes">
+      <div class="bg-shape shape-1"></div>
+      <div class="bg-shape shape-2"></div>
+      <div class="bg-shape shape-3"></div>
+    </div>
 
-        <p>
+    <div class="premium-hero-container">
+      <!-- Two Column Layout: Image Left, Text Right -->
+      <div class="premium-hero-layout">
+        <!-- Left: Image -->
+        <div class="premium-hero-image-wrapper">
+          <img src="images/lloyd both.983.png" 
+               alt="Premium HVAC Remote with Advanced Features" 
+               class="premium-hero-image" />
+        </div>
+        
+        <!-- Right: Content -->
+        <div class="premium-hero-content-wrapper">
+        <h2 class="premium-headline">
+          Premium HVAC Controls<br />
+          <span class="premium-accent">for Modern Climate Management</span>
+        </h2>
+        <p class="premium-description">
           LIT Group specializes in creating exceptional HVAC remote controls
           that prioritize user comfort and efficient climate management. Our
           innovative solutions are designed for compatibility with all major
-          air conditioning systems.
+          air conditioning systems and deliver precision-engineered performance
+          with eco-friendly design principles.
         </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <p>
-          Our flagship remotes feature intuitive interfaces with precise
-          temperature control, energy-saving modes, and smart connectivity
-          options. The premium models integrate seamlessly with smart home
-          ecosystems while our standard versions offer reliable operation with
-          enhanced durability.
-        </p>
+  <!-- Design Features Section - Second Scroll -->
+  <section class="premium-features-section next-section scroll-snap-section">
+    <!-- Premium Background Elements -->
+    <div class="premium-bg-shapes">
+      <div class="bg-shape shape-1"></div>
+      <div class="bg-shape shape-2"></div>
+      <div class="bg-shape shape-3"></div>
+    </div>
 
-        <p>
-          Each remote is manufactured using high-quality materials including
-          impact-resistant polymers, premium circuit components, and
-          energy-efficient LCD displays that extend battery life.
-        </p>
+    <div class="premium-container">
+      <!-- Features Grid -->
+      <div class="premium-features-section-header">
+        <h2 class="premium-features-title">Design Features</h2>
+      </div>
+      
+      <!-- Desktop Grid View -->
+      <div class="premium-features-grid">
+        <div class="premium-feature-card" data-animate="left" data-index="0">
+          <div class="feature-image-wrapper">
+            <img src="images/design/ac/godrej remote new.2034.png" alt="Sleek Design" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Sleek and Modern Design</h3>
+          <p class="feature-description">Contemporary aesthetics that complement any interior while delivering intuitive control.</p>
+        </div>
 
-        <p>
-          Our commitment to sustainability is reflected in our use of
-          recyclable materials and energy-efficient designs that reduce
-          environmental impact while maximizing comfort.
-        </p>
+        <div class="premium-feature-card" data-animate="left" data-index="1">
+          <div class="feature-image-wrapper">
+            <img src="images/design/ac/lloyd old.946.png" alt="Eco Efficiency" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Eco Efficiency Mode</h3>
+          <p class="feature-description">Energy-saving technology that reduces power consumption without compromising comfort.</p>
+        </div>
 
-        <div class="wavy-divider">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
-            style="width: 100px; height: 20px">
-            <path fill="#1f62cc" fill-opacity="0.3"
-              d="M0,128L60,117.3C120,107,240,85,360,90.7C480,96,600,128,720,154.7C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-          </svg>
+        <div class="premium-feature-card" data-animate="right" data-index="2">
+          <div class="feature-image-wrapper">
+            <img src="images/design/ac/lloyed remote.2039.png" alt="Premium Finishes" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Premium Button Finishes</h3>
+          <p class="feature-description">Refined textures and high-quality materials for a sophisticated tactile experience.</p>
+        </div>
+
+        <div class="premium-feature-card" data-animate="right" data-index="3">
+          <div class="feature-image-wrapper">
+            <img src="images/design/volts new.2345.png" alt="Ergonomic Design" class="feature-image" />
+          </div>
+          <h3 class="feature-title">Ergonomic Soft-Touch Coating</h3>
+          <p class="feature-description">Comfortable grip with soft-touch materials designed for extended use.</p>
         </div>
       </div>
 
-      <div class="design-features">
-        <h2>Design features</h2>
-
-        <div class="features-grid">
-          <div class="feature-circle">
-            <img src="images/design/ac/godrej remote new.2034.png" alt="Sleek Design Remote" />
-            <h4>Sleek and modern design</h4>
+      <!-- Mobile Carousel View -->
+      <div class="features-carousel-container">
+        <button class="features-carousel-btn features-carousel-arrow features-carousel-arrow-left" aria-label="Previous feature">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="features-carousel-track">
+          <div class="premium-feature-card features-carousel-card" data-feature-index="0">
+            <div class="feature-image-wrapper">
+              <img src="images/design/ac/godrej remote new.2034.png" alt="Sleek Design" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Sleek and Modern Design</h3>
+            <p class="feature-description">Contemporary aesthetics that complement any interior while delivering intuitive control.</p>
           </div>
 
-          <div class="feature-circle">
-            <img src="images/design/ac/lloyd old.946.png" alt="Voice Search Feature" />
-            <h4>Eco Efficiency Mode</h4>
+          <div class="premium-feature-card features-carousel-card" data-feature-index="1">
+            <div class="feature-image-wrapper">
+              <img src="images/design/ac/lloyd old.946.png" alt="Eco Efficiency" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Eco Efficiency Mode</h3>
+            <p class="feature-description">Energy-saving technology that reduces power consumption without compromising comfort.</p>
           </div>
 
-          <div class="feature-circle">
-            <img src="images/design/ac/lloyed remote.2039.png" alt="Metallic Button Detail" />
-            <h4>Premium button finishes</h4>
+          <div class="premium-feature-card features-carousel-card" data-feature-index="2">
+            <div class="feature-image-wrapper">
+              <img src="images/design/ac/lloyed remote.2039.png" alt="Premium Finishes" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Premium Button Finishes</h3>
+            <p class="feature-description">Refined textures and high-quality materials for a sophisticated tactile experience.</p>
           </div>
 
-          <div class="feature-circle">
-            <img src="images/design/volts new.2345.png" alt="Soft Coating" />
-            <h4>Ergonomic soft-touch coating</h4>
+          <div class="premium-feature-card features-carousel-card" data-feature-index="3">
+            <div class="feature-image-wrapper">
+              <img src="images/design/volts new.2345.png" alt="Ergonomic Design" class="feature-image" />
+            </div>
+            <h3 class="feature-title">Ergonomic Soft-Touch Coating</h3>
+            <p class="feature-description">Comfortable grip with soft-touch materials designed for extended use.</p>
+          </div>
+        </div>
+        
+        <button class="features-carousel-btn features-carousel-arrow features-carousel-arrow-right" aria-label="Next feature">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- HVAC Remotes Collection Section -->
+  <section class="stb-collection-section scroll-snap-section">
+    <div class="collection-container">
+      <h2 class="collection-title">Premium HVAC Remote Collection</h2>
+      
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-arrow carousel-arrow-left" aria-label="Previous cards">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        
+        <div class="carousel-track">
+          <!-- Card 1 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/godrej/godrej remote new.2253.png" alt="L97 AC Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L97</h3>
+              <p class="collection-card-subtitle">Premium Control</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/llyod/lloyed remote.2254.png" alt="L99 AC Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L99</h3>
+              <p class="collection-card-subtitle">Advanced Features</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/voltas/volts new.2260.png" alt="L37 AC Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L37</h3>
+              <p class="collection-card-subtitle">Modern Design</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-btn carousel-arrow carousel-arrow-right" aria-label="Next cards">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Clients Section -->
+  <section class="clients-section scroll-snap-section">
+    <div class="clients-container">
+      <div class="clients-header">
+        <h2 class="clients-title">Our Trusted Clients</h2>
+        <p class="clients-subtitle">We work with world's leading brands and manufacturers</p>
+      </div>
+      
+      <div class="clients-logos-wrapper">
+        <div class="clients-logos-grid">
+          <div class="client-logo-item">
+            <img src="../images/Logos/samsung.png" alt="Samsung" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/voltas-logo.png" alt="Voltas" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/mi.png" alt="Xiaomi" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Havells_Logo.svg.png" alt="Havells" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Reliance_Jio_Logo.svg.png" alt="Jio" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/skyworth-color-logo.svg" alt="Skyworth" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/paytm.png" alt="Paytm" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/1200px-Blue_Star_primary_logo.png" alt="Blue Star" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/Godrej_Logo.svg.png" alt="Godrej" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/daikin logo.png" alt="Daikin" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/carrier logo.png" alt="Carrier" class="client-logo" />
+          </div>
+          <div class="client-logo-item">
+            <img src="../images/Logos/philips logo.png" alt="Philips" class="client-logo" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Products Section -->
-  <section id="eco-remotes" class="products-section">
+  <!-- Get in Touch Section -->
+  <section class="get-in-touch-section scroll-snap-section">
+    <div class="get-in-touch-container">
+      <div class="get-in-touch-content">
+        <h2 class="get-in-touch-title">Ready to Transform Your Climate Control Experience?</h2>
+        <p class="get-in-touch-subtitle">
+        Contact us for custom HVAC remote control solutions
+        tailored to your specific requirements
+      </p>
+        <a href="../contact/" class="get-in-touch-btn">
+          <span class="btn-shine"></span>
+          <span>Get in Touch</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer scroll-snap-section">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="footer-logo-container">
+            <img src="../images/logo.png" alt="LIT Group Logo" class="footer-logo" />
+          </div>
+          <p>Premium remote controls for modern living</p>
+          <div class="social-links">
+            <a href="https://x.com/litgroupindia" target="_blank"><img src="../images/icons/twitter (1).png"
+                alt="" /></a>
+            <a href="https://www.linkedin.com/company/litgroupindia/" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/litgroupindia" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="../ac-remotes/">HVAC Remotes</a></li>
+            <li><a href="../smart-remote/">Smart Remotes</a></li>
+            <li><a href="../fan-remotes/">Fan Remotes</a></li>
+            <li><a href="../power-supply/">Power Supply</a></li>
+            <li><a href="../stb-remote/">STB Remotes</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../ems/">EMS</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="../about/">About Us</a></li>
+            <li><a href="../contact/">Contact</a></li>
+            <li><a href="../feedback/">Feedback</a></li>
+            <li><a href="https://litpayments.in/" target="_blank" rel="noopener">Payments</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <ul>
+            <li>LIT INDIA PVT. LTD</li>
+            <li>
+              <a href="mailto:contact@litgroup.in">contact@litgroup.in</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/maps/place/LIT+India+Private+Limited+(Unit-2)/@28.5539358,77.4042305,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef751054616b:0x63de60f43bdde662!8m2!3d28.5539311!4d77.4068054!16s%2Fg%2F11vmb3f29y?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                target="_blank">A-124, Sector 80, Noida, INDIA</a>
+            </li>
+            <li>
+              <a href="https://www.google.co.in/maps/place/LIT+Plasto+Tech/@28.5548696,77.4086868,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef128b41db1d:0xcb4f69d333df667f!8m2!3d28.5548649!4d77.4112617!16s%2Fg%2F11lkskrb8l?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank">A-31, Sector 80 Noida, INDIA</a>
+            </li>
+            <li>
+              <a href="https://www.google.com/maps/place/LIT+India+Private+Limited/@28.5308343,77.4205149,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce8df9ef585bf:0x34b92ab17d559b03!8m2!3d28.5308296!4d77.4230898!16s%2Fg%2F11bbrl6hwg?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank">B-52, Sector 88, Noida, INDIA</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="certifications">
+        <h4>Certifications</h4>
+        <div class="certification-list">
+          <div class="certification-item">
+            <i class="fas fa-certificate"></i>
+            <span>ISO 9001:2015</span>
+          </div>
+          <div class="certification-item">
+            <i class="fas fa-leaf"></i>
+            <span>ISO 14001:2015</span>
+          </div>
+          <div class="certification-item">
+            <i class="fas fa-hard-hat"></i>
+            <span>ISO 45001:2018</span>
+          </div>
+          <div class="certification-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>ISO 27001:2022</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> LIT Group. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  </div>
+  <!-- End of scroll-snap-container -->
+
+  <!-- Remote Details Modal -->
+  <div class="remote-modal" id="remoteModal">
+    <div class="remote-modal-backdrop"></div>
+    <div class="remote-modal-content">
+      <button class="remote-modal-close" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="remote-modal-body">
+        <div class="remote-modal-image-section">
+          <div class="modal-image-carousel">
+            <div class="modal-image-main">
+              <img id="modalRemoteImage" src="" alt="" class="modal-remote-image" />
+            </div>
+            <div class="modal-image-thumbnails" id="modalImageThumbnails">
+              <!-- Thumbnails will be populated by JavaScript -->
+            </div>
+            <button class="modal-carousel-btn modal-carousel-prev" aria-label="Previous image">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-carousel-btn modal-carousel-next" aria-label="Next image">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="remote-modal-info-section">
+          <h2 id="modalRemoteTitle" class="modal-remote-title"></h2>
+          <p id="modalRemoteSubtitle" class="modal-remote-subtitle"></p>
+          <div id="modalRemoteDescription" class="modal-remote-description"></div>
+          <div class="modal-remote-specs">
+            <h3 class="specs-title">Specifications</h3>
+            <div id="modalRemoteSpecs" class="specs-grid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products Section (Hidden - keeping for reference) -->
+  <section id="eco-remotes" class="products-section" style="display: none;">
     <div class="section-header">
       <h2>Premium HVAC Remote Collection</h2>
       <p>
@@ -369,7 +687,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Features Section -->
-  <section class="features">
+  <section class="features scroll-snap-section">
     <div class="section-header">
       <h2>AC Remote Features</h2>
       <p>Cutting-edge technology for superior air conditioning control</p>
@@ -418,152 +736,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- Our Partners Section -->
-  <section class="partners">
-    <div class="section-header">
-      <h2>Some Of Our Happy Clients</h2>
-      <p>We work with world's leading air conditioning and HVAC brands</p>
-    </div>
-
-    <div class="logos-container">
-      <div class="clients-logos-slider">
-        <div class="logo-slide">
-          <img src="images/logo/llyod.jpg" alt="Lloyd" class="client-logo" />
-        </div>
-        <div class="logo-slide">
-          <img src="images/logo/daikin - Copy.png" alt="Daikin" class="client-logo" />
-        </div>
-        <div class="logo-slide">
-          <img src="images/logo/Godrej_Logo.svg - Copy.png" alt="Godrej" class="client-logo" />
-        </div>
-        <div class="logo-slide">
-          <img src="images/logo/voltas-logo.png" alt="Voltas" class="client-logo" />
-        </div>
-        <div class="logo-slide">
-          <img src="images/logo/carrier logo.png" alt="Carrier" class="client-logo" />
-        </div>
-        <div class="logo-slide">
-          <img src="images/logo/philips logo.png" alt="Philips" class="client-logo" />
-        </div>
-        <div class="logo-slide">
-          <img src="images/logo/1200px-Blue_Star_primary_logo.png" alt="Blue Star" class="client-logo" />
-        </div>
-        <div class="logo-slide">
-          <img src="images/logo/EPACK-logo.png" alt="EPACK" class="client-logo" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta">
-    <div class="cta-content">
-      <h2>Need a Custom AC Remote Solution?</h2>
-      <p>
-        Contact us for custom air conditioner remote control solutions
-        tailored to your specific requirements
-      </p>
-      <a href="../contact/" class="btn glow">Get in Touch</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <div class="footer-column">
-          <div class="footer-logo-container">
-            <img src="../images/logo.png" alt="LIT Group Logo" class="footer-logo" />
-          </div>
-          <p>Premium remote controls for modern living</p>
-          <div class="social-links">
-            <a href="https://x.com/litgroupindia" target="_blank"><img src="../images/icons/twitter (1).png"
-                alt="" /></a>
-            <a href="https://www.linkedin.com/company/litgroupindia/" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/litgroupindia" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="footer-column">
-          <h4>Products</h4>
-          <ul>
-            <li><a href="../ac-remotes/">HVAC Remotes</a></li>
-            <li><a href="../smart-remote/">Smart Remotes</a></li>
-            <li><a href="../fan-remotes/">Fan Remotes</a></li>
-            <li><a href="../power-supply/">Power Supply</a></li>
-            <li><a href="../stb-remote/">STB Remotes</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Services</h4>
-          <ul>
-            <li><a href="../ems/">EMS</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="../about/">About Us</a></li>
-            <li><a href="../contact/">Contact</a></li>
-            <li><a href="../feedback/">Feedback</a></li>
-            <li><a href="https://litpayments.in/" target="_blank" rel="noopener">Payments</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-column">
-          <h4>Contact Us</h4>
-          <ul>
-            <li>LIT INDIA PVT. LTD</li>
-            <li>
-              <a href="mailto:contact@litgroup.in">contact@litgroup.in</a>
-            </li>
-            <li>
-              <a href="https://www.google.com/maps/place/LIT+India+Private+Limited+(Unit-2)/@28.5539358,77.4042305,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef751054616b:0x63de60f43bdde662!8m2!3d28.5539311!4d77.4068054!16s%2Fg%2F11vmb3f29y?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
-                target="_blank">A-124, Sector 80, Noida, INDIA</a>
-            </li>
-            <li>
-              <a href="https://www.google.co.in/maps/place/LIT+Plasto+Tech/@28.5548696,77.4086868,17z/data=!3m1!4b1!4m6!3m5!1s0x390cef128b41db1d:0xcb4f69d333df667f!8m2!3d28.5548649!4d77.4112617!16s%2Fg%2F11lkskrb8l?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank">A-31, Sector 80 Noida, INDIA</a>
-            </li>
-            <li>
-              <a href="https://www.google.com/maps/place/LIT+India+Private+Limited/@28.5308343,77.4205149,17z/data=!3m1!4b1!4m6!3m5!1s0x390ce8df9ef585bf:0x34b92ab17d559b03!8m2!3d28.5308296!4d77.4230898!16s%2Fg%2F11bbrl6hwg?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank">B-52, Sector 88, Noida, INDIA</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="certifications">
-        <h4>Certifications</h4>
-        <div class="certification-list">
-          <div class="certification-item">
-            <i class="fas fa-certificate"></i>
-            <span>ISO 9001:2015</span>
-          </div>
-          <div class="certification-item">
-            <i class="fas fa-leaf"></i>
-            <span>ISO 14001:2015</span>
-          </div>
-          <div class="certification-item">
-            <i class="fas fa-hard-hat"></i>
-            <span>ISO 45001:2018</span>
-          </div>
-          <div class="certification-item">
-            <i class="fas fa-shield-alt"></i>
-            <span>ISO 27001:2022</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-                  <p>&copy; <script>document.write(new Date().getFullYear())</script> LIT Group. All rights reserved.</p>
-
-      </div>
-    </div>
-  </footer>
-
   <!-- Coming Soon Popup -->
   <div id="coming-soon-popup" class="popup-overlay">
     <div class="popup-content">
@@ -576,9 +748,1198 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
+  </div>
+  <!-- End Scroll Container -->
+
   <script src="../script.js"></script>
   <script src="ac-remotes.js"></script>
   <script src="../acproduct/product-script.js"></script>
+  
+  <!-- Smooth Section Glide Scroll -->
+  <script>
+    /* ====== JavaScript: Smooth section glide ====== */
+    (function () {
+      // Configuration
+      const DURATION = 900; // animation duration in ms (tune: 700-1200)
+      const QUIET_PERIOD = 80; // ignore small wheel spikes under this delta threshold
+      const DEBOUNCE = 300; // don't accept another section change for this ms while animating
+      const EASING = function (t) { // easeInOutCubic
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      };
+
+      // Get scroll container and sections
+      const scrollContainer = document.querySelector('.scroll-snap-container');
+      if (!scrollContainer) return;
+
+      const sections = Array.from(document.querySelectorAll('.scroll-snap-section'));
+      if (!sections.length) return;
+
+      // Utilities
+      const now = () => performance.now();
+      function animateScroll(startY, endY, duration, cb) {
+        const startTime = now();
+        function frame() {
+          const t = Math.min(1, (now() - startTime) / duration);
+          const eased = EASING(t);
+          scrollContainer.scrollTop = Math.round(startY + (endY - startY) * eased);
+          if (t < 1) {
+            requestId = requestAnimationFrame(frame);
+          } else {
+            cb && cb();
+          }
+        }
+        let requestId = requestAnimationFrame(frame);
+        return () => cancelAnimationFrame(requestId); // returns cancel function
+      }
+
+      // Find sections and helper functions
+      function getNearestSectionIndex(scrollY) {
+        let bestIdx = 0;
+        let bestDiff = Infinity;
+        sections.forEach((s, i) => {
+          const rect = s.getBoundingClientRect();
+          const containerRect = scrollContainer.getBoundingClientRect();
+          const top = scrollContainer.scrollTop + (rect.top - containerRect.top);
+          const diff = Math.abs(top - scrollY);
+          if (diff < bestDiff) {
+            bestDiff = diff;
+            bestIdx = i;
+          }
+        });
+        return bestIdx;
+      }
+
+      // State
+      let isAnimating = false;
+      let lastActionTime = 0;
+      let cancelAnimation = null;
+
+      // Core function to scroll to section index with soft glide
+      function scrollToSection(index) {
+        index = Math.max(0, Math.min(sections.length - 1, index));
+        const rect = sections[index].getBoundingClientRect();
+        const containerRect = scrollContainer.getBoundingClientRect();
+        const destTop = scrollContainer.scrollTop + (rect.top - containerRect.top);
+        const currentScroll = scrollContainer.scrollTop;
+        if (Math.abs(currentScroll - destTop) < 2) return; // already there
+        if (cancelAnimation) cancelAnimation();
+        isAnimating = true;
+        lastActionTime = Date.now();
+        cancelAnimation = animateScroll(currentScroll, destTop, DURATION, () => {
+          isAnimating = false;
+          cancelAnimation = null;
+        });
+      }
+
+      // Determine next/prev based on current scroll position
+      function goNext() {
+        const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
+        const nextIndex = Math.min(sections.length - 1, currentIndex + 1);
+        if (nextIndex !== currentIndex) scrollToSection(nextIndex);
+      }
+      function goPrev() {
+        const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
+        const prevIndex = Math.max(0, currentIndex - 1);
+        if (prevIndex !== currentIndex) scrollToSection(prevIndex);
+      }
+
+      // Wheel/trackpad handling — translate vertical scroll impulses into section changes
+      let wheelTimeout;
+      scrollContainer.addEventListener('wheel', function (e) {
+        // If user is currently touching / dragging or we are animating, ignore small deltas
+        if (isAnimating) {
+          // allow user override: if they attempt a strong scroll, cancel animation and let native scroll
+          if (Math.abs(e.deltaY) > 120) {
+            if (cancelAnimation) cancelAnimation();
+            isAnimating = false;
+            cancelAnimation = null;
+          } else {
+            e.preventDefault();
+            return;
+          }
+        }
+        // Prevent default tiny jittering
+        if (Math.abs(e.deltaY) < QUIET_PERIOD) return;
+
+        e.preventDefault();
+        clearTimeout(wheelTimeout);
+        wheelTimeout = setTimeout(() => {
+          // Determine direction
+          if (e.deltaY > 0) {
+            // down
+            if (Date.now() - lastActionTime > DEBOUNCE) goNext();
+          } else {
+            // up
+            if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
+          }
+        }, 10);
+      }, { passive: false });
+
+      // Keyboard support (PageDown/PageUp, Arrow keys, Home/End)
+      window.addEventListener('keydown', function (e) {
+        if (isAnimating) return;
+        if (['ArrowDown','PageDown'].includes(e.code)) {
+          e.preventDefault();
+          goNext();
+        } else if (['ArrowUp','PageUp'].includes(e.code)) {
+          e.preventDefault();
+          goPrev();
+        } else if (e.code === 'Home') {
+          e.preventDefault();
+          scrollToSection(0);
+        } else if (e.code === 'End') {
+          e.preventDefault();
+          scrollToSection(sections.length - 1);
+        }
+      });
+
+      // Touch handling: simple swipe detection
+      let touchStartY = null;
+      let touchStartTime = 0;
+      scrollContainer.addEventListener('touchstart', function (e) {
+        if (e.touches && e.touches.length === 1) {
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+          if (cancelAnimation) { cancelAnimation(); isAnimating = false; cancelAnimation = null; } // allow user override
+        }
+      }, { passive: true });
+
+      scrollContainer.addEventListener('touchend', function (e) {
+        if (touchStartY === null) return;
+        const dy = (e.changedTouches[0].clientY - touchStartY);
+        const dt = Date.now() - touchStartTime;
+        const velocity = Math.abs(dy / dt);
+        touchStartY = null;
+        // small swipe threshold
+        if (Math.abs(dy) < 30 && velocity < 0.15) return;
+        if (dy < 0) {
+          // swipe up => next
+          if (Date.now() - lastActionTime > DEBOUNCE) goNext();
+        } else {
+          if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
+        }
+      }, { passive: true });
+
+      // If user performs manual scroll (scrollbar/trackpad) while animating, cancel animation to allow manual control
+      let manualScrollTimeout;
+      scrollContainer.addEventListener('scroll', function () {
+        if (isAnimating) {
+          clearTimeout(manualScrollTimeout);
+          manualScrollTimeout = setTimeout(() => {
+            // if user hasn't interacted recently, allow auto animations again
+          }, 250);
+        }
+      }, { passive: true });
+
+      // Recalculate on resize (section heights may change)
+      window.addEventListener('resize', function () {
+        // optional: snap to nearest section to avoid being mid-way
+        const idx = getNearestSectionIndex(scrollContainer.scrollTop);
+        setTimeout(() => scrollToSection(idx), 120);
+      });
+
+      // Optional: if page loads and not at top, snap to nearest section smoothly
+      window.addEventListener('load', function () {
+        const idx = getNearestSectionIndex(scrollContainer.scrollTop);
+        setTimeout(() => scrollToSection(idx), 200);
+      });
+
+      // Section Focus Behavior - Visual focus when section enters viewport
+      (function() {
+        // IntersectionObserver to detect when section is centered (50% of viewport)
+        const observerOptions = {
+          root: scrollContainer,
+          rootMargin: '-25% 0px -25% 0px', // Trigger when section occupies 50% of viewport (centered)
+          threshold: [0, 0.3, 0.5, 0.7, 1.0] // Multiple thresholds for smoother transitions
+        };
+
+        let currentActiveIndex = 0;
+
+        const observer = new IntersectionObserver((entries) => {
+          // Find the entry with the highest intersection ratio
+          let maxRatio = 0;
+          let activeEntry = null;
+
+          entries.forEach(entry => {
+            if (entry.intersectionRatio > maxRatio) {
+              maxRatio = entry.intersectionRatio;
+              activeEntry = entry;
+            }
+          });
+
+          // If we have an active entry with significant visibility, activate it
+          if (activeEntry && activeEntry.intersectionRatio > 0.3) {
+            // Remove active class from all sections
+            sections.forEach((section, index) => {
+              section.classList.remove('section-active');
+              if (section === activeEntry.target) {
+                currentActiveIndex = index;
+              }
+            });
+            // Add active class to current section
+            activeEntry.target.classList.add('section-active');
+          }
+        }, observerOptions);
+
+        // Observe all sections
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+
+        // Set initial active section (first section)
+        if (sections.length > 0) {
+          sections[0].classList.add('section-active');
+          currentActiveIndex = 0;
+        }
+
+        // Also handle scroll events for immediate feedback
+        scrollContainer.addEventListener('scroll', () => {
+          const scrollTop = scrollContainer.scrollTop;
+          const sectionHeight = window.innerHeight;
+          const newActiveIndex = Math.round(scrollTop / sectionHeight);
+          
+          if (newActiveIndex !== currentActiveIndex && newActiveIndex >= 0 && newActiveIndex < sections.length) {
+            sections.forEach(section => {
+              section.classList.remove('section-active');
+            });
+            sections[newActiveIndex].classList.add('section-active');
+            currentActiveIndex = newActiveIndex;
+          }
+        }, { passive: true });
+      })();
+
+      // Accessibility note: ensure focusable content inside sections remains accessible; this script avoids stealing focus.
+    })();
+  </script>
+  
+  <!-- Scroll-triggered animations for feature cards -->
+  <script>
+    (function() {
+      // Wait for DOM to be ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAnimations);
+      } else {
+        initAnimations();
+      }
+
+      function initAnimations() {
+        const featureCards = document.querySelectorAll('.premium-feature-card[data-animate]');
+        
+        if (featureCards.length === 0) return;
+
+        // IntersectionObserver options - trigger when 20% of element is visible
+        const observerOptions = {
+          threshold: 0.2,
+          rootMargin: '0px'
+        };
+
+        // Track if animation has been triggered to ensure it only happens once
+        let hasAnimated = false;
+
+        // Create observer
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !hasAnimated) {
+              hasAnimated = true;
+              
+              // Animate all cards with staggered delay based on data-index
+              featureCards.forEach((card) => {
+                const index = parseInt(card.getAttribute('data-index')) || 0;
+                const delay = index * 0.1; // 0.1s stagger between each card
+                
+                setTimeout(() => {
+                  card.classList.add('animate-in');
+                }, delay * 1000);
+              });
+              
+              // Unobserve all cards after animation triggers
+              featureCards.forEach(card => {
+                observer.unobserve(card);
+              });
+            }
+          });
+        }, observerOptions);
+
+        // Observe each card individually
+        featureCards.forEach(card => {
+          observer.observe(card);
+        });
+      }
+    })();
+  </script>
+
+  <!-- Features Carousel Script -->
+  <script>
+    (function() {
+      const featuresCarouselContainer = document.querySelector('.features-carousel-container');
+      const featuresCarouselTrack = document.querySelector('.features-carousel-track');
+      const featuresLeftArrow = document.querySelector('.features-carousel-arrow-left');
+      const featuresRightArrow = document.querySelector('.features-carousel-arrow-right');
+      const featuresCards = document.querySelectorAll('.features-carousel-card');
+      
+      if (!featuresCarouselContainer || !featuresCarouselTrack || !featuresLeftArrow || !featuresRightArrow || featuresCards.length === 0) return;
+      
+      let currentFeatureIndex = 0;
+      const totalFeatures = featuresCards.length;
+      let isTransitioning = false;
+      const TRANSITION_DURATION = 600;
+      let autoSlideInterval = null;
+      let userInactivityTimeout = null;
+      let isPaused = false;
+      const autoSlideDelay = 3000; // 3 seconds
+      const inactivityDelay = 2000; // 2 seconds
+      
+      // Check if carousel is visible (mobile view)
+      function isCarouselVisible() {
+        const style = window.getComputedStyle(featuresCarouselContainer);
+        return style.display !== 'none';
+      }
+      
+      // Calculate card width (each card is 100% of container)
+      function getCardWidth() {
+        if (!isCarouselVisible()) return 0;
+        return featuresCarouselContainer.offsetWidth || featuresCarouselContainer.clientWidth;
+      }
+      
+      // Update carousel position
+      function updateFeaturesCarouselPosition() {
+        if (!isCarouselVisible()) return;
+        const cardWidth = getCardWidth();
+        if (cardWidth === 0) return;
+        const gap = 20; // Gap from CSS
+        const translateX = -(currentFeatureIndex * (cardWidth + gap));
+        featuresCarouselTrack.style.transform = `translate3d(${translateX}px, 0, 0)`;
+      }
+      
+      // Set track width
+      function setFeaturesTrackWidth() {
+        if (!isCarouselVisible()) return;
+        const cardWidth = getCardWidth();
+        if (cardWidth === 0) return;
+        const gap = 20; // Gap between cards from CSS
+        const totalWidth = (cardWidth * totalFeatures) + (gap * (totalFeatures - 1));
+        featuresCarouselTrack.style.width = `${totalWidth}px`;
+      }
+      
+      // Next feature
+      function nextFeature() {
+        if (isTransitioning || !isCarouselVisible()) return;
+        
+        isTransitioning = true;
+        currentFeatureIndex = (currentFeatureIndex + 1) % totalFeatures;
+        updateFeaturesCarouselPosition();
+        
+        setTimeout(() => {
+          isTransitioning = false;
+        }, TRANSITION_DURATION);
+      }
+      
+      // Previous feature
+      function prevFeature() {
+        if (isTransitioning || !isCarouselVisible()) return;
+        
+        isTransitioning = true;
+        currentFeatureIndex = (currentFeatureIndex - 1 + totalFeatures) % totalFeatures;
+        updateFeaturesCarouselPosition();
+        
+        setTimeout(() => {
+          isTransitioning = false;
+        }, TRANSITION_DURATION);
+      }
+      
+      // Start auto sliding
+      function startAutoSlide() {
+        if (autoSlideInterval || !isCarouselVisible()) return;
+        autoSlideInterval = setInterval(() => {
+          if (!isPaused && isCarouselVisible()) {
+            nextFeature();
+          }
+        }, autoSlideDelay);
+      }
+      
+      // Stop auto sliding
+      function stopAutoSlide() {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+          autoSlideInterval = null;
+        }
+      }
+      
+      // Pause auto sliding
+      function pauseAutoSlide() {
+        isPaused = true;
+        stopAutoSlide();
+      }
+      
+      // Resume auto sliding after inactivity
+      function resumeAutoSlideAfterInactivity() {
+        if (userInactivityTimeout) {
+          clearTimeout(userInactivityTimeout);
+        }
+        userInactivityTimeout = setTimeout(() => {
+          isPaused = false;
+          if (isCarouselVisible()) {
+            startAutoSlide();
+          }
+        }, inactivityDelay);
+      }
+      
+      // Handle user interaction
+      function handleUserInteraction() {
+        pauseAutoSlide();
+        resumeAutoSlideAfterInactivity();
+      }
+      
+      // Arrow button handlers
+      featuresLeftArrow.addEventListener('click', () => {
+        prevFeature();
+        handleUserInteraction();
+      });
+      
+      featuresRightArrow.addEventListener('click', () => {
+        nextFeature();
+        handleUserInteraction();
+      });
+      
+      // Pause on hover (for desktop/tablet)
+      featuresCarouselContainer.addEventListener('mouseenter', () => {
+        pauseAutoSlide();
+      });
+      
+      // Resume on mouse leave
+      featuresCarouselContainer.addEventListener('mouseleave', () => {
+        isPaused = false;
+        if (isCarouselVisible()) {
+          startAutoSlide();
+        }
+      });
+      
+      // Touch swipe support
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      featuresCarouselContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+        handleUserInteraction();
+      }, { passive: true });
+      
+      featuresCarouselContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        const threshold = 50;
+        
+        if (Math.abs(diff) > threshold) {
+          if (diff > 0) {
+            nextFeature();
+          } else {
+            prevFeature();
+          }
+          handleUserInteraction();
+        }
+      }, { passive: true });
+      
+      // Pause on pointer down
+      featuresCarouselContainer.addEventListener('pointerdown', handleUserInteraction);
+      
+      // Handle window resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          if (isCarouselVisible()) {
+            setFeaturesTrackWidth();
+            updateFeaturesCarouselPosition();
+            // Restart auto-slide if it was stopped
+            if (!autoSlideInterval) {
+              startAutoSlide();
+            }
+          } else {
+            // Stop auto-slide if carousel is hidden
+            stopAutoSlide();
+          }
+        }, 100);
+      });
+      
+      // Initialize on load and after a short delay to ensure DOM is ready
+      function initializeCarousel() {
+        if (isCarouselVisible()) {
+          setFeaturesTrackWidth();
+          featuresCarouselTrack.style.transition = 'transform 0.6s ease-in-out';
+          updateFeaturesCarouselPosition();
+          // Start auto-slide
+          startAutoSlide();
+        } else {
+          // Stop auto-slide if not visible
+          stopAutoSlide();
+        }
+      }
+      
+      // Initialize immediately if visible, otherwise wait
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeCarousel);
+      } else {
+        initializeCarousel();
+      }
+      
+      // Also initialize after a short delay to handle any layout shifts
+      setTimeout(initializeCarousel, 100);
+    })();
+  </script>
+
+  <!-- Apple-Style Horizontal Scrolling Carousel Script -->
+  <script>
+    (function() {
+      const carouselContainer = document.querySelector('.carousel-container');
+      const carouselTrack = document.querySelector('.carousel-track');
+      const leftArrow = document.querySelector('.carousel-arrow-left');
+      const rightArrow = document.querySelector('.carousel-arrow-right');
+      const allCards = document.querySelectorAll('.carousel-card[data-original="true"]');
+      
+      if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
+      
+      // Constants
+      const ORIGINAL_CARD_COUNT = 3; // Updated for 3 AC remote cards
+      const CARD_GAP = 24;
+      const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)'; // Apple easing
+      const SCROLL_DURATION = 600; // Smooth scroll duration in ms
+      
+      // State
+      let cardWidth = 0;
+      let totalCardWidth = 0;
+      let currentScrollPosition = 0;
+      let isScrolling = false;
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartScroll = 0;
+      let velocity = 0;
+      let lastScrollTime = 0;
+      let lastScrollPosition = 0;
+      let animationFrameId = null;
+      
+      // Get original cards (not clones)
+      const originalCards = Array.from(allCards).slice(0, ORIGINAL_CARD_COUNT);
+      
+      // Calculate card width dynamically
+      function calculateCardWidth() {
+        if (originalCards.length === 0) return;
+        const firstCard = originalCards[0];
+        const cardRect = firstCard.getBoundingClientRect();
+        cardWidth = cardRect.width;
+        totalCardWidth = cardWidth + CARD_GAP;
+        return totalCardWidth;
+      }
+      
+      // Setup infinite loop: Clone cards at start and end
+      function setupInfiniteLoop() {
+        // Remove any existing clones
+        const existingClones = carouselTrack.querySelectorAll('[data-clone]');
+        existingClones.forEach(clone => clone.remove());
+        
+        // Clone original cards to end
+        originalCards.forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('data-clone', 'end');
+          carouselTrack.appendChild(clone);
+        });
+        
+        // Clone original cards to start (in reverse)
+        originalCards.slice().reverse().forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('data-clone', 'start');
+          carouselTrack.insertBefore(clone, carouselTrack.firstChild);
+        });
+        
+        // Calculate card width
+        calculateCardWidth();
+        
+        // Set initial position to start of original cards
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        currentScrollPosition = startClonesWidth;
+        carouselTrack.style.transition = 'none';
+        carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+        void carouselTrack.offsetWidth; // Force reflow
+        carouselTrack.style.transition = '';
+      }
+      
+      // Apple easing function (cubic-bezier(0.22, 0.61, 0.36, 1))
+      function easeInOutCubic(t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+      
+      // Smooth scroll animation helper
+      function smoothScrollTo(targetPosition, duration = SCROLL_DURATION) {
+        if (isScrolling) return;
+        
+        const startPosition = currentScrollPosition;
+        const distance = targetPosition - startPosition;
+        const startTime = performance.now();
+        
+        isScrolling = true;
+        
+        function animate(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          
+          // Apple easing
+          const eased = easeInOutCubic(progress);
+          
+          currentScrollPosition = startPosition + (distance * eased);
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          
+          // Check for loop during animation
+          checkInfiniteLoop();
+          
+          if (progress < 1) {
+            animationFrameId = requestAnimationFrame(animate);
+          } else {
+            isScrolling = false;
+            checkInfiniteLoop();
+            updateGradientFades();
+          }
+        }
+        
+        animationFrameId = requestAnimationFrame(animate);
+      }
+      
+      // Check and reset infinite loop position
+      function checkInfiniteLoop() {
+        if (totalCardWidth === 0) return;
+        
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const endClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const totalWidth = startClonesWidth + originalSetWidth + endClonesWidth;
+        
+        // If scrolled past end of original set (into end clones), reset to start of original set
+        if (currentScrollPosition >= startClonesWidth + originalSetWidth) {
+          carouselTrack.style.transition = 'none';
+          currentScrollPosition = startClonesWidth;
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth; // Force reflow
+          carouselTrack.style.transition = '';
+        }
+        // If scrolled before start of original set (into start clones), reset to end of original set
+        else if (currentScrollPosition < startClonesWidth) {
+          carouselTrack.style.transition = 'none';
+          currentScrollPosition = startClonesWidth + originalSetWidth - totalCardWidth;
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth; // Force reflow
+          carouselTrack.style.transition = '';
+        }
+      }
+      
+      // Update gradient fade visibility
+      function updateGradientFades() {
+        if (totalCardWidth === 0) return;
+        
+        const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+        
+        if (currentScrollPosition <= startClonesWidth + 10) {
+          carouselContainer.classList.add('at-start');
+        } else {
+          carouselContainer.classList.remove('at-start');
+        }
+        
+        if (currentScrollPosition >= startClonesWidth + originalSetWidth - 10) {
+          carouselContainer.classList.add('at-end');
+        } else {
+          carouselContainer.classList.remove('at-end');
+        }
+      }
+      
+      // Scroll by one card width
+      function scrollByCard(direction) {
+        if (isScrolling || totalCardWidth === 0) return;
+        
+        const targetPosition = currentScrollPosition + (direction * totalCardWidth);
+        smoothScrollTo(targetPosition);
+      }
+      
+      // Arrow button handlers
+      leftArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollByCard(-1);
+      });
+      
+      rightArrow.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollByCard(1);
+      });
+      
+      // Trackpad/Mouse wheel horizontal scrolling
+      let wheelTimeout;
+      let wheelAccumulator = 0;
+      
+      carouselContainer.addEventListener('wheel', (e) => {
+        // Only handle horizontal scroll or Shift + vertical scroll
+        const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+        const isShiftPressed = e.shiftKey;
+        
+        if (isHorizontal || isShiftPressed) {
+          e.preventDefault();
+          
+          const delta = isHorizontal ? e.deltaX : e.deltaY;
+          wheelAccumulator += delta;
+          
+          // Debounce wheel events
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            if (isScrolling || totalCardWidth === 0) {
+              wheelAccumulator = 0;
+              return;
+            }
+            
+            // Scroll by card increments based on accumulated delta
+            const cardIncrements = Math.round(wheelAccumulator / 100);
+            if (cardIncrements !== 0) {
+              const targetPosition = currentScrollPosition + (cardIncrements * totalCardWidth);
+              smoothScrollTo(targetPosition, 400);
+              wheelAccumulator = 0;
+            }
+          }, 50);
+        }
+      }, { passive: false });
+      
+      // Touch/Drag scrolling with inertia
+      let touchStartX = 0;
+      let touchStartScroll = 0;
+      let isTouching = false;
+      
+      carouselTrack.addEventListener('touchstart', (e) => {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+        isScrolling = false;
+        isTouching = true;
+        touchStartX = e.touches[0].clientX;
+        touchStartScroll = currentScrollPosition;
+      }, { passive: true });
+      
+      carouselTrack.addEventListener('touchmove', (e) => {
+        if (!isTouching) return;
+        e.preventDefault();
+        
+        const touchX = e.touches[0].clientX;
+        const deltaX = touchStartX - touchX;
+        currentScrollPosition = touchStartScroll + deltaX;
+        carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+        carouselTrack.style.transition = 'none';
+        
+        // Check for loop during drag
+        checkInfiniteLoop();
+        
+        // Calculate velocity for inertia
+        const now = performance.now();
+        velocity = (currentScrollPosition - lastScrollPosition) / (now - lastScrollTime || 1);
+        lastScrollPosition = currentScrollPosition;
+        lastScrollTime = now;
+      }, { passive: false });
+      
+      carouselTrack.addEventListener('touchend', () => {
+        if (!isTouching) return;
+        isTouching = false;
+        
+        // Apply inertia
+        if (Math.abs(velocity) > 0.5) {
+          const inertiaDistance = velocity * 200; // Inertia multiplier
+          const targetPosition = currentScrollPosition + inertiaDistance;
+          smoothScrollTo(targetPosition, 400);
+        } else {
+          // Snap to nearest card
+          if (totalCardWidth > 0) {
+            const nearestCardPosition = Math.round(currentScrollPosition / totalCardWidth) * totalCardWidth;
+            smoothScrollTo(nearestCardPosition);
+          }
+        }
+        
+        checkInfiniteLoop();
+        updateGradientFades();
+        velocity = 0;
+      }, { passive: true });
+      
+      // Mouse drag scrolling
+      carouselTrack.addEventListener('mousedown', (e) => {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+        isScrolling = false;
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartScroll = currentScrollPosition;
+        carouselContainer.style.cursor = 'grabbing';
+        e.preventDefault();
+      });
+      
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        const deltaX = dragStartX - e.clientX;
+        currentScrollPosition = dragStartScroll + deltaX;
+        carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+        carouselTrack.style.transition = 'none';
+        
+        // Check for loop during drag
+        checkInfiniteLoop();
+        
+        // Calculate velocity
+        const now = performance.now();
+        velocity = (currentScrollPosition - lastScrollPosition) / (now - lastScrollTime || 1);
+        lastScrollPosition = currentScrollPosition;
+        lastScrollTime = now;
+      });
+      
+      document.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        carouselContainer.style.cursor = 'grab';
+        
+        // Apply inertia
+        if (Math.abs(velocity) > 0.5) {
+          const inertiaDistance = velocity * 200;
+          const targetPosition = currentScrollPosition + inertiaDistance;
+          smoothScrollTo(targetPosition, 400);
+        } else {
+          // Snap to nearest card
+          if (totalCardWidth > 0) {
+            const nearestCardPosition = Math.round(currentScrollPosition / totalCardWidth) * totalCardWidth;
+            smoothScrollTo(nearestCardPosition);
+          }
+        }
+        
+        checkInfiniteLoop();
+        updateGradientFades();
+        velocity = 0;
+      });
+      
+      // Initialize after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          setTimeout(() => {
+            setupInfiniteLoop();
+            updateGradientFades();
+          }, 100);
+        });
+      } else {
+        setTimeout(() => {
+          setupInfiniteLoop();
+          updateGradientFades();
+        }, 100);
+      }
+      
+      // Handle resize
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          calculateCardWidth();
+          const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+          currentScrollPosition = startClonesWidth;
+          carouselTrack.style.transition = 'none';
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth;
+          carouselTrack.style.transition = '';
+          updateGradientFades();
+        }, 100);
+      });
+    })();
+  </script>
+
+  <!-- Remote modal interactions -->
+  <script>
+    (() => {
+      const REMOTE_DATA = {
+        'L97': {
+          image: 'images/godrej/godrej remote new.2253.png',
+          images: [
+            'images/godrej/godrej remote new.2253.png',
+            'images/godrej/godrej remote new.2223.png',
+            'images/godrej/godrej remote new.2224.png',
+            'images/godrej/godrej remote new.2225.png',
+            'images/godrej/godrej remote new.2226.png'
+          ],
+          title: 'L97',
+          subtitle: 'Premium Control',
+          description: 'Durable ABS build with ergonomic grip, backlit LCD visibility, and quick-access Turbo, mode, fan, and swing controls for effortless comfort.',
+          specs: [
+            { label: 'Range', value: 'Up to 15 meters' },
+            { label: 'Battery', value: '2x AAA (long-life)' },
+            { label: 'Display', value: 'Backlit LCD' },
+            { label: 'Modes', value: 'Cool / Heat / Fan / Dry / Auto' },
+            { label: 'Features', value: 'Turbo, Sleep, Timer' },
+            { label: 'Build', value: 'Ergonomic ABS' }
+          ]
+        },
+        'L99': {
+          image: 'images/llyod/lloyed remote.2254.png',
+          images: [
+            'images/llyod/lloyed remote.2254.png',
+            'images/llyod/lloyed remote.2239.png',
+            'images/llyod/lloyed remote.2257.png',
+            'images/llyod/lloyed remote.2256.png',
+            'images/llyod/lloyed remote.2238.png'
+          ],
+          title: 'L99',
+          subtitle: 'Advanced Features',
+          description: 'Enhanced LCD clarity with extended reach, energy-optimized electronics, and one-tap Turbo for instant cooling when you need it.',
+          specs: [
+            { label: 'Range', value: 'Up to 15+ meters' },
+            { label: 'Battery', value: '2x AAA (high efficiency)' },
+            { label: 'Display', value: 'High-contrast LCD' },
+            { label: 'Modes', value: 'Cool / Heat / Fan / Dry / Auto' },
+            { label: 'Features', value: 'Turbo, Adaptive Sleep, Timer' },
+            { label: 'Design', value: 'Slim, balanced grip' }
+          ]
+        },
+        'L37': {
+          image: 'images/voltas/volts new.2260.png',
+          images: [
+            'images/voltas/volts new.2260.png',
+            'images/voltas/volts new.2261.png',
+            'images/voltas/volts new.2262.png',
+            'images/voltas/volts new.2263.png',
+            'images/voltas/volts new.2264.png'
+          ],
+          title: 'L37',
+          subtitle: 'Modern Design',
+          description: 'Backlit display, intuitive layout, precise fan and swing control, and energy-aware operation for everyday reliability.',
+          specs: [
+            { label: 'Range', value: 'Up to 15 meters' },
+            { label: 'Battery', value: '2x AAA' },
+            { label: 'Display', value: 'Backlit LCD' },
+            { label: 'Modes', value: 'Cool / Heat / Fan / Dry / Auto' },
+            { label: 'Features', value: 'Turbo, Sleep, Timer' },
+            { label: 'Build', value: 'Ergonomic soft-touch finish' }
+          ]
+        }
+      };
+
+      const modal = document.getElementById('remoteModal');
+      const modalBackdrop = document.querySelector('.remote-modal-backdrop');
+      const modalClose = document.querySelector('.remote-modal-close');
+      const modalImage = document.getElementById('modalRemoteImage');
+      const modalTitle = document.getElementById('modalRemoteTitle');
+      const modalSubtitle = document.getElementById('modalRemoteSubtitle');
+      const modalDescription = document.getElementById('modalRemoteDescription');
+      const modalSpecs = document.getElementById('modalRemoteSpecs');
+      const modalThumbnails = document.getElementById('modalImageThumbnails');
+      const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
+      const modalCarouselNext = document.querySelector('.modal-carousel-next');
+      const scrollContainer = document.querySelector('.scroll-snap-container');
+
+      if (!modal || !modalImage || !modalTitle || !modalSubtitle || !modalDescription || !modalSpecs || !modalThumbnails) return;
+
+      let isOpen = false;
+      let currentImageIndex = 0;
+      let currentImages = [];
+
+      const preventBackgroundScroll = (e) => {
+        e.preventDefault();
+      };
+
+      function openModal(remoteName) {
+        const data = REMOTE_DATA[remoteName];
+        if (!data) return;
+
+        // Set current images array
+        currentImages = data.images || [data.image];
+        currentImageIndex = 0;
+
+        // Set main image
+        modalImage.src = currentImages[0];
+        modalImage.alt = data.title;
+
+        // Populate thumbnails
+        modalThumbnails.innerHTML = '';
+        currentImages.forEach((imgSrc, index) => {
+          const thumbnail = document.createElement('div');
+          thumbnail.className = 'modal-thumbnail' + (index === 0 ? ' active' : '');
+          thumbnail.innerHTML = `<img src="${imgSrc}" alt="${data.title} - View ${index + 1}" />`;
+          thumbnail.addEventListener('click', () => {
+            changeModalImage(index);
+          });
+          modalThumbnails.appendChild(thumbnail);
+        });
+
+        modalTitle.textContent = data.title;
+        modalSubtitle.textContent = data.subtitle;
+        modalDescription.textContent = data.description;
+
+        modalSpecs.innerHTML = '';
+        data.specs.forEach(spec => {
+          const specItem = document.createElement('div');
+          specItem.className = 'spec-item';
+          specItem.innerHTML = `
+            <div class="spec-label">${spec.label}</div>
+            <div class="spec-value">${spec.value}</div>
+          `;
+          modalSpecs.appendChild(specItem);
+        });
+
+        if (scrollContainer) {
+          scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
+          scrollContainer.style.overflow = 'hidden';
+          scrollContainer.style.position = 'fixed';
+          scrollContainer.style.width = '100%';
+          scrollContainer.style.height = '100vh';
+          scrollContainer.style.top = `-${scrollContainer.scrollTop}px`;
+          scrollContainer.style.left = '0';
+          scrollContainer.style.right = '0';
+        }
+
+        document.body.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.width = '100%';
+        document.body.style.height = '100vh';
+        document.body.style.top = '0';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+
+        document.addEventListener('wheel', preventBackgroundScroll, { passive: false });
+        document.addEventListener('touchmove', preventBackgroundScroll, { passive: false });
+
+        modal.classList.add('active');
+        isOpen = true;
+        
+        // Update carousel visibility
+        updateCarouselVisibility();
+      }
+
+      function changeModalImage(index) {
+        if (index < 0 || index >= currentImages.length) return;
+        currentImageIndex = index;
+        
+        // Fade out current image
+        modalImage.style.opacity = '0';
+        
+        // After fade, change image and fade in
+        setTimeout(() => {
+          modalImage.src = currentImages[index];
+          modalImage.alt = `${REMOTE_DATA[modalTitle.textContent]?.title || 'Remote'} - View ${index + 1}`;
+          modalImage.style.opacity = '1';
+        }, 150);
+        
+        // Update active thumbnail
+        const thumbnails = modalThumbnails.querySelectorAll('.modal-thumbnail');
+        thumbnails.forEach((thumb, i) => {
+          thumb.classList.toggle('active', i === index);
+        });
+      }
+
+      // Show/hide carousel buttons based on number of images
+      function updateCarouselVisibility() {
+        const hasMultipleImages = currentImages.length > 1;
+        if (modalCarouselPrev) {
+          modalCarouselPrev.style.display = hasMultipleImages ? 'flex' : 'none';
+        }
+        if (modalCarouselNext) {
+          modalCarouselNext.style.display = hasMultipleImages ? 'flex' : 'none';
+        }
+        if (modalThumbnails) {
+          modalThumbnails.style.display = hasMultipleImages ? 'flex' : 'none';
+        }
+      }
+
+      function nextModalImage() {
+        const nextIndex = (currentImageIndex + 1) % currentImages.length;
+        changeModalImage(nextIndex);
+      }
+
+      function prevModalImage() {
+        const prevIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+        changeModalImage(prevIndex);
+      }
+
+      // Carousel navigation handlers
+      if (modalCarouselNext) {
+        modalCarouselNext.addEventListener('click', (e) => {
+          e.stopPropagation();
+          nextModalImage();
+        });
+      }
+
+      if (modalCarouselPrev) {
+        modalCarouselPrev.addEventListener('click', (e) => {
+          e.stopPropagation();
+          prevModalImage();
+        });
+      }
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!isOpen) return;
+        if (e.key === 'ArrowLeft') {
+          prevModalImage();
+        } else if (e.key === 'ArrowRight') {
+          nextModalImage();
+        }
+      });
+
+      function closeModal() {
+        if (!isOpen) return;
+
+        modal.classList.remove('active');
+
+        document.removeEventListener('wheel', preventBackgroundScroll, { passive: false });
+        document.removeEventListener('touchmove', preventBackgroundScroll, { passive: false });
+
+        document.body.classList.remove('modal-open');
+        document.body.removeAttribute('style');
+
+        if (scrollContainer) {
+          const storedTop = parseInt(scrollContainer.dataset.scrollTop || '0', 10);
+          scrollContainer.style.position = '';
+          scrollContainer.style.overflow = '';
+          scrollContainer.style.width = '';
+          scrollContainer.style.height = '';
+          scrollContainer.style.top = '';
+          scrollContainer.style.left = '';
+          scrollContainer.style.right = '';
+          scrollContainer.scrollTop = storedTop;
+        }
+
+        isOpen = false;
+      }
+
+      // Attach click handlers to cards (including clones)
+      const collectionCards = document.querySelectorAll('.collection-card');
+      collectionCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.carousel-btn')) return;
+          const titleElement = card.querySelector('.collection-card-title');
+          if (titleElement) {
+            openModal(titleElement.textContent.trim());
+          }
+        });
+      });
+
+      // Close handlers
+      modalClose?.addEventListener('click', closeModal);
+      modalBackdrop?.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      // Prevent modal inner scroll from bubbling
+      const modalBody = document.querySelector('.remote-modal-body');
+      const modalInfoSection = document.querySelector('.remote-modal-info-section');
+
+      modalBody?.addEventListener('wheel', (e) => e.stopPropagation(), { passive: false });
+      modalBody?.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: false });
+      modalInfoSection?.addEventListener('wheel', (e) => e.stopPropagation(), { passive: false });
+      modalInfoSection?.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: false });
+    })();
+  </script>
 </body>
 
 </html>

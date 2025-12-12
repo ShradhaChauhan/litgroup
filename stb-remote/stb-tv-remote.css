@@ -1156,6 +1156,8 @@ body {
   padding-top: 0;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  z-index: 10; /* Ensure header is visible above other elements */
 }
 
 .premium-features-title {
@@ -1177,6 +1179,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  /* Fallback for browsers that don't support background-clip */
+  color: #1A1A1A;
 }
 
 .premium-features-title::after {
@@ -1197,8 +1201,8 @@ body {
 }
 
 .premium-features-section:not(.section-active) .premium-features-title {
-  opacity: 0.7;
-  transform: translateY(8px);
+  opacity: 1; /* Keep visible even when not active */
+  transform: translateY(0);
 }
 
 /* Premium Features Grid */
@@ -3166,7 +3170,7 @@ body {
 /* STB Remotes Collection Section */
 .stb-collection-section {
   position: relative;
-  padding: 120px 0;
+  padding: calc(80px + 40px) 0 120px 0; /* Top padding for navbar (80px) + spacing (40px) */
   background: #FFFFFF; /* Apple white */
   overflow: hidden;
   z-index: 5;
@@ -3175,7 +3179,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Changed from center to flex-start */
   align-items: center;
   box-sizing: border-box;
 }
@@ -3208,27 +3212,38 @@ body {
 }
 
 .collection-title {
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: #000000; /* Apple deep black */
-  margin: 0 auto 80px auto; /* Increased bottom margin for Apple spacing */
-  padding-bottom: 0;
+  font-size: 42px; /* Match Design Features heading */
+  font-weight: 600; /* Match Design Features heading */
+  line-height: 1.2; /* Match Design Features heading */
+  letter-spacing: -0.02em; /* Match Design Features heading */
+  color: #1A1A1A; /* Match Design Features heading */
+  margin: 0 auto 60px auto; /* Adjusted bottom margin */
+  padding-bottom: 24px; /* Match Design Features heading */
   text-align: center;
-  text-shadow: none;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.08),
+               0 1px 3px rgba(0, 0, 0, 0.05); /* Match Design Features heading */
   transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
               transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
   position: relative;
   display: inline-block;
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: #000000;
-  background-clip: unset;
+  background: linear-gradient(135deg, #1A1A1A 0%, rgba(26, 26, 26, 0.95) 50%, #1A1A1A 100%); /* Match Design Features heading */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Fallback for browsers that don't support background-clip */
+  color: #1A1A1A;
 }
 
 .collection-title::after {
-  display: none;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(74, 124, 89, 0.6), transparent);
+  border-radius: 2px;
 }
 
 .stb-collection-section.section-active .collection-title {
@@ -3370,21 +3385,21 @@ body {
 
 .carousel-card {
   flex: 0 0 auto;
-  min-width: 300px; /* Fixed minimum width for e-commerce card */
-  width: 300px; /* Fixed width */
-  max-width: 300px;
+  min-width: 340px; /* Increased card width */
+  width: 340px; /* Increased card width */
+  max-width: 340px;
   background: #FFFFFF; /* White card background */
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-radius: 12px; /* Rounded corners */
-  padding: 20px;
+  padding: 0; /* Removed padding */
   border: 1px solid #E5E5EA; /* Subtle border */
   box-shadow: rgba(0, 0, 0, 0.04) 0px 2px 8px; /* Subtle shadow */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Left align content */
-  text-align: left; /* Left align text */
+  align-items: center; /* Center align content */
+  text-align: center; /* Center align text */
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -3415,17 +3430,22 @@ body {
 
 .collection-card-image-wrapper {
   width: 100%;
-  height: 400px; /* Increased card image height */
+  height: 380px; /* Reduced card image height */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px; /* Spacing below image */
+  margin-bottom: 0; /* Removed margin */
   position: relative;
   z-index: 2;
-  background: #F5F5F7; /* Light gray background for image area */
-  border-radius: 8px;
+  background: #F5F5F7; /* Solid background color only */
+  border-radius: 8px 8px 0 0; /* Rounded top corners only */
   overflow: hidden;
-  padding: 20px;
+  padding: 20px; /* Consistent padding for all remotes */
+  box-sizing: border-box;
+}
+
+.collection-card-image-wrapper::before {
+  display: none; /* Remove overlay since background image is removed */
 }
 
 .collection-card-image {
@@ -3433,11 +3453,15 @@ body {
   height: 100%;
   object-fit: contain;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: none; /* Remove drop shadow for cleaner look */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15)); /* Add subtle shadow for better visibility */
+  position: relative;
+  z-index: 2; /* Ensure image is above the background overlay */
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .collection-card:hover .collection-card-image {
-  transform: scale(1.05); /* Subtle scale on hover */
+  transform: scale(1.45); /* Scale on hover for better visibility */
 }
 
 .collection-card-content {
@@ -3447,6 +3471,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: center; /* Center align content */
+  padding: 20px 0; /* Top-bottom padding for text */
+  text-align: center; /* Center align text */
 }
 
 .collection-card-title {
@@ -3456,11 +3483,7 @@ body {
   letter-spacing: 0;
   color: #000000; /* Deep black */
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* Limit to 2 lines */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-align: center; /* Center align title */
 }
 
 .collection-card-subtitle {
@@ -3470,6 +3493,7 @@ body {
   margin: 0;
   font-weight: 400;
   letter-spacing: 0;
+  text-align: center; /* Center align subtitle */
 }
 
 .collection-card-price {
@@ -3498,47 +3522,47 @@ body {
 /* Responsive Styles for Collection Section */
 @media (max-width: 1200px) {
   .collection-title {
-    font-size: 48px;
+    font-size: 36px; /* Match Design Features responsive size */
     margin-bottom: 60px;
   }
   
   .collection-card-image-wrapper {
-    height: 380px; /* Increased height */
+    height: 360px; /* Reduced height */
   }
 
   .carousel-card {
-    min-width: 280px;
-    width: 280px;
-    max-width: 280px;
-    padding: 18px;
+    min-width: 320px;
+    width: 320px;
+    max-width: 320px;
+    padding: 0;
   }
 
   .collection-card-image-wrapper {
-    height: 320px; /* Increased height */
-    padding: 16px;
+    height: 320px; /* Reduced height */
+    padding: 16px; /* Consistent padding for all remotes */
   }
 }
 
 @media (max-width: 1024px) {
   .collection-title {
-    font-size: 44px;
+    font-size: 38px; /* Match Design Features responsive size */
     margin-bottom: 50px;
   }
 
   .collection-card-image-wrapper {
-    height: 360px; /* Increased height */
+    height: 340px; /* Reduced height */
   }
 
   .carousel-card {
-    min-width: 260px;
-    width: 260px;
-    max-width: 260px;
-    padding: 16px;
+    min-width: 300px;
+    width: 300px;
+    max-width: 300px;
+    padding: 0;
   }
 
   .collection-card-image-wrapper {
-    height: 280px; /* Increased height */
-    padding: 14px;
+    height: 300px; /* Reduced height */
+    padding: 16px; /* Consistent padding for all remotes */
   }
   
   .carousel-btn {
@@ -3557,7 +3581,8 @@ body {
 
 @media (max-width: 768px) {
   .stb-collection-section {
-    padding: 80px 0;
+    padding: calc(80px + 30px) 0 70px 0; /* Top padding for navbar + spacing */
+    justify-content: flex-start;
   }
 }
 
@@ -4088,7 +4113,8 @@ body {
     font-size: 15px;
   }
 }
-  
+
+@media (max-width: 640px) {
   .collection-title {
     font-size: 36px;
     margin-bottom: 40px;
@@ -4100,7 +4126,7 @@ body {
   }
   
   .collection-card {
-    padding: 24px 20px;
+    padding: 0;
   }
   
   .collection-card-image-wrapper {
@@ -4937,7 +4963,7 @@ footer.footer .footer-bottom p {
   }
 
   .collection-card {
-    padding: 28px 22px;
+    padding: 0;
   }
 
   .collection-card-image-wrapper {
@@ -5165,7 +5191,8 @@ footer.footer .footer-bottom p {
 
   /* Collection Section - Mobile */
   .stb-collection-section {
-    padding: 70px 0;
+    padding: calc(80px + 30px) 0 70px 0; /* Top padding for navbar + spacing */
+    justify-content: flex-start;
   }
 
   .collection-container {
@@ -5173,14 +5200,15 @@ footer.footer .footer-bottom p {
   }
 
   .collection-title {
-    font-size: 32px;
+    font-size: 36px; /* Match Design Features mobile size */
+    font-weight: 600;
     margin-bottom: 40px;
     padding-bottom: 20px;
   }
 
   .collection-title::after {
-    width: 60px;
-    height: 2.5px;
+    width: 70px;
+    height: 3px;
   }
 
   .carousel-container {
@@ -5206,7 +5234,7 @@ footer.footer .footer-bottom p {
   }
 
   .collection-card {
-    padding: 24px 18px;
+    padding: 0;
     min-width: 100%;
     max-width: 100%;
     box-sizing: border-box;
@@ -5215,7 +5243,8 @@ footer.footer .footer-bottom p {
   }
 
   .collection-title {
-    font-size: 36px;
+    font-size: 36px; /* Match Design Features mobile size */
+    font-weight: 600;
     margin-bottom: 40px;
   }
 
@@ -5223,13 +5252,13 @@ footer.footer .footer-bottom p {
     min-width: 100%;
     width: 100%;
     max-width: 100%;
-    padding: 16px;
+    padding: 0;
   }
 
   .collection-card-image-wrapper {
-    height: 300px; /* Increased height */
-    margin-bottom: 16px;
-    padding: 16px;
+    height: 320px; /* Reduced height */
+    margin-bottom: 0;
+    padding: 16px; /* Consistent padding for all remotes */
   }
 
   .collection-card-title {
@@ -5466,20 +5495,23 @@ footer.footer .footer-bottom p {
 
   /* Collection Section - Small Mobile */
   .stb-collection-section {
-    padding: 60px 0;
+    padding: calc(80px + 20px) 0 60px 0; /* Top padding for navbar + spacing */
+    justify-content: flex-start;
   }
 
   .collection-title {
-    font-size: 28px;
+    font-size: 34px; /* Match Design Features small mobile size */
+    font-weight: 600;
   }
 
   .collection-card {
-    padding: 20px 16px;
+    padding: 0;
     min-width: 260px;
   }
 
   .collection-card-image-wrapper {
-    height: 240px; /* Increased height */
+    height: 260px; /* Reduced height */
+    padding: 12px; /* Consistent padding for all remotes */
   }
 
   .collection-card-title {
