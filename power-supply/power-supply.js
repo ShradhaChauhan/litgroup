@@ -135,36 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', handleProductScroll);
     }
 
-    // Animate elements on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature-card');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementPosition < windowHeight - 50) {
-                element.classList.add('animate');
-            }
-        });
-        
-        // Animate mobile hero image on scroll
-        const mobileHeroImage = document.querySelector('.mobile-hero-image');
-        if (mobileHeroImage) {
-            const imagePosition = mobileHeroImage.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (imagePosition < windowHeight - 50) {
-                mobileHeroImage.classList.add('animate');
-            }
-        }
-    };
-    
-    // Initial check for elements in view
-    animateOnScroll();
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', animateOnScroll);
+    // Animation system is now handled by shared-animations.js
+    // No need for scroll-based animation listeners
+    // Just ensure elements have appropriate animation classes in HTML
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

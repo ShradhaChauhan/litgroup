@@ -101,59 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Function to handle scrolling between products
-        function handleProductScroll() {
-            const scrollPosition = window.scrollY;
-            const windowHeight = window.innerHeight;
-            
-            productCards.forEach(card => {
-                const rect = card.getBoundingClientRect();
-                const cardTop = rect.top;
-                const cardHeight = rect.height;
-                
-                // Check if card is in view
-                if (cardTop < windowHeight * 0.5 && cardTop > -cardHeight * 0.5) {
-                    card.classList.add('active-product');
-                    card.style.opacity = 1;
-                    
-                    // Calculate parallax effect for image
-                    const parallaxValue = Math.max(0, Math.min(1, (windowHeight * 0.5 - cardTop) / windowHeight));
-                    const productImage = card.querySelector('.product-detail-full-size-image img');
-                    if (productImage) {
-                        productImage.style.transform = `translateY(${parallaxValue * 20}px)`;
-                    }
-                } else {
-                    card.classList.remove('active-product');
-                }
-            });
-        }
-        
-        // Call once on load
-        setTimeout(handleProductScroll, 100);
-        
-        // Add scroll event listener
-        window.addEventListener('scroll', handleProductScroll);
+        // Product scroll handling removed - causes flickering
+        // Products now use IntersectionObserver for smooth animations (see below)
     }
 
-    // Animate elements on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature-card');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementPosition < windowHeight - 50) {
-                element.classList.add('animate');
-            }
-        });
-    };
-    
-    // Initial check for elements in view
-    animateOnScroll();
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', animateOnScroll);
+    // Animation system is now handled by shared-animations.js
+    // No need for scroll-based animation listeners
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -467,59 +420,8 @@ document.addEventListener('DOMContentLoaded', function() {
         productObserver.observe(productSection);
     }
 
-    // Also trigger on scroll event for browsers with poor IntersectionObserver support
-    window.addEventListener('scroll', debounce(function() {
-        productElements.forEach(product => {
-            const rect = product.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const visibilityThreshold = 150;
-            
-            if (rect.top < windowHeight - visibilityThreshold && rect.bottom > visibilityThreshold) {
-                product.classList.add('visible');
-                
-                // If this product just became visible, reset its images
-                if (!product.hasAttribute('data-reset-done')) {
-                    const productIndex = product.getAttribute('data-product-index');
-                    if (productIndex !== null) {
-                        // Clear existing interval for this product
-                        if (window.productIntervals && window.productIntervals[productIndex]) {
-                            clearInterval(window.productIntervals[productIndex]);
-                        }
-                        
-                        // If the product has a reset cycling function, call it
-                        if (typeof product.resetCycling === 'function') {
-                            product.resetCycling();
-                        } else {
-                            // Fallback to manual reset
-                            const mainImageId = `product${parseInt(productIndex) + 1}-main-image`;
-                            const firstSliderImage = product.querySelector('.slider-image:first-child');
-                            
-                            if (firstSliderImage && document.getElementById(mainImageId)) {
-                                // Set main image to the first slider image
-                                document.getElementById(mainImageId).src = firstSliderImage.src;
-                                
-                                // Set active class on first slider image only
-                                product.querySelectorAll('.slider-image').forEach(img => {
-                                    img.classList.remove('active');
-                                });
-                                firstSliderImage.classList.add('active');
-                                
-                                // Reset the current index
-                                product.setAttribute('data-current-index', '0');
-                            }
-                        }
-                        
-                        // Mark as reset done for this scroll action
-                        product.setAttribute('data-reset-done', 'true');
-                    }
-                }
-            } else if (rect.bottom < 0 || rect.top > windowHeight) {
-                product.classList.remove('visible');
-                // Reset the "reset done" flag when product goes off screen
-                product.removeAttribute('data-reset-done');
-            }
-        });
-    }, 15));
+    // Removed debounced scroll listener - causes flickering
+    // IntersectionObserver above handles all visibility detection smoothly
     
     // Slider image click functionality
     const sliderImages = document.querySelectorAll('.slider-image');

@@ -31,7 +31,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="fan.css">
+    <link rel="stylesheet" href="../shared-animations.css" />
     <link rel="icon" href="../favicon/cropped-favicon-1-192x192.png" />
+    <script src="../shared-animations.js" defer></script>
 
     
   </head>
@@ -93,6 +95,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <a href="../about/">About Us</a>
           <a href="../events/">Events</a>
+          <a href="../blog/">Blogs</a>
           <a href="../contact/">Contact Us</a>
         </div>
 
@@ -102,8 +105,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </nav>
 
+    <!-- Scroll Snap Container -->
+    <div class="scroll-snap-container">
+  
     <!-- Fan Hero Section -->
-    <section class="fan-hero">
+    <section class="fan-hero scroll-snap-section">
       <div class="video-background">
         <video autoplay muted >
           <source src="media/Orient Fan animation.2268.mp4" type="video/mp4">
@@ -128,241 +134,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-   
-    <!-- Fan Models Section -->
-    <section id="fan-models" class="fan-models">
-      <div class="models-container">
-        <div class="section-header">
-          <h2>Our Fan Remote Collection</h2>
-          <p>Find the perfect fan remote for your needs</p>
-        </div>
-
-        <div class="model-tabs">
-          <button class="model-tab active" data-model="atomberg-smart">L56</button>
-          <button class="model-tab" data-model="atomberg-classic">L48</button>
-          <button class="model-tab" data-model="universal">L91</button>
-        </div>
-
-        <div class="model-content" id="atomberg-smart-content" style="display: block;">
-          <div class="model-image">
-            <img src="image/Atomberg/Atomberg Remote 001.2270.png" alt="Atomberg Smart Remote" class="active-image" id="atomberg-smart-main-image" />
-            <div class="thumbnail-carousel">
-              <img src="image/Atomberg/Atomberg Remote 001.2270.png" alt="Atomberg Smart Remote View 1" class="thumbnail active" data-image="image/Atomberg/Atomberg Remote 001.2270.png" />
-              <img src="image/Atomberg/Atomberg Remote 001.2271.png" alt="Atomberg Smart Remote View 1" class="thumbnail" data-image="image/Atomberg/Atomberg Remote 001.2271.png" />
-              <img src="image/Atomberg/Atomberg Remote 001.2272.png" alt="Atomberg Smart Remote View 1" class="thumbnail" data-image="image/Atomberg/Atomberg Remote 001.2272.png" />
-              <img src="image/Atomberg/Atomberg Remote 001.2273.png" alt="Atomberg Smart Remote View 1" class="thumbnail" data-image="image/Atomberg/Atomberg Remote 001.2273.png" />
-             
-            </div>
-          </div>
-          <div class="model-details">
-            <h3>L56</h3>
-            <p>Our premium ceiling fan remote is engineered to deliver advanced functionality, enhanced comfort, and improved energy efficiency.</p>
-            
-            <div class="model-features">
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Multi-speed control with 6 precision settings</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Smart sleep mode with automatic fan speed adjustment</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Basic Timer function</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Led control</p>
-              </div>
-              
-            </div>
-
-            <div class="specs-grid">
-              <div class="spec-item">
-                <span class="spec-label">Range</span>
-                <span class="spec-value">15+ Meter</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Type</span>
-                <span class="spec-value">IR</span>
-              </div>
-              <!-- <div class="spec-item">
-                <span class="spec-label">Battery Life</span>
-                <span class="spec-value">~12 months</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Compatibility</span>
-                <span class="spec-value">All Atomberg Models</span>
-              </div> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="model-content" id="atomberg-classic-content" style="display: none;">
-          <div class="model-image">
-            <img src="image/Orient/Orient Fan.2312.png" alt="Atomberg Classic Remote" class="active-image" id="atomberg-classic-main-image" />
-            <div class="thumbnail-carousel">
-              <img src="image/Orient/Orient Fan.2312.png" alt="Atomberg Classic Remote View 1" class="thumbnail active" data-image="image/Orient/Orient Fan.2312.png" />
-              <img src="image/Orient/Orient Fan.2314.png" alt="Atomberg Classic Remote View 2" class="thumbnail" data-image="image/Orient/Orient Fan.2314.png" />
-              <img src="image/Orient/Orient Fan.2316.png" alt="Atomberg Classic Remote View 3" class="thumbnail" data-image="image/Orient/Orient Fan.2316.png" />
-              <img src="image/Orient/Orient Fan.2317.png" alt="Atomberg Classic Remote View 4" class="thumbnail" data-image="image/Orient/Orient Fan.2317.png" />
-            </div>
-          </div>
-          <div class="model-details">
-            <h3>L48</h3>
-            <p>A dependable and intuitive remote control system for ceiling fans, designed to offer seamless operation with all the essential features.</p>
-            
-            <div class="model-features">
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>5-speed control for optimal airflow</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Simple timer function up to 8 hours</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Energy-saving mode</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Boost feature</p>
-              </div>
-            </div>
-
-            <div class="specs-grid">
-              <div class="spec-item">
-                <span class="spec-label">Range</span>
-                <span class="spec-value">20+ Meter</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Type</span>
-                <span class="spec-value">IR/RF</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="model-content" id="universal-content" style="display: none;">
-          <div class="model-image">
-            <img src="image/havells/Havells Pebble Remote.2320.png" alt="Universal Fan Remote" class="active-image" id="universal-main-image" />
-            <div class="thumbnail-carousel">
-              <img src="image/havells/Havells Pebble Remote.2320.png" alt="Universal Fan Remote View 1" class="thumbnail active" data-image="image/havells/Havells Pebble Remote.2320.png" />
-              <img src="image/havells/Havells Pebble Remote.2321.png" alt="Universal Fan Remote View 2" class="thumbnail" data-image="image/havells/Havells Pebble Remote.2321.png" />
-              <img src="image/havells/Havells Pebble Remote.2322.png" alt="Universal Fan Remote View 3" class="thumbnail" data-image="image/havells/Havells Pebble Remote.2322.png" />
-              <img src="image/havells/Havells Pebble Remote.2323.png" alt="Universal Fan Remote View 4" class="thumbnail" data-image="image/havells/Havells Pebble Remote.2323.png" />
-            </div>
-          </div>
-          <div class="model-details">
-            <h3>L91</h3>
-            <p>A versatile remote control solution compatible with most ceiling and pedestal fans, delivering essential features for seamless everyday use.</p>
-            
-            <div class="model-features">
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>5-speed control</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Basic timer function</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Sleep Mode</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check-circle"></i>
-                <p>Wide compatibility</p>
-              </div>
-            </div>
-
-            <div class="specs-grid">
-              <div class="spec-item">
-                <span class="spec-label">Range</span>
-                <span class="spec-value">20+ Meter</span>
-              </div>
-              <div class="spec-item">
-                <span class="spec-label">Type</span>
-                <span class="spec-value">IR/RF</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-     <!-- Benefits Section -->
-    <section class="fan-benefits">
-      <div class="benefits-container">
-        <div class="section-header">
-          <h2>Why Choose Our Fan Remotes</h2>
-          <p>Experience the perfect blend of design, functionality and convenience</p>
-        </div>
-
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-tachometer-alt"></i>
-            </div>
-            <h3>Precise Speed Control</h3>
-            <p>Multiple speed settings from gentle breeze to powerful airflow with fine adjustment capabilities</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-bolt"></i>
-            </div>
-            <h3>Energy Efficient</h3>
-            <p>Smart features that optimize energy consumption while maintaining comfort</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-moon"></i>
-            </div>
-            <h3>Sleep Mode</h3>
-            <p>Intelligently adjusts fan speed throughout the night for optimal sleeping comfort</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-clock"></i>
-            </div>
-            <h3>Timer Function</h3>
-            <p>Preset operation times to automatically turn off your fan when desired</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-broadcast-tower"></i>
-            </div>
-            <h3>Extended Range</h3>
-            <p>Superior signal strength for controlling your fan from anywhere in the room</p>
-          </div>
-
-          <div class="benefit-card">
-            <div class="benefit-icon">
-              <i class="fas fa-battery-full"></i>
-            </div>
-            <h3>Long Battery Life</h3>
-            <p>Optimized power management for extended operation between battery replacements</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <!-- Premium Series Showcase -->
-    <section class="custom-solutions">
+    <section class="custom-solutions scroll-snap-section">
       <div class="section-header">
         <h2>Premium Series Fan Remotes</h2>
         <p>Advanced features for exceptional control</p>
       </div>
 
       <div class="solutions-grid">
-        <div class="solution-card">
+        <div class="solution-card" data-animate="left" data-index="0">
           <div class="solution-icon">
             <i class="fas fa-wind"></i>
           </div>
@@ -372,7 +152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>
         </div>
 
-        <div class="solution-card">
+        <div class="solution-card" data-animate="right" data-index="1">
           <div class="solution-icon">
             <i class="fas fa-sync-alt"></i>
           </div>
@@ -382,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>
         </div>
 
-        <div class="solution-card">
+        <div class="solution-card" data-animate="left" data-index="2">
           <div class="solution-icon">
             <i class="fas fa-lightbulb"></i>
           </div>
@@ -392,7 +172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>
         </div>
 
-        <div class="solution-card">
+        <div class="solution-card" data-animate="right" data-index="3">
           <div class="solution-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
@@ -404,40 +184,148 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </section>
 
-    <!-- Our Partners Section -->
-    <section class="partners">
-      <div class="section-header">
-        <h2>Some Of Our Happy Clients</h2>
-        <p>We work with world's leading fan manufacturers and smart home providers</p>
+   
+    <!-- Fan Remotes Collection Section -->
+    <section id="fan-models" class="stb-collection-section scroll-snap-section">
+      <div class="collection-container">
+        <h2 class="collection-title">Our Fan Remote Collection</h2>
+        
+        <div class="carousel-container">
+          <button class="carousel-btn carousel-arrow carousel-arrow-left" aria-label="Previous cards">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          
+          <div class="carousel-track">
+            <!-- Card 1 - L56 -->
+            <div class="collection-card carousel-card" data-original="true">
+              <div class="collection-card-image-wrapper">
+                <img src="image/Atomberg/Atomberg Remote 001.2270.png" alt="L56 Fan Remote" class="collection-card-image" />
+              </div>
+              <div class="collection-card-content">
+                <h3 class="collection-card-title">L56</h3>
+                <p class="collection-card-subtitle">Premium Control</p>
+              </div>
+            </div>
+
+            <!-- Card 2 - L48 -->
+            <div class="collection-card carousel-card" data-original="true">
+              <div class="collection-card-image-wrapper">
+                <img src="image/Orient/Orient Fan.2312.png" alt="L48 Fan Remote" class="collection-card-image" />
+              </div>
+              <div class="collection-card-content">
+                <h3 class="collection-card-title">L48</h3>
+                <p class="collection-card-subtitle">Classic Design</p>
+              </div>
+            </div>
+
+            <!-- Card 3 - L91 -->
+            <div class="collection-card carousel-card" data-original="true">
+              <div class="collection-card-image-wrapper">
+                <img src="image/havells/Havells Pebble Remote.2320.png" alt="L91 Fan Remote" class="collection-card-image" />
+              </div>
+              <div class="collection-card-content">
+                <h3 class="collection-card-title">L91</h3>
+                <p class="collection-card-subtitle">Universal Compatibility</p>
+              </div>
+            </div>
+          </div>
+          
+          <button class="carousel-btn carousel-arrow carousel-arrow-right" aria-label="Next cards">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
       </div>
-      
-      <div class="logos-container">
-        <!-- Static grid for desktop view -->
-        <div class="clients-grid static">
-          <img src="image/logo/Orient_Logo_2x_906fb550-c200-42e5-b9e7-f6375c0bcdab.avif" loading="eager" alt="Orient" class="client-logo featured" />
-          <img src="image/logo/Atomberg logo - Brandlogos.net.svg" loading="eager" alt="Atomberg" class="client-logo featured" />
-          <img src="image/logo/Havells_Logo.svg.png" loading="eager" alt="Havells" class="client-logo featured" />
+    </section>
+
+     <!-- Benefits Section -->
+    <section class="fan-benefits scroll-snap-section">
+      <div class="benefits-container">
+        <div class="section-header">
+          <h2>Why Choose Our Fan Remotes</h2>
+          <p>Experience the perfect blend of design, functionality and convenience</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card" data-animate="left" data-index="0">
+            <div class="benefit-icon">
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h3>Precise Speed Control</h3>
+            <p>Multiple speed settings from gentle breeze to powerful airflow with fine adjustment capabilities</p>
+          </div>
+
+          <div class="benefit-card" data-animate="right" data-index="1">
+            <div class="benefit-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Energy Efficient</h3>
+            <p>Smart features that optimize energy consumption while maintaining comfort</p>
+          </div>
+
+          <div class="benefit-card" data-animate="left" data-index="2">
+            <div class="benefit-icon">
+              <i class="fas fa-moon"></i>
+            </div>
+            <h3>Sleep Mode</h3>
+            <p>Intelligently adjusts fan speed throughout the night for optimal sleeping comfort</p>
+          </div>
+
+          <div class="benefit-card" data-animate="right" data-index="3">
+            <div class="benefit-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Timer Function</h3>
+            <p>Preset operation times to automatically turn off your fan when desired</p>
+          </div>
+
+          <div class="benefit-card" data-animate="left" data-index="4">
+            <div class="benefit-icon">
+              <i class="fas fa-broadcast-tower"></i>
+            </div>
+            <h3>Extended Range</h3>
+            <p>Superior signal strength for controlling your fan from anywhere in the room</p>
+          </div>
+
+          <div class="benefit-card" data-animate="right" data-index="5">
+            <div class="benefit-icon">
+              <i class="fas fa-battery-full"></i>
+            </div>
+            <h3>Long Battery Life</h3>
+            <p>Optimized power management for extended operation between battery replacements</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Partners Section -->
+    <section class="partners scroll-snap-section">
+      <div class="clients-container">
+        <div class="clients-header">
+          <h2 class="clients-title">Some Of Our Happy Clients</h2>
+          <p class="clients-subtitle">We work with world's leading fan manufacturers and smart home providers</p>
         </div>
         
-        <!-- Mobile slider -->
-        <div class="clients-logos-slider">
-          <div class="logo-slide">
-            <img src="image/logo/Orient_Logo_2x_906fb550-c200-42e5-b9e7-f6375c0bcdab.avif" loading="eager" alt="Orient" class="client-logo featured" />
-          </div>
-          <div class="logo-slide">
-            <img src="image/logo/Atomberg logo - Brandlogos.net.svg" loading="eager" alt="Atomberg" class="client-logo featured" />
-          </div>
-          <div class="logo-slide">
-            <img src="image/logo/Havells_Logo.svg.png" loading="eager" alt="Havells" class="client-logo featured" />
+        <div class="clients-logos-wrapper">
+          <div class="clients-logos-grid">
+            <div class="client-logo-item">
+              <img src="image/logo/Orient_Logo_2x_906fb550-c200-42e5-b9e7-f6375c0bcdab.avif" loading="eager" alt="Orient" class="client-logo" />
+            </div>
+            <div class="client-logo-item">
+              <img src="image/logo/Atomberg logo - Brandlogos.net.svg" loading="eager" alt="Atomberg" class="client-logo" />
+            </div>
+            <div class="client-logo-item">
+              <img src="image/logo/Havells_Logo.svg.png" loading="eager" alt="Havells" class="client-logo" />
+            </div>
+            <div class="client-logo-item">
+              <img src="../images/Logos/Crompton-Logo-Vector.png" loading="eager" alt="Crompton" class="client-logo" />
+            </div>
           </div>
         </div>
-        <div class="home-logo-left-gradient"></div>
-        <div class="home-logo-left-gradient right"></div>
       </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="cta">
+    <section class="cta scroll-snap-section">
       <div class="cta-content">
         <h2>Ready to enhance your fan control experience?</h2>
         <p>Contact us today to learn more about our fan remote solutions</p>
@@ -446,7 +334,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer scroll-snap-section">
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-column">
@@ -572,6 +460,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </footer>
+    </div>
+    <!-- End Scroll Snap Container -->
+
+    <!-- Remote Details Modal -->
+    <div class="remote-modal" id="remoteModal">
+      <div class="remote-modal-backdrop"></div>
+      <div class="remote-modal-content">
+        <button class="remote-modal-close" aria-label="Close modal">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="remote-modal-body">
+          <div class="remote-modal-image-section">
+            <div class="modal-image-carousel">
+              <div class="modal-image-main">
+                <img id="modalRemoteImage" src="" alt="" class="modal-remote-image" />
+              </div>
+              <div class="modal-image-thumbnails" id="modalImageThumbnails">
+                <!-- Thumbnails will be populated by JavaScript -->
+              </div>
+              <button class="modal-carousel-btn modal-carousel-prev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="modal-carousel-btn modal-carousel-next" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="remote-modal-info-section">
+            <h2 id="modalRemoteTitle" class="modal-remote-title"></h2>
+            <p id="modalRemoteSubtitle" class="modal-remote-subtitle"></p>
+            <div id="modalRemoteDescription" class="modal-remote-description"></div>
+            <div class="modal-remote-specs">
+              <h3 class="specs-title">Specifications</h3>
+              <div id="modalRemoteSpecs" class="specs-grid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Coming Soon Popup -->
     <div id="coming-soon-popup" class="popup-overlay">
@@ -587,6 +514,828 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script src="../script.js"></script>
     <script src="fan.js"></script>
+
+    <!-- Smooth Section Glide Scroll -->
+    <script>
+      /* ====== JavaScript: Smooth section glide ====== */
+      (function () {
+        // Configuration
+        const DURATION = 900; // animation duration in ms
+        const QUIET_PERIOD = 80; // ignore small wheel spikes
+        const DEBOUNCE = 300; // don't accept another section change while animating
+        const EASING = function (t) { // easeInOutCubic
+          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        };
+
+        // Get scroll container and sections
+        const scrollContainer = document.querySelector('.scroll-snap-container');
+        if (!scrollContainer) return;
+
+        const sections = Array.from(document.querySelectorAll('.scroll-snap-section'));
+        if (!sections.length) return;
+
+        // Utilities
+        const now = () => performance.now();
+        function animateScroll(startY, endY, duration, cb) {
+          const startTime = now();
+          function frame() {
+            const t = Math.min(1, (now() - startTime) / duration);
+            const eased = EASING(t);
+            scrollContainer.scrollTop = Math.round(startY + (endY - startY) * eased);
+            if (t < 1) {
+              requestId = requestAnimationFrame(frame);
+            } else {
+              cb && cb();
+            }
+          }
+          let requestId = requestAnimationFrame(frame);
+          return () => cancelAnimationFrame(requestId);
+        }
+
+        // Find sections and helper functions
+        function getNearestSectionIndex(scrollY) {
+          let bestIdx = 0;
+          let bestDiff = Infinity;
+          sections.forEach((s, i) => {
+            const rect = s.getBoundingClientRect();
+            const containerRect = scrollContainer.getBoundingClientRect();
+            const top = scrollContainer.scrollTop + (rect.top - containerRect.top);
+            const diff = Math.abs(top - scrollY);
+            if (diff < bestDiff) {
+              bestDiff = diff;
+              bestIdx = i;
+            }
+          });
+          return bestIdx;
+        }
+
+        // State
+        let isAnimating = false;
+        let lastActionTime = 0;
+        let cancelAnimation = null;
+
+        // Core function to scroll to section index
+        function scrollToSection(index) {
+          index = Math.max(0, Math.min(sections.length - 1, index));
+          const rect = sections[index].getBoundingClientRect();
+          const containerRect = scrollContainer.getBoundingClientRect();
+          const destTop = scrollContainer.scrollTop + (rect.top - containerRect.top);
+          const currentScroll = scrollContainer.scrollTop;
+          if (Math.abs(currentScroll - destTop) < 2) return;
+          if (cancelAnimation) cancelAnimation();
+          isAnimating = true;
+          lastActionTime = Date.now();
+          cancelAnimation = animateScroll(currentScroll, destTop, DURATION, () => {
+            isAnimating = false;
+            cancelAnimation = null;
+          });
+        }
+
+        // Determine next/prev
+        function goNext() {
+          const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
+          const nextIndex = Math.min(sections.length - 1, currentIndex + 1);
+          if (nextIndex !== currentIndex) scrollToSection(nextIndex);
+        }
+        function goPrev() {
+          const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
+          const prevIndex = Math.max(0, currentIndex - 1);
+          if (prevIndex !== currentIndex) scrollToSection(prevIndex);
+        }
+
+        // Wheel/trackpad handling
+        let wheelTimeout;
+        scrollContainer.addEventListener('wheel', function (e) {
+          if (isAnimating) {
+            if (Math.abs(e.deltaY) > 120) {
+              if (cancelAnimation) cancelAnimation();
+              isAnimating = false;
+              cancelAnimation = null;
+            } else {
+              e.preventDefault();
+              return;
+            }
+          }
+          if (Math.abs(e.deltaY) < QUIET_PERIOD) return;
+
+          e.preventDefault();
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => {
+            if (e.deltaY > 0) {
+              if (Date.now() - lastActionTime > DEBOUNCE) goNext();
+            } else {
+              if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
+            }
+          }, 10);
+        }, { passive: false });
+
+        // Keyboard support
+        window.addEventListener('keydown', function (e) {
+          if (isAnimating) return;
+          if (['ArrowDown','PageDown'].includes(e.code)) {
+            e.preventDefault();
+            goNext();
+          } else if (['ArrowUp','PageUp'].includes(e.code)) {
+            e.preventDefault();
+            goPrev();
+          } else if (e.code === 'Home') {
+            e.preventDefault();
+            scrollToSection(0);
+          } else if (e.code === 'End') {
+            e.preventDefault();
+            scrollToSection(sections.length - 1);
+          }
+        });
+
+        // Touch handling
+        let touchStartY = null;
+        let touchStartTime = 0;
+        scrollContainer.addEventListener('touchstart', function (e) {
+          if (e.touches && e.touches.length === 1) {
+            touchStartY = e.touches[0].clientY;
+            touchStartTime = Date.now();
+            if (cancelAnimation) { cancelAnimation(); isAnimating = false; cancelAnimation = null; }
+          }
+        }, { passive: true });
+
+        scrollContainer.addEventListener('touchend', function (e) {
+          if (touchStartY === null) return;
+          const dy = (e.changedTouches[0].clientY - touchStartY);
+          const dt = Date.now() - touchStartTime;
+          const velocity = Math.abs(dy / dt);
+          touchStartY = null;
+          if (Math.abs(dy) < 30 && velocity < 0.15) return;
+          if (dy < 0) {
+            if (Date.now() - lastActionTime > DEBOUNCE) goNext();
+          } else {
+            if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
+          }
+        }, { passive: true });
+
+        // Section Focus Behavior
+        (function() {
+          const observerOptions = {
+            root: scrollContainer,
+            rootMargin: '-25% 0px -25% 0px',
+            threshold: [0, 0.3, 0.5, 0.7, 1.0]
+          };
+
+          let currentActiveIndex = 0;
+
+          const observer = new IntersectionObserver((entries) => {
+            let maxRatio = 0;
+            let activeEntry = null;
+
+            entries.forEach(entry => {
+              if (entry.intersectionRatio > maxRatio) {
+                maxRatio = entry.intersectionRatio;
+                activeEntry = entry;
+              }
+            });
+
+            if (activeEntry && activeEntry.intersectionRatio > 0.3) {
+              sections.forEach((section, index) => {
+                section.classList.remove('section-active');
+                if (section === activeEntry.target) {
+                  currentActiveIndex = index;
+                }
+              });
+              activeEntry.target.classList.add('section-active');
+            }
+          }, observerOptions);
+
+          sections.forEach(section => {
+            observer.observe(section);
+          });
+
+          if (sections.length > 0) {
+            sections[0].classList.add('section-active');
+            currentActiveIndex = 0;
+          }
+
+          scrollContainer.addEventListener('scroll', () => {
+            const scrollTop = scrollContainer.scrollTop;
+            const sectionHeight = window.innerHeight;
+            const newActiveIndex = Math.round(scrollTop / sectionHeight);
+            
+            if (newActiveIndex !== currentActiveIndex && newActiveIndex >= 0 && newActiveIndex < sections.length) {
+              sections.forEach(section => {
+                section.classList.remove('section-active');
+              });
+              sections[newActiveIndex].classList.add('section-active');
+              currentActiveIndex = newActiveIndex;
+            }
+          }, { passive: true });
+        })();
+
+        // Recalculate on resize
+        window.addEventListener('resize', function () {
+          const idx = getNearestSectionIndex(scrollContainer.scrollTop);
+          setTimeout(() => scrollToSection(idx), 120);
+        });
+
+        // Snap to nearest section on load
+        window.addEventListener('load', function () {
+          const idx = getNearestSectionIndex(scrollContainer.scrollTop);
+          setTimeout(() => scrollToSection(idx), 200);
+        });
+      })();
+    </script>
+    
+    <!-- Scroll-triggered animations for elements -->
+    <script>
+      (function() {
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initAnimations);
+        } else {
+          initAnimations();
+        }
+
+        function initAnimations() {
+          const animatedElements = document.querySelectorAll('[data-animate]');
+          
+          if (animatedElements.length === 0) return;
+
+          const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px'
+          };
+
+          // Track animated elements to prevent re-triggering
+          const animatedSet = new Set();
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              // Only animate if intersecting and hasn't been animated yet
+              if (entry.isIntersecting && !animatedSet.has(entry.target)) {
+                animatedSet.add(entry.target);
+                entry.target.classList.add('animate-in');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, observerOptions);
+
+          animatedElements.forEach(element => {
+            observer.observe(element);
+          });
+        }
+      })();
+    </script>
+
+    <!-- Apple-Style Horizontal Scrolling Carousel Script -->
+    <script>
+      (function() {
+        const carouselContainer = document.querySelector('.carousel-container');
+        const carouselTrack = document.querySelector('.carousel-track');
+        const leftArrow = document.querySelector('.carousel-arrow-left');
+        const rightArrow = document.querySelector('.carousel-arrow-right');
+        const allCards = document.querySelectorAll('.carousel-card[data-original="true"]');
+        
+        if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
+        
+        // Constants
+        const ORIGINAL_CARD_COUNT = 3; // 3 Fan remote cards
+        const CARD_GAP = 24;
+        const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
+        const SCROLL_DURATION = 600;
+        
+        // State
+        let cardWidth = 0;
+        let totalCardWidth = 0;
+        let currentScrollPosition = 0;
+        let isScrolling = false;
+        let isDragging = false;
+        let dragStartX = 0;
+        let dragStartScroll = 0;
+        let velocity = 0;
+        let lastScrollTime = 0;
+        let lastScrollPosition = 0;
+        let animationFrameId = null;
+        
+        const originalCards = Array.from(allCards).slice(0, ORIGINAL_CARD_COUNT);
+        
+        function calculateCardWidth() {
+          if (originalCards.length === 0) return;
+          const firstCard = originalCards[0];
+          const cardRect = firstCard.getBoundingClientRect();
+          cardWidth = cardRect.width;
+          totalCardWidth = cardWidth + CARD_GAP;
+          return totalCardWidth;
+        }
+        
+        function easeInOutCubic(t) {
+          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+        
+        function setupInfiniteLoop() {
+          const existingClones = carouselTrack.querySelectorAll('[data-clone]');
+          existingClones.forEach(clone => clone.remove());
+          
+          originalCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('data-clone', 'end');
+            carouselTrack.appendChild(clone);
+          });
+          
+          originalCards.slice().reverse().forEach(card => {
+            const clone = card.cloneNode(true);
+            clone.setAttribute('data-clone', 'start');
+            carouselTrack.insertBefore(clone, carouselTrack.firstChild);
+          });
+          
+          calculateCardWidth();
+          
+          const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+          currentScrollPosition = startClonesWidth;
+          carouselTrack.style.transition = 'none';
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          void carouselTrack.offsetWidth;
+          carouselTrack.style.transition = '';
+        }
+        
+        function smoothScrollTo(targetPosition, duration = SCROLL_DURATION) {
+          if (isScrolling) return;
+          
+          const startPosition = currentScrollPosition;
+          const distance = targetPosition - startPosition;
+          const startTime = performance.now();
+          
+          isScrolling = true;
+          
+          function animate(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeInOutCubic(progress);
+            
+            currentScrollPosition = startPosition + (distance * eased);
+            carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+            
+            checkInfiniteLoop();
+            
+            if (progress < 1) {
+              animationFrameId = requestAnimationFrame(animate);
+            } else {
+              isScrolling = false;
+              checkInfiniteLoop();
+              updateGradientFades();
+            }
+          }
+          
+          animationFrameId = requestAnimationFrame(animate);
+        }
+        
+        function checkInfiniteLoop() {
+          if (totalCardWidth === 0) return;
+          
+          const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+          const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+          
+          if (currentScrollPosition >= startClonesWidth + originalSetWidth) {
+            carouselTrack.style.transition = 'none';
+            currentScrollPosition = startClonesWidth;
+            carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+            void carouselTrack.offsetWidth;
+            carouselTrack.style.transition = '';
+          } else if (currentScrollPosition < startClonesWidth) {
+            carouselTrack.style.transition = 'none';
+            currentScrollPosition = startClonesWidth + originalSetWidth - totalCardWidth;
+            carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+            void carouselTrack.offsetWidth;
+            carouselTrack.style.transition = '';
+          }
+        }
+        
+        function updateGradientFades() {
+          if (totalCardWidth === 0) return;
+          
+          const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+          const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+          
+          if (currentScrollPosition <= startClonesWidth + 10) {
+            carouselContainer.classList.add('at-start');
+          } else {
+            carouselContainer.classList.remove('at-start');
+          }
+          
+          if (currentScrollPosition >= startClonesWidth + originalSetWidth - 10) {
+            carouselContainer.classList.add('at-end');
+          } else {
+            carouselContainer.classList.remove('at-end');
+          }
+        }
+        
+        function scrollByCard(direction) {
+          if (isScrolling || totalCardWidth === 0) return;
+          const targetPosition = currentScrollPosition + (direction * totalCardWidth);
+          smoothScrollTo(targetPosition);
+        }
+        
+        leftArrow.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          scrollByCard(-1);
+        });
+        
+        rightArrow.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          scrollByCard(1);
+        });
+        
+        let wheelTimeout;
+        let wheelAccumulator = 0;
+        
+        carouselContainer.addEventListener('wheel', (e) => {
+          const isHorizontal = Math.abs(e.deltaX) > Math.abs(e.deltaY);
+          const isShiftPressed = e.shiftKey;
+          
+          if (isHorizontal || isShiftPressed) {
+            e.preventDefault();
+            const delta = isHorizontal ? e.deltaX : e.deltaY;
+            wheelAccumulator += delta;
+            
+            clearTimeout(wheelTimeout);
+            wheelTimeout = setTimeout(() => {
+              if (isScrolling || totalCardWidth === 0) {
+                wheelAccumulator = 0;
+                return;
+              }
+              
+              const cardIncrements = Math.round(wheelAccumulator / 100);
+              if (cardIncrements !== 0) {
+                const targetPosition = currentScrollPosition + (cardIncrements * totalCardWidth);
+                smoothScrollTo(targetPosition, 400);
+                wheelAccumulator = 0;
+              }
+            }, 50);
+          }
+        }, { passive: false });
+        
+        let touchStartX = 0;
+        let touchStartScroll = 0;
+        let isTouching = false;
+        
+        carouselTrack.addEventListener('touchstart', (e) => {
+          if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+          }
+          isScrolling = false;
+          isTouching = true;
+          touchStartX = e.touches[0].clientX;
+          touchStartScroll = currentScrollPosition;
+        }, { passive: true });
+        
+        carouselTrack.addEventListener('touchmove', (e) => {
+          if (!isTouching) return;
+          e.preventDefault();
+          
+          const touchX = e.touches[0].clientX;
+          const deltaX = touchStartX - touchX;
+          currentScrollPosition = touchStartScroll + deltaX;
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          carouselTrack.style.transition = 'none';
+          
+          checkInfiniteLoop();
+          
+          const now = performance.now();
+          velocity = (currentScrollPosition - lastScrollPosition) / (now - lastScrollTime || 1);
+          lastScrollPosition = currentScrollPosition;
+          lastScrollTime = now;
+        }, { passive: false });
+        
+        carouselTrack.addEventListener('touchend', () => {
+          if (!isTouching) return;
+          isTouching = false;
+          
+          if (Math.abs(velocity) > 0.5) {
+            const inertiaDistance = velocity * 200;
+            const targetPosition = currentScrollPosition + inertiaDistance;
+            smoothScrollTo(targetPosition, 400);
+          } else {
+            if (totalCardWidth > 0) {
+              const nearestCardPosition = Math.round(currentScrollPosition / totalCardWidth) * totalCardWidth;
+              smoothScrollTo(nearestCardPosition);
+            }
+          }
+          
+          checkInfiniteLoop();
+          updateGradientFades();
+          velocity = 0;
+        }, { passive: true });
+        
+        carouselTrack.addEventListener('mousedown', (e) => {
+          if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
+          }
+          isScrolling = false;
+          isDragging = true;
+          dragStartX = e.clientX;
+          dragStartScroll = currentScrollPosition;
+          carouselContainer.style.cursor = 'grabbing';
+          e.preventDefault();
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          
+          const deltaX = dragStartX - e.clientX;
+          currentScrollPosition = dragStartScroll + deltaX;
+          carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+          carouselTrack.style.transition = 'none';
+          
+          checkInfiniteLoop();
+          
+          const now = performance.now();
+          velocity = (currentScrollPosition - lastScrollPosition) / (now - lastScrollTime || 1);
+          lastScrollPosition = currentScrollPosition;
+          lastScrollTime = now;
+        });
+        
+        document.addEventListener('mouseup', () => {
+          if (!isDragging) return;
+          isDragging = false;
+          carouselContainer.style.cursor = 'grab';
+          
+          if (Math.abs(velocity) > 0.5) {
+            const inertiaDistance = velocity * 200;
+            const targetPosition = currentScrollPosition + inertiaDistance;
+            smoothScrollTo(targetPosition, 400);
+          } else {
+            if (totalCardWidth > 0) {
+              const nearestCardPosition = Math.round(currentScrollPosition / totalCardWidth) * totalCardWidth;
+              smoothScrollTo(nearestCardPosition);
+            }
+          }
+          
+          checkInfiniteLoop();
+          updateGradientFades();
+          velocity = 0;
+        });
+        
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+              setupInfiniteLoop();
+              updateGradientFades();
+            }, 100);
+          });
+        } else {
+          setTimeout(() => {
+            setupInfiniteLoop();
+            updateGradientFades();
+          }, 100);
+        }
+        
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            calculateCardWidth();
+            const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
+            currentScrollPosition = startClonesWidth;
+            carouselTrack.style.transition = 'none';
+            carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
+            void carouselTrack.offsetWidth;
+            carouselTrack.style.transition = '';
+            updateGradientFades();
+          }, 100);
+        });
+      })();
+    </script>
+
+    <!-- Remote modal interactions -->
+    <script>
+      (() => {
+        const REMOTE_DATA = {
+          'L56': {
+            image: 'image/Atomberg/Atomberg Remote 001.2270.png',
+            images: [
+              'image/Atomberg/Atomberg Remote 001.2270.png',
+              'image/Atomberg/Atomberg Remote 001.2271.png',
+              'image/Atomberg/Atomberg Remote 001.2272.png',
+              'image/Atomberg/Atomberg Remote 001.2273.png'
+            ],
+            title: 'L56',
+            subtitle: 'Premium Control',
+            description: 'Our premium ceiling fan remote is engineered to deliver advanced functionality, enhanced comfort, and improved energy efficiency.',
+            specs: [
+              { label: 'Range', value: '15+ Meter' },
+              { label: 'Type', value: 'IR' },
+              { label: 'Speed Control', value: 'Multi-speed with 6 precision settings' },
+              { label: 'Features', value: 'Smart sleep mode, Timer, LED control' },
+              { label: 'Design', value: 'Premium, Advanced functionality' }
+            ]
+          },
+          'L48': {
+            image: 'image/Orient/Orient Fan.2312.png',
+            images: [
+              'image/Orient/Orient Fan.2312.png',
+              'image/Orient/Orient Fan.2314.png',
+              'image/Orient/Orient Fan.2316.png',
+              'image/Orient/Orient Fan.2317.png'
+            ],
+            title: 'L48',
+            subtitle: 'Classic Design',
+            description: 'A dependable and intuitive remote control system for ceiling fans, designed to offer seamless operation with all the essential features.',
+            specs: [
+              { label: 'Range', value: '20+ Meter' },
+              { label: 'Type', value: 'IR/RF' },
+              { label: 'Speed Control', value: '5-speed for optimal airflow' },
+              { label: 'Features', value: 'Timer up to 8 hours, Energy-saving mode, Boost' },
+              { label: 'Design', value: 'Dependable, Intuitive' }
+            ]
+          },
+          'L91': {
+            image: 'image/havells/Havells Pebble Remote.2320.png',
+            images: [
+              'image/havells/Havells Pebble Remote.2320.png',
+              'image/havells/Havells Pebble Remote.2321.png',
+              'image/havells/Havells Pebble Remote.2322.png',
+              'image/havells/Havells Pebble Remote.2323.png'
+            ],
+            title: 'L91',
+            subtitle: 'Universal Compatibility',
+            description: 'A versatile remote control solution compatible with most ceiling and pedestal fans, delivering essential features for seamless everyday use.',
+            specs: [
+              { label: 'Range', value: '20+ Meter' },
+              { label: 'Type', value: 'IR/RF' },
+              { label: 'Speed Control', value: '5-speed control' },
+              { label: 'Features', value: 'Timer, Sleep Mode, Wide compatibility' },
+              { label: 'Design', value: 'Versatile, Essential features' }
+            ]
+          }
+        };
+
+        const modal = document.getElementById('remoteModal');
+        const modalImage = document.getElementById('modalRemoteImage');
+        const modalThumbnails = document.getElementById('modalImageThumbnails');
+        const modalTitle = document.getElementById('modalRemoteTitle');
+        const modalSubtitle = document.getElementById('modalRemoteSubtitle');
+        const modalDescription = document.getElementById('modalRemoteDescription');
+        const modalSpecs = document.getElementById('modalRemoteSpecs');
+        const modalClose = document.querySelector('.remote-modal-close');
+        const modalBackdrop = document.querySelector('.remote-modal-backdrop');
+        const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
+        const modalCarouselNext = document.querySelector('.modal-carousel-next');
+        const scrollContainer = document.querySelector('.scroll-snap-container');
+
+        let currentImages = [];
+        let currentImageIndex = 0;
+
+        function changeModalImage(index) {
+          if (currentImages.length === 0) return;
+          currentImageIndex = (index + currentImages.length) % currentImages.length;
+          
+          modalImage.style.opacity = '0';
+          setTimeout(() => {
+            modalImage.src = currentImages[currentImageIndex];
+            modalImage.alt = `${REMOTE_DATA[modalTitle.textContent.trim()]?.title || 'Remote'} - View ${currentImageIndex + 1}`;
+            modalImage.style.opacity = '1';
+          }, 150);
+          
+          const thumbnails = modalThumbnails.querySelectorAll('.modal-thumbnail');
+          thumbnails.forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentImageIndex);
+          });
+        }
+
+        function updateCarouselVisibility() {
+          const hasMultipleImages = currentImages.length > 1;
+          if (modalCarouselPrev) {
+            modalCarouselPrev.style.display = hasMultipleImages ? 'flex' : 'none';
+          }
+          if (modalCarouselNext) {
+            modalCarouselNext.style.display = hasMultipleImages ? 'flex' : 'none';
+          }
+          if (modalThumbnails) {
+            modalThumbnails.style.display = hasMultipleImages ? 'flex' : 'none';
+          }
+        }
+
+        function nextModalImage() {
+          const nextIndex = (currentImageIndex + 1) % currentImages.length;
+          changeModalImage(nextIndex);
+        }
+
+        function prevModalImage() {
+          const prevIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+          changeModalImage(prevIndex);
+        }
+
+        if (modalCarouselNext) {
+          modalCarouselNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            nextModalImage();
+          });
+        }
+
+        if (modalCarouselPrev) {
+          modalCarouselPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            prevModalImage();
+          });
+        }
+
+        function openModal(remoteName) {
+          const data = REMOTE_DATA[remoteName];
+          if (!data) return;
+
+          currentImages = data.images || [data.image];
+          currentImageIndex = 0;
+
+          modalImage.src = currentImages[0];
+          modalImage.alt = data.title;
+
+          modalThumbnails.innerHTML = '';
+          currentImages.forEach((imgSrc, index) => {
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'modal-thumbnail' + (index === 0 ? ' active' : '');
+            thumbnail.innerHTML = `<img src="${imgSrc}" alt="${data.title} - View ${index + 1}" />`;
+            thumbnail.addEventListener('click', () => {
+              changeModalImage(index);
+            });
+            modalThumbnails.appendChild(thumbnail);
+          });
+
+          modalTitle.textContent = data.title;
+          modalSubtitle.textContent = data.subtitle;
+          modalDescription.textContent = data.description;
+
+          modalSpecs.innerHTML = '';
+          data.specs.forEach(spec => {
+            const specItem = document.createElement('div');
+            specItem.className = 'spec-item';
+            specItem.innerHTML = `
+              <div class="spec-label">${spec.label}</div>
+              <div class="spec-value">${spec.value}</div>
+            `;
+            modalSpecs.appendChild(specItem);
+          });
+
+          if (scrollContainer) {
+            scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
+            scrollContainer.style.overflow = 'hidden';
+            scrollContainer.style.position = 'fixed';
+            scrollContainer.style.width = '100%';
+            scrollContainer.style.height = '100vh';
+            scrollContainer.style.top = `-${scrollContainer.scrollTop}px`;
+            scrollContainer.style.left = '0';
+            scrollContainer.style.right = '0';
+          }
+
+          document.body.classList.add('modal-open');
+          document.body.style.overflow = 'hidden';
+          modal.classList.add('active');
+          updateCarouselVisibility();
+        }
+
+        function closeModal() {
+          modal.classList.remove('active');
+          document.body.classList.remove('modal-open');
+          document.body.style.overflow = '';
+
+          if (scrollContainer) {
+            const savedScrollTop = scrollContainer.dataset.scrollTop || 0;
+            scrollContainer.style.overflow = '';
+            scrollContainer.style.position = '';
+            scrollContainer.style.width = '';
+            scrollContainer.style.height = '';
+            scrollContainer.style.top = '';
+            scrollContainer.style.left = '';
+            scrollContainer.style.right = '';
+            scrollContainer.scrollTop = savedScrollTop;
+            delete scrollContainer.dataset.scrollTop;
+          }
+        }
+
+        document.querySelectorAll('.collection-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const titleElement = card.querySelector('.collection-card-title');
+            if (titleElement) {
+              openModal(titleElement.textContent.trim());
+            }
+          });
+        });
+
+        modalClose?.addEventListener('click', closeModal);
+        modalBackdrop?.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+          }
+        });
+
+        const modalBody = document.querySelector('.remote-modal-body');
+        const modalInfoSection = document.querySelector('.remote-modal-info-section');
+
+        modalBody?.addEventListener('wheel', (e) => e.stopPropagation(), { passive: false });
+        modalBody?.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: false });
+        modalInfoSection?.addEventListener('wheel', (e) => e.stopPropagation(), { passive: false });
+        modalInfoSection?.addEventListener('touchmove', (e) => e.stopPropagation(), { passive: false });
+      })();
+    </script>
     
   </body>
 </html> 

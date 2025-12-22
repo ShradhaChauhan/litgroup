@@ -135,25 +135,8 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', handleProductScroll);
     }
 
-    // Animate elements on scroll
-    const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature-card, .function-item, .sustainability-item');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-            
-            if (elementPosition < windowHeight - 50) {
-                element.classList.add('animate');
-            }
-        });
-    };
-    
-    // Initial check for elements in view
-    animateOnScroll();
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', animateOnScroll);
+    // Animation system is now handled by shared-animations.js
+    // No need for scroll-based animation listeners
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -183,11 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Add staggered animation to function items
-    const functionItems = document.querySelectorAll('.function-item');
-    functionItems.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.1}s`;
-    });
+    // Stagger animation is now handled by CSS classes (stagger-1, stagger-2, etc.)
+    // Applied via HTML class attributes for cleaner separation of concerns
     
     // Animate hero features on load
     const heroFeatures = document.querySelectorAll('.hero-feature-item');

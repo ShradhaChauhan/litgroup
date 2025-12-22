@@ -1,0 +1,131 @@
+/* ====================================================
+   SHARED SCROLL ANIMATIONS - GLITCH-FREE SYSTEM
+   ==================================================== */
+
+/* Initial state for all animated sections */
+.section,
+.feature-card,
+.function-item,
+.sustainability-item,
+.slide-left,
+.slide-right {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+/* Directional slide variants - initial state */
+.slide-left {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+
+.slide-right {
+  transform: translateX(40px);
+  opacity: 0;
+}
+
+/* Final state when element comes into view */
+.section.in-view,
+.feature-card.in-view,
+.function-item.in-view,
+.sustainability-item.in-view,
+.slide-left.in-view,
+.slide-right.in-view {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Remove will-change after animation completes for better performance */
+.section.animation-complete,
+.feature-card.animation-complete,
+.function-item.animation-complete,
+.sustainability-item.animation-complete,
+.slide-left.animation-complete,
+.slide-right.animation-complete {
+  will-change: auto;
+}
+
+/* Staggered animation delays (optional - only if elements have these classes) */
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.10s; }
+.stagger-3 { transition-delay: 0.15s; }
+.stagger-4 { transition-delay: 0.20s; }
+.stagger-5 { transition-delay: 0.25s; }
+.stagger-6 { transition-delay: 0.30s; }
+.stagger-7 { transition-delay: 0.35s; }
+.stagger-8 { transition-delay: 0.40s; }
+
+/* Ensure smooth hardware-accelerated animations */
+.section,
+.feature-card,
+.function-item,
+.sustainability-item,
+.slide-left,
+.slide-right {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Additional animation variants */
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.fade-in.in-view {
+  opacity: 1;
+}
+
+.fade-in.animation-complete {
+  will-change: auto;
+}
+
+/* Scale animation variant */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.scale-in.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scale-in.animation-complete {
+  will-change: auto;
+}
+
+/* Mobile optimization - reduce animation complexity */
+@media (max-width: 768px) {
+  .section,
+  .feature-card,
+  .function-item,
+  .sustainability-item,
+  .slide-left,
+  .slide-right {
+    transition-duration: 0.6s;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .section,
+  .feature-card,
+  .function-item,
+  .sustainability-item,
+  .slide-left,
+  .slide-right,
+  .fade-in,
+  .scale-in {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
