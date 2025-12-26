@@ -8,13 +8,14 @@ body {
 .blog-hero {
     position: relative;
     padding: 160px 5% 100px;
-    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1f62cc 100%);
+    background: 
+        linear-gradient(135deg, rgba(20, 20, 30, 0.88) 0%, rgba(30, 35, 45, 0.82) 50%, rgba(25, 30, 40, 0.85) 100%),
+        url('images/Blog Cover 1 (1).png') center center/cover no-repeat;
     color: white;
     overflow: hidden;
     min-height: 70vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: flex;
+    justify-content: center;
     align-items: center;
     max-width: 1600px;
     margin: 0 auto;
@@ -65,19 +66,15 @@ body {
 
 .blog-hero-content {
     position: relative;
-    max-width: 700px;
+    max-width: 900px;
     z-index: 2;
     animation: slideUpFade 1s ease-out;
+    text-align: center;
 }
 
 /* Hero Image Section */
 .blog-hero-image {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: slideInRight 1s ease-out;
+    display: none;
 }
 
 /* Hero Graphic Container */
@@ -538,7 +535,7 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     margin: 0 auto;
     padding: 0 60px;
@@ -581,6 +578,12 @@ body {
     opacity: 0;
 }
 
+/* Hide fade gradients when there's only one card */
+.blog-carousel-container:has(.blog-carousel-track:not(:has(.blog-card:nth-child(2))))::before,
+.blog-carousel-container:has(.blog-carousel-track:not(:has(.blog-card:nth-child(2))))::after {
+    display: none;
+}
+
 /* Blog Carousel Track */
 .blog-carousel-track {
     display: flex;
@@ -592,6 +595,12 @@ body {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    justify-content: center;
+}
+
+/* When there are multiple cards, override center alignment */
+.blog-carousel-track:has(.blog-card:nth-child(2)) {
+    justify-content: flex-start;
 }
 
 .blog-carousel-track::-webkit-scrollbar {
@@ -667,10 +676,19 @@ body {
     pointer-events: none;
 }
 
+/* Hide carousel arrows when there's only one card */
+.blog-carousel-track:not(:has(.blog-card:nth-child(2))) ~ .blog-carousel-btn {
+    display: none;
+}
+
+.blog-carousel-container:has(.blog-carousel-track:not(:has(.blog-card:nth-child(2)))) .blog-carousel-btn {
+    display: none;
+}
+
 .blog-card-image {
     position: relative;
     width: 100%;
-    height: 250px;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
     background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
 }
@@ -679,6 +697,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.3s ease;
 }
 
@@ -761,6 +780,7 @@ body {
     color: var(--dark-color);
     font-weight: 600;
     line-height: 1.3;
+    text-align: left;
 }
 
 .blog-card-content p {
@@ -768,6 +788,7 @@ body {
     line-height: 1.7;
     font-size: 0.95rem;
     flex: 1;
+    text-align: left;
 }
 
 /* Blog Single View */
@@ -817,15 +838,21 @@ body {
 
 .blog-single-image {
     width: 100%;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
     background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
 }
 
 .blog-single-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
+    border-radius: 8px;
 }
 
 .blog-single-article {
@@ -910,6 +937,26 @@ body {
     font-weight: 600;
 }
 
+.blog-article-content a {
+    color: #1f62cc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.blog-article-content a:hover {
+    color: #1d4ed8;
+    border-bottom: 1px solid #1d4ed8;
+}
+
+.blog-article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 .blog-article-content blockquote {
     border-left: 4px solid var(--primary-color);
     padding: 1.5rem;
@@ -989,25 +1036,19 @@ body {
     }
 
     .blog-single-image {
-        height: 350px;
+        height: 450px;
+        padding: 25px;
     }
 }
 
 @media (max-width: 1024px) {
     .blog-hero {
-        grid-template-columns: 1fr;
-        gap: 3rem;
         padding: 120px 3% 60px;
     }
 
-    .blog-hero-image {
-        order: 2;
-    }
-
     .blog-hero-content {
-        order: 1;
-        text-align: center;
         max-width: 100%;
+        text-align: center;
     }
 
     .hero-graphic-container {
@@ -1130,6 +1171,12 @@ body {
     .blog-carousel-track {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        justify-content: center;
+    }
+    
+    /* Override for multiple cards on mobile */
+    .blog-carousel-track:has(.blog-card:nth-child(2)) {
+        justify-content: flex-start;
     }
 
     .blog-card {
@@ -1138,9 +1185,6 @@ body {
         scroll-snap-align: center;
     }
 
-    .blog-card-image {
-        height: 220px;
-    }
 
     .blog-card-content {
         padding: 1.5rem;
@@ -1151,7 +1195,8 @@ body {
     }
 
     .blog-single-image {
-        height: 250px;
+        height: 300px;
+        padding: 20px;
     }
 
     .blog-single-article {
@@ -1260,6 +1305,15 @@ body {
     .blog-card {
         min-width: 90%;
     }
+    
+    /* Ensure single card is centered on mobile */
+    .blog-carousel-track {
+        justify-content: center;
+    }
+    
+    .blog-carousel-track:has(.blog-card:nth-child(2)) {
+        justify-content: flex-start;
+    }
 
     .blog-card-content h3 {
         font-size: 1.2rem;
@@ -1274,9 +1328,6 @@ body {
         font-size: 1rem;
     }
 
-    .blog-card-image {
-        height: 200px;
-    }
 
     .blog-card-content h3 {
         font-size: 1.2rem;

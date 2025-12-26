@@ -103,8 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Product scroll handling removed - causes flickering
         // Products now use IntersectionObserver for smooth animations (see below)
-    }
-
+        }
+        
     // Animation system is now handled by shared-animations.js
     // No need for scroll-based animation listeners
 

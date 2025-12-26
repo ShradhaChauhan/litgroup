@@ -1121,6 +1121,12 @@ body {
   height: 30px;
 }
 
+/* Lloyd logo - zoomed for better visibility without changing card size */
+.client-logo[alt="Lloyd"] {
+  transform: scale(1.8);
+  transform-origin: center;
+}
+
 .home-logo-left-gradient {
   position: absolute;
   top: 0;
@@ -2798,6 +2804,10 @@ body {
   transform: scale(1.08);
 }
 
+.client-logo-item:hover .client-logo[alt="Lloyd"] {
+  transform: scale(1.94);
+}
+
 /* Get in Touch Section - STB Style */
 /* CTA Section */
 .cta {
@@ -2847,6 +2857,14 @@ body {
   .client-logo {
     max-height: 45px;
   }
+
+  .client-logo[alt="Lloyd"] {
+    transform: scale(1.8);
+  }
+
+  .client-logo-item:hover .client-logo[alt="Lloyd"] {
+    transform: scale(1.94);
+  }
 }
 
 @media (max-width: 768px) {
@@ -2882,6 +2900,14 @@ body {
 
   .client-logo {
     max-height: 35px;
+  }
+
+  .client-logo[alt="Lloyd"] {
+    transform: scale(1.7);
+  }
+
+  .client-logo-item:hover .client-logo[alt="Lloyd"] {
+    transform: scale(1.84);
   }
 }
 
@@ -2919,6 +2945,14 @@ body {
 
   .client-logo {
     max-height: 30px;
+  }
+
+  .client-logo[alt="Lloyd"] {
+    transform: scale(1.6);
+  }
+
+  .client-logo-item:hover .client-logo[alt="Lloyd"] {
+    transform: scale(1.73);
   }
 }
 

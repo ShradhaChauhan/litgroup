@@ -315,7 +315,7 @@ Effortless reliability
     <div class="premium-container">
       <!-- Features Grid -->
       <div class="premium-features-section-header">
-        <h2 class="premium-features-title">Design Features</h2>
+        <h2 class="premium-features-title">Why Choose Our Adapters?</h2>
       </div>
       
       <!-- Desktop Grid View -->
@@ -496,56 +496,42 @@ Effortless reliability
     </div>
   </section>
 
-  <!-- Our Clients Section -->
-  <section class="clients-section scroll-snap-section">
-    <div class="clients-container">
-      <div class="clients-header">
-        <h2 class="clients-title">Our Trusted Clients</h2>
-        <p class="clients-subtitle">We work with world's leading brands and manufacturers</p>
-      </div>
-      
-      <div class="clients-logos-wrapper">
-        <div class="clients-logos-grid">
-          <div class="client-logo-item">
-            <img src="../images/Logos/samsung.png" alt="Samsung" class="client-logo" />
+  <!-- Power Supply Details Modal -->
+  <div class="remote-modal" id="powerModal">
+    <div class="remote-modal-backdrop"></div>
+    <div class="remote-modal-content">
+      <button class="remote-modal-close" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="remote-modal-body">
+        <div class="remote-modal-image-section">
+          <div class="modal-image-carousel">
+            <div class="modal-image-main">
+              <img id="modalPowerImage" src="" alt="" class="modal-remote-image" />
+            </div>
+            <div class="modal-image-thumbnails" id="modalImageThumbnails">
+              <!-- Thumbnails will be populated by JavaScript -->
+            </div>
+            <button class="modal-carousel-btn modal-carousel-prev" aria-label="Previous image">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-carousel-btn modal-carousel-next" aria-label="Next image">
+              <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/voltas-logo.png" alt="Voltas" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/mi.png" alt="Xiaomi" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/Havells_Logo.svg.png" alt="Havells" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/Reliance_Jio_Logo.svg.png" alt="Jio" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/skyworth-color-logo.svg" alt="Skyworth" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/paytm.png" alt="Paytm" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/1200px-Blue_Star_primary_logo.png" alt="Blue Star" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/Godrej_Logo.svg.png" alt="Godrej" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/daikin logo.png" alt="Daikin" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/carrier logo.png" alt="Carrier" class="client-logo" />
-          </div>
-          <div class="client-logo-item">
-            <img src="../images/Logos/philips logo.png" alt="Philips" class="client-logo" />
+        </div>
+        <div class="remote-modal-info-section">
+          <h2 id="modalPowerTitle" class="modal-remote-title"></h2>
+          <p id="modalPowerSubtitle" class="modal-remote-subtitle"></p>
+          <div id="modalPowerDescription" class="modal-remote-description"></div>
+          <div class="modal-remote-specs">
+            <h3 class="specs-title">Specifications</h3>
+            <div id="modalPowerSpecs" class="specs-grid"></div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Get in Touch Section -->
   <section class="cta scroll-snap-section">
@@ -1332,6 +1318,299 @@ Effortless reliability
       featureCards.forEach(card => {
         observer.observe(card);
       });
+    })();
+
+    // Power Supply Modal JavaScript
+    (function() {
+      const POWER_DATA = {
+        '30W Power Supply': {
+          image: 'images/30w 1c 1usb.2775.png',
+          images: ['images/30w 1c 1usb.2775.png'],
+          title: '30W Power Supply',
+          subtitle: 'USB-C Fast Charging',
+          description: 'High-performance 30W power adapter with USB-C fast charging capability. Engineered for optimal efficiency and compatibility with a wide range of devices. Features advanced safety mechanisms and compact design for portability.',
+          specs: [
+            { label: 'Output Power', value: '30W' },
+            { label: 'Output Voltage', value: '5V/9V/12V/15V/20V' },
+            { label: 'Port Type', value: 'USB-C' },
+            { label: 'Efficiency', value: '>90%' }
+          ]
+        },
+        '20W Power Supply': {
+          image: 'images/20w Adapter.png',
+          images: ['images/20w Adapter.png'],
+          title: '20W Power Supply',
+          subtitle: 'Compact Design',
+          description: 'Ultra-compact 20W power adapter designed for everyday charging needs. Combines sleek aesthetics with reliable performance, perfect for smartphones and tablets. Built with premium components for long-lasting durability.',
+          specs: [
+            { label: 'Output Power', value: '20W' },
+            { label: 'Output Voltage', value: '5V/9V/12V' },
+            { label: 'Port Type', value: 'USB-C' },
+            { label: 'Efficiency', value: '>88%' }
+          ]
+        },
+        '65W Power Supply': {
+          image: 'images/65w C type.bip.3476.png',
+          images: ['images/65w C type.bip.3476.png'],
+          title: '65W Power Supply',
+          subtitle: 'High Power Output',
+          description: 'Professional-grade 65W power adapter for laptops and high-performance devices. Features intelligent power distribution and advanced thermal management for safe, efficient charging under demanding conditions.',
+          specs: [
+            { label: 'Output Power', value: '65W' },
+            { label: 'Output Voltage', value: '5V/9V/12V/15V/20V' },
+            { label: 'Port Type', value: 'USB-C' },
+            { label: 'Efficiency', value: '>92%' }
+          ]
+        },
+        '30W USB-A': {
+          image: 'images/30w Usb -A.2771.png',
+          images: ['images/30w Usb -A.2771.png'],
+          title: '30W USB-A',
+          subtitle: 'Universal Compatibility',
+          description: 'Versatile 30W power adapter with USB-A connector for universal device compatibility. Supports multiple charging protocols and provides stable, consistent power delivery for all your devices.',
+          specs: [
+            { label: 'Output Power', value: '30W' },
+            { label: 'Output Voltage', value: '5V/9V/12V' },
+            { label: 'Port Type', value: 'USB-A' },
+            { label: 'Efficiency', value: '>89%' }
+          ]
+        },
+        '25W Power Supply': {
+          image: 'images/20w & 25w Adapter.bip.3021.png',
+          images: ['images/20w & 25w Adapter.bip.3021.png'],
+          title: '25W Power Supply',
+          subtitle: 'Balanced Performance',
+          description: 'Optimally balanced 25W power adapter offering the perfect middle ground between power and portability. Ideal for daily use with smartphones, tablets, and other mobile devices.',
+          specs: [
+            { label: 'Output Power', value: '25W' },
+            { label: 'Output Voltage', value: '5V/9V/12V' },
+            { label: 'Port Type', value: 'USB-C' },
+            { label: 'Efficiency', value: '>88%' }
+          ]
+        },
+        '65W Dual Port': {
+          image: 'images/Adopter 65w 2c 1A.bip.3475.png',
+          images: ['images/Adopter 65w 2c 1A.bip.3475.png'],
+          title: '65W Dual Port',
+          subtitle: 'Multi-Device Charging',
+          description: 'Advanced 65W dual-port power adapter capable of charging multiple devices simultaneously. Features intelligent power allocation, ensuring optimal charging speed for each connected device.',
+          specs: [
+            { label: 'Output Power', value: '65W Total' },
+            { label: 'Output Voltage', value: '5V/9V/12V/15V/20V' },
+            { label: 'Port Type', value: '2x USB-C, 1x USB-A' },
+            { label: 'Efficiency', value: '>91%' }
+          ]
+        },
+        '45W Power Supply': {
+          image: 'images/Adopter 45w 1c & 1a.bip.3471.png',
+          images: ['images/Adopter 45w 1c & 1a.bip.3471.png'],
+          title: '45W Power Supply',
+          subtitle: 'Versatile Charging',
+          description: 'Flexible 45W power adapter with dual USB-C and USB-A ports for versatile charging options. Perfect for users with multiple devices requiring simultaneous charging capability.',
+          specs: [
+            { label: 'Output Power', value: '45W' },
+            { label: 'Output Voltage', value: '5V/9V/12V/15V/20V' },
+            { label: 'Port Type', value: 'USB-C + USB-A' },
+            { label: 'Efficiency', value: '>90%' }
+          ]
+        }
+      };
+
+      const modal = document.getElementById('powerModal');
+      const modalBackdrop = document.querySelector('.remote-modal-backdrop');
+      const modalClose = document.querySelector('.remote-modal-close');
+      const modalImage = document.getElementById('modalPowerImage');
+      const modalTitle = document.getElementById('modalPowerTitle');
+      const modalSubtitle = document.getElementById('modalPowerSubtitle');
+      const modalDescription = document.getElementById('modalPowerDescription');
+      const modalSpecs = document.getElementById('modalPowerSpecs');
+      const modalThumbnails = document.getElementById('modalImageThumbnails');
+      const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
+      const modalCarouselNext = document.querySelector('.modal-carousel-next');
+      const scrollContainer = document.querySelector('.scroll-snap-container');
+
+      if (!modal || !modalImage || !modalTitle || !modalSubtitle || !modalDescription || !modalSpecs || !modalThumbnails) return;
+
+      let isOpen = false;
+      let currentImageIndex = 0;
+      let currentImages = [];
+
+      const preventBackgroundScroll = (e) => {
+        e.preventDefault();
+      };
+
+      function openModal(powerName) {
+        const data = POWER_DATA[powerName];
+        if (!data) return;
+
+        // Set current images array
+        currentImages = data.images || [data.image];
+        currentImageIndex = 0;
+
+        // Set main image
+        modalImage.src = currentImages[0];
+        modalImage.alt = data.title;
+
+        // Populate thumbnails
+        modalThumbnails.innerHTML = '';
+        if (currentImages.length > 1) {
+          currentImages.forEach((imgSrc, index) => {
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'modal-thumbnail' + (index === 0 ? ' active' : '');
+            thumbnail.innerHTML = `<img src="${imgSrc}" alt="${data.title} - View ${index + 1}" />`;
+            thumbnail.addEventListener('click', () => {
+              changeModalImage(index);
+            });
+            modalThumbnails.appendChild(thumbnail);
+          });
+        }
+
+        modalTitle.textContent = data.title;
+        modalSubtitle.textContent = data.subtitle;
+        modalDescription.textContent = data.description;
+
+        modalSpecs.innerHTML = '';
+        data.specs.forEach(spec => {
+          const specItem = document.createElement('div');
+          specItem.className = 'spec-item';
+          specItem.innerHTML = `
+            <div class="spec-label">${spec.label}</div>
+            <div class="spec-value">${spec.value}</div>
+          `;
+          modalSpecs.appendChild(specItem);
+        });
+
+        if (scrollContainer) {
+          scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
+          scrollContainer.style.position = 'fixed';
+          scrollContainer.style.overflow = 'hidden';
+          scrollContainer.style.width = '100%';
+          scrollContainer.style.height = '100%';
+          scrollContainer.style.top = `-${scrollContainer.scrollTop}px`;
+          scrollContainer.style.left = '0';
+          scrollContainer.style.right = '0';
+        }
+
+        document.body.classList.add('modal-open');
+        document.body.style.overflow = 'hidden';
+        modal.classList.add('active');
+        isOpen = true;
+
+        updateCarouselVisibility();
+
+        document.addEventListener('wheel', preventBackgroundScroll, { passive: false });
+        document.addEventListener('touchmove', preventBackgroundScroll, { passive: false });
+      }
+
+      function changeModalImage(index) {
+        currentImageIndex = index;
+        modalImage.style.opacity = '0';
+        
+        setTimeout(() => {
+          modalImage.src = currentImages[index];
+          modalImage.alt = `${POWER_DATA[modalTitle.textContent]?.title || 'Power Supply'} - View ${index + 1}`;
+          modalImage.style.opacity = '1';
+        }, 150);
+        
+        // Update active thumbnail
+        const thumbnails = modalThumbnails.querySelectorAll('.modal-thumbnail');
+        thumbnails.forEach((thumb, i) => {
+          thumb.classList.toggle('active', i === index);
+        });
+      }
+
+      // Show/hide carousel buttons based on number of images
+      function updateCarouselVisibility() {
+        const hasMultipleImages = currentImages.length > 1;
+        if (modalCarouselPrev) {
+          modalCarouselPrev.style.display = hasMultipleImages ? 'flex' : 'none';
+        }
+        if (modalCarouselNext) {
+          modalCarouselNext.style.display = hasMultipleImages ? 'flex' : 'none';
+        }
+        if (modalThumbnails) {
+          modalThumbnails.style.display = hasMultipleImages ? 'flex' : 'none';
+        }
+      }
+
+      function nextModalImage() {
+        const nextIndex = (currentImageIndex + 1) % currentImages.length;
+        changeModalImage(nextIndex);
+      }
+
+      function prevModalImage() {
+        const prevIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+        changeModalImage(prevIndex);
+      }
+
+      modalCarouselPrev?.addEventListener('click', prevModalImage);
+      modalCarouselNext?.addEventListener('click', nextModalImage);
+
+      // Keyboard navigation for modal images
+      document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('active')) {
+          if (e.key === 'ArrowRight') {
+            nextModalImage();
+          } else if (e.key === 'ArrowLeft') {
+            prevModalImage();
+          }
+        }
+      });
+
+      function closeModal() {
+        if (!isOpen) return;
+
+        modal.classList.remove('active');
+
+        document.removeEventListener('wheel', preventBackgroundScroll, { passive: false });
+        document.removeEventListener('touchmove', preventBackgroundScroll, { passive: false });
+
+        document.body.classList.remove('modal-open');
+        document.body.removeAttribute('style');
+
+        if (scrollContainer) {
+          const storedTop = parseInt(scrollContainer.dataset.scrollTop || '0', 10);
+          scrollContainer.style.position = '';
+          scrollContainer.style.overflow = '';
+          scrollContainer.style.width = '';
+          scrollContainer.style.height = '';
+          scrollContainer.style.top = '';
+          scrollContainer.style.left = '';
+          scrollContainer.style.right = '';
+          scrollContainer.scrollTop = storedTop;
+        }
+
+        isOpen = false;
+      }
+
+      // Attach click handlers to cards (including clones)
+      const collectionCards = document.querySelectorAll('.collection-card');
+      collectionCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.carousel-btn')) return;
+          const titleElement = card.querySelector('.collection-card-title');
+          if (titleElement) {
+            openModal(titleElement.textContent.trim());
+          }
+        });
+      });
+
+      // Close handlers
+      modalClose?.addEventListener('click', closeModal);
+      modalBackdrop?.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+
+      // Prevent modal inner scroll from bubbling
+      const modalBody = document.querySelector('.remote-modal-body');
+      const modalInfoSection = document.querySelector('.remote-modal-info-section');
+
+      modalBody?.addEventListener('wheel', (e) => e.stopPropagation(), { passive: false });
+      modalInfoSection?.addEventListener('wheel', (e) => e.stopPropagation(), { passive: false });
     })();
   </script>
 </body>

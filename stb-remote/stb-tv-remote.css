@@ -1892,6 +1892,260 @@ body {
   }
 }
 
+/* ========================================
+   NEW LAYOUT - Centered Title + Two Columns
+   ======================================== */
+
+.hero-content-wrapper-new {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 90px 5% 20px;
+  z-index: 15;
+  gap: 10px;
+}
+
+/* Centered Title at Top */
+.hero-title-centered {
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-title-centered .hero-wavy-line {
+  width: 80px;
+  height: 3px;
+  background: #1a1a1a;
+  margin: 0 auto 20px;
+}
+
+.hero-headline-centered {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+  color: #1a1a1a;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+/* Two Column Layout Below */
+.hero-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  width: 100%;
+  max-width: 1300px;
+  align-items: center;
+  flex: 1;
+  margin-top: -10px;
+}
+
+/* Left Column - Image */
+.hero-image-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-image-container-new {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: -60px;
+}
+
+.remote-image-new {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  min-height: 550px;
+  object-fit: contain;
+  z-index: 3;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 10px 25px rgba(0, 0, 0, 0.12));
+  transform: scale(1.6);
+}
+
+/* Right Column - Text + Button */
+.hero-text-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding-left: 20px;
+}
+
+.hero-description-new {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 400;
+}
+
+.hero-cta-new {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #0071E3 0%, #005BBB 100%);
+  border: none;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.02em;
+  box-shadow: rgba(0, 113, 227, 0.25) 0px 8px 24px, rgba(0, 113, 227, 0.15) 0px 4px 12px;
+}
+
+.hero-cta-new::after {
+  content: '→';
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.hero-cta-new:hover {
+  background: linear-gradient(135deg, #005BBB 0%, #004a94 100%);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: rgba(0, 113, 227, 0.35) 0px 12px 32px, rgba(0, 113, 227, 0.2) 0px 6px 16px;
+}
+
+.hero-cta-new:hover::after {
+  transform: translateX(4px);
+}
+
+/* Responsive Design for New Layout */
+@media (max-width: 1200px) {
+  .hero-two-column {
+    gap: 60px;
+  }
+  
+  .hero-headline-centered {
+    font-size: 48px;
+  }
+  
+  .remote-image-new {
+    transform: scale(1.4);
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-content-wrapper-new {
+    gap: 10px;
+    padding: 120px 4% 30px;
+  }
+  
+  .hero-two-column {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .hero-image-container-new {
+    margin-top: -40px;
+  }
+  
+  .hero-text-column {
+    align-items: center;
+    text-align: center;
+    padding-left: 0;
+  }
+  
+  .hero-headline-centered {
+    font-size: 42px;
+  }
+  
+  .remote-image-new {
+    transform: scale(1.2);
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content-wrapper-new {
+    gap: 10px;
+    padding: 110px 3% 20px;
+  }
+  
+  .hero-headline-centered {
+    font-size: 36px;
+  }
+  
+  .hero-description-new {
+    font-size: 16px;
+  }
+  
+  .hero-two-column {
+    margin-top: 0;
+  }
+  
+  .hero-image-container-new {
+    margin-top: -30px;
+  }
+  
+  .remote-image-new {
+    max-height: 50vh;
+    min-height: 350px;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content-wrapper-new {
+    gap: 10px;
+    padding: 100px 3% 15px;
+  }
+  
+  .hero-headline-centered {
+    font-size: 30px;
+  }
+  
+  .hero-description-new {
+    font-size: 15px;
+  }
+  
+  .hero-two-column {
+    margin-top: 0;
+  }
+  
+  .hero-image-container-new {
+    margin-top: -20px;
+  }
+  
+  .remote-image-new {
+    min-height: 300px;
+    transform: scale(1);
+  }
+  
+  .hero-cta-new {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
 /* Content Wrapper - t4h Style Layout: Headline Top, Image Left, Text Right */
 .hero-content-wrapper-t4h {
   position: relative;
@@ -3746,11 +4000,13 @@ body {
 
 .clients-logos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
   align-items: center;
   justify-items: center;
   padding: 50px 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .client-logo-item {
@@ -3855,7 +4111,7 @@ body {
   height: auto;
   object-fit: contain;
   filter: none;
-  opacity: 0.75;
+  opacity: 1;
   transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
   position: relative;
   z-index: 2;
@@ -3866,6 +4122,16 @@ body {
   filter: none;
   opacity: 1;
   transform: scale(1.1);
+}
+
+.client-logo[alt="Airtel"],
+.client-logo[alt="Jio"] {
+  max-height: 50px;
+}
+
+.client-logo-item:hover .client-logo[alt="Airtel"],
+.client-logo-item:hover .client-logo[alt="Jio"] {
+  transform: scale(1.15);
 }
 
 /* Responsive Styles for Clients Section */
@@ -3892,8 +4158,9 @@ body {
   }
 
   .clients-logos-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    max-width: 800px;
   }
 
   .client-logo-item {
@@ -3932,9 +4199,10 @@ body {
   }
 
   .clients-logos-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 30px 0;
+    max-width: 100%;
   }
 
   .client-logo-item {

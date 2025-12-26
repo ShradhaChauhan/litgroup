@@ -843,12 +843,12 @@
 
       .clients-logos-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(6, 1fr);
         gap: 32px;
         align-items: center;
         justify-items: center;
         padding: 40px 0;
-        max-width: 1000px;
+        max-width: 1400px;
         margin: 0 auto;
       }
 
@@ -877,6 +877,9 @@
       .client-logo-item:nth-child(1) { animation-delay: 0.1s; }
       .client-logo-item:nth-child(2) { animation-delay: 0.2s; }
       .client-logo-item:nth-child(3) { animation-delay: 0.3s; }
+      .client-logo-item:nth-child(4) { animation-delay: 0.4s; }
+      .client-logo-item:nth-child(5) { animation-delay: 0.5s; }
+      .client-logo-item:nth-child(6) { animation-delay: 0.6s; }
 
       @keyframes fadeInUp {
         to {
@@ -932,6 +935,13 @@
       }
 
       /* Responsive Styles */
+      @media (max-width: 1400px) {
+        .clients-logos-grid {
+          max-width: 1200px;
+          gap: 28px;
+        }
+      }
+
       @media (max-width: 1200px) {
         .partners {
           padding: calc(80px + 50px) 0 100px 0;
@@ -950,8 +960,9 @@
         }
 
         .clients-logos-grid {
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+          grid-template-columns: repeat(3, 1fr);
           gap: 28px;
+          max-width: 1000px;
         }
 
         .client-logo-item {
@@ -982,9 +993,10 @@
         }
 
         .clients-logos-grid {
-          grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-          gap: 24px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
           padding: 30px 0;
+          max-width: 100%;
         }
 
         .client-logo-item {
@@ -1019,6 +1031,7 @@
           grid-template-columns: repeat(2, 1fr);
           gap: 16px;
           padding: 25px 0;
+          max-width: 100%;
         }
 
         .client-logo-item {
