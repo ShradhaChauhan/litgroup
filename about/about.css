@@ -2303,4 +2303,66 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ============================================
+   COMPREHENSIVE MOBILE RESPONSIVE ENHANCEMENTS
+   ============================================ */
+
+/* Prevent horizontal scroll */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Touch-friendly interactive elements */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  
+  .about-hero {
+    padding: 3rem 1.5rem;
+    min-height: 60vh;
+  }
+  
+  .about-hero-content {
+    padding-top: 120px;
+  }
+  
+  .about-hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .timeline-item {
+    padding: 1.5rem 1rem;
+  }
+  
+  .directors-grid {
+    gap: 1rem;
+  }
+  
+  .director-item {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero-content h1 {
+    font-size: 1.75rem;
+  }
+  
+  .director-info.active {
+    padding: 20px 20px;
+  }
 } 

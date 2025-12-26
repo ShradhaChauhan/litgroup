@@ -807,11 +807,21 @@ textarea {
   justify-content: center;
   width: 40px;
   height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  flex-shrink: 0;
+  flex-grow: 0;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: white;
   font-size: 1.2rem;
   transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
 }
 
 .social-links a:nth-of-type(1):hover i {
@@ -822,12 +832,20 @@ textarea {
   color: #0077b5;
 }
 
-.social-links a:nth-of-type(3):hover {
+.social-links a:nth-of-type(3):hover i {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+.social-links a:nth-of-type(4):hover i {
+  color: #1877F2;
+}
+
+.social-links a:nth-of-type(5):hover i {
+  color: #FF0000;
 }
 
 .social-links a:nth-of-type(1) img {
@@ -1942,5 +1960,77 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* ============================================
+   COMPREHENSIVE MOBILE RESPONSIVE ENHANCEMENTS
+   ============================================ */
+
+/* Prevent horizontal scroll */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Touch-friendly interactive elements */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  
+  .survey-form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-row .survey-form-group {
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+  
+  .radio-group,
+  .checkbox-group {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .survey-card-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .survey-form-group label {
+    font-size: 0.9rem;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    padding: 0.75rem;
+    font-size: 16px;
+  }
 }
 

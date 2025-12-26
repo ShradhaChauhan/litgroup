@@ -1346,3 +1346,62 @@ body {
         font-size: 1.75rem;
     }
 }
+
+/* ============================================
+   COMPREHENSIVE MOBILE RESPONSIVE ENHANCEMENTS
+   ============================================ */
+
+/* Prevent horizontal scroll */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Touch-friendly interactive elements */
+@media (max-width: 768px) {
+  button, a, input, select, textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .blog-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .blog-card-image {
+    height: 200px;
+  }
+  
+  .blog-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .blog-back-btn {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-card-image {
+    height: 180px;
+  }
+  
+  .blog-content {
+    padding: 1.25rem 0.875rem;
+  }
+}

@@ -152,7 +152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>
         </div>
 
-        <div class="solution-card" data-animate="right" data-index="1">
+        <div class="solution-card" data-animate="left" data-index="1">
           <div class="solution-icon">
             <i class="fas fa-sync-alt"></i>
           </div>
@@ -162,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </p>
         </div>
 
-        <div class="solution-card" data-animate="left" data-index="2">
+        <div class="solution-card" data-animate="right" data-index="2">
           <div class="solution-icon">
             <i class="fas fa-lightbulb"></i>
           </div>
@@ -351,20 +351,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 class="footer-logo"
               />
             </div>
-            <p>Premium remote controls for modern living</p>
-            <div class="social-links">
-              <a href="https://x.com/litgroupindia" target="_blank"
-                ><img src="../images/icons/twitter (1).png" alt=""
-              /></a>
-              <a
-                href="https://www.linkedin.com/company/litgroupindia/"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="https://www.instagram.com/litgroupindia" target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </div>
+          <p>Leading Remote Manufacturer with OEM and ODM Expertise.</p>
+          <div class="social-links">
+            <a href="https://x.com/litgroupindia" target="_blank"
+              ><img src="../images/icons/twitter (1).png" alt=""
+            /></a>
+            <a
+              href="https://www.linkedin.com/company/litgroupindia/"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://www.instagram.com/litgroupindia" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/litgroupindia/" target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://youtube.com/@litgroupindia?si=T0yL8S8HF-VqZqZw" target="_blank"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
           </div>
 
           <div class="footer-column">
@@ -388,8 +394,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h4>Company</h4>
             <ul>
               <li><a href="../about/">About Us</a></li>
+              <li><a href="../blog/">Blogs</a></li>
               <!-- <li><a href="#">Careers</a></li> -->
-              <!-- <li><a href="#">Blog</a></li> -->
               <li><a href="../contact/">Contact</a></li>
               <li><a href="../feedback/">Feedback</a></li>
               <li><a href="https://litpayments.in/" target="_blank" rel="noopener">Payments</a></li>
@@ -1293,6 +1299,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           document.body.classList.add('modal-open');
           document.body.style.overflow = 'hidden';
+          document.body.style.position = 'fixed';
           modal.classList.add('active');
           updateCarouselVisibility();
         }
@@ -1301,6 +1308,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           modal.classList.remove('active');
           document.body.classList.remove('modal-open');
           document.body.style.overflow = '';
+          document.body.style.position = '';
 
           if (scrollContainer) {
             const savedScrollTop = scrollContainer.dataset.scrollTop || 0;
@@ -1316,8 +1324,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         }
 
-        document.querySelectorAll('.collection-card').forEach(card => {
-          card.addEventListener('click', () => {
+        // Attach click handlers to cards (including clones)
+        const collectionCards = document.querySelectorAll('.collection-card');
+        collectionCards.forEach(card => {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', (e) => {
+            if (e.target.closest('.carousel-btn')) return;
             const titleElement = card.querySelector('.collection-card-title');
             if (titleElement) {
               openModal(titleElement.textContent.trim());

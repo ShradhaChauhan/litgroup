@@ -24,50 +24,65 @@ body {
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: none;
   scroll-behavior: auto; /* we use JS easing to control timing precisely */
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: thin; /* Firefox - shows thin scrollbar */
+  -ms-overflow-style: auto; /* IE and Edge - shows scrollbar */
   overscroll-behavior-y: contain; /* avoid scroll chaining */
+  z-index: 1;
 }
 
 .scroll-snap-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  width: 8px; /* Chrome, Safari, Opera - shows scrollbar */
+  z-index: 999; /* Ensure scrollbar is visible */
 }
 
-/* Each section snaps to viewport */
+.scroll-snap-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.scroll-snap-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.scroll-snap-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Responsive adjustments for navbar padding */
+@media (max-width: 768px) {
+  .scroll-snap-container {
+    padding-top: 80px; /* Smaller navbar on mobile */
+  }
+}
+
+/* Sections - simple scrolling like home page */
 .scroll-snap-section {
-  height: 100vh; /* each section fills viewport */
-  min-height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
-  /* Initial state - inactive */
-  opacity: 0.6;
-  transform: scale(0.98);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-              transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-              filter 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-  filter: blur(1px);
+  overflow: visible;
 }
 
-/* Active section - in focus */
-.scroll-snap-section.section-active {
-  opacity: 1;
-  transform: scale(1);
-  filter: blur(0);
-  z-index: 2;
+/* First section should account for navbar */
+.scroll-snap-section:first-child {
+  padding-top: 90px;
 }
 
-/* Inactive sections - out of focus */
+/* Remove all scroll effect styles */
+.scroll-snap-section.section-active,
 .scroll-snap-section:not(.section-active) {
-  opacity: 0.6;
-  transform: scale(0.98);
-  filter: blur(1px);
-  z-index: 1;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+/* Responsive adjustments for navbar padding */
+@media (max-width: 768px) {
+  .scroll-snap-section:first-child {
+    padding-top: 80px; /* Smaller navbar on mobile */
+  }
 }
 
 /* Enhanced content visibility within active sections */
@@ -126,7 +141,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: calc(50px + 60px);
+  padding-top: calc(50px + 40px);
   padding-bottom: 80px;
   padding-left: 0;
   padding-right: 0;
@@ -253,8 +268,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 120px);
-  padding: 15px 5% 20px;
+  min-height: calc(100vh - 90px);
+  padding: 5px 5% 20px;
   z-index: 15;
   gap: 10px;
 }
@@ -507,7 +522,7 @@ body {
 @media (max-width: 1400px) {
   .hero-content-wrapper-t4h {
     gap: 10px;
-    padding: 75px 5% 20px;
+    padding: 5px 5% 20px;
   }
 
   .hero-bottom-section {
@@ -535,7 +550,7 @@ body {
 @media (max-width: 1200px) {
   .hero-content-wrapper-t4h {
     gap: 10px;
-    padding: 75px 5% 20px;
+    padding: 5px 5% 20px;
   }
 
   .hero-headline-t4h {
@@ -594,7 +609,7 @@ body {
 @media (max-width: 992px) {
   .hero-content-wrapper-t4h {
     gap: 10px;
-    padding: 75px 4% 30px;
+    padding: 5px 4% 30px;
   }
   
   .hero-bottom-section {
@@ -636,7 +651,7 @@ body {
 
   .hero-content-wrapper-t4h {
     gap: 10px;
-    padding: 75px 3% 20px;
+    padding: 5px 3% 20px;
     min-height: calc(100vh - 120px);
   }
   
@@ -687,7 +702,7 @@ body {
 
   .hero-content-wrapper-t4h {
     gap: 10px;
-    padding: 70px 3% 15px;
+    padding: 5px 3% 15px;
     min-height: calc(100vh - 120px);
   }
   
@@ -1784,9 +1799,14 @@ body {
 .collection-card-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   filter: none;
+}
+
+/* Show right side of 20W Power Supply image */
+.power-20w-image {
+  object-position: right center;
 }
 
 .collection-card:hover .collection-card-image {
@@ -1958,7 +1978,7 @@ body {
 }
 
 .remote-modal-image-section {
-  background: linear-gradient(180deg, #F8F6F3 0%, #F5F2ED 50%, #F0EDE8 100%);
+  background: linear-gradient(180deg, #F5F5F7 0%, #E8E8ED 50%, #D1D1D6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1976,8 +1996,9 @@ body {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+    radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .modal-image-carousel {
@@ -2008,7 +2029,7 @@ body {
   object-fit: contain;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.2)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
   transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
   opacity: 1;
 }
@@ -3210,6 +3231,113 @@ footer.footer.scroll-snap-section {
 @media (max-width: 768px) {
   footer.footer.scroll-snap-section {
     padding-top: calc(80px + 1.5rem) !important; /* Navbar height + reduced spacing on mobile */
+  }
+}
+
+/* ============================================
+   COMPREHENSIVE MOBILE RESPONSIVE ENHANCEMENTS
+   ============================================ */
+
+/* Prevent horizontal scroll on all devices */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Touch-friendly interactive elements */
+@media (max-width: 768px) {
+  /* Ensure touch targets are at least 44x44px */
+  button, a, input, select, textarea, .carousel-btn, .modal-close-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on input focus (iOS) */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  
+  /* Better spacing for mobile */
+  .section-header {
+    padding: 0 1rem;
+  }
+  
+  /* Improved carousel touch support */
+  .carousel-track {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel-card {
+    scroll-snap-align: center;
+  }
+  
+  /* Better modal spacing on mobile */
+  .remote-modal-content {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+  }
+  
+  .remote-modal-body {
+    gap: 1rem;
+  }
+  
+  /* Improved image display */
+  .collection-card-image-wrapper {
+    min-height: 200px;
+  }
+  
+  /* Better text readability */
+  .collection-card-title {
+    font-size: 15px;
+  }
+  
+  .collection-card-subtitle {
+    font-size: 13px;
+  }
+  
+  /* Power Supply specific mobile improvements */
+  .hero-content-wrapper-t4h {
+    padding: 0 1rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .collection-title {
+    font-size: 28px;
+  }
+  
+  .carousel-card {
+    min-width: 260px;
+    width: 260px;
+  }
+  
+  .remote-modal-content {
+    margin: 0.25rem;
+    max-height: calc(100vh - 0.5rem);
+  }
+  
+  .remote-modal-image-section,
+  .remote-modal-info-section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .collection-card-image-wrapper {
+    height: 280px;
+  }
+  
+  .carousel-card {
+    min-width: 300px;
+    width: 300px;
   }
 }
 

@@ -11,52 +11,63 @@ html {
   overscroll-behavior-y: contain;
 }
 
-.scroll-snap-container {
-  height: 100vh;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  overscroll-behavior-y: contain;
+      .scroll-snap-container {
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scroll-snap-type: none;
+        scroll-behavior: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin; /* Firefox - shows thin scrollbar */
+        -ms-overflow-style: auto; /* IE and Edge - shows scrollbar */
+        overscroll-behavior-y: contain;
+        position: relative;
+        z-index: 1;
+      }
+
+      .scroll-snap-container::-webkit-scrollbar {
+        width: 8px; /* Chrome, Safari, Opera - shows scrollbar */
+        z-index: 999; /* Ensure scrollbar is visible */
+      }
+
+      /* First section should account for navbar */
+      .scroll-snap-section:first-child {
+        padding-top: 90px;
+      }
+
+      /* Responsive adjustments for navbar padding */
+      @media (max-width: 768px) {
+        .scroll-snap-section:first-child {
+          padding-top: 80px; /* Smaller navbar on mobile */
+        }
+      }
+
+.scroll-snap-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.scroll-snap-container::-webkit-scrollbar {
-  display: none;
+.scroll-snap-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
 }
 
-/* Each section snaps to viewport */
+.scroll-snap-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Sections - simple scrolling like home page */
 .scroll-snap-section {
-  min-height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
-  opacity: 0.6;
-  transform: scale(0.98);
-  transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-              transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-              filter 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-  filter: blur(1px);
+  overflow: visible;
 }
 
-/* Active section - in focus */
-.scroll-snap-section.section-active {
-  opacity: 1;
-  transform: scale(1);
-  filter: blur(0);
-  z-index: 2;
-}
-
-/* Inactive sections - out of focus */
+/* Remove all scroll effect styles */
+.scroll-snap-section.section-active,
 .scroll-snap-section:not(.section-active) {
-  opacity: 0.6;
-  transform: scale(0.98);
-  filter: blur(1px);
-  z-index: 1;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: none !important;
 }
 
 /* Scroll-triggered animations */
@@ -484,10 +495,9 @@ html {
     animation: pulse 2s infinite;
 }
 
-.overlay-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
-}
+    .overlay-icon:hover {
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+    }
 
 .overlay-icon i {
     font-size: 1.5rem;
@@ -556,6 +566,11 @@ html {
 .google-icon {
     top: 20%;
     right: 10%;
+    transform: translate(50%, -50%);
+}
+
+.google-icon:hover {
+    transform: translate(50%, -50%) scale(1.1);
 }
 
 .google-icon i {
@@ -565,6 +580,11 @@ html {
 .alexa-icon {
     top: 16%;
     left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.alexa-icon:hover {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .alexa-icon i {
@@ -575,6 +595,11 @@ html {
 .android-icon {
     bottom: 40%;
     right: 8%;
+    transform: translate(50%, 50%);
+}
+
+.android-icon:hover {
+    transform: translate(50%, 50%) scale(1.1);
 }
 
 .android-icon i {
@@ -584,6 +609,11 @@ html {
 .bluetooth-icon {
     bottom: 41%;
     left: 21%;
+    transform: translate(-50%, 50%);
+}
+
+.bluetooth-icon:hover {
+    transform: translate(-50%, 50%) scale(1.1);
 }
 
 .bluetooth-icon i {
@@ -694,21 +724,41 @@ html {
     .google-icon {
         top: 22%;
         right: 10%;
+        transform: translate(50%, -50%);
+    }
+    
+    .google-icon:hover {
+        transform: translate(50%, -50%) scale(1.1);
     }
     
     .alexa-icon {
         top: 32%;
         left: 18%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .alexa-icon:hover {
+        transform: translate(-50%, -50%) scale(1.1);
     }
     
     .android-icon {
         bottom: 35%;
         right: 28%;
+        transform: translate(50%, 50%);
+    }
+    
+    .android-icon:hover {
+        transform: translate(50%, 50%) scale(1.1);
     }
     
     .bluetooth-icon {
         bottom: 35%;
         left: 28%;
+        transform: translate(-50%, 50%);
+    }
+    
+    .bluetooth-icon:hover {
+        transform: translate(-50%, 50%) scale(1.1);
     }
 }
 
@@ -955,21 +1005,41 @@ html {
     .google-icon {
         top: 32%;
         right: 16%;
+        transform: translate(50%, -50%);
+    }
+    
+    .google-icon:hover {
+        transform: translate(50%, -50%) scale(1.1);
     }
     
     .alexa-icon {
         top: 32%;
         left: 16%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .alexa-icon:hover {
+        transform: translate(-50%, -50%) scale(1.1);
     }
     
     .android-icon {
         bottom: 35%;
         right: 25%;
+        transform: translate(50%, 50%);
+    }
+    
+    .android-icon:hover {
+        transform: translate(50%, 50%) scale(1.1);
     }
     
     .bluetooth-icon {
         bottom: 35%;
         left: 25%;
+        transform: translate(-50%, 50%);
+    }
+    
+    .bluetooth-icon:hover {
+        transform: translate(-50%, 50%) scale(1.1);
     }
 
 }
@@ -1027,21 +1097,41 @@ html {
     .google-icon {
         top: 20%;
         right: 16%;
+        transform: translate(50%, -50%);
+    }
+    
+    .google-icon:hover {
+        transform: translate(50%, -50%) scale(1.1);
     }
     
     .alexa-icon {
         top: 17%;
         left: 16%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .alexa-icon:hover {
+        transform: translate(-50%, -50%) scale(1.1);
     }
     
     .android-icon {
         bottom: 39%;
         right: 12%;
+        transform: translate(50%, 50%);
+    }
+    
+    .android-icon:hover {
+        transform: translate(50%, 50%) scale(1.1);
     }
     
     .bluetooth-icon {
         bottom: 40%;
         left: 16%;
+        transform: translate(-50%, 50%);
+    }
+    
+    .bluetooth-icon:hover {
+        transform: translate(-50%, 50%) scale(1.1);
     }
 
     .tv-hero {
@@ -2136,8 +2226,21 @@ html {
   max-height: 100%;
 }
 
+/* Zoom specific remote images to match L51 size */
+.collection-card-image.l50-image,
+.collection-card-image.l53-image,
+.collection-card-image.l94-image {
+  transform: scale(1.3);
+}
+
 .collection-card:hover .collection-card-image {
   transform: scale(1.45);
+}
+
+.collection-card:hover .collection-card-image.l50-image,
+.collection-card:hover .collection-card-image.l53-image,
+.collection-card:hover .collection-card-image.l94-image {
+  transform: scale(1.5);
 }
 
 .collection-card-content {
@@ -2376,7 +2479,7 @@ body.modal-open .scroll-snap-container {
 }
 
 .remote-modal-image-section {
-  background: linear-gradient(180deg, #F8F6F3 0%, #F5F2ED 50%, #F0EDE8 100%);
+  background: linear-gradient(180deg, #F5F5F7 0%, #E8E8ED 50%, #D1D1D6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2415,8 +2518,9 @@ body.modal-open .scroll-snap-container {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .modal-remote-image {
@@ -2425,7 +2529,7 @@ body.modal-open .scroll-snap-container {
   object-fit: contain;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.2)) drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
   transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
   opacity: 1;
 }
@@ -2728,4 +2832,115 @@ footer.footer.scroll-snap-section {
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
     }
+}
+
+/* ============================================
+   COMPREHENSIVE MOBILE RESPONSIVE ENHANCEMENTS
+   ============================================ */
+
+/* Prevent horizontal scroll on all devices */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Touch-friendly interactive elements */
+@media (max-width: 768px) {
+  /* Ensure touch targets are at least 44x44px */
+  button, a, input, select, textarea, .carousel-btn, .modal-close-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Prevent zoom on input focus (iOS) */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  
+  /* Better spacing for mobile */
+  .section-header {
+    padding: 0 1rem;
+  }
+  
+  /* Improved carousel touch support */
+  .carousel-track {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .carousel-card {
+    scroll-snap-align: center;
+  }
+  
+  /* Better modal spacing on mobile */
+  .remote-modal-content {
+    margin: 0.5rem;
+    max-height: calc(100vh - 1rem);
+  }
+  
+  .remote-modal-body {
+    gap: 1rem;
+  }
+  
+  /* Improved image display */
+  .collection-card-image-wrapper {
+    min-height: 200px;
+  }
+  
+  /* Better text readability */
+  .collection-card-title {
+    font-size: 15px;
+  }
+  
+  .collection-card-subtitle {
+    font-size: 13px;
+  }
+  
+  /* Smart Remote specific mobile improvements */
+  .smart-hero-content {
+    padding: 0 1rem;
+  }
+  
+  .interaction-section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .collection-title {
+    font-size: 28px;
+  }
+  
+  .carousel-card {
+    min-width: 260px;
+    width: 260px;
+  }
+  
+  .remote-modal-content {
+    margin: 0.25rem;
+    max-height: calc(100vh - 0.5rem);
+  }
+  
+  .remote-modal-image-section,
+  .remote-modal-info-section {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .collection-card-image-wrapper {
+    height: 280px;
+  }
+  
+  .carousel-card {
+    min-width: 300px;
+    width: 300px;
+  }
 }
