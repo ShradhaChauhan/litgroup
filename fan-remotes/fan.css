@@ -1,14 +1,11 @@
-      /* Scroll Snap Container - Full Page Navigation */
+      /* Normal body scrolling */
       body {
-        overflow: hidden;
-        height: 100vh;
+        overflow: visible;
       }
 
       html {
-        overflow: hidden;
-        height: 100vh;
-        scroll-behavior: auto;
-        overscroll-behavior-y: contain;
+        overflow: visible;
+        scroll-behavior: smooth;
       }
 
       .scroll-snap-container {
@@ -77,9 +74,9 @@
         }
       }
 
-      /* Scroll-triggered animations */
+      /* Scroll-triggered animations - visible by default */
       [data-animate] {
-        opacity: 0;
+        opacity: 1;
         transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                     transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
@@ -866,13 +863,6 @@
       .clients-header {
         text-align: center;
         margin-bottom: 80px;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
-                    transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
-      }
-
-      .partners.section-active .clients-header {
         opacity: 1;
         transform: translateY(0);
       }
@@ -916,13 +906,6 @@
       .clients-logos-wrapper {
         width: 100%;
         overflow: hidden;
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.2s,
-                    transform 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.2s;
-      }
-
-      .partners.section-active .clients-logos-wrapper {
         opacity: 1;
         transform: translateY(0);
       }
@@ -1179,19 +1162,12 @@
         position: relative;
         z-index: 2;
         padding: 0 6%;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
-                    transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+        opacity: 1;
+        transform: translateY(0);
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-      }
-
-      .stb-collection-section.section-active .collection-container {
-        opacity: 1;
-        transform: translateY(0);
       }
 
       .collection-title {
@@ -1209,11 +1185,12 @@
                     transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
         position: relative;
         display: inline-block;
-        background: linear-gradient(135deg, #1A1A1A 0%, rgba(26, 26, 26, 0.95) 50%, #1A1A1A 100%);
+        background: linear-gradient(135deg, #1A1A1A 0%, #1A1A1A 50%, #1A1A1A 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         color: #1A1A1A;
+        opacity: 1;
       }
 
       .collection-title::after {
@@ -1228,14 +1205,9 @@
         border-radius: 2px;
       }
 
-      .stb-collection-section.section-active .collection-title {
+      .stb-collection-section .collection-title {
         opacity: 1;
         transform: translateY(0);
-      }
-
-      .stb-collection-section:not(.section-active) .collection-title {
-        opacity: 0.7;
-        transform: translateY(8px);
       }
 
       /* Carousel Styles */

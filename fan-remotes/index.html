@@ -105,11 +105,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </nav>
 
-    <!-- Scroll Snap Container -->
-    <div class="scroll-snap-container">
-  
     <!-- Fan Hero Section -->
-    <section class="fan-hero scroll-snap-section">
+    <section class="fan-hero">
       <div class="video-background">
         <video autoplay muted >
           <source src="media/Orient Fan animation.2268.mp4" type="video/mp4">
@@ -135,7 +132,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- Premium Series Showcase -->
-    <section class="custom-solutions scroll-snap-section">
+    <section class="custom-solutions">
       <div class="section-header">
         <h2>Premium Series Fan Remotes</h2>
         <p>Advanced features for exceptional control</p>
@@ -186,7 +183,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
    
     <!-- Fan Remotes Collection Section -->
-    <section id="fan-models" class="stb-collection-section scroll-snap-section">
+    <section id="fan-models" class="stb-collection-section">
       <div class="collection-container">
         <h2 class="collection-title">Our Fan Remote Collection</h2>
         
@@ -238,7 +235,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
      <!-- Benefits Section -->
-    <section class="fan-benefits scroll-snap-section">
+    <section class="fan-benefits">
       <div class="benefits-container">
         <div class="section-header">
           <h2>Why Choose Our Fan Remotes</h2>
@@ -298,7 +295,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- Our Partners Section -->
-    <section class="partners scroll-snap-section">
+    <section class="partners">
       <div class="clients-container">
         <div class="clients-header">
           <h2 class="clients-title">Some Of Our Happy Clients</h2>
@@ -331,7 +328,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- Call to Action -->
-    <section class="cta scroll-snap-section">
+    <section class="cta">
       <div class="cta-content">
         <h2>Ready to enhance your fan control experience?</h2>
         <p>Contact us today to learn more about our fan remote solutions</p>
@@ -340,7 +337,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- Footer -->
-    <footer class="footer scroll-snap-section">
+    <footer class="footer">
       <div class="footer-container">
         <div class="footer-grid">
           <div class="footer-column">
@@ -472,8 +469,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
     </footer>
-    </div>
-    <!-- End Scroll Snap Container -->
 
     <!-- Remote Details Modal -->
     <div class="remote-modal" id="remoteModal">
@@ -526,25 +521,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script src="../script.js"></script>
     <script src="fan.js"></script>
-
-    <!-- Smooth Section Glide Scroll -->
-    <script>
-      /* ====== JavaScript: Smooth section glide ====== */
-      (function () {
-        // Configuration
-        const DURATION = 900; // animation duration in ms
-        const QUIET_PERIOD = 80; // ignore small wheel spikes
-        const DEBOUNCE = 300; // don't accept another section change while animating
-        const EASING = function (t) { // easeInOutCubic
-          return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-        };
-
-        // Get scroll container and sections
-        const scrollContainer = document.querySelector('.scroll-snap-container');
-        if (!scrollContainer) return;
-
-        const sections = Array.from(document.querySelectorAll('.scroll-snap-section'));
-        if (!sections.length) return;
+<script>
 
         // Utilities
         const now = () => performance.now();
@@ -769,12 +746,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (animatedElements.length === 0) return;
 
           const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px'
+            threshold: 0.1,
+            rootMargin: '50px' // Trigger earlier
           };
 
           // Track animated elements to prevent re-triggering
           const animatedSet = new Set();
+
+          // Check if elements are already visible on page load
+          function checkInitialVisibility() {
+            animatedElements.forEach(element => {
+              const rect = element.getBoundingClientRect();
+              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+              if (isVisible && !animatedSet.has(element)) {
+                animatedSet.add(element);
+                element.classList.add('animate-in');
+              }
+            });
+          }
 
           const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -790,6 +779,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           animatedElements.forEach(element => {
             observer.observe(element);
           });
+
+          // Check initial visibility after a short delay
+          setTimeout(checkInitialVisibility, 100);
         }
       })();
     </script>
@@ -1191,7 +1183,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const modalBackdrop = document.querySelector('.remote-modal-backdrop');
         const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
         const modalCarouselNext = document.querySelector('.modal-carousel-next');
-        const scrollContainer = document.querySelector('.scroll-snap-container');
+        const scrollContainer = document.body;
 
         let currentImages = [];
         let currentImageIndex = 0;

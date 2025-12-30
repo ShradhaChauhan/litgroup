@@ -92,10 +92,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </nav>
 
-  <!-- Scroll Container for Snap Scrolling -->
-  <div class="scroll-snap-container">
   <!-- Hero Section -->
-  <section class="stb-hero scroll-snap-section">
+  <section class="stb-hero">
     <div class="hero-bg-premium relative overflow-hidden" id="hero-background-container">
       <!-- Ambient floating shapes for premium depth -->
       <div class="hero-floating-shape shape-1"></div>
@@ -148,7 +146,7 @@ Effortless reliability
           <!-- Right: Subheadline + CTA -->
           <div class="hero-right-column">
             <p class="hero-subheadline-t4h">
-              Engineered with precision, safety, and intelligent power management, our adapters deliver ultra-efficient performance for mobile devices, smart electronics, and next-generation hardware ecosystems.
+              LIT India is a trusted fast charger manufacturer India, delivering high-performance mobile charging solutions for OEMs and global brands. With advanced manufacturing infrastructure and stringent quality control, we produce reliable fast chargers designed for safety, efficiency, and scalability.
             </p>
             <a href="#power-supplies" class="hero-cta-t4h">Learn More</a>
           </div>
@@ -267,7 +265,7 @@ Effortless reliability
   <!-- </section> -->
 
   <!-- Design Features Section - Second Scroll -->
-  <section class="premium-features-section next-section scroll-snap-section">
+  <section class="premium-features-section next-section">
     <!-- Premium Background Elements -->
     <div class="premium-bg-shapes">
       <div class="bg-shape shape-1"></div>
@@ -364,7 +362,7 @@ Effortless reliability
   </section>
 
   <!-- Power Supply Collection Section -->
-  <section class="stb-collection-section scroll-snap-section">
+  <section class="stb-collection-section">
     <div class="collection-container">
       <h2 class="collection-title">Our Power Supply Collection</h2>
       
@@ -497,7 +495,7 @@ Effortless reliability
   </div>
 
   <!-- Get in Touch Section -->
-  <section class="cta scroll-snap-section">
+  <section class="cta">
     <div class="cta-content">
       <h2>Ready to Power Your Next Project?</h2>
       <p>
@@ -509,7 +507,7 @@ Effortless reliability
   </section>
 
   <!-- Footer -->
-  <footer class="footer scroll-snap-section">
+  <footer class="footer">
     <div class="footer-container">
       <div class="footer-grid">
         <div class="footer-column">
@@ -646,291 +644,12 @@ Effortless reliability
       </div>
     </div>
   </footer>
-  </div>
-  <!-- End Scroll Container -->
 
   <script src="../script.js"></script>
   <script src="power-supply.js"></script>
   <script src="../acproduct/product-script.js"></script>
   
-  <!-- Smooth Section Glide Scroll -->
   <script>
-    /* ====== JavaScript: Smooth section glide ====== */
-    (function () {
-      // Configuration
-      const DURATION = 900; // animation duration in ms (tune: 700-1200)
-      const QUIET_PERIOD = 80; // ignore small wheel spikes under this delta threshold
-      const DEBOUNCE = 300; // don't accept another section change for this ms while animating
-      const EASING = function (t) { // easeInOutCubic
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-      };
-
-      // Get scroll container and sections
-      const scrollContainer = document.querySelector('.scroll-snap-container');
-      if (!scrollContainer) {
-        console.warn('Scroll container not found, using normal scroll');
-        return;
-      }
-
-      const sections = Array.from(document.querySelectorAll('.scroll-snap-section'));
-      if (!sections.length) {
-        console.warn('No scroll sections found, using normal scroll');
-        return;
-      }
-      
-      // Ensure scroll container is scrollable
-      scrollContainer.style.height = '100vh';
-      scrollContainer.style.overflowY = 'auto';
-      
-      // Debug: Log container info
-      console.log('Scroll container initialized:', {
-        height: scrollContainer.offsetHeight,
-        scrollHeight: scrollContainer.scrollHeight,
-        sections: sections.length
-      });
-
-      // Utilities
-      const now = () => performance.now();
-      function animateScroll(startY, endY, duration, cb) {
-        const startTime = now();
-        function frame() {
-          const t = Math.min(1, (now() - startTime) / duration);
-          const eased = EASING(t);
-          scrollContainer.scrollTop = Math.round(startY + (endY - startY) * eased);
-          if (t < 1) {
-            requestId = requestAnimationFrame(frame);
-          } else {
-            cb && cb();
-          }
-        }
-        let requestId = requestAnimationFrame(frame);
-        return () => cancelAnimationFrame(requestId); // returns cancel function
-      }
-
-      // Find sections and helper functions
-      function getNearestSectionIndex(scrollY) {
-        let bestIdx = 0;
-        let bestDiff = Infinity;
-        sections.forEach((s, i) => {
-          const rect = s.getBoundingClientRect();
-          const containerRect = scrollContainer.getBoundingClientRect();
-          const top = scrollContainer.scrollTop + (rect.top - containerRect.top);
-          const diff = Math.abs(top - scrollY);
-          if (diff < bestDiff) {
-            bestDiff = diff;
-            bestIdx = i;
-          }
-        });
-        return bestIdx;
-      }
-
-      // State
-      let isAnimating = false;
-      let lastActionTime = 0;
-      let cancelAnimation = null;
-
-      // Core function to scroll to section index with soft glide
-      function scrollToSection(index) {
-        index = Math.max(0, Math.min(sections.length - 1, index));
-        const rect = sections[index].getBoundingClientRect();
-        const containerRect = scrollContainer.getBoundingClientRect();
-        const destTop = scrollContainer.scrollTop + (rect.top - containerRect.top);
-        const currentScroll = scrollContainer.scrollTop;
-        if (Math.abs(currentScroll - destTop) < 2) return; // already there
-        if (cancelAnimation) cancelAnimation();
-        isAnimating = true;
-        lastActionTime = Date.now();
-        cancelAnimation = animateScroll(currentScroll, destTop, DURATION, () => {
-          isAnimating = false;
-          cancelAnimation = null;
-        });
-      }
-
-      // Determine next/prev based on current scroll position
-      function goNext() {
-        const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
-        const nextIndex = Math.min(sections.length - 1, currentIndex + 1);
-        if (nextIndex !== currentIndex) scrollToSection(nextIndex);
-      }
-      function goPrev() {
-        const currentIndex = getNearestSectionIndex(scrollContainer.scrollTop);
-        const prevIndex = Math.max(0, currentIndex - 1);
-        if (prevIndex !== currentIndex) scrollToSection(prevIndex);
-      }
-
-      // Wheel/trackpad handling — translate vertical scroll impulses into section changes
-      let wheelTimeout;
-      scrollContainer.addEventListener('wheel', function (e) {
-        // If user is currently touching / dragging or we are animating, ignore small deltas
-        if (isAnimating) {
-          // allow user override: if they attempt a strong scroll, cancel animation and let native scroll
-          if (Math.abs(e.deltaY) > 120) {
-            if (cancelAnimation) cancelAnimation();
-            isAnimating = false;
-            cancelAnimation = null;
-            // Allow normal scroll
-            return;
-          } else {
-            e.preventDefault();
-            return;
-          }
-        }
-        // Prevent default tiny jittering - but allow larger scrolls
-        if (Math.abs(e.deltaY) < QUIET_PERIOD) {
-          // Allow small scrolls to pass through for fine control
-          return;
-        }
-
-        e.preventDefault();
-        clearTimeout(wheelTimeout);
-        wheelTimeout = setTimeout(() => {
-          // Determine direction
-          if (e.deltaY > 0) {
-            // down
-            if (Date.now() - lastActionTime > DEBOUNCE) goNext();
-          } else {
-            // up
-            if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
-          }
-        }, 10);
-      }, { passive: false });
-
-      // Keyboard support (PageDown/PageUp, Arrow keys, Home/End)
-      window.addEventListener('keydown', function (e) {
-        if (isAnimating) return;
-        if (['ArrowDown','PageDown'].includes(e.code)) {
-          e.preventDefault();
-          goNext();
-        } else if (['ArrowUp','PageUp'].includes(e.code)) {
-          e.preventDefault();
-          goPrev();
-        } else if (e.code === 'Home') {
-          e.preventDefault();
-          scrollToSection(0);
-        } else if (e.code === 'End') {
-          e.preventDefault();
-          scrollToSection(sections.length - 1);
-        }
-      });
-
-      // Touch handling: simple swipe detection
-      let touchStartY = null;
-      let touchStartTime = 0;
-      scrollContainer.addEventListener('touchstart', function (e) {
-        if (e.touches && e.touches.length === 1) {
-          touchStartY = e.touches[0].clientY;
-          touchStartTime = Date.now();
-          if (cancelAnimation) { cancelAnimation(); isAnimating = false; cancelAnimation = null; } // allow user override
-        }
-      }, { passive: true });
-
-      scrollContainer.addEventListener('touchend', function (e) {
-        if (touchStartY === null) return;
-        const dy = (e.changedTouches[0].clientY - touchStartY);
-        const dt = Date.now() - touchStartTime;
-        const velocity = Math.abs(dy / dt);
-        touchStartY = null;
-        // small swipe threshold
-        if (Math.abs(dy) < 30 && velocity < 0.15) return;
-        if (dy < 0) {
-          // swipe up => next
-          if (Date.now() - lastActionTime > DEBOUNCE) goNext();
-        } else {
-          if (Date.now() - lastActionTime > DEBOUNCE) goPrev();
-        }
-      }, { passive: true });
-
-      // If user performs manual scroll (scrollbar/trackpad) while animating, cancel animation to allow manual control
-      let manualScrollTimeout;
-      scrollContainer.addEventListener('scroll', function () {
-        if (isAnimating) {
-          clearTimeout(manualScrollTimeout);
-          manualScrollTimeout = setTimeout(() => {
-            // if user hasn't interacted recently, allow auto animations again
-          }, 250);
-        }
-      }, { passive: true });
-
-      // Recalculate on resize (section heights may change)
-      window.addEventListener('resize', function () {
-        // optional: snap to nearest section to avoid being mid-way
-        const idx = getNearestSectionIndex(scrollContainer.scrollTop);
-        setTimeout(() => scrollToSection(idx), 120);
-      });
-
-      // Optional: if page loads and not at top, snap to nearest section smoothly
-      window.addEventListener('load', function () {
-        const idx = getNearestSectionIndex(scrollContainer.scrollTop);
-        setTimeout(() => scrollToSection(idx), 200);
-      });
-
-      // Section Focus Behavior - Visual focus when section enters viewport
-      (function() {
-        // IntersectionObserver to detect when section is centered (50% of viewport)
-        const observerOptions = {
-          root: scrollContainer,
-          rootMargin: '-25% 0px -25% 0px', // Trigger when section occupies 50% of viewport (centered)
-          threshold: [0, 0.3, 0.5, 0.7, 1.0] // Multiple thresholds for smoother transitions
-        };
-
-        let currentActiveIndex = 0;
-
-        const observer = new IntersectionObserver((entries) => {
-          // Find the entry with the highest intersection ratio
-          let maxRatio = 0;
-          let activeEntry = null;
-
-          entries.forEach(entry => {
-            if (entry.intersectionRatio > maxRatio) {
-              maxRatio = entry.intersectionRatio;
-              activeEntry = entry;
-            }
-          });
-
-          // If we have an active entry with significant visibility, activate it
-          if (activeEntry && activeEntry.intersectionRatio > 0.3) {
-            // Remove active class from all sections
-            sections.forEach((section, index) => {
-              section.classList.remove('section-active');
-              if (section === activeEntry.target) {
-                currentActiveIndex = index;
-              }
-            });
-            // Add active class to current section
-            activeEntry.target.classList.add('section-active');
-          }
-        }, observerOptions);
-
-        // Observe all sections
-        sections.forEach(section => {
-          observer.observe(section);
-        });
-
-        // Set initial active section (first section)
-        if (sections.length > 0) {
-          sections[0].classList.add('section-active');
-          currentActiveIndex = 0;
-        }
-
-        // Also handle scroll events for immediate feedback
-        scrollContainer.addEventListener('scroll', () => {
-          const scrollTop = scrollContainer.scrollTop;
-          const sectionHeight = window.innerHeight;
-          const newActiveIndex = Math.round(scrollTop / sectionHeight);
-          
-          if (newActiveIndex !== currentActiveIndex && newActiveIndex >= 0 && newActiveIndex < sections.length) {
-            sections.forEach(section => {
-              section.classList.remove('section-active');
-            });
-            sections[newActiveIndex].classList.add('section-active');
-            currentActiveIndex = newActiveIndex;
-          }
-        }, { passive: true });
-      })();
-
-      // Accessibility note: ensure focusable content inside sections remains accessible; this script avoids stealing focus.
-    })();
-
     // Collection Carousel JavaScript
     (function() {
       const carouselContainer = document.querySelector('.stb-collection-section .carousel-container');
@@ -1382,6 +1101,19 @@ Effortless reliability
             { label: 'Port Type', value: 'USB-C + USB-A' },
             { label: 'Efficiency', value: '>90%' }
           ]
+        },
+        '30W Premium': {
+          image: 'images/30w 1c 1usb 01.3462.png',
+          images: ['images/30w 1c 1usb 01.3462.png'],
+          title: '30W Premium',
+          subtitle: 'Advanced Technology',
+          description: 'Premium 30W power adapter featuring advanced charging technology and superior build quality. Designed for users who demand the best in performance, reliability, and design aesthetics.',
+          specs: [
+            { label: 'Output Power', value: '30W' },
+            { label: 'Output Voltage', value: '5V/9V/12V/15V/20V' },
+            { label: 'Port Type', value: 'USB-C' },
+            { label: 'Efficiency', value: '>91%' }
+          ]
         }
       };
 
@@ -1396,7 +1128,7 @@ Effortless reliability
       const modalThumbnails = document.getElementById('modalImageThumbnails');
       const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
       const modalCarouselNext = document.querySelector('.modal-carousel-next');
-      const scrollContainer = document.querySelector('.scroll-snap-container');
+      const scrollContainer = document.body;
 
       if (!modal || !modalImage || !modalTitle || !modalSubtitle || !modalDescription || !modalSpecs || !modalThumbnails) return;
 
@@ -1552,18 +1284,38 @@ Effortless reliability
         isOpen = false;
       }
 
-      // Attach click handlers to cards (including clones)
-      const collectionCards = document.querySelectorAll('.collection-card');
-      collectionCards.forEach(card => {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', (e) => {
+      // Attach click handlers using event delegation (works for original cards and clones)
+      const collectionSection = document.querySelector('.stb-collection-section');
+      if (collectionSection) {
+        // Use event delegation on the collection section
+        collectionSection.addEventListener('click', (e) => {
+          // Don't trigger if clicking on carousel buttons
           if (e.target.closest('.carousel-btn')) return;
+          
+          // Find the clicked card
+          const card = e.target.closest('.collection-card');
+          if (!card) return;
+          
           const titleElement = card.querySelector('.collection-card-title');
           if (titleElement) {
-            openModal(titleElement.textContent.trim());
+            const powerName = titleElement.textContent.trim();
+            openModal(powerName);
           }
         });
-      });
+        
+        // Set cursor pointer on all cards (including future clones)
+        const setCardCursors = () => {
+          const allCards = collectionSection.querySelectorAll('.collection-card');
+          allCards.forEach(card => {
+            card.style.cursor = 'pointer';
+          });
+        };
+        
+        setCardCursors();
+        
+        // Re-set cursors after a delay to catch cloned cards
+        setTimeout(setCardCursors, 500);
+      }
 
       // Close handlers
       modalClose?.addEventListener('click', closeModal);
