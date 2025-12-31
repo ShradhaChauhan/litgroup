@@ -129,98 +129,248 @@
 
       /* Fan Remote Page Specific Styles */
       .fan-hero {
-        padding: 90px 2rem 8rem;
         position: relative;
-        overflow: hidden;
-      }
-
-      .video-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 128%;
-        z-index: 0;
-        overflow: hidden;
-      }
-
-      .video-background video {
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        object-fit: cover;
-      }
-
-      .video-background .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.1);
-        z-index: 1;
+        overflow: visible;
+        background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #FFFFFF 100%);
+        min-height: 90vh;
+        padding-top: 90px;
       }
 
       .fan-hero::before {
-        display: none;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+          radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+          radial-gradient(circle at 80% 70%, rgba(147, 197, 253, 0.06) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, rgba(240, 250, 255, 0.4) 0%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+        animation: gradientMove 20s ease-in-out infinite;
       }
 
-      .fan-hero-container {
+      .fan-hero::after {
+        content: '';
+        position: absolute;
+        top: -20%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(147, 197, 253, 0.05) 40%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.6;
+        animation: floatSoft 18s ease-in-out infinite;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      @keyframes gradientMove {
+        0%, 100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes floatSoft {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0.6;
+        }
+        50% {
+          transform: translateY(-20px) scale(1.05);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 0.6;
+        }
+      }
+
+      /* Hero Content Wrapper - STB Style */
+      .hero-content-wrapper-new {
+        position: relative;
+        width: 100%;
         max-width: 1400px;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: calc(100vh - 120px);
+        padding: 30px 5% 20px;
+        z-index: 15;
+        gap: 10px;
+      }
+
+      /* Floating decorative shapes */
+      .hero-floating-shape {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.03) 50%, transparent 100%);
+        filter: blur(60px);
+        opacity: 0.7;
+        border-radius: 50%;
+        z-index: 1;
+        pointer-events: none;
+        animation: floatSoft 18s ease-in-out infinite;
+      }
+
+      .hero-floating-shape.shape-1 {
+        top: 15%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .hero-floating-shape.shape-2 {
+        width: 250px;
+        height: 250px;
+        top: 30%;
+        right: 5%;
+        animation-duration: 16s;
+        animation-delay: 2s;
+        background: radial-gradient(circle, rgba(147, 197, 253, 0.12) 0%, rgba(147, 197, 253, 0.04) 50%, transparent 100%);
+      }
+
+      .hero-floating-shape.shape-3 {
+        width: 280px;
+        height: 280px;
+        bottom: 10%;
+        left: 35%;
+        animation-duration: 20s;
+        animation-delay: 1s;
+        background: radial-gradient(circle, rgba(240, 250, 255, 0.6) 0%, rgba(240, 250, 255, 0.2) 50%, transparent 100%);
+      }
+
+      /* Centered Title at Top */
+      .hero-title-centered {
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-headline-centered {
+        font-size: 56px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin: 0;
+        color: #1a1a1a;
+        letter-spacing: -1px;
+        text-align: center;
+      }
+
+      /* Two Column Layout Below - Image Left, Text Right */
+      .hero-two-column {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3rem;
+        gap: 80px;
+        width: 100%;
+        max-width: 1300px;
         align-items: center;
+        flex: 1;
+        margin-top: -10px;
+      }
+      
+      /* Left Column - Image */
+      .hero-image-column {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
-        z-index: 2;
+        order: 1;
+      }
+      
+      /* Right Column - Text + Button */
+      .hero-text-column {
+        order: 2;
       }
 
-      .fan-hero-content {
-        text-align: left;
-      }
-
-      .fan-hero-content h1 {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: white;
-        line-height: 1.2;
-      }
-
-      .hero-mobile-image {
-        display: none;
-        max-width: 100%;
+      .hero-image-container-new {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
         height: auto;
-        margin: 1.5rem auto;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0;
+        margin-top: -60px;
+        margin-left: -40px;
       }
 
-      .fan-badge {
-        display: inline-block;
-        background-color: rgba(255, 255, 255, 0.9);
-        color: var(--primary-dark);
+      .remote-image-new {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: 75vh;
+        min-height: 320px;
+        object-fit: contain;
+        z-index: 3;
+        filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.18))
+          drop-shadow(0 10px 25px rgba(0, 0, 0, 0.12));
+        transform: scale(0.95);
+      }
+
+      /* Right Column - Text + Button */
+      .hero-text-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        padding-left: 20px;
+        order: 2;
+      }
+
+      .hero-description-new {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #6b7280;
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .hero-cta-new {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 32px;
+        font-size: 16px;
         font-weight: 600;
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-        border-radius: 30px;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        color: #FFFFFF;
+        background: linear-gradient(135deg, #0071E3 0%, #005BBB 100%);
+        border: none;
+        border-radius: 14px;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        letter-spacing: 0.02em;
+        box-shadow: rgba(0, 113, 227, 0.25) 0px 8px 24px, rgba(0, 113, 227, 0.15) 0px 4px 12px;
       }
 
-      .fan-hero-content p {
-        font-size: 1.2rem;
-        color: white;
-        margin-bottom: 2rem;
-        max-width: 90%;
-        margin-left: 0;
-        margin-right: auto;
+      .hero-cta-new::after {
+        content: '→';
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .hero-cta-new:hover {
+        background: linear-gradient(135deg, #005BBB 0%, #004a94 100%);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: rgba(0, 113, 227, 0.35) 0px 12px 32px, rgba(0, 113, 227, 0.2) 0px 6px 16px;
+      }
+
+      .hero-cta-new:hover::after {
+        transform: translateX(4px);
       }
 
       .fan-image-stack {
@@ -268,9 +418,35 @@
 
       .benefits-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
         margin-top: 3rem;
+      }
+
+      /* Desktop: 3 cards per row - First row: Precise Speed Control, Energy Efficient, Sleep Mode | Second row: Timer Function, Extended Range, Long Battery Life */
+      @media (min-width: 1400px) {
+        .benefits-grid {
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 2rem;
+          max-width: 100%;
+        }
+        
+        .benefit-card {
+          width: 100%;
+          max-width: 100%;
+          min-width: 0;
+        }
+      }
+      
+      /* Large desktop: 3 cards per row */
+      @media (min-width: 1200px) and (max-width: 1399px) {
+        .benefits-grid {
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 1.75rem;
+        }
+        
+        .benefit-card {
+          min-width: 0;
+        }
       }
 
       .benefit-card {
@@ -563,6 +739,19 @@
 
         .benefits-grid {
           grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+        
+        .benefit-card {
+          padding: 2rem 1.5rem;
+        }
+        
+        .benefit-card h3 {
+          font-size: 1.2rem;
+        }
+        
+        .benefit-card p {
+          font-size: 0.95rem;
         }
 
         .model-content,
@@ -601,6 +790,28 @@
           gap: 1.5rem;
         }
         
+        .benefit-card {
+          padding: 2rem 1.5rem;
+        }
+        
+        .benefit-icon {
+          width: 70px;
+          height: 70px;
+          margin-bottom: 1.25rem;
+        }
+        
+        .benefit-icon i {
+          font-size: 2rem;
+        }
+        
+        .benefit-card h3 {
+          font-size: 1.25rem;
+        }
+        
+        .benefit-card p {
+          font-size: 0.95rem;
+        }
+        
         .model-content,
         #atomberg-smart-content,
         #atomberg-classic-content,
@@ -613,81 +824,168 @@
         }
       }
 
+      /* Responsive Design for New Layout */
+      @media (max-width: 1200px) {
+        .hero-two-column {
+          gap: 60px;
+        }
+        
+        .hero-headline-centered {
+          font-size: 48px;
+        }
+        
+        .remote-image-new {
+          transform: scale(0.85);
+          min-height: 280px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero-content-wrapper-new {
+          gap: 10px;
+          padding: 120px 4% 30px;
+        }
+        
+        .hero-two-column {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          margin-top: 0;
+        }
+        
+        .hero-headline-centered {
+          font-size: 42px;
+        }
+        
+        .hero-image-container-new {
+          margin-top: 0;
+          margin-left: -20px;
+        }
+        
+        .remote-image-new {
+          transform: scale(0.75);
+          min-height: 240px;
+        }
+        
+        .hero-text-column {
+          align-items: center;
+          text-align: center;
+          padding-left: 0;
+        }
+        
+        .hero-cta-new {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+          margin: 0 auto;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+
       @media (max-width: 768px) {
         .fan-hero {
-          padding: 80px 1.5rem 4rem;
-          min-height: 85vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #ffffff;
-          position: relative;
-        }
-        
-        .fan-hero::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(255, 255, 255, 0.92);
-          z-index: 1;
-        }
-        
-        .fan-hero::after {
-          content: '';
-          position: absolute;
-          top: -20%;
-          right: -20%;
-          width: 60%;
-          height: 60%;
-          background: radial-gradient(circle, rgba(248, 250, 255, 0.6) 0%, rgba(255, 255, 255, 0) 70%);
-          border-radius: 50%;
-          z-index: 0;
-        }
-        
-        .video-background {
-          opacity: 0;
-        }
-        
-        .fan-hero-container {
-          grid-template-columns: 1fr;
-          text-align: center;
-          gap: 2rem;
-        }
-        
-        .fan-hero-content {
-          text-align: center;
-          width: 100%;
-          position: relative;
-          z-index: 2;
-          animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .fan-badge {
-          font-size: 0.75rem;
-          padding: 0.4rem 0.9rem;
-          margin-bottom: 1.25rem;
-          letter-spacing: 0.3px;
+          min-height: auto;
+          height: auto;
+          overflow: visible;
+          padding-top: 80px;
         }
 
-        .fan-hero-content h1 {
-          font-size: 2.75rem;
-          font-weight: 700;
-          line-height: 1.15;
-          margin-bottom: 1.25rem;
-          letter-spacing: -0.5px;
-          color: var(--dark-color);
+        .hero-content-wrapper-new {
+          gap: 10px;
+          padding: 20px 3% 80px;
+          min-height: auto;
         }
         
-        .hero-mobile-image {
-          display: block;
-          max-width: 80%;
-          margin: 1.5rem auto 2rem;
+        .hero-headline-centered {
+          font-size: 36px;
         }
         
-        .fan-hero-content p {
+        .hero-description-new {
+          font-size: 16px;
+        }
+        
+        .hero-two-column {
+          margin-top: 0;
+          gap: 30px;
+          margin-bottom: 20px;
+        }
+        
+        .hero-text-column {
+          gap: 20px;
+          padding-bottom: 10px;
+        }
+        
+        .hero-image-container-new {
+          margin-top: -30px;
+          margin-left: -15px;
+        }
+        
+        .remote-image-new {
+          max-height: 50vh;
+          min-height: 200px;
+          transform: scale(0.65);
+        }
+        
+        .hero-cta-new {
+          width: 100%;
+          max-width: 280px;
+          justify-content: center;
+          margin: 0 auto;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-content-wrapper-new {
+          gap: 10px;
+          padding: 100px 3% 80px;
+          min-height: auto;
+        }
+        
+        .hero-headline-centered {
+          font-size: 30px;
+        }
+        
+        .hero-description-new {
+          font-size: 15px;
+        }
+        
+        .hero-two-column {
+          margin-top: 0;
+          gap: 25px;
+          margin-bottom: 20px;
+        }
+        
+        .hero-text-column {
+          gap: 18px;
+          padding-bottom: 10px;
+        }
+        
+        .hero-image-container-new {
+          margin-top: -20px;
+          margin-left: -10px;
+        }
+        
+        .remote-image-new {
+          min-height: 180px;
+          transform: scale(0.6);
+        }
+        
+        .hero-cta-new {
+          padding: 14px 28px;
+          font-size: 15px;
+          width: 100%;
+          max-width: 260px;
+          justify-content: center;
+          margin: 0 auto;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+
+      /* Legacy styles cleanup - keeping for compatibility */
+      .fan-hero-content p {
           font-size: 1.1rem;
           line-height: 1.6;
           margin-bottom: 1.75rem;
@@ -714,6 +1012,31 @@
 
         .benefits-grid {
           grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        
+        .benefit-card {
+          padding: 1.75rem 1.5rem;
+        }
+        
+        .benefit-icon {
+          width: 65px;
+          height: 65px;
+          margin-bottom: 1rem;
+        }
+        
+        .benefit-icon i {
+          font-size: 1.8rem;
+        }
+        
+        .benefit-card h3 {
+          font-size: 1.15rem;
+          margin-bottom: 0.75rem;
+        }
+        
+        .benefit-card p {
+          font-size: 0.9rem;
+          line-height: 1.5;
         }
 
         .specs-grid {

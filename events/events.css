@@ -7,11 +7,15 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   align-items: center;
-  padding: 6rem 5vw 4rem;
+  padding-top: calc(80px + 4rem);
+  padding-bottom: 4rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
   background: var(--events-bg);
   color: #fff;
   position: relative;
   overflow: hidden;
+  min-height: calc(100vh - 80px);
 }
 
 .events-hero-media {
@@ -19,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100%;
 }
 
 .hero-gallery {
@@ -27,7 +32,8 @@
   gap: 1.75rem;
   width: 100%;
   max-width: 520px;
-  padding-top: 40px;
+  align-self: center;
+  margin: 0 auto;
 }
 
 .hero-card {
@@ -37,6 +43,9 @@
   min-height: 200px;
   box-shadow: 0 25px 45px rgba(6, 22, 51, 0.45);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-card img {
@@ -44,6 +53,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  object-position: center;
 }
 
 .hero-card::after {
@@ -95,6 +105,11 @@
     grid-template-columns: repeat(2, minmax(160px, 1fr));
     max-width: 480px;
     gap: 1.5rem;
+    align-self: center;
+  }
+  
+  .events-hero-media {
+    align-items: center;
   }
   
   .categories-grid {
@@ -108,7 +123,7 @@
 
 @media (max-width: 768px) {
   .events-hero {
-    padding: 8rem 1.5rem 4rem;
+    padding: calc(80px + 3rem) 1.5rem 3rem;
     min-height: 85vh;
     display: grid;
     grid-template-columns: 1fr;
@@ -150,16 +165,21 @@
   
   .events-hero-media {
     margin-top: 2.5rem;
+    align-items: center;
   }
   
   .hero-gallery {
     grid-template-columns: 1fr;
     max-width: 100%;
     gap: 1rem;
+    align-self: center;
   }
   
   .hero-card {
     min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .categories-grid {
@@ -181,7 +201,7 @@
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
   .events-hero {
-    padding: 7rem 1.25rem 3.5rem;
+    padding: calc(80px + 2.5rem) 1.25rem 2.5rem;
     min-height: 80vh;
   }
   
@@ -208,10 +228,18 @@
     max-width: 100%;
     gap: 0.75rem;
     margin-top: 2rem;
+    align-self: center;
   }
   
   .hero-card {
     min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .events-hero-media {
+    align-items: center;
   }
   
   .event-categories,

@@ -1113,6 +1113,7 @@ body {
     -webkit-transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000px;
+    gap: 2rem;
 }
 
 .home-logo-wrapper {
@@ -1132,14 +1133,16 @@ body {
 
 .client-logo {
     height: 40px;
-    margin: 0 1rem;
+    margin: 0;
     object-fit: contain;
     opacity: 1; /* Changed from 0.85 to 1 */
     transition: opacity 0.3s ease, transform 0.3s ease;
     background: transparent !important;
     flex-shrink: 0;
-    padding: 0 5px;
-    min-width: 80px;
+    padding: 0;
+    min-width: 120px;
+    max-width: 180px;
+    width: auto;
     position: relative;
     z-index: 1;
     filter: contrast(1.1) brightness(1); /* Added to enhance visibility */
@@ -1148,17 +1151,19 @@ body {
 
 /* Target Daikin logo specifically */
 img[alt="Daikin"] {
-    margin: 0 1rem !important;
+    margin: 0 !important;
     position: relative;
     z-index: 1;
-    min-width: 100px;
+    min-width: 120px;
+    max-width: 180px;
 }
 
 /* Target Samsung logo specifically */
 .samsung-logo {
     height: 45px !important;
-    margin: 0 1rem !important;
-    min-width: 100px;
+    margin: 0 !important;
+    min-width: 120px;
+    max-width: 180px;
 }
 
 .client-logo.featured {
@@ -1180,16 +1185,18 @@ img[alt="Daikin"] {
 
 /* Target specific logos for individual adjustments */
 img[alt="Daikin"] {
-    margin: 0 1rem !important;
+    margin: 0 !important;
     position: relative;
     z-index: 1;
-    min-width: 100px;
+    min-width: 120px;
+    max-width: 180px;
 }
 
 .samsung-logo {
     height: 45px !important;
-    margin: 0 1rem !important;
-    min-width: 100px;
+    margin: 0 !important;
+    min-width: 120px;
+    max-width: 180px;
 }
 
 .client-logo.featured {
@@ -1230,24 +1237,28 @@ img[alt="Daikin"] {
     .client-logo, 
     .client-logo.featured {
         height: 36px;
-        margin: 0 1rem !important;
-        padding: 0 4px;
+        margin: 0 !important;
+        padding: 0;
+        min-width: 100px;
+        max-width: 150px;
     }
     
     .samsung-logo {
         height: 40px !important;
-        margin: 0 1rem !important;
-        min-width: 90px;
+        margin: 0 !important;
+        min-width: 100px;
+        max-width: 150px;
     }
     
     img[alt="Daikin"] {
-        margin: 0 1rem !important;
-        min-width: 80px;
+        margin: 0 !important;
+        min-width: 100px;
+        max-width: 150px;
     }
     
     .clients-grid {
         padding: 1rem 2rem;
-        gap: 0.8rem;
+        gap: 1.5rem;
     }
     
     .home-logo-wrapper {
@@ -1263,19 +1274,23 @@ img[alt="Daikin"] {
     .client-logo,
     .client-logo.featured {
         height: 32px;
-        margin: 0 0.8rem !important;
-        padding: 0 3px;
+        margin: 0 !important;
+        padding: 0;
+        min-width: 90px;
+        max-width: 130px;
     }
     
     .samsung-logo {
         height: 36px !important;
-        margin: 0 0.8rem !important;
-        min-width: 80px;
+        margin: 0 !important;
+        min-width: 90px;
+        max-width: 130px;
     }
     
     img[alt="Daikin"] {
-        margin: 0 0.8rem !important;
-        min-width: 70px;
+        margin: 0 !important;
+        min-width: 90px;
+        max-width: 130px;
     }
     
     .partners {
@@ -1284,7 +1299,7 @@ img[alt="Daikin"] {
     
     .clients-grid {
         padding: 1rem 1.5rem;
-        gap: 0.6rem;
+        gap: 1.2rem;
     }
     
     .home-logo-wrapper {
@@ -1300,24 +1315,28 @@ img[alt="Daikin"] {
     .client-logo,
     .client-logo.featured {
         height: 28px;
-        margin: 0 0.6rem !important;
-        padding: 0 2px;
+        margin: 0 !important;
+        padding: 0;
+        min-width: 80px;
+        max-width: 120px;
     }
     
     .samsung-logo {
         height: 32px !important;
-        margin: 0 0.6rem !important;
-        min-width: 70px;
+        margin: 0 !important;
+        min-width: 80px;
+        max-width: 120px;
     }
     
     img[alt="Daikin"] {
-        margin: 0 0.6rem !important;
-        min-width: 60px;
+        margin: 0 !important;
+        min-width: 80px;
+        max-width: 120px;
     }
     
     .clients-grid {
         padding: 1rem;
-        gap: 0.5rem;
+        gap: 1rem;
     }
     
     .home-logo-wrapper {
@@ -2800,6 +2819,25 @@ img[alt="Daikin"] {
 }
 
 .smart-remote-slide .smart-remote-image-wrapper img {
+    position: relative;
+    z-index: 1;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.fan-remote-slide .fan-remote-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f5f9 0%, #e8f2f8 25%, #d8ebf1 50%, #cfe7f0 75%, #f5f7fa 100%);
+    border-radius: 20px;
+    position: relative;
+    max-height: 85%;
+    max-width: 90%;
+}
+
+.fan-remote-slide .fan-remote-image-wrapper img {
     position: relative;
     z-index: 1;
     max-height: 100%;

@@ -1843,7 +1843,7 @@ html {
   justify-content: center;
   overflow: hidden;
   border-radius: 16px; /* Square shape with gentle rounding */
-  background: #FFFFFF;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   border: 1px solid #E5E5EA;
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.03);
   padding: 12px; /* breathing room for tall remotes */
@@ -1855,6 +1855,21 @@ html {
   object-fit: contain;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.15));
+}
+
+/* Make Eco Efficiency Mode and Premium Button Finishes images cover the container */
+.premium-feature-card[data-index="1"] .feature-image-wrapper,
+.premium-feature-card[data-feature-index="1"] .feature-image-wrapper,
+.premium-feature-card[data-index="2"] .feature-image-wrapper,
+.premium-feature-card[data-feature-index="2"] .feature-image-wrapper {
+  padding: 0;
+}
+
+.premium-feature-card[data-index="1"] .feature-image,
+.premium-feature-card[data-feature-index="1"] .feature-image,
+.premium-feature-card[data-index="2"] .feature-image,
+.premium-feature-card[data-feature-index="2"] .feature-image {
+  object-fit: cover;
 }
 
 .premium-feature-card:hover .feature-image {
@@ -2458,7 +2473,7 @@ html {
   margin-bottom: 0;
   position: relative;
   z-index: 2;
-  background: #F5F5F7;
+  background: #F5F5F7; /* Solid background color only */
   border-radius: 8px 8px 0 0;
   overflow: hidden;
   padding: 20px;
@@ -2466,15 +2481,11 @@ html {
 }
 
 .collection-card-image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(245, 245, 247, 0.3);
-  z-index: 1;
-  border-radius: 8px 8px 0 0;
+  display: none; /* Remove overlay since background image is removed */
+}
+
+.collection-card:hover .collection-card-image-wrapper {
+  background: #F5F5F7; /* Keep same background on hover */
 }
 
 .collection-card-image {
