@@ -791,19 +791,19 @@
       /* Partners Section */
       /* CTA Section */
       .cta {
-        padding: 0;
+        padding: 60px 0;
         background-color: var(--light-background);
         text-align: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 100vh;
+        min-height: auto;
       }
 
       .cta-content {
         max-width: 800px;
         margin: 0 auto;
-        padding: calc(80px + 2rem) 2rem 2rem;
+        padding: 2rem;
       }
 
       /* Partners Section - Premium Style */

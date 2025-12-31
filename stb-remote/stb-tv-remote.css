@@ -838,7 +838,7 @@ html {
   .premium-hero-content-wrapper .premium-description {
     font-size: 16px;
   }
-
+  
   .premium-hero-image-wrapper {
     min-height: 500px;
   }
@@ -864,7 +864,7 @@ html {
   .premium-hero-content-wrapper {
     padding: 50px 70px;
   }
-
+  
   .premium-hero-content-wrapper .premium-headline {
     font-size: 54px;
   }
@@ -996,7 +996,7 @@ html {
     overflow: visible;
     text-align: center; /* Ensure centering */
   }
-
+  
   .premium-hero-image {
     max-width: 100%;
     width: 100%;
@@ -1024,7 +1024,7 @@ html {
     min-height: 250px;
     margin-bottom: 25px;
   }
-
+  
   .premium-hero-content-wrapper {
     padding: 25px 18px;
     text-align: center;
@@ -1036,7 +1036,7 @@ html {
     border-radius: 12px;
     width: 100%;
   }
-
+  
   .premium-hero-content-wrapper .premium-headline {
     font-size: 28px;
     text-align: center;
@@ -1044,7 +1044,7 @@ html {
     line-height: 1.2;
     letter-spacing: -0.02em;
   }
-
+  
   .premium-hero-content-wrapper .premium-description {
     font-size: 15px;
     text-align: center;

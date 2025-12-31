@@ -60,6 +60,10 @@
   background-color: var(--light-background);
 }
 
+.contact-info-section .section-header p {
+  text-align: justify;
+}
+
 .contact-info-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

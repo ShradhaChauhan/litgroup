@@ -27,6 +27,7 @@
   gap: 1.75rem;
   width: 100%;
   max-width: 520px;
+  padding-top: 40px;
 }
 
 .hero-card {
