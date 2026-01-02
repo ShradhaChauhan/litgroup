@@ -19,22 +19,22 @@ body {
 /* Hero Section */
 .blog-hero {
     position: relative;
-    padding: 0 5%;
-    padding-top: calc(30px + var(--navbar-height));
-    padding-bottom: 0;
+    width: 100%;
+    padding: 4rem 2rem;
+    padding-top: calc(4rem + var(--navbar-height));
     background: 
         linear-gradient(135deg, rgba(20, 20, 30, 0.88) 0%, rgba(30, 35, 45, 0.82) 50%, rgba(25, 30, 40, 0.85) 100%),
         url('images/Blog Cover 1 (1).png') center center/cover no-repeat;
+    background-attachment: fixed;
     color: white;
     overflow: hidden;
-    min-height: 100vh;
-    height: 100vh;
+    min-height: calc(100vh - var(--navbar-height));
+    height: calc(100vh - var(--navbar-height));
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1600px;
-    margin: 0 auto;
     box-sizing: border-box;
+    margin: 0;
 }
 
 /* Animated background elements */
@@ -1071,11 +1071,11 @@ body {
 
 @media (max-width: 1024px) {
     .blog-hero {
-        min-height: 100vh;
-        height: 100vh;
-        padding: 0 3%;
-        padding-top: calc(30px + var(--navbar-height));
-        padding-bottom: 0;
+        min-height: calc(100vh - var(--navbar-height));
+        height: calc(100vh - var(--navbar-height));
+        padding: 4rem 2rem;
+        padding-top: calc(4rem + var(--navbar-height));
+        background-attachment: scroll;
     }
 
     .blog-hero-content {
@@ -1109,12 +1109,10 @@ body {
 
 @media (max-width: 768px) {
     .blog-hero {
-        min-height: 100vh;
-        height: 100vh;
-        padding: 0 1.5rem;
-        padding-top: calc(30px + var(--navbar-height));
-        padding-bottom: 0;
-        gap: 2.5rem;
+        min-height: calc(100vh - var(--navbar-height));
+        height: calc(100vh - var(--navbar-height));
+        padding: 8rem 1.5rem 4rem;
+        background-attachment: scroll;
     }
     
     .blog-hero::after,
@@ -1263,12 +1261,10 @@ body {
 
 @media (max-width: 576px) {
     .blog-hero {
-        min-height: 100vh;
-        height: 100vh;
-        padding: 0 1.25rem;
-        padding-top: calc(30px + var(--navbar-height));
-        padding-bottom: 0;
-        gap: 2rem;
+        min-height: calc(100vh - var(--navbar-height));
+        height: calc(100vh - var(--navbar-height));
+        padding: 7rem 1.25rem 3.5rem;
+        background-attachment: scroll;
     }
 
     .hero-badge {
