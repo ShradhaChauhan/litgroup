@@ -141,7 +141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     fill="url(#gb)" filter="url(#bblur)"/>
                 </svg>
               </div>
-              <img src="images/STB Concept 1.bip.3500.png" alt="STB Remote" class="remote-image-new" />
+              <img src="images/STB Remote 2.bip.3605.png" alt="STB Remote" class="remote-image-new" />
             </div>
           </div>
     
@@ -296,7 +296,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </button>
         
         <div class="carousel-track">
-          <!-- Original 5 Cards -->
+          <!-- Original 10 Cards -->
           <!-- Card 1 -->
           <div class="collection-card carousel-card" data-original="true">
             <div class="collection-card-image-wrapper">
@@ -349,6 +349,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="collection-card-content">
               <h3 class="collection-card-title">STB R5</h3>
               <p class="collection-card-subtitle">Ergonomic Control</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB Remote 6/STB Remote  (1).png" alt="STB Remote 6" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB R6</h3>
+              <p class="collection-card-subtitle">Compact Design</p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB Remote 7/STB Remote 2 (5).png" alt="STB Remote 7" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB R7</h3>
+              <p class="collection-card-subtitle">Streamlined Control</p>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB Remote 8/STB Remote 3 (2).png" alt="STB Remote 8" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB R8</h3>
+              <p class="collection-card-subtitle">Professional Grade</p>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB Remote 9/STB Remote 4 (5).png" alt="STB Remote 9" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB R9</h3>
+              <p class="collection-card-subtitle">Enhanced Navigation</p>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/STB Remote 10/STB Remote 5 (5).png" alt="STB Remote 10" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">STB R10</h3>
+              <p class="collection-card-subtitle">Ultimate Control</p>
             </div>
           </div>
         </div>
@@ -662,7 +717,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
       
       // Constants
-      const ORIGINAL_CARD_COUNT = 5;
+      const ORIGINAL_CARD_COUNT = 10;
       const CARD_GAP = 24;
       const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)'; // Apple easing
       const SCROLL_DURATION = 600; // Smooth scroll duration in ms
@@ -752,6 +807,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           currentScrollPosition = startPosition + (distance * eased);
           carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
           
+          // Check infinite loop during animation
+          checkInfiniteLoop();
+          
           if (progress < 1) {
             animationFrameId = requestAnimationFrame(animate);
           } else {
@@ -770,20 +828,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
         const originalSetWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
-        const endClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
         
-        // If scrolled past end clones, reset to start of original set
-        if (currentScrollPosition >= startClonesWidth + originalSetWidth + endClonesWidth) {
+        // If scrolled past end of original set (entering end clones), reset to equivalent position in original set
+        if (currentScrollPosition >= startClonesWidth + originalSetWidth) {
+          const offset = currentScrollPosition - (startClonesWidth + originalSetWidth);
           carouselTrack.style.transition = 'none';
-          currentScrollPosition = startClonesWidth;
+          currentScrollPosition = startClonesWidth + offset;
           carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
           void carouselTrack.offsetWidth; // Force reflow
           carouselTrack.style.transition = '';
         }
-        // If scrolled before start clones, reset to end of original set
+        // If scrolled before start of original set (entering start clones), reset to equivalent position in original set
         else if (currentScrollPosition < startClonesWidth) {
+          const offset = startClonesWidth - currentScrollPosition;
           carouselTrack.style.transition = 'none';
-          currentScrollPosition = startClonesWidth + originalSetWidth;
+          currentScrollPosition = startClonesWidth + originalSetWidth - offset;
           carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
           void carouselTrack.offsetWidth; // Force reflow
           carouselTrack.style.transition = '';
@@ -891,6 +950,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
         carouselTrack.style.transition = 'none';
         
+        // Check infinite loop during touch drag
+        checkInfiniteLoop();
+        
         // Calculate velocity for inertia
         const now = performance.now();
         velocity = (currentScrollPosition - lastScrollPosition) / (now - lastScrollTime || 1);
@@ -941,6 +1003,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         currentScrollPosition = dragStartScroll + deltaX;
         carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
         carouselTrack.style.transition = 'none';
+        
+        // Check infinite loop during drag
+        checkInfiniteLoop();
         
         // Calculate velocity
         const now = performance.now();
@@ -1335,6 +1400,116 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             { label: 'Finish', value: 'Matt and Gloss with Etching' },
             { label: 'Power Source', value: 'AAA Battery' },
             { label: 'Features', value: 'BLE, Google Assist Features, Modern and Ergonomic Design, Light Weight, Smooth and Accurate Navigation, Long Battery Life' },
+          ]
+        },
+        'STB R6': {
+          image: 'images/STB Remote 6/STB Remote  (1).png',
+          images: [
+            'images/STB Remote 6/STB Remote  (1).png',
+            'images/STB Remote 6/STB Remote  (2).png',
+            'images/STB Remote 6/STB Remote  (3).png',
+            'images/STB Remote 6/STB Remote  (4).png',
+            'images/STB Remote 6/STB Remote  (5).png'
+          ],
+          title: 'STB R6',
+          subtitle: 'Compact Design',
+          description: 'Perfect for space-conscious setups, STB R6 combines compact dimensions with full-featured control. Its streamlined design ensures all essential functions are easily accessible without compromising on comfort.',
+          specs: [
+            { label: 'Type of Device Controlled', value: 'TV' },
+            { label: 'No. of Keys', value: '40' },
+            { label: 'Color', value: 'Black' },
+            { label: 'Material', value: 'ABS' },
+            { label: 'Finish', value: 'Matt' },
+            { label: 'Power Source', value: 'AAA Battery' },
+            { label: 'Features', value: 'BLE, Google Assist Features, Compact Design, Light Weight, Smooth Navigation, Long Battery Life' },
+          ]
+        },
+        'STB R7': {
+          image: 'images/STB Remote 7/STB Remote 2 (1).png',
+          images: [
+            'images/STB Remote 7/STB Remote 2 (1).png',
+            'images/STB Remote 7/STB Remote 2 (2).png',
+            'images/STB Remote 7/STB Remote 2 (3).png',
+            'images/STB Remote 7/STB Remote 2 (4).png',
+            'images/STB Remote 7/STB Remote 2 (5).png'
+          ],
+          title: 'STB R7',
+          subtitle: 'Streamlined Control',
+          description: 'Experience seamless control with STB R7. Its streamlined interface and intuitive button layout make navigation effortless, while premium materials ensure durability and a premium feel.',
+          specs: [
+            { label: 'Type of Device Controlled', value: 'TV' },
+            { label: 'No. of Keys', value: '42' },
+            { label: 'Color', value: 'Black' },
+            { label: 'Material', value: 'ABS' },
+            { label: 'Finish', value: 'Matt with Gloss Accents' },
+            { label: 'Power Source', value: 'AAA Battery' },
+            { label: 'Features', value: 'BLE, Google Assist Features, Streamlined Design, Light Weight, Smooth Navigation, Long Battery Life' },
+          ]
+        },
+        'STB R8': {
+          image: 'images/STB Remote 8/STB Remote 3 (1).png',
+          images: [
+            'images/STB Remote 8/STB Remote 3 (1).png',
+            'images/STB Remote 8/STB Remote 3 (2).png',
+            'images/STB Remote 8/STB Remote 3 (3).png',
+            'images/STB Remote 8/STB Remote 3 (4).png',
+            'images/STB Remote 8/STB Remote 3 (5).png'
+          ],
+          title: 'STB R8',
+          subtitle: 'Professional Grade',
+          description: 'Built for professional entertainment systems, STB R8 delivers exceptional performance and reliability. With enhanced button responsiveness and premium construction, it meets the demands of commercial and residential installations.',
+          specs: [
+            { label: 'Type of Device Controlled', value: 'TV' },
+            { label: 'No. of Keys', value: '46' },
+            { label: 'Color', value: 'Black' },
+            { label: 'Material', value: 'ABS' },
+            { label: 'Finish', value: 'Matt with Side Grip' },
+            { label: 'Power Source', value: 'AAA Battery' },
+            { label: 'Features', value: 'BLE, Google Assist Features, Professional Grade Design, Enhanced Durability, Smooth Navigation, Long Battery Life' },
+          ]
+        },
+        'STB R9': {
+          image: 'images/STB Remote 9/STB Remote 4 (1).png',
+          images: [
+            'images/STB Remote 9/STB Remote 4 (1).png',
+            'images/STB Remote 9/STB Remote 4 (2).png',
+            'images/STB Remote 9/STB Remote 4 (3).png',
+            'images/STB Remote 9/STB Remote 4 (4).png',
+            'images/STB Remote 9/STB Remote 4 (5).png'
+          ],
+          title: 'STB R9',
+          subtitle: 'Enhanced Navigation',
+          description: 'Navigate with precision using STB R9. Featuring enhanced navigation controls and optimized button placement, this remote provides superior control accuracy for complex entertainment setups.',
+          specs: [
+            { label: 'Type of Device Controlled', value: 'TV' },
+            { label: 'No. of Keys', value: '45' },
+            { label: 'Color', value: 'Black' },
+            { label: 'Material', value: 'ABS' },
+            { label: 'Finish', value: 'Matt with Etching' },
+            { label: 'Power Source', value: 'AAA Battery' },
+            { label: 'Features', value: 'BLE, Google Assist Features, Enhanced Navigation, Ergonomic Design, Light Weight, Smooth Control, Long Battery Life' },
+          ]
+        },
+        'STB R10': {
+          image: 'images/STB Remote 10/STB Remote 5 (1).png',
+          images: [
+            'images/STB Remote 10/STB Remote 5 (1).png',
+            'images/STB Remote 10/STB Remote 5 (2).png',
+            'images/STB Remote 10/STB Remote 5 (3).png',
+            'images/STB Remote 10/STB Remote 5 (4).png',
+            'images/STB Remote 10/STB Remote 5 (5).png'
+          ],
+          title: 'STB R10',
+          subtitle: 'Ultimate Control',
+          description: 'The pinnacle of remote control design, STB R10 combines advanced features with elegant aesthetics. Experience the ultimate in entertainment control with premium materials, intelligent design, and exceptional functionality.',
+          specs: [
+            { label: 'Type of Device Controlled', value: 'TV' },
+            { label: 'No. of Keys', value: '50' },
+            { label: 'Color', value: 'Black with Metallic Accents' },
+            { label: 'Material', value: 'ABS' },
+            { label: 'Finish', value: 'Premium Matt and Gloss with Etching' },
+            { label: 'Power Source', value: 'AAA Battery' },
+            { label: 'Features', value: 'BLE, Google Assist Features, Ultimate Design, Premium Materials, Enhanced Functionality, Smooth Navigation, Extended Battery Life' },
           ]
         }
       };

@@ -1,5 +1,12 @@
 :root {
   --events-bg: linear-gradient(135deg, #0f1a2b 0%, #1f3c8a 40%, #142747 100%);
+  --navbar-height: 90px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 80px;
+  }
 }
 
 .events-hero {
@@ -7,15 +14,18 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   align-items: center;
-  padding-top: calc(80px + 4rem);
-  padding-bottom: 4rem;
+  padding-top: calc(30px + var(--navbar-height));
+  padding-bottom: 0;
   padding-left: 5vw;
   padding-right: 5vw;
   background: var(--events-bg);
   color: #fff;
   position: relative;
   overflow: hidden;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .events-hero-media {
@@ -94,7 +104,11 @@
 /* Tablet optimizations (768px - 1199px) */
 @media (min-width: 768px) and (max-width: 1199px) {
   .events-hero {
-    padding: 5rem 4vw 3rem;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 4vw;
+    padding-top: calc(30px + var(--navbar-height));
+    padding-bottom: 0;
   }
   
   .events-hero-content h1 {
@@ -123,8 +137,11 @@
 
 @media (max-width: 768px) {
   .events-hero {
-    padding: calc(80px + 3rem) 1.5rem 3rem;
-    min-height: 85vh;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 1.5rem;
+    padding-top: calc(30px + var(--navbar-height));
+    padding-bottom: 0;
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
@@ -201,8 +218,11 @@
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
   .events-hero {
-    padding: calc(80px + 2.5rem) 1.25rem 2.5rem;
-    min-height: 80vh;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 1.25rem;
+    padding-top: calc(30px + var(--navbar-height));
+    padding-bottom: 0;
   }
   
   .events-hero-content .hero-badge {

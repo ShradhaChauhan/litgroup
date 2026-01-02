@@ -14,19 +14,30 @@
     --border-color: #e5e7eb;
     --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+    --navbar-height: 90px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 80px;
+    }
 }
 
 /* Hero Section */
 .about-hero {
-    min-height: 85vh;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4rem 4rem;
+    padding: 0 4rem;
+    padding-top: calc(30px + var(--navbar-height));
+    padding-bottom: 0;
     background: url('../about/images/all 2.1615.png') center center/cover no-repeat;
-    margin-top: 80px;
+    margin: 0;
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .about-hero::before {
@@ -47,8 +58,9 @@
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 190px;
+    padding-top: 0;
     padding-left: 82px;
+    padding-bottom: 0;
 }
 
 .hero-badge {
@@ -103,8 +115,11 @@
 /* Add responsive styles for about-hero section */
 @media (max-width: 992px) {
     .about-hero {
-        padding: 3rem 2rem;
-        min-height: 50vh;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 2rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 0;
     }
     
     .about-hero h1 {
@@ -114,8 +129,11 @@
 
 @media (max-width: 768px) {
     .about-hero {
-        padding: 8rem 1.5rem 4rem;
-        min-height: 70vh;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 1.5rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -162,13 +180,17 @@
 /* Tablet optimizations (768px - 1199px) */
 @media (min-width: 768px) and (max-width: 1199px) {
     .about-hero {
-        padding: 3rem 2rem;
-        min-height: 60vh;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 2rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 0;
     }
     
     .about-hero-content {
-        padding-top: 150px;
+        padding-top: 0;
         padding-left: 40px;
+        padding-bottom: 0;
     }
     
     .about-hero h1 {
@@ -191,8 +213,11 @@
 
 @media (max-width: 576px) {
     .about-hero {
-        padding: 7rem 1.25rem 3.5rem;
-        min-height: 65vh;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 1.25rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 0;
     }
     
     .about-hero-content {
@@ -463,8 +488,9 @@
 }
 
 .timeline-item {
-    width: calc(100% / 9 - 10px);
-    min-width: 120px;
+    width: calc((100% - 90px) / 10);
+    min-width: 100px;
+    flex: 0 0 calc((100% - 90px) / 10);
     position: relative;
     padding-top: 50px;
     margin-bottom: 20px;
@@ -521,6 +547,22 @@
 }
 
 /* Timeline responsive styles */
+@media (max-width: 1400px) {
+    .timeline-item {
+        width: calc((100% - 80px) / 10);
+        flex: 0 0 calc((100% - 80px) / 10);
+        min-width: 90px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .timeline-item {
+        width: calc((100% - 45px) / 5);
+        flex: 0 0 calc((100% - 45px) / 5);
+        min-width: 100px;
+    }
+}
+
 @media (max-width: 992px) {
     .timeline {
         overflow-x: auto;
@@ -533,6 +575,7 @@
     .timeline-item {
         min-width: 150px;
         width: auto;
+        flex: 0 0 auto;
         margin-right: 0;
     }
     
@@ -2314,6 +2357,8 @@ body, html {
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* Touch-friendly interactive elements */
@@ -2332,12 +2377,15 @@ body, html {
   }
   
   .about-hero {
-    padding: 3rem 1.5rem;
-    min-height: 60vh;
+    min-height: 100vh;
+    height: 100vh;
+    padding: 0 1.5rem;
+    padding-top: calc(30px + var(--navbar-height));
+    padding-bottom: 0;
   }
   
   .about-hero-content {
-    padding-top: 120px;
+    padding-top: 0;
   }
   
   .about-hero-content h1 {

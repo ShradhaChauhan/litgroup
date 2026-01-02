@@ -275,6 +275,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <p class="collection-card-subtitle">Elite Control</p>
             </div>
           </div>
+
+          <!-- Card 9 - L58 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/Tv Remote 1/TV 1 (1).png" alt="L58 Smart TV Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L58</h3>
+              <p class="collection-card-subtitle">Compact Design</p>
+            </div>
+          </div>
+
+          <!-- Card 10 - L59 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/Tv Remote 2/TV Remote 2 (1).png" alt="L59 Smart TV Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L59</h3>
+              <p class="collection-card-subtitle">Sleek Control</p>
+            </div>
+          </div>
+
+          <!-- Card 11 - L60 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/Tv Remote 3/Tv Remote 3 (1).png" alt="L60 Smart TV Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L60</h3>
+              <p class="collection-card-subtitle">Modern Interface</p>
+            </div>
+          </div>
+
+          <!-- Card 12 - L61 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/Tv Remote 4/Tv Remote 4 (1).png" alt="L61 Smart TV Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L61</h3>
+              <p class="collection-card-subtitle">Premium Interface</p>
+            </div>
+          </div>
         </div>
         
         <button class="carousel-btn carousel-arrow carousel-arrow-right" aria-label="Next cards">
@@ -652,7 +696,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
       
       // Constants
-      const ORIGINAL_CARD_COUNT = 8; // 8 Smart TV remote cards
+      const ORIGINAL_CARD_COUNT = 12; // 12 Smart TV remote cards
       const CARD_GAP = 24;
       const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
       const SCROLL_DURATION = 600;
@@ -704,7 +748,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         calculateCardWidth();
         
         const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
-        currentScrollPosition = startClonesWidth;
+        // Start at L50 (index 1) instead of L94 (index 0) to show L50, L51, L52 on first load
+        const INITIAL_CARD_INDEX = 1; // L50 is the second card
+        currentScrollPosition = startClonesWidth + (INITIAL_CARD_INDEX * totalCardWidth);
         carouselTrack.style.transition = 'none';
         carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
         void carouselTrack.offsetWidth;
@@ -952,7 +998,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         resizeTimeout = setTimeout(() => {
           calculateCardWidth();
           const startClonesWidth = ORIGINAL_CARD_COUNT * totalCardWidth;
-          currentScrollPosition = startClonesWidth;
+          // Start at L50 (index 1) instead of L94 (index 0) to show L50, L51, L52 on first load
+          const INITIAL_CARD_INDEX = 1; // L50 is the second card
+          currentScrollPosition = startClonesWidth + (INITIAL_CARD_INDEX * totalCardWidth);
           carouselTrack.style.transition = 'none';
           carouselTrack.style.transform = `translateX(-${currentScrollPosition}px)`;
           void carouselTrack.offsetWidth;
@@ -1126,6 +1174,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             { label: 'Build Quality', value: 'Premium materials' },
             { label: 'Design', value: 'Sophisticated, Elite craftsmanship' }
           ]
+        },
+        'L58': {
+          image: 'images/Tv Remote 1/TV 1 (1).png',
+          images: [
+            'images/Tv Remote 1/TV 1 (1).png',
+            'images/Tv Remote 1/TV 1 (2).png',
+            'images/Tv Remote 1/TV 1 (3).png',
+            'images/Tv Remote 1/TV 1 (4).png',
+            'images/Tv Remote 1/TV 1 (5).png'
+          ],
+          title: 'L58',
+          subtitle: 'Compact Design',
+          description: 'Compact smart TV remote control with streamlined design and essential features for comfortable and efficient TV control.',
+          specs: [
+            { label: 'Voice Control', value: 'Voice assistant integration' },
+            { label: 'Connectivity', value: 'Bluetooth and Infrared' },
+            { label: 'Battery', value: 'Long-lasting battery' },
+            { label: 'Features', value: 'Essential controls, Quick access buttons' },
+            { label: 'Design', value: 'Compact, Streamlined, Ergonomic' }
+          ]
+        },
+        'L59': {
+          image: 'images/Tv Remote 2/TV Remote 2 (1).png',
+          images: [
+            'images/Tv Remote 2/TV Remote 2 (1).png',
+            'images/Tv Remote 2/TV Remote 2 (2).png',
+            'images/Tv Remote 2/TV Remote 2 (3).png',
+            'images/Tv Remote 2/TV Remote 2 (4).png',
+            'images/Tv Remote 2/TV Remote 2 (5).png'
+          ],
+          title: 'L59',
+          subtitle: 'Sleek Control',
+          description: 'Sleek smart TV remote control featuring modern aesthetics and intuitive button layout for seamless entertainment navigation.',
+          specs: [
+            { label: 'Voice Assistant', value: 'Google Assistant and Alexa compatible' },
+            { label: 'Connectivity', value: 'Bluetooth Low Energy, IR' },
+            { label: 'Battery', value: 'Extended battery life' },
+            { label: 'Features', value: 'Smart navigation, App shortcuts' },
+            { label: 'Design', value: 'Sleek, Modern, Intuitive' }
+          ]
+        },
+        'L60': {
+          image: 'images/Tv Remote 3/Tv Remote 3 (1).png',
+          images: [
+            'images/Tv Remote 3/Tv Remote 3 (1).png',
+            'images/Tv Remote 3/Tv Remote 3 (2).png',
+            'images/Tv Remote 3/Tv Remote 3 (3).png',
+            'images/Tv Remote 3/Tv Remote 3 (4).png',
+            'images/Tv Remote 3/Tv Remote 3 (5).png'
+          ],
+          title: 'L60',
+          subtitle: 'Modern Interface',
+          description: 'Modern smart TV remote control with advanced interface design and enhanced functionality for contemporary entertainment systems.',
+          specs: [
+            { label: 'Voice Control', value: 'Advanced voice recognition' },
+            { label: 'Connectivity', value: 'Wi-Fi, Bluetooth, Infrared' },
+            { label: 'Battery', value: 'High-capacity battery' },
+            { label: 'Features', value: 'Advanced interface, Multi-device support' },
+            { label: 'Design', value: 'Modern, Advanced, User-friendly' }
+          ]
+        },
+        'L61': {
+          image: 'images/Tv Remote 4/Tv Remote 4 (1).png',
+          images: [
+            'images/Tv Remote 4/Tv Remote 4 (1).png',
+            'images/Tv Remote 4/Tv Remote 4 (2).png',
+            'images/Tv Remote 4/Tv Remote 4 (3).png',
+            'images/Tv Remote 4/Tv Remote 4 (4).png',
+            'images/Tv Remote 4/Tv Remote 4 (5).png'
+          ],
+          title: 'L61',
+          subtitle: 'Premium Interface',
+          description: 'Premium smart TV remote control with sophisticated interface and cutting-edge technology for superior entertainment control experience.',
+          specs: [
+            { label: 'Voice Assistant', value: 'Premium voice recognition technology' },
+            { label: 'Connectivity', value: 'Multi-protocol (Bluetooth, Wi-Fi Direct, IR)' },
+            { label: 'Battery', value: 'Ultra-long battery life' },
+            { label: 'Features', value: 'Premium interface, Advanced controls' },
+            { label: 'Design', value: 'Premium, Sophisticated, Cutting-edge' }
+          ]
         }
       };
 
@@ -1140,10 +1268,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const modalBackdrop = document.querySelector('.remote-modal-backdrop');
       const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
       const modalCarouselNext = document.querySelector('.modal-carousel-next');
-      const scrollContainer = document.body;
 
       let currentImages = [];
       let currentImageIndex = 0;
+      let savedScrollPosition = 0;
 
       function changeModalImage(index) {
         if (currentImages.length === 0) return;
@@ -1235,19 +1363,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           modalSpecs.appendChild(specItem);
         });
 
-        if (scrollContainer) {
-          scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
-          scrollContainer.style.overflow = 'hidden';
-          scrollContainer.style.position = 'fixed';
-          scrollContainer.style.width = '100%';
-          scrollContainer.style.height = '100vh';
-          scrollContainer.style.top = `-${scrollContainer.scrollTop}px`;
-          scrollContainer.style.left = '0';
-          scrollContainer.style.right = '0';
-        }
-
+        // Save scroll position
+        savedScrollPosition = window.pageYOffset || window.scrollY || 0;
+        
+        // Lock body scroll
         document.body.classList.add('modal-open');
         document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        
         modal.classList.add('active');
         updateCarouselVisibility();
       }
@@ -1256,19 +1383,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         modal.classList.remove('active');
         document.body.classList.remove('modal-open');
         document.body.style.overflow = '';
-
-        if (scrollContainer) {
-          const savedScrollTop = scrollContainer.dataset.scrollTop || 0;
-          scrollContainer.style.overflow = '';
-          scrollContainer.style.position = '';
-          scrollContainer.style.width = '';
-          scrollContainer.style.height = '';
-          scrollContainer.style.top = '';
-          scrollContainer.style.left = '';
-          scrollContainer.style.right = '';
-          scrollContainer.scrollTop = savedScrollTop;
-          delete scrollContainer.dataset.scrollTop;
-        }
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        
+        // Restore scroll position
+        requestAnimationFrame(() => {
+          window.scrollTo(0, savedScrollPosition);
+          savedScrollPosition = 0;
+        });
       }
 
       document.querySelectorAll('.collection-card').forEach(card => {

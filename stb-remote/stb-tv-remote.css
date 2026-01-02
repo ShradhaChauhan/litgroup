@@ -1,13 +1,28 @@
 /* STB Remote Page Styles */
 
+/* Navbar height CSS variable - single source of truth */
+:root {
+  --navbar-height: 90px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 80px;
+  }
+}
+
 /* Normal body scrolling */
 body {
   overflow: visible;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   overflow: visible;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 /* Scroll Snap Container - Apple-style Full Page Navigation */
@@ -46,7 +61,7 @@ html {
 /* Responsive adjustments for navbar padding */
 @media (max-width: 768px) {
   .scroll-snap-container {
-    padding-top: 80px; /* Smaller navbar on mobile */
+    padding-top: 0; /* Padding handled by hero section */
   }
 }
 
@@ -58,7 +73,7 @@ html {
 
 /* First section should account for navbar */
 .scroll-snap-section:first-child {
-  padding-top: 90px;
+  padding-top: var(--navbar-height);
 }
 
 /* Remove all scroll effect styles */
@@ -73,7 +88,7 @@ html {
 /* Responsive adjustments for navbar padding */
 @media (max-width: 768px) {
   .scroll-snap-section:first-child {
-    padding-top: 80px; /* Smaller navbar on mobile */
+    padding-top: var(--navbar-height); /* Uses CSS variable for consistency */
   }
 }
 
@@ -434,10 +449,6 @@ html {
   position: relative;
   padding: 100px 0;
   background: linear-gradient(135deg, #FFFFFF 0%, #F8F9FA 50%, #FFFFFF 100%);
-  background-image: url('images/Recycled Plastic.png');
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: contain;
   overflow: visible;
   z-index: 5;
   width: 100%;
@@ -456,9 +467,9 @@ html {
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(147, 197, 253, 0.06) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(240, 250, 255, 0.4) 0%, transparent 70%);
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(147, 197, 253, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(240, 250, 255, 0.2) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
   animation: gradientMove 20s ease-in-out infinite;
@@ -471,10 +482,10 @@ html {
   right: -10%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(147, 197, 253, 0.05) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, rgba(147, 197, 253, 0.03) 40%, transparent 70%);
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.6;
+  opacity: 0.4;
   animation: floatSoft 18s ease-in-out infinite;
   z-index: 0;
   pointer-events: none;
@@ -514,14 +525,23 @@ html {
   min-height: 600px;
 }
 
-/* Premium Hero Image Wrapper - Now used for layout spacing */
+/* Premium Hero Image Wrapper - Contains the background image */
 .premium-hero-image-wrapper {
   position: relative;
   z-index: 1;
   width: 100%;
   height: 100%;
-  min-height: 600px;
+  min-height: 500px;
+  max-height: 600px;
   pointer-events: none;
+  background-image: url('images/Recycled Plastic.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Premium Hero Content Wrapper */
@@ -839,8 +859,6 @@ html {
 @media (max-width: 1200px) {
   .premium-hero-section {
     padding: 80px 0;
-    background-size: 50% auto;
-    background-position: left center;
     min-height: 500px;
   }
 
@@ -867,16 +885,22 @@ html {
   }
   
   .premium-hero-image-wrapper {
-    min-height: 500px;
+    min-height: 400px;
+    max-height: 500px;
+    background-size: contain;
   }
 }
 
 @media (min-width: 1400px) {
   .premium-hero-section {
     padding: 120px 0;
-    background-size: 60% auto;
-    background-position: left center;
     min-height: 700px;
+  }
+  
+  .premium-hero-image-wrapper {
+    min-height: 550px;
+    max-height: 650px;
+    background-size: contain;
   }
 
   .premium-hero-container {
@@ -901,7 +925,8 @@ html {
   }
 
   .premium-hero-image-wrapper {
-    min-height: 700px;
+    min-height: 550px;
+    max-height: 650px;
   }
 }
 
@@ -919,6 +944,9 @@ html {
     transform: none;
     order: 1;
     width: 100%;
+    min-height: 350px;
+    max-height: 450px;
+    background-size: contain;
   }
   
   .premium-hero-content-wrapper {
@@ -948,8 +976,6 @@ html {
 @media (max-width: 768px) {
   .premium-hero-section {
     padding: 50px 0 40px;
-    background-size: 100% auto;
-    background-position: center top;
     min-height: 400px;
   }
 
@@ -970,7 +996,9 @@ html {
     width: 100%;
     height: 300px;
     min-height: 300px;
+    max-height: 350px;
     margin-bottom: 30px;
+    background-size: contain;
   }
   
   .premium-hero-content-wrapper {
@@ -1016,11 +1044,15 @@ html {
     transform: none;
     width: 100%;
     max-width: 100%;
+    height: 250px;
+    min-height: 250px;
+    max-height: 300px;
     margin: 0 auto 30px auto; /* Center the wrapper horizontally */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: visible;
+    overflow: hidden;
+    background-size: contain;
     text-align: center; /* Ensure centering */
   }
   
@@ -1806,9 +1838,15 @@ html {
   z-index: 1;
   min-height: 100vh;
   height: 100vh;
-  overflow: visible;
+  padding-top: var(--navbar-height);
+  padding-bottom: 0;
+  margin: 0;
+  margin-bottom: 0;
+  overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 /* Hero Background Premium - Apple Style Minimal */
@@ -1816,7 +1854,7 @@ html {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 100vh;
+  max-height: 100%;
   /* Soft Apple-like glow with gentle center highlight and warm tint */
   background:
     radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 45%),
@@ -1826,8 +1864,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(80px + 60px) 0 80px;
-  overflow: visible;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
   position: relative;
   isolation: isolate;
 }
@@ -1837,13 +1876,14 @@ html {
 .hero-bg-premium::after {
   content: "";
   position: absolute;
-  inset: -12%;
+  inset: 0;
   pointer-events: none;
   z-index: 1;
   opacity: 0.55; /* Stronger presence */
   mix-blend-mode: normal; /* Ensure visible on light background */
   filter: blur(28px);
   animation: heroWave 18s cubic-bezier(0.22, 0.61, 0.36, 1) infinite alternate;
+  overflow: hidden;
 }
 
 .hero-bg-premium::before {
@@ -1972,10 +2012,15 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 120px);
-  padding: 30px 5% 20px;
+  justify-content: center;
+  height: 100%;
+  max-height: 100%;
+  padding: 30px 5%;
+  padding-top: calc(30px + var(--navbar-height));
   z-index: 15;
-  gap: 10px;
+  gap: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Centered Title at Top */
@@ -1985,9 +2030,12 @@ html {
   max-width: 100%;
   margin: 0 auto;
   padding-top: 0;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-shrink: 0;
+  margin-bottom: 0;
 }
 
 .hero-title-centered .hero-wavy-line {
@@ -2014,42 +2062,46 @@ html {
   gap: 80px;
   width: 100%;
   max-width: 1300px;
-  align-items: center;
-  flex: 1;
-  margin-top: -10px;
+  align-items: stretch;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* Left Column - Image */
 .hero-image-column {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   position: relative;
+  height: 100%;
+  min-height: 0;
 }
 
 .hero-image-container-new {
   position: relative;
   width: 100%;
   max-width: 600px;
-  height: auto;
+  height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 0;
-  margin-top: -60px;
+  margin-top: 0;
 }
 
 .remote-image-new {
   position: relative;
   width: 100%;
-  height: auto;
-  max-height: 75vh;
-  min-height: 550px;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
   object-fit: contain;
+  object-position: bottom center;
   z-index: 3;
   filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.18))
     drop-shadow(0 10px 25px rgba(0, 0, 0, 0.12));
-  transform: scale(1.6);
+  transform: none;
 }
 
 /* Right Column - Text + Button */
@@ -2060,6 +2112,8 @@ html {
   align-items: flex-start;
   gap: 30px;
   padding-left: 20px;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .hero-description-new {
@@ -2113,16 +2167,26 @@ html {
     font-size: 48px;
   }
   
+  .hero-image-container-new {
+    height: 100%;
+  }
+  
   .remote-image-new {
-    transform: scale(1.4);
-    min-height: 480px;
+    height: 100%;
+    max-height: 100%;
+    min-height: 0;
+    transform: none;
   }
 }
 
 @media (max-width: 992px) {
   .hero-content-wrapper-new {
-    gap: 10px;
-    padding: 120px 4% 30px;
+    gap: 0;
+    padding: 30px 4%;
+    padding-top: calc(30px + var(--navbar-height));
+    height: 100%;
+    max-height: 100%;
+    justify-content: center;
   }
   
   .hero-two-column {
@@ -2133,7 +2197,8 @@ html {
   }
   
   .hero-image-container-new {
-    margin-top: -40px;
+    margin-top: 0;
+    height: 100%;
   }
   
   .hero-text-column {
@@ -2147,28 +2212,35 @@ html {
   }
   
   .remote-image-new {
-    transform: scale(1.2);
-    min-height: 400px;
+    height: 100%;
+    max-height: 100%;
+    min-height: 0;
+    transform: none;
   }
 }
 
 @media (max-width: 768px) {
   .stb-hero {
-    min-height: auto;
-    height: auto;
-    overflow: visible;
+    min-height: 100vh;
+    height: 100vh;
+    padding-top: var(--navbar-height);
+    overflow: hidden;
   }
 
   .hero-bg-premium {
-    min-height: auto;
-    height: auto;
-    padding-bottom: 100px; /* Extra padding at bottom to ensure button visibility */
+    height: 100%;
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   .hero-content-wrapper-new {
-    gap: 10px;
-    padding: 110px 3% 80px; /* Significantly increased bottom padding to ensure button is fully visible */
-    min-height: auto;
+    gap: 0;
+    padding: 30px 3%;
+    padding-top: calc(30px + var(--navbar-height));
+    height: 100%;
+    max-height: 100%;
+    justify-content: center;
   }
   
   .hero-headline-centered {
@@ -2181,23 +2253,26 @@ html {
   
   .hero-two-column {
     margin-top: 0;
-    gap: 30px; /* Ensure proper spacing between image and text/button */
-    margin-bottom: 20px; /* Add bottom margin for extra space */
+    gap: 30px;
+    margin-bottom: 0;
   }
   
   .hero-text-column {
     gap: 20px; /* Ensure proper spacing between description and button */
-    padding-bottom: 10px; /* Add padding at bottom of text column */
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
   
   .hero-image-container-new {
-    margin-top: -30px;
+    margin-top: 0;
+    height: 100%;
   }
   
   .remote-image-new {
-    max-height: 50vh;
-    min-height: 350px;
-    transform: scale(1.1);
+    height: 100%;
+    max-height: 100%;
+    min-height: 0;
+    transform: none;
   }
   
   .hero-cta-new {
@@ -2205,28 +2280,33 @@ html {
     max-width: 280px;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 10px; /* Add top margin for spacing */
-    margin-bottom: 10px; /* Add bottom margin to ensure visibility */
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 }
 
 @media (max-width: 576px) {
   .stb-hero {
-    min-height: auto;
-    height: auto;
-    overflow: visible;
+    min-height: 100vh;
+    height: 100vh;
+    padding-top: var(--navbar-height);
+    overflow: hidden;
   }
 
   .hero-bg-premium {
-    min-height: auto;
-    height: auto;
-    padding-bottom: 100px; /* Extra padding at bottom to ensure button visibility */
+    height: 100%;
+    max-height: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   .hero-content-wrapper-new {
-    gap: 10px;
-    padding: 100px 3% 80px; /* Significantly increased bottom padding to ensure button is fully visible */
-    min-height: auto;
+    gap: 0;
+    padding: 30px 3%;
+    padding-top: calc(30px + var(--navbar-height));
+    height: 100%;
+    max-height: 100%;
+    justify-content: center;
   }
   
   .hero-headline-centered {
@@ -2239,22 +2319,26 @@ html {
   
   .hero-two-column {
     margin-top: 0;
-    gap: 25px; /* Ensure proper spacing between image and text/button */
-    margin-bottom: 20px; /* Add bottom margin for extra space */
+    gap: 25px;
+    margin-bottom: 0;
   }
   
   .hero-text-column {
-    gap: 18px; /* Ensure proper spacing between description and button */
-    padding-bottom: 10px; /* Add padding at bottom of text column */
+    gap: 18px;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
   
   .hero-image-container-new {
-    margin-top: -20px;
+    margin-top: 0;
+    height: 100%;
   }
   
   .remote-image-new {
-    min-height: 300px;
-    transform: scale(1);
+    height: 100%;
+    max-height: 100%;
+    min-height: 0;
+    transform: none;
   }
   
   .hero-cta-new {
@@ -2264,8 +2348,8 @@ html {
     max-width: 260px;
     justify-content: center;
     margin: 0 auto;
-    margin-top: 10px; /* Add top margin for spacing */
-    margin-bottom: 10px; /* Add bottom margin to ensure visibility */
+    margin-top: 10px;
+    margin-bottom: 0;
   }
 }
 

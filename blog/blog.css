@@ -1,24 +1,40 @@
+:root {
+    --navbar-height: 90px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 80px;
+    }
+}
+
 body {
     background-color: var(--background);
     color: var(--text-color);
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Hero Section */
 .blog-hero {
     position: relative;
-    padding: 160px 5% 100px;
+    padding: 0 5%;
+    padding-top: calc(30px + var(--navbar-height));
+    padding-bottom: 0;
     background: 
         linear-gradient(135deg, rgba(20, 20, 30, 0.88) 0%, rgba(30, 35, 45, 0.82) 50%, rgba(25, 30, 40, 0.85) 100%),
         url('images/Blog Cover 1 (1).png') center center/cover no-repeat;
     color: white;
     overflow: hidden;
-    min-height: 70vh;
+    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1600px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* Animated background elements */
@@ -1055,7 +1071,11 @@ body {
 
 @media (max-width: 1024px) {
     .blog-hero {
-        padding: 120px 3% 60px;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 3%;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 0;
     }
 
     .blog-hero-content {
@@ -1089,8 +1109,11 @@ body {
 
 @media (max-width: 768px) {
     .blog-hero {
-        padding: 8rem 1.5rem 4rem;
-        min-height: 50vh;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 1.5rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 0;
         gap: 2.5rem;
     }
     
@@ -1240,8 +1263,11 @@ body {
 
 @media (max-width: 576px) {
     .blog-hero {
-        padding: 7rem 1.25rem 3.5rem;
-        min-height: 45vh;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 1.25rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 0;
         gap: 2rem;
     }
 

@@ -19,6 +19,13 @@
     --border-color: #e5e7eb;
     --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.2);
+    --navbar-height: 90px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --navbar-height: 80px;
+    }
 }
 
 body {
@@ -383,15 +390,19 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: auto;
-  display: flex;
-    align-items: center;
-  justify-content: space-between;
-    padding: 4rem 4rem;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 4rem;
+    padding-top: calc(30px + var(--navbar-height));
+    padding-bottom: 30px;
     background: linear-gradient(135deg, #f8faff 0%, #edf6ff 100%);
-    margin-top: 40px;
-  position: relative;
-    overflow: hidden;
+    margin: 0;
+    position: relative;
+    overflow: visible;
+    box-sizing: border-box;
 }
 
 .hero::before {
@@ -411,25 +422,33 @@ body {
     flex: 1;
     max-width: 600px;
     padding-right: 2rem;
+    padding-top: clamp(10px, 2vh, 20px);
+    padding-bottom: clamp(10px, 2vh, 20px);
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: clamp(0.5rem, 1vh, 1rem);
 }
 
 .hero-badge {
     display: inline-block;
+    width: fit-content;
     background: rgba(59, 130, 246, 0.1);
     color: var(--primary-color);
-    padding: 0.5rem 1rem;
+    padding: clamp(0.4rem, 0.8vw, 0.5rem) clamp(0.8rem, 1.5vw, 1rem);
     border-radius: 50px;
     font-weight: 500;
-    font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(0.75rem, 1vw, 0.9rem);
+    margin-bottom: clamp(0.8rem, 1.5vh, 1.5rem);
+    white-space: nowrap;
 }
 
 .hero-content h1 {
-    font-size: 3.2rem;
+    font-size: clamp(2rem, 4vw, 3.2rem);
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(0.8rem, 1.5vh, 1.5rem);
     line-height: 1.2;
     color: var(--dark-color);
     position: relative;
@@ -454,21 +473,23 @@ body {
 }
 
 .hero-content p {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     color: var(--light-text);
-    margin-bottom: 2.5rem;
+    margin-bottom: clamp(1.2rem, 2vh, 2.5rem);
+    line-height: 1.6;
 }
 
 .hero-buttons {
     display: flex;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: clamp(1rem, 2vh, 2rem);
     justify-content: flex-start;
 }
 
 .hero-stats {
   display: flex;
-    gap: 3rem;
+    gap: clamp(1.5rem, 3vw, 3rem);
+    flex-wrap: wrap;
 }
 
 .stat-item {
@@ -477,16 +498,16 @@ body {
 }
 
 .stat-number {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
     font-weight: 700;
     color: var(--primary-color);
     line-height: 1;
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
     color: var(--light-text);
-    margin-top: 0.5rem;
+    margin-top: clamp(0.3rem, 0.5vh, 0.5rem);
 }
 
 .hero-image {
@@ -2402,26 +2423,55 @@ img[alt="Daikin"] {
 /* Responsive Design */
 @media (max-width: 1200px) {
     .hero {
-        padding: 6rem 4rem;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 4rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 30px;
     }
     
     .hero-content h1 {
-        font-size: 2.8rem;
-  }
+        font-size: clamp(2rem, 3.5vw, 2.8rem);
+        margin-bottom: clamp(0.8rem, 1.2vh, 1.2rem);
+    }
+    
+    .hero-content p {
+        font-size: clamp(1rem, 1.3vw, 1.2rem);
+        margin-bottom: clamp(1rem, 1.8vh, 2rem);
+    }
+    
+    .hero-buttons {
+        margin-bottom: clamp(1rem, 1.5vh, 1.5rem);
+    }
 }
 
 @media (max-width: 992px) {
     .hero {
-        padding: 6rem 3rem;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 3rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 30px;
     }
     
     .hero-content h1 {
-        font-size: 2.4rem;
+        font-size: clamp(1.8rem, 3vw, 2.4rem);
+        margin-bottom: clamp(0.6rem, 1vh, 1rem);
     }
     
     .hero-content p {
-        font-size: 1.1rem;
+        font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+        margin-bottom: clamp(0.8rem, 1.5vh, 1.5rem);
     }
+    
+    .hero-buttons {
+        margin-bottom: clamp(0.8rem, 1.2vh, 1.2rem);
+    }
+    
+    .stat-number {
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+    }
+}
     
     .dropdown-content {
         min-width: 500px;
@@ -2450,11 +2500,15 @@ img[alt="Daikin"] {
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 8rem 1.5rem 4rem;
-        min-height: 85vh;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 1.5rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 30px;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
+        overflow: visible;
         background: #ffffff;
         position: relative;
         overflow: hidden;
@@ -2486,41 +2540,46 @@ img[alt="Daikin"] {
     
     .hero-content {
         padding-right: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
         margin-bottom: 0;
         max-width: 100%;
         width: 100%;
         position: relative;
         z-index: 2;
         animation: fadeInUp 0.8s ease-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
   
     .hero-badge {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.9rem;
-        margin-bottom: 1.25rem;
+        font-size: clamp(0.7rem, 1vw, 0.75rem);
+        padding: clamp(0.35rem, 0.6vw, 0.4rem) clamp(0.8rem, 1.2vw, 0.9rem);
+        margin-bottom: clamp(0.6rem, 1vh, 1rem);
         letter-spacing: 0.3px;
     }
   
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: clamp(1.6rem, 2.8vw, 2.2rem);
         font-weight: 700;
         line-height: 1.15;
-        margin-bottom: 1.25rem;
+        margin-bottom: clamp(0.6rem, 1vh, 1rem);
         letter-spacing: -0.5px;
         color: var(--dark-color);
     }
     
     .hero-content p {
-        font-size: 1.1rem;
+        font-size: clamp(0.9rem, 1.1vw, 1.1rem);
         line-height: 1.6;
-        margin-bottom: 2rem;
+        margin-bottom: clamp(1rem, 1.5vh, 1.5rem);
         max-width: 100%;
         color: var(--light-text);
     }
     
     .hero-buttons {
         justify-content: center;
-        margin-bottom: 2.5rem;
+        margin-bottom: clamp(0.8rem, 1.2vh, 1.2rem);
     }
     
     .hero-buttons .btn {
@@ -2611,8 +2670,12 @@ img[alt="Daikin"] {
 
 @media (max-width: 480px) {
     .hero {
-        padding: 7rem 1.25rem 3.5rem;
-        min-height: 80vh;
+        min-height: 100vh;
+        height: 100vh;
+        padding: 0 1.25rem;
+        padding-top: calc(30px + var(--navbar-height));
+        padding-bottom: 30px;
+        overflow: visible;
     }
     
     .hero::before {
@@ -2620,30 +2683,31 @@ img[alt="Daikin"] {
     }
     
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: clamp(1.5rem, 2.5vw, 1.8rem);
         line-height: 1.2;
-        margin-bottom: 1rem;
+        margin-bottom: clamp(0.5rem, 0.8vh, 0.8rem);
         letter-spacing: -0.3px;
         color: var(--dark-color);
     }
     
     .hero-content p {
-        font-size: 1rem;
+        font-size: clamp(0.85rem, 1vw, 1rem);
         line-height: 1.55;
-        margin-bottom: 1.75rem;
+        margin-bottom: clamp(0.8rem, 1.2vh, 1.2rem);
         color: var(--light-text);
     }
     
     .hero-badge {
-        font-size: 0.7rem;
-        padding: 0.35rem 0.8rem;
-        margin-bottom: 1rem;
+        font-size: clamp(0.65rem, 0.9vw, 0.7rem);
+        padding: clamp(0.3rem, 0.5vw, 0.35rem) clamp(0.7rem, 1vw, 0.8rem);
+        margin-bottom: clamp(0.5rem, 0.8vh, 0.8rem);
     }
     
     .hero-buttons {
         flex-direction: column;
         width: 100%;
         gap: 0.75rem;
+        margin-bottom: clamp(0.6rem, 1vh, 1rem);
     }
     
     .hero-buttons .btn {
@@ -2657,16 +2721,16 @@ img[alt="Daikin"] {
     
     .hero-stats {
         flex-direction: column;
-        gap: 1.5rem;
-        margin-top: 0.5rem;
+        gap: clamp(1rem, 1.5vw, 1.5rem);
+        margin-top: clamp(0.3rem, 0.5vh, 0.5rem);
     }
     
     .stat-number {
-        font-size: 1.75rem;
+        font-size: clamp(1.4rem, 2vw, 1.75rem);
     }
     
     .stat-label {
-        font-size: 0.85rem;
+        font-size: clamp(0.75rem, 0.9vw, 0.85rem);
     }
     
     .hero-slider {

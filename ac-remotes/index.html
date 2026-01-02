@@ -304,6 +304,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <p class="collection-card-subtitle">Modern Design</p>
             </div>
           </div>
+
+          <!-- Card 4 - L100 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/AC Remote 1/Ac Remote 1.bip.3527.png" alt="L100 AC Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L100</h3>
+              <p class="collection-card-subtitle">Compact Control</p>
+            </div>
+          </div>
+
+          <!-- Card 5 - L101 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/AC Remote 2/Concept 1B.3519.png" alt="L101 AC Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L101</h3>
+              <p class="collection-card-subtitle">Sleek Design</p>
+            </div>
+          </div>
+
+          <!-- Card 6 - L102 -->
+          <div class="collection-card carousel-card" data-original="true">
+            <div class="collection-card-image-wrapper">
+              <img src="images/AC Remote 3/AC Remote 3.3532.png" alt="L102 AC Remote" class="collection-card-image" />
+            </div>
+            <div class="collection-card-content">
+              <h3 class="collection-card-title">L102</h3>
+              <p class="collection-card-subtitle">Premium Control</p>
+            </div>
+          </div>
         </div>
         
         <button class="carousel-btn carousel-arrow carousel-arrow-right" aria-label="Next cards">
@@ -1022,7 +1055,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
       
       // Constants
-      const ORIGINAL_CARD_COUNT = 3; // Updated for 3 AC remote cards
+      const ORIGINAL_CARD_COUNT = 6; // Updated for 6 AC remote cards
       const CARD_GAP = 24;
       const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)'; // Apple easing
       const SCROLL_DURATION = 600; // Smooth scroll duration in ms
@@ -1441,6 +1474,69 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             { label: 'Features', value: 'Turbo, Sleep, Timer' },
             { label: 'Build', value: 'Ergonomic soft-touch finish' }
           ]
+        },
+        'L100': {
+          image: 'images/AC Remote 1/Ac Remote 1.bip.3527.png',
+          images: [
+            'images/AC Remote 1/Ac Remote 1.bip.3527.png',
+            'images/AC Remote 1/Ac Remote 1.bip.3528.png',
+            'images/AC Remote 1/Ac Remote 1.bip.3529.png',
+            'images/AC Remote 1/Ac Remote 1.bip.3530.png',
+            'images/AC Remote 1/Ac Remote 1.bip.3531.png'
+          ],
+          title: 'L100',
+          subtitle: 'Compact Control',
+          description: 'Compact AC remote control with streamlined design and essential features for comfortable and efficient air conditioning control.',
+          specs: [
+            { label: 'Range', value: 'Up to 15 meters' },
+            { label: 'Battery', value: '2x AAA (long-life)' },
+            { label: 'Display', value: 'LCD display' },
+            { label: 'Modes', value: 'Cool / Heat / Fan / Dry / Auto' },
+            { label: 'Features', value: 'Turbo, Sleep, Timer, Swing control' },
+            { label: 'Design', value: 'Compact, Streamlined, Ergonomic' }
+          ]
+        },
+        'L101': {
+          image: 'images/AC Remote 2/Concept 1B.3519.png',
+          images: [
+            'images/AC Remote 2/Concept 1B.3519.png',
+            'images/AC Remote 2/Concept 1B.3520.png',
+            'images/AC Remote 2/Concept 1B.3521.png',
+            'images/AC Remote 2/Concept 1B.3522.png',
+            'images/AC Remote 2/Concept 1B.3523.png'
+          ],
+          title: 'L101',
+          subtitle: 'Sleek Design',
+          description: 'Sleek AC remote control featuring modern aesthetics and intuitive button layout for seamless air conditioning navigation.',
+          specs: [
+            { label: 'Range', value: 'Up to 15+ meters' },
+            { label: 'Battery', value: '2x AAA (high efficiency)' },
+            { label: 'Display', value: 'High-contrast LCD' },
+            { label: 'Modes', value: 'Cool / Heat / Fan / Dry / Auto' },
+            { label: 'Features', value: 'Turbo, Sleep mode, Timer, Fan speed control' },
+            { label: 'Design', value: 'Sleek, Modern, Intuitive' }
+          ]
+        },
+        'L102': {
+          image: 'images/AC Remote 3/AC Remote 3.3532.png',
+          images: [
+            'images/AC Remote 3/AC Remote 3.3532.png',
+            'images/AC Remote 3/AC Remote 3.3533.png',
+            'images/AC Remote 3/AC Remote 3.3534.png',
+            'images/AC Remote 3/AC Remote 3.3535.png',
+            'images/AC Remote 3/AC Remote 3.3536.png'
+          ],
+          title: 'L102',
+          subtitle: 'Premium Control',
+          description: 'Premium AC remote control with sophisticated design and advanced features for superior air conditioning control experience.',
+          specs: [
+            { label: 'Range', value: 'Up to 15+ meters' },
+            { label: 'Battery', value: '2x AAA (ultra-long life)' },
+            { label: 'Display', value: 'Backlit LCD with high visibility' },
+            { label: 'Modes', value: 'Cool / Heat / Fan / Dry / Auto' },
+            { label: 'Features', value: 'Turbo cooling, Sleep mode, Timer, Swing control, Eco mode' },
+            { label: 'Design', value: 'Premium, Sophisticated, Ergonomic' }
+          ]
         }
       };
 
@@ -1455,13 +1551,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const modalThumbnails = document.getElementById('modalImageThumbnails');
       const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
       const modalCarouselNext = document.querySelector('.modal-carousel-next');
-      const scrollContainer = document.body;
 
       if (!modal || !modalImage || !modalTitle || !modalSubtitle || !modalDescription || !modalSpecs || !modalThumbnails) return;
 
       let isOpen = false;
       let currentImageIndex = 0;
       let currentImages = [];
+      let savedScrollPosition = 0;
 
       const preventBackgroundScroll = (e) => {
         e.preventDefault();
@@ -1506,23 +1602,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           modalSpecs.appendChild(specItem);
         });
 
-        if (scrollContainer) {
-          scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
-          scrollContainer.style.overflow = 'hidden';
-          scrollContainer.style.position = 'fixed';
-          scrollContainer.style.width = '100%';
-          scrollContainer.style.height = '100vh';
-          scrollContainer.style.top = `-${scrollContainer.scrollTop}px`;
-          scrollContainer.style.left = '0';
-          scrollContainer.style.right = '0';
-        }
-
+        // Save scroll position
+        savedScrollPosition = window.pageYOffset || window.scrollY || 0;
+        
+        // Lock body scroll
         document.body.classList.add('modal-open');
         document.body.style.overflow = 'hidden';
         document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollPosition}px`;
         document.body.style.width = '100%';
-        document.body.style.height = '100vh';
-        document.body.style.top = '0';
         document.body.style.left = '0';
         document.body.style.right = '0';
 
@@ -1615,19 +1703,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.removeEventListener('touchmove', preventBackgroundScroll, { passive: false });
 
         document.body.classList.remove('modal-open');
-        document.body.removeAttribute('style');
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
 
-        if (scrollContainer) {
-          const storedTop = parseInt(scrollContainer.dataset.scrollTop || '0', 10);
-          scrollContainer.style.position = '';
-          scrollContainer.style.overflow = '';
-          scrollContainer.style.width = '';
-          scrollContainer.style.height = '';
-          scrollContainer.style.top = '';
-          scrollContainer.style.left = '';
-          scrollContainer.style.right = '';
-          scrollContainer.scrollTop = storedTop;
-        }
+        // Restore scroll position
+        requestAnimationFrame(() => {
+          window.scrollTo(0, savedScrollPosition);
+          savedScrollPosition = 0;
+        });
 
         isOpen = false;
       }

@@ -234,6 +234,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p class="collection-card-subtitle">Universal Compatibility</p>
               </div>
             </div>
+
+            <!-- Card 4 - FR1 -->
+            <div class="collection-card carousel-card" data-original="true">
+              <div class="collection-card-image-wrapper">
+                <img src="image/Fan Remote 1/Fan Remote 1.3633.png" alt="FR1 Fan Remote" class="collection-card-image" />
+              </div>
+              <div class="collection-card-content">
+                <h3 class="collection-card-title">FR1</h3>
+                <p class="collection-card-subtitle">Modern Design</p>
+              </div>
+            </div>
+
+            <!-- Card 5 - FR2 -->
+            <div class="collection-card carousel-card" data-original="true">
+              <div class="collection-card-image-wrapper">
+                <img src="image/Fan Remote 2/Fan Remote 2.bip.3642.png" alt="FR2 Fan Remote" class="collection-card-image" />
+              </div>
+              <div class="collection-card-content">
+                <h3 class="collection-card-title">FR2</h3>
+                <p class="collection-card-subtitle">Sleek Control</p>
+              </div>
+            </div>
+
+            <!-- Card 6 - FR3 -->
+            <div class="collection-card carousel-card" data-original="true">
+              <div class="collection-card-image-wrapper">
+                <img src="image/Fan Remote 3/Fan Remote 3.bip.3648.png" alt="FR3 Fan Remote" class="collection-card-image" />
+              </div>
+              <div class="collection-card-content">
+                <h3 class="collection-card-title">FR3</h3>
+                <p class="collection-card-subtitle">Advanced Features</p>
+              </div>
+            </div>
+
+            <!-- Card 7 - FR4 -->
+            <div class="collection-card carousel-card" data-original="true">
+              <div class="collection-card-image-wrapper">
+                <img src="image/Fan Remote 4/Fan Remote 4.bip.3653.png" alt="FR4 Fan Remote" class="collection-card-image" />
+              </div>
+              <div class="collection-card-content">
+                <h3 class="collection-card-title">FR4</h3>
+                <p class="collection-card-subtitle">Premium Quality</p>
+              </div>
+            </div>
           </div>
           
           <button class="carousel-btn carousel-arrow carousel-arrow-right" aria-label="Next cards">
@@ -806,7 +850,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
         
         // Constants
-        const ORIGINAL_CARD_COUNT = 3; // 3 Fan remote cards
+        const ORIGINAL_CARD_COUNT = 7; // 7 Fan remote cards
         const CARD_GAP = 24;
         const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)';
         const SCROLL_DURATION = 600;
@@ -1177,6 +1221,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               { label: 'Features', value: 'Timer, Sleep Mode, Wide compatibility' },
               { label: 'Design', value: 'Versatile, Essential features' }
             ]
+          },
+          'FR1': {
+            image: 'image/Fan Remote 1/Fan Remote 1.3633.png',
+            images: [
+              'image/Fan Remote 1/Fan Remote 1.3633.png',
+              'image/Fan Remote 1/Fan Remote 1.3638.png',
+              'image/Fan Remote 1/Fan Remote 1.3639.png',
+              'image/Fan Remote 1/Fan Remote 1.3640.png',
+              'image/Fan Remote 1/Fan Remote 1.3641.png'
+            ],
+            title: 'FR1',
+            subtitle: 'Modern Design',
+            description: 'A contemporary fan remote control featuring sleek design and intuitive controls for enhanced user experience and modern home aesthetics.',
+            specs: [
+              { label: 'Range', value: '18+ Meter' },
+              { label: 'Type', value: 'IR/RF' },
+              { label: 'Speed Control', value: '6-speed precision control' },
+              { label: 'Features', value: 'Timer, Natural breeze mode, LED indicator' },
+              { label: 'Design', value: 'Modern, Sleek, Intuitive' }
+            ]
+          },
+          'FR2': {
+            image: 'image/Fan Remote 2/Fan Remote 2.bip.3642.png',
+            images: [
+              'image/Fan Remote 2/Fan Remote 2.bip.3642.png',
+              'image/Fan Remote 2/Fan Remote 2.bip.3643.png',
+              'image/Fan Remote 2/Fan Remote 2.bip.3644.png',
+              'image/Fan Remote 2/Fan Remote 2.bip.3645.png',
+              'image/Fan Remote 2/Fan Remote 2.bip.3646.png'
+            ],
+            title: 'FR2',
+            subtitle: 'Sleek Control',
+            description: 'An elegantly designed remote control offering smooth operation and premium feel, perfect for discerning users seeking style and functionality.',
+            specs: [
+              { label: 'Range', value: '20+ Meter' },
+              { label: 'Type', value: 'IR/RF' },
+              { label: 'Speed Control', value: '5-speed with boost mode' },
+              { label: 'Features', value: 'Sleep timer, Reverse mode, Energy saving' },
+              { label: 'Design', value: 'Elegant, Premium, Smooth operation' }
+            ]
+          },
+          'FR3': {
+            image: 'image/Fan Remote 3/Fan Remote 3.bip.3648.png',
+            images: [
+              'image/Fan Remote 3/Fan Remote 3.bip.3648.png',
+              'image/Fan Remote 3/Fan Remote 3.bip.3649.png',
+              'image/Fan Remote 3/Fan Remote 3.bip.3650.png',
+              'image/Fan Remote 3/Fan Remote 3.bip.3651.png',
+              'image/Fan Remote 3/Fan Remote 3.bip.3652.png'
+            ],
+            title: 'FR3',
+            subtitle: 'Advanced Features',
+            description: 'A feature-rich remote control solution with advanced capabilities including smart home integration and comprehensive fan control options.',
+            specs: [
+              { label: 'Range', value: '22+ Meter' },
+              { label: 'Type', value: 'IR/RF' },
+              { label: 'Speed Control', value: '7-speed with fine adjustment' },
+              { label: 'Features', value: 'Smart home ready, Timer, Sleep mode, Light control' },
+              { label: 'Design', value: 'Advanced, Feature-rich, Smart integration' }
+            ]
+          },
+          'FR4': {
+            image: 'image/Fan Remote 4/Fan Remote 4.bip.3653.png',
+            images: [
+              'image/Fan Remote 4/Fan Remote 4.bip.3653.png',
+              'image/Fan Remote 4/Fan Remote 4.bip.3654.png',
+              'image/Fan Remote 4/Fan Remote 4.bip.3655.png',
+              'image/Fan Remote 4/Fan Remote 4.bip.3656.png',
+              'image/Fan Remote 4/Fan Remote 4.bip.3657.png'
+            ],
+            title: 'FR4',
+            subtitle: 'Premium Quality',
+            description: 'A premium-grade remote control built with superior materials and engineering, delivering exceptional durability and performance for long-term reliability.',
+            specs: [
+              { label: 'Range', value: '25+ Meter' },
+              { label: 'Type', value: 'IR/RF' },
+              { label: 'Speed Control', value: '6-speed with natural breeze mode' },
+              { label: 'Features', value: 'Extended timer, Reverse operation, Premium build' },
+              { label: 'Design', value: 'Premium, Durable, Long-lasting' }
+            ]
           }
         };
 
@@ -1191,10 +1315,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const modalBackdrop = document.querySelector('.remote-modal-backdrop');
         const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
         const modalCarouselNext = document.querySelector('.modal-carousel-next');
-        const scrollContainer = document.body;
 
         let currentImages = [];
         let currentImageIndex = 0;
+        let savedScrollPosition = 0;
 
         function changeModalImage(index) {
           if (currentImages.length === 0) return;
@@ -1286,20 +1410,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             modalSpecs.appendChild(specItem);
           });
 
-          if (scrollContainer) {
-            scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
-            scrollContainer.style.overflow = 'hidden';
-            scrollContainer.style.position = 'fixed';
-            scrollContainer.style.width = '100%';
-            scrollContainer.style.height = '100vh';
-            scrollContainer.style.top = `-${scrollContainer.scrollTop}px`;
-            scrollContainer.style.left = '0';
-            scrollContainer.style.right = '0';
-          }
-
-          document.body.classList.add('modal-open');
+          // Save scroll position
+          savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          
+          // Prevent body scroll
           document.body.style.overflow = 'hidden';
           document.body.style.position = 'fixed';
+          document.body.style.top = `-${savedScrollPosition}px`;
+          document.body.style.width = '100%';
+          document.body.style.left = '0';
+          document.body.style.right = '0';
+
+          document.body.classList.add('modal-open');
           modal.classList.add('active');
           updateCarouselVisibility();
         }
@@ -1307,21 +1429,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function closeModal() {
           modal.classList.remove('active');
           document.body.classList.remove('modal-open');
+          
+          // Restore body styles
           document.body.style.overflow = '';
           document.body.style.position = '';
-
-          if (scrollContainer) {
-            const savedScrollTop = scrollContainer.dataset.scrollTop || 0;
-            scrollContainer.style.overflow = '';
-            scrollContainer.style.position = '';
-            scrollContainer.style.width = '';
-            scrollContainer.style.height = '';
-            scrollContainer.style.top = '';
-            scrollContainer.style.left = '';
-            scrollContainer.style.right = '';
-            scrollContainer.scrollTop = savedScrollTop;
-            delete scrollContainer.dataset.scrollTop;
-          }
+          document.body.style.top = '';
+          document.body.style.width = '';
+          document.body.style.left = '';
+          document.body.style.right = '';
+          
+          // Restore scroll position after a brief delay to ensure styles are reset
+          requestAnimationFrame(() => {
+            window.scrollTo(0, savedScrollPosition);
+            savedScrollPosition = 0;
+          });
         }
 
         // Attach click handlers to cards (including clones)
