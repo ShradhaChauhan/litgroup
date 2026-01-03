@@ -395,6 +395,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 3rem;
     padding: 0 4rem;
     padding-top: calc(30px + var(--navbar-height));
     padding-bottom: 30px;
@@ -2452,6 +2453,15 @@ img[alt="Daikin"] {
         padding: 0 3rem;
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
+        gap: 2rem;
+    }
+    
+    .hero-slider {
+        max-width: 45%;
+    }
+    
+    .slides-container {
+        padding-left: 1.5rem;
     }
     
     .hero-content h1 {
@@ -2506,8 +2516,9 @@ img[alt="Daikin"] {
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
+        gap: 2rem;
         overflow: visible;
         background: #ffffff;
         position: relative;
@@ -2832,24 +2843,33 @@ img[alt="Daikin"] {
     border-radius: 0;
     box-shadow: none;
     background: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 50%;
 }
 
 .slides-container {
     width: 100%;
     height: 100%;
     position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 2rem;
 }
 
 .slide {
   position: absolute;
     top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
     height: 100%;
     opacity: 0;
     overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
     transform: translateX(100px);
     transition: opacity 1s ease, transform 1s ease;
     z-index: 0;
@@ -2876,18 +2896,21 @@ img[alt="Daikin"] {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #93c5fd 100%);
-    border-radius: 20px;
+    border-radius: 12px;
     position: relative;
-    max-height: 85%;
-    max-width: 90%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .smart-remote-slide .smart-remote-image-wrapper img {
     position: relative;
     z-index: 1;
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .fan-remote-slide .fan-remote-image-wrapper {
@@ -2895,34 +2918,50 @@ img[alt="Daikin"] {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #f0f5f9 0%, #e8f2f8 25%, #d8ebf1 50%, #cfe7f0 75%, #f5f7fa 100%);
-    border-radius: 20px;
+    border-radius: 12px;
     position: relative;
-    max-height: 85%;
-    max-width: 90%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .fan-remote-slide .fan-remote-image-wrapper img {
     position: relative;
     z-index: 1;
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.power-supply-slide .slide-image {
+    background: linear-gradient(135deg, #e8f2ff 0%, #d6e9ff 50%, #f0f7ff 100%);
 }
 
 .slide-image {
-    flex: 1;
+    flex: 0 0 38%;
+    max-width: 38%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: 75%;
     padding: 0;
     position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Add padding back for slides with special wrappers */
+.slide-image .smart-remote-image-wrapper,
+.slide-image .fan-remote-image-wrapper {
+    padding: 1.5rem;
 }
 
 .slide-image img {
-    max-height: 85%;
-    max-width: 90%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15));
     transform: translateY(0);
     transition: transform 0.6s ease;
@@ -3136,6 +3175,13 @@ img[alt="Daikin"] {
         min-height: 450px;
         margin-top: 2rem;
         width: 100%;
+        max-width: 100%;
+        justify-content: center;
+    }
+    
+    .slides-container {
+        padding-left: 0;
+        justify-content: center;
     }
     
     .slide {
@@ -3152,8 +3198,9 @@ img[alt="Daikin"] {
     }
     
     .slide-image img {
-        max-width: 280px;
-        max-height: 280px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12));
     }
     
@@ -3221,8 +3268,9 @@ img[alt="Daikin"] {
     }
     
     .slide-image img {
-        max-width: 240px;
-        max-height: 240px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     
     .slide-text {

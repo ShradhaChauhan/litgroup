@@ -1128,13 +1128,13 @@ Effortless reliability
       const modalThumbnails = document.getElementById('modalImageThumbnails');
       const modalCarouselPrev = document.querySelector('.modal-carousel-prev');
       const modalCarouselNext = document.querySelector('.modal-carousel-next');
-      const scrollContainer = document.body;
 
       if (!modal || !modalImage || !modalTitle || !modalSubtitle || !modalDescription || !modalSpecs || !modalThumbnails) return;
 
       let isOpen = false;
       let currentImageIndex = 0;
       let currentImages = [];
+      let savedScrollPosition = 0;
 
       const preventBackgroundScroll = (e) => {
         e.preventDefault();
@@ -1143,6 +1143,9 @@ Effortless reliability
       function openModal(powerName) {
         const data = POWER_DATA[powerName];
         if (!data) return;
+
+        // Save current scroll position
+        savedScrollPosition = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
         // Set current images array
         currentImages = data.images || [data.image];
@@ -1181,19 +1184,13 @@ Effortless reliability
           modalSpecs.appendChild(specItem);
         });
 
-        if (scrollContainer) {
-          scrollContainer.dataset.scrollTop = scrollContainer.scrollTop;
-          scrollContainer.style.position = 'fixed';
-          scrollContainer.style.overflow = 'hidden';
-          scrollContainer.style.width = '100%';
-          scrollContainer.style.height = '100%';
-          scrollContainer.style.top = `-${scrollContainer.scrollTop}px`;
-          scrollContainer.style.left = '0';
-          scrollContainer.style.right = '0';
-        }
+        // Lock body scroll
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollPosition}px`;
+        document.body.style.width = '100%';
+        document.body.style.overflow = 'hidden';
 
         document.body.classList.add('modal-open');
-        document.body.style.overflow = 'hidden';
         modal.classList.add('active');
         isOpen = true;
 
@@ -1266,20 +1263,15 @@ Effortless reliability
         document.removeEventListener('wheel', preventBackgroundScroll, { passive: false });
         document.removeEventListener('touchmove', preventBackgroundScroll, { passive: false });
 
+        // Restore body scroll
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
         document.body.classList.remove('modal-open');
-        document.body.removeAttribute('style');
 
-        if (scrollContainer) {
-          const storedTop = parseInt(scrollContainer.dataset.scrollTop || '0', 10);
-          scrollContainer.style.position = '';
-          scrollContainer.style.overflow = '';
-          scrollContainer.style.width = '';
-          scrollContainer.style.height = '';
-          scrollContainer.style.top = '';
-          scrollContainer.style.left = '';
-          scrollContainer.style.right = '';
-          scrollContainer.scrollTop = storedTop;
-        }
+        // Restore scroll position
+        window.scrollTo(0, savedScrollPosition);
 
         isOpen = false;
       }

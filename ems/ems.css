@@ -313,7 +313,14 @@
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     max-width: 1280px;
+    align-items: center;
     margin: 0 auto;
+}
+
+.variants-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .variants-content h2 {
@@ -322,11 +329,13 @@
     margin-bottom: 30px;
     position: relative;
     font-weight: 600;
+    flex-shrink: 0;
 }
 
 .variants-content p {
-    margin-bottom: 20px;
+    margin: auto 0;
     line-height: 1.7;
+    text-align: justify;
 }
 
 .wavy-divider {
