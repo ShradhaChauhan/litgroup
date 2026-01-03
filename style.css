@@ -396,7 +396,7 @@ body {
     align-items: flex-start;
     justify-content: space-between;
     gap: 3rem;
-    padding: 0 4rem;
+    padding: 0 2rem;
     padding-top: calc(30px + var(--navbar-height));
     padding-bottom: 30px;
     background: linear-gradient(135deg, #f8faff 0%, #edf6ff 100%);
@@ -404,6 +404,9 @@ body {
     position: relative;
     overflow: visible;
     box-sizing: border-box;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero::before {
@@ -423,8 +426,8 @@ body {
     flex: 1;
     max-width: 600px;
     padding-right: 2rem;
-    padding-top: clamp(10px, 2vh, 20px);
-    padding-bottom: clamp(10px, 2vh, 20px);
+    padding-top: 0;
+    padding-bottom: 0;
     position: relative;
     z-index: 2;
     display: flex;
@@ -2456,7 +2459,7 @@ img[alt="Daikin"] {
     .hero {
         min-height: 100vh;
         height: 100vh;
-        padding: 0 3rem;
+        padding: 0 2rem;
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
         gap: 2rem;
@@ -2689,7 +2692,7 @@ img[alt="Daikin"] {
     .hero {
         min-height: 100vh;
         height: 100vh;
-        padding: 0 1.25rem;
+        padding: 0 1.5rem;
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
         overflow: visible;
