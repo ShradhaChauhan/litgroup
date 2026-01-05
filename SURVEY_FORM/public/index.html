@@ -12,7 +12,8 @@
     />
 
     <link rel="stylesheet" href="index.css" />
-  </head>
+      <link rel="preload" as="image" href="./images/lit_logo.webp" fetchpriority="high">
+</head>
   <body>
     <form id="feedbackForm" action="/submit-feedback" method="POST">
     <div class="survey-page">
@@ -21,7 +22,7 @@
           <!-- Logo Center -->
           <div class="logo-section">
             <img
-              src="./images/lit_logo.webp"
+              src="./images/lit_logo.webp" fetchpriority="high" width="200" height="200"
               alt="Company Logo"
               class="survey-logo"
             />

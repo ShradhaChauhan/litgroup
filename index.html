@@ -41,6 +41,8 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="favicon/cropped-favicon-1-192x192.webp" />
+    <!-- Preload critical hero image -->
+    <link rel="preload" as="image" href="images/lloyed remote.1911.webp" fetchpriority="high" />
   </head>
 
   <body>
@@ -143,10 +145,17 @@
       </div>
       <div class="hero-slider">
         <div class="slides-container">
-          <div class="slide">
+          <div class="slide active">
             <div class="slide-background"></div>
             <div class="slide-image">
-              <img src="images/lloyed remote.1911.webp" alt="Lloyd Remote" />
+              <img 
+                src="images/lloyed remote.1911.webp" 
+                alt="Lloyd Remote"
+                width="600"
+                height="450"
+                fetchpriority="high"
+                loading="eager"
+              />
             </div>
             <div class="slide-text">
               <span class="slide-badge">Elite</span>
@@ -165,7 +174,13 @@
             <div class="slide-background"></div>
             <div class="slide-image">
               <div class="smart-remote-image-wrapper">
-                <img src="smart-remote/images/Smart TV Remote 7/Smart TV 3 (1).webp" alt="Smart TV Remote" />
+                <img 
+                  src="smart-remote/images/Smart TV Remote 7/Smart TV 3 (1).webp" 
+                  alt="Smart TV Remote"
+                  width="600"
+                  height="800"
+                  loading="lazy"
+                />
               </div>
             </div>
             <div class="slide-text">
@@ -186,6 +201,9 @@
                 <img
                   src="fan-remotes/image/havells/Havells Pebble Remote.2320.webp"
                   alt="Fan Remote"
+                  width="600"
+                  height="600"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -206,6 +224,9 @@
               <img
                 src="power-supply/images/20w Adapter Aaaaaaaa.3667.webp"
                 alt="Power Supply"
+                width="600"
+                height="400"
+                loading="lazy"
               />
             </div>
             <div class="slide-text">
