@@ -24,7 +24,7 @@ body {
     padding-top: calc(4rem + var(--navbar-height));
     background: 
         linear-gradient(135deg, rgba(20, 20, 30, 0.88) 0%, rgba(30, 35, 45, 0.82) 50%, rgba(25, 30, 40, 0.85) 100%),
-        url('images/Blog Cover 1 (1).png') center center/cover no-repeat;
+        url('images/Blog Cover 1 (1).webp') center center/cover no-repeat;
     background-attachment: fixed;
     color: white;
     overflow: hidden;

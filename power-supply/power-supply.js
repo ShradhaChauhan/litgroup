@@ -515,12 +515,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // List of images from the power-supply/images/Adapters folder
         const images = [
-            'images/Adapters/20w & 25w Adapter.bip.3477.png',
-            'images/Adapters/25w Adapter.3480.png',
-            'images/Adapters/30w 1c 1usb 01.3482.png',
-            'images/Adapters/30w 1c 1usb 01.3483.png',
-            'images/Adapters/30w Usb -A.3481.png',
-            'images/Adapters/Two Usb A.bip.3484.png'
+            'images/Adapters/20w & 25w Adapter.bip.3477.webp',
+            'images/Adapters/25w Adapter.3480.webp',
+            'images/Adapters/30w 1c 1usb 01.3482.webp',
+            'images/Adapters/30w 1c 1usb 01.3483.webp',
+            'images/Adapters/30w Usb -A.3481.webp',
+            'images/Adapters/Two Usb A.bip.3484.webp'
         ];
         
         let currentIndex = 0;

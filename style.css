@@ -394,19 +394,26 @@ body {
     height: 100vh;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 3rem;
-    padding: 0 2rem;
+    justify-content: center;
+    padding: 0;
     padding-top: calc(30px + var(--navbar-height));
     padding-bottom: 30px;
     background: linear-gradient(135deg, #f8faff 0%, #edf6ff 100%);
     margin: 0;
+    width: 100%;
     position: relative;
     overflow: visible;
     box-sizing: border-box;
+}
+
+.hero-wrapper {
     max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: flex-start;
+    padding: 0 2rem;
 }
 
 .hero::before {
@@ -2459,9 +2466,13 @@ img[alt="Daikin"] {
     .hero {
         min-height: 100vh;
         height: 100vh;
-        padding: 0 2rem;
+        padding: 0;
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
+    }
+    
+    .hero-wrapper {
+        padding: 0 2rem;
         gap: 2rem;
     }
     
@@ -2521,17 +2532,22 @@ img[alt="Daikin"] {
         text-align: center;
         min-height: 100vh;
         height: 100vh;
-        padding: 0 1.5rem;
+        padding: 0;
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
-        overflow: visible;
         background: #ffffff;
         position: relative;
         overflow: hidden;
+    }
+    
+    .hero-wrapper {
+        flex-direction: column;
+        padding: 0 1.5rem;
+        gap: 2rem;
+        width: 100%;
     }
     
     .hero::before {
@@ -2692,10 +2708,14 @@ img[alt="Daikin"] {
     .hero {
         min-height: 100vh;
         height: 100vh;
-        padding: 0 1.5rem;
+        padding: 0;
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
         overflow: visible;
+    }
+    
+    .hero-wrapper {
+        padding: 0 1.5rem;
     }
     
     .hero::before {

@@ -190,7 +190,7 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('images/heroBackground.png');
+    background: url('images/heroBackground.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -852,7 +852,7 @@ html {
     
     .tv-hero::before {
         top: 0;
-        background: url('images/heroBackground.png'), linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 255, 0.95) 100%);
+        background: url('images/heroBackground.webp'), linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 255, 0.95) 100%);
         background-size: cover, 100%;
         background-position: center, center;
     }

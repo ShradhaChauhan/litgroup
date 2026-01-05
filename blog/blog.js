@@ -6,7 +6,7 @@ const blogData = {
     date: 'December 22, 2025',
     author: 'LIT Group Manufacturing',
     tag: 'Manufacturing',
-    image: 'images/1.png',
+    image: 'images/1.webp',
     content: `
       <p>
         Remote controls have evolved far beyond simple IR transmitters. As consumer expectations rise for smarter, more intuitive, and durable devices, the demand for advanced remote control manufacturing capabilities in India is at an all-time high. Brands across HVAC, smart appliances, smart TVs, industrial automation, and home electronics now expect remotes that offer precision engineering, seamless connectivity, ergonomic design, and long product life cycles.
@@ -108,7 +108,7 @@ const blogData = {
       </p>
       
       <div style="text-align: center; margin: 40px 0;">
-        <img src="images/Blog Cover 2.png" alt="Remote Control Manufacturing Technologies" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+        <img src="images/Blog Cover 2.webp" alt="Remote Control Manufacturing Technologies" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
       </div>
       
       <h3>3. Core Manufacturing Capabilities Required</h3>
