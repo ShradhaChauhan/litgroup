@@ -260,6 +260,18 @@ body {
     color: var(--text-color);
     cursor: pointer;
     transition: color 0.3s;
+    z-index: 1001;
+    position: relative;
+    padding: 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.mobile-menu-btn i {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    line-height: 1;
 }
 
 .mobile-menu-btn:hover {
@@ -345,11 +357,30 @@ body {
     }
     
     .mobile-menu-btn {
-        display: block;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .mobile-menu-btn.active i:before {
         content: "\f00d";
+    }
+    
+    .mobile-menu-btn i {
+        display: inline-block !important;
+        font-size: 1.5rem !important;
+        color: var(--text-color) !important;
+        line-height: 1;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .mobile-menu-btn:hover i,
+    .mobile-menu-btn.active i {
+        color: var(--primary-color) !important;
     }
     
     .social-links {
@@ -394,7 +425,7 @@ body {
 .hero {
     min-height: 100vh;
     height: 100vh;
-    display: flex;
+  display: flex;
     align-items: flex-start;
     justify-content: center;
     padding: 0;
@@ -403,7 +434,7 @@ body {
     background: linear-gradient(135deg, #f8faff 0%, #edf6ff 100%);
     margin: 0;
     width: 100%;
-    position: relative;
+  position: relative;
     overflow: visible;
     box-sizing: border-box;
 }
@@ -2461,7 +2492,7 @@ img[alt="Daikin"] {
     
     .hero-buttons {
         margin-bottom: clamp(1rem, 1.5vh, 1.5rem);
-    }
+  }
 }
 
 @media (max-width: 992px) {
@@ -2474,16 +2505,20 @@ img[alt="Daikin"] {
     }
     
     .hero-wrapper {
+        flex-direction: column;
         padding: 0 2rem;
         gap: 2rem;
     }
     
     .hero-slider {
-        max-width: 45%;
+        max-width: 100%;
+        width: 100%;
+        margin-top: 2rem;
     }
     
     .slides-container {
-        padding-left: 1.5rem;
+        padding-left: 0;
+        justify-content: center;
     }
     
     .hero-content h1 {
@@ -2503,7 +2538,7 @@ img[alt="Daikin"] {
     .stat-number {
         font-size: clamp(1.5rem, 2.5vw, 2rem);
     }
-}
+    }
     
     .dropdown-content {
         width: fit-content;
@@ -2527,23 +2562,44 @@ img[alt="Daikin"] {
     }
     
     .mobile-menu-btn {
-        display: block;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .mobile-menu-btn i {
+        display: inline-block !important;
+        font-size: 1.5rem !important;
+        color: var(--text-color) !important;
+        line-height: 1;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .mobile-menu-btn:hover i,
+    .mobile-menu-btn.active i {
+        color: var(--primary-color) !important;
     }
     
     .hero {
         flex-direction: column;
         text-align: center;
-        min-height: 100vh;
-        height: 100vh;
+        min-height: auto;
+        height: auto;
         padding: 0;
-        padding-top: calc(30px + var(--navbar-height));
-        padding-bottom: 30px;
+        padding-top: calc(var(--navbar-height) + 20px);
+        padding-bottom: 4rem;
+        margin-bottom: 2rem;
+        margin-top: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         background: #ffffff;
         position: relative;
-        overflow: hidden;
+        overflow: visible;
     }
     
     .hero-wrapper {
@@ -2551,6 +2607,12 @@ img[alt="Daikin"] {
         padding: 0 1.5rem;
         gap: 2rem;
         width: 100%;
+        position: relative;
+        z-index: 5;
+    }
+    
+    .hero-slider {
+        display: none !important;
     }
     
     .hero::before {
@@ -2644,11 +2706,6 @@ img[alt="Daikin"] {
     .stat-label {
         font-size: 0.9rem;
     }
-    
-    /* Hide hero carousel on mobile view */
-    .hero-slider {
-        display: none;
-    }
 }
     
     .about-container {
@@ -2709,16 +2766,21 @@ img[alt="Daikin"] {
 
 @media (max-width: 480px) {
     .hero {
-        min-height: 100vh;
-        height: 100vh;
+        min-height: auto;
+        height: auto;
         padding: 0;
-        padding-top: calc(30px + var(--navbar-height));
+        padding-top: calc(var(--navbar-height) + 20px);
         padding-bottom: 30px;
+        margin-top: 0;
         overflow: visible;
     }
     
     .hero-wrapper {
         padding: 0 1.5rem;
+    }
+    
+    .hero-slider {
+        display: none !important;
     }
     
     .hero::before {
@@ -3218,22 +3280,40 @@ img[alt="Daikin"] {
 
 @media (max-width: 768px) {
     .hero-slider {
-        height: auto;
-        min-height: 450px;
-        margin-top: 2rem;
-        width: 100%;
-        max-width: 100%;
-        justify-content: center;
+        display: none !important;
     }
     
     .slides-container {
         padding-left: 0;
         justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
     }
     
     .slide {
+        position: absolute !important;
         flex-direction: column;
         padding: 0;
+        opacity: 0;
+        transform: translateX(20px);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        pointer-events: none;
+    }
+    
+    .slide.active {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+        position: absolute !important;
+        z-index: 10 !important;
+        pointer-events: auto;
     }
     
     .slide-image {
@@ -3307,9 +3387,26 @@ img[alt="Daikin"] {
 
 @media (max-width: 576px) {
     .hero-slider {
-        height: auto;
-        min-height: 400px;
-        margin-top: 2rem;
+        display: none !important;
+    }
+    
+    .slide {
+        position: absolute !important;
+        opacity: 0;
+        transform: translateX(20px);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        pointer-events: none;
+    }
+    
+    .slide.active {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+        position: absolute !important;
+        pointer-events: auto;
     }
     
     .slide-image {
@@ -3997,6 +4094,62 @@ img[alt="Daikin"] {
     transform: translateY(-30px) scale(0.95);
 }
 
+/* Mobile loader centering */
+@media (max-width: 768px) {
+    .loader-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh; /* Dynamic viewport height for mobile */
+    }
+    
+    .loader {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(0);
+        margin: 0;
+    }
+    
+    .loader-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .loader::before {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .loader-spinner {
+        width: 240px;
+        height: 240px;
+    }
+}
+
+@media (max-width: 576px) {
+    .loader-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .loader::before {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .loader-spinner {
+        width: 200px;
+        height: 200px;
+    }
+}
+
 /* ============================================
    COMPREHENSIVE RESPONSIVE DESIGN ENHANCEMENTS
    ============================================ */
@@ -4131,11 +4284,54 @@ img, video {
         max-width: 95vw;
         margin: 1rem;
         max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        overscroll-behavior: contain;
     }
     
     .modal-body,
     .remote-modal-body {
         padding: 1rem;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        max-height: calc(100vh - 8rem);
+    }
+    
+    .modal,
+    .remote-modal {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+    }
+    
+    .modal.active,
+    .remote-modal.active {
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content,
+    .remote-modal-content {
+        max-width: 98vw;
+        margin: 0.5rem;
+        max-height: calc(100vh - 1rem);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+    }
+    
+    .modal-body,
+    .remote-modal-body {
+        padding: 0.75rem;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y;
+        max-height: calc(100vh - 6rem);
     }
 }
 

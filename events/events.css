@@ -14,7 +14,7 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   align-items: center;
-  padding-top: calc(30px + var(--navbar-height));
+  padding-top: calc(var(--navbar-height) + 30px);
   padding-bottom: 0;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -28,12 +28,41 @@
   box-sizing: border-box;
 }
 
+.events-hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+    "badge media"
+    "heading media"
+    "text text"
+    "actions actions";
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.events-hero-content .hero-badge {
+  grid-area: badge;
+}
+
+.events-hero-content h1 {
+  grid-area: heading;
+}
+
 .events-hero-media {
+  grid-area: media;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100%;
+}
+
+.events-hero-content p {
+  grid-area: text;
+}
+
+.events-hero-actions {
+  grid-area: actions;
 }
 
 .hero-gallery {
@@ -107,12 +136,43 @@
     min-height: 100vh;
     height: 100vh;
     padding: 0 4vw;
-    padding-top: calc(30px + var(--navbar-height));
+    padding-top: calc(var(--navbar-height) + 30px);
     padding-bottom: 0;
   }
   
+  .events-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      "badge media"
+      "heading media"
+      "text text"
+      "actions actions";
+    gap: 1.5rem;
+    align-items: start;
+  }
+  
+  .events-hero-content .hero-badge {
+    grid-area: badge;
+  }
+  
   .events-hero-content h1 {
+    grid-area: heading;
     font-size: clamp(2.2rem, 4vw, 3rem);
+  }
+  
+  .events-hero-media {
+    grid-area: media;
+    align-items: center;
+    order: 0;
+  }
+  
+  .events-hero-content p {
+    grid-area: text;
+  }
+  
+  .events-hero-actions {
+    grid-area: actions;
   }
   
   .hero-gallery {
@@ -120,10 +180,6 @@
     max-width: 480px;
     gap: 1.5rem;
     align-self: center;
-  }
-  
-  .events-hero-media {
-    align-items: center;
   }
   
   .categories-grid {
@@ -137,21 +193,29 @@
 
 @media (max-width: 768px) {
   .events-hero {
-    min-height: 100vh;
-    height: 100vh;
+    min-height: auto;
+    height: auto;
     padding: 0 1.5rem;
-    padding-top: calc(30px + var(--navbar-height));
-    padding-bottom: 0;
+    padding-top: calc(var(--navbar-height) + 30px);
+    padding-bottom: 2rem;
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
   }
   
   .events-hero-content {
     text-align: center;
     width: 100%;
+    max-width: 100%;
     animation: fadeInUp 0.8s ease-out;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .events-hero-content .hero-badge {
@@ -159,14 +223,27 @@
     padding: 0.4rem 0.9rem;
     margin-bottom: 1.25rem;
     letter-spacing: 0.3px;
+    align-self: center;
+    order: 1;
   }
   
   .events-hero-content h1 {
     font-size: 2.75rem;
     font-weight: 700;
     line-height: 1.15;
-    margin: 1rem 0 1.25rem;
+    margin: 0 0 1.25rem;
     letter-spacing: -0.5px;
+    text-align: center;
+    width: 100%;
+    order: 2;
+  }
+  
+  .events-hero-media {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    align-items: center;
+    width: 100%;
+    order: 3;
   }
   
   .events-hero-content p {
@@ -174,15 +251,23 @@
     line-height: 1.6;
     margin-bottom: 1.75rem;
     max-width: 100%;
+    text-align: center;
+    order: 4;
   }
   
   .events-hero-actions {
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    order: 5;
   }
   
-  .events-hero-media {
-    margin-top: 2.5rem;
-    align-items: center;
+  .events-hero-actions .btn {
+    flex: 1 1 auto;
+    min-width: fit-content;
+    text-align: center;
   }
   
   .hero-gallery {
@@ -218,37 +303,76 @@
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
   .events-hero {
-    min-height: 100vh;
-    height: 100vh;
+    min-height: auto;
+    height: auto;
     padding: 0 1.25rem;
-    padding-top: calc(30px + var(--navbar-height));
-    padding-bottom: 0;
+    padding-top: calc(var(--navbar-height) + 25px);
+    padding-bottom: 2rem;
+    gap: 1.5rem;
+  }
+  
+  .events-hero-content {
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    order: 1;
   }
   
   .events-hero-content .hero-badge {
     font-size: 0.7rem;
     padding: 0.35rem 0.8rem;
     margin-bottom: 1rem;
+    align-self: center;
+    order: 1;
   }
   
   .events-hero-content h1 {
     font-size: 2.25rem;
     line-height: 1.2;
-    margin: 1rem 0;
+    margin: 0 0 1rem;
     letter-spacing: -0.3px;
+    text-align: center;
+    width: 100%;
+    order: 2;
   }
   
   .events-hero-content p {
     font-size: 1rem;
     line-height: 1.55;
     margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+    order: 4;
+  }
+  
+  .events-hero-actions {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    order: 5;
+  }
+  
+  .events-hero-actions .btn {
+    flex: 1 1 auto;
+    min-width: fit-content;
+    text-align: center;
   }
   
   .hero-gallery {
     max-width: 100%;
     gap: 0.75rem;
-    margin-top: 2rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
     align-self: center;
+    width: 100%;
   }
   
   .hero-card {
@@ -259,7 +383,11 @@
   }
   
   .events-hero-media {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
     align-items: center;
+    width: 100%;
+    order: 3;
   }
   
   .event-categories,
@@ -1120,7 +1248,50 @@
   }
 
   .events-hero {
-    padding-top: 5rem;
+    padding-top: calc(var(--navbar-height) + 20px);
+    min-height: auto;
+    height: auto;
+  }
+  
+  .events-hero-content {
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .events-hero-content .hero-badge {
+    order: 1;
+  }
+  
+  .events-hero-content h1 {
+    text-align: center;
+    width: 100%;
+    order: 2;
+  }
+  
+  .events-hero-media {
+    order: 3;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .events-hero-content p {
+    text-align: center;
+    width: 100%;
+    order: 4;
+  }
+  
+  .events-hero-actions {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    order: 5;
   }
 
   .events-hero-meta {

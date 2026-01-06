@@ -838,11 +838,11 @@ html {
 
 @media (max-width: 768px) {
     .tv-hero {
-        min-height: 100vh;
-        height: 100vh;
+        min-height: auto;
+        height: auto;
         padding: 0 1.5rem;
-        padding-top: calc(30px + var(--navbar-height));
-        padding-bottom: 0;
+        padding-top: calc(var(--navbar-height) + 30px);
+        padding-bottom: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1524,11 +1524,11 @@ html {
 
 @media (max-width: 576px) {
     .tv-hero {
-        min-height: 100vh;
-        height: 100vh;
+        min-height: auto;
+        height: auto;
         padding: 0 1.25rem;
-        padding-top: calc(30px + var(--navbar-height));
-        padding-bottom: 0;
+        padding-top: calc(var(--navbar-height) + 25px);
+        padding-bottom: 2rem;
     }
     
     .tv-hero::before {
@@ -1611,11 +1611,11 @@ html {
 
 @media (max-width: 480px) {
     .tv-hero {
-        min-height: 100vh;
-        height: 100vh;
+        min-height: auto;
+        height: auto;
         padding: 0 1rem;
-        padding-top: calc(30px + var(--navbar-height));
-        padding-bottom: 0;
+        padding-top: calc(var(--navbar-height) + 20px);
+        padding-bottom: 2rem;
     }
     
     .tv-hero-content h1 {
@@ -2748,19 +2748,35 @@ body.modal-open .scroll-snap-container {
     padding-top: calc(80px + 1.5rem);
   }
   
+  .remote-modal-content {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+  
   .remote-modal-body {
     grid-template-columns: 1fr;
-    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    max-height: calc(100vh - 120px);
   }
   
   .remote-modal-image-section {
-    max-height: 50vh;
+    position: relative;
+    max-height: 320px;
+    flex-shrink: 0;
     padding: 40px 20px;
   }
   
   .remote-modal-info-section {
+    max-height: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    flex: 1;
+    min-height: 0;
     padding: 40px 32px;
-    max-height: 50vh;
   }
   
   .modal-remote-title {
@@ -2792,6 +2808,57 @@ body.modal-open .scroll-snap-container {
   }
 }
 
+@media (max-width: 640px) {
+  .remote-modal {
+    padding: 1rem;
+    padding-top: calc(80px + 1rem);
+  }
+  
+  .remote-modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+  
+  .remote-modal-body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    max-height: calc(100vh - 100px);
+  }
+  
+  .remote-modal-image-section {
+    padding: 40px 24px;
+    flex-shrink: 0;
+  }
+  
+  .remote-modal-info-section {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    flex: 1;
+    min-height: 0;
+    padding: 32px 24px;
+  }
+  
+  .modal-remote-title {
+    font-size: 28px;
+  }
+  
+  .modal-remote-subtitle {
+    font-size: 16px;
+  }
+  
+  .modal-remote-description {
+    font-size: 15px;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 480px) {
   .remote-modal {
     padding: 1rem;
@@ -2799,14 +2866,30 @@ body.modal-open .scroll-snap-container {
   }
   
   .remote-modal-content {
-    max-height: 95vh;
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+  
+  .remote-modal-body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    max-height: calc(100vh - 100px);
   }
   
   .remote-modal-image-section {
-    padding: 30px 15px;
+    padding: 40px 24px;
+    flex-shrink: 0;
   }
   
   .remote-modal-info-section {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    flex: 1;
+    min-height: 0;
     padding: 32px 24px;
   }
   
@@ -2917,10 +3000,25 @@ body, html {
   .remote-modal-content {
     margin: 0.5rem;
     max-height: calc(100vh - 1rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
   }
   
   .remote-modal-body {
     gap: 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    max-height: calc(100vh - 120px);
+  }
+  
+  .remote-modal-info-section {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    flex: 1;
+    min-height: 0;
   }
   
   /* Improved image display */
@@ -2961,11 +3059,30 @@ body, html {
   .remote-modal-content {
     margin: 0.25rem;
     max-height: calc(100vh - 0.5rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
   }
   
-  .remote-modal-image-section,
+  .remote-modal-body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    max-height: calc(100vh - 100px);
+  }
+  
+  .remote-modal-image-section {
+    padding: 40px 24px;
+    flex-shrink: 0;
+  }
+  
   .remote-modal-info-section {
-    padding: 1.5rem 1rem;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    flex: 1;
+    min-height: 0;
+    padding: 32px 24px;
   }
 }
 
