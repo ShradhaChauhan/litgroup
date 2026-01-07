@@ -27,6 +27,12 @@
         max-width: 100%;
     }
 
+    /* ===== HERO SECTION FIX ===== */
+    .hero {
+        padding-top: calc(var(--navbar-height, 70px) + 2rem) !important;
+        min-height: auto !important;
+    }
+
     /* ===== PRODUCTS SECTION ===== */
     .products {
         padding: 3rem 1rem !important;
@@ -62,7 +68,12 @@
     .product-image img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain !important;
+        /* Prevent cropping */
+        background-color: #f8f9fa;
+        /* Light background for consistent look */
+        padding: 10px;
+        /* Internal padding */
     }
 
     .product-info {
@@ -168,12 +179,32 @@
     }
 
     .client-logo {
-        max-width: 90px !important;
+        max-width: 80px !important;
         height: auto !important;
+        margin: 0 1.5rem !important;
+        /* Explicit large margin */
+        flex-shrink: 0 !important;
+        object-fit: contain !important;
+        display: block !important;
     }
 
     .client-logo.featured {
-        max-width: 100px !important;
+        max-width: 90px !important;
+    }
+
+    .clients-grid {
+        gap: 0 !important;
+        /* Reset gap, use margins instead for better control */
+        justify-content: flex-start !important;
+        width: max-content !important;
+        /* Critical: allow container to grow beyond viewport */
+        flex-wrap: nowrap !important;
+    }
+
+    .logo-animate,
+    .logo-animate-alt {
+        width: max-content !important;
+        gap: 0 !important;
     }
 
     /* ===== EMS SECTION ===== */
