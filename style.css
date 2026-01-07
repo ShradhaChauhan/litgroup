@@ -74,9 +74,9 @@ body {
 }
 
 .nav-links {
-      display: flex;
+    display: flex;
     gap: 2.5rem;
-      align-items: center;
+    align-items: center;
 }
 
 .nav-links a {
@@ -291,22 +291,25 @@ body {
         flex-direction: column;
         padding: 1rem 0;
         z-index: 1000;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
-    
+
     .nav-links.active {
         display: flex;
     }
-    
-    .nav-links a, 
+
+    .nav-links a,
     .nav-links .dropdown {
         margin: 0.5rem 2rem;
         width: calc(100% - 4rem);
     }
-    
+
     .dropdown-content {
         position: static;
-        display: none;
-        opacity: 1;
+        display: block;
+        opacity: 0;
         transform: none !important;
         box-shadow: none;
         min-width: 100%;
@@ -318,44 +321,46 @@ body {
         background: var(--light-background);
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
     }
-    
+
     .dropdown:hover .dropdown-content,
     .dropdown-open .dropdown-content,
     .dropdown.active .dropdown-content {
         display: block;
         transform: none !important;
-        max-height: 350px; /* Adjust based on content */
+        max-height: 500px;
+        opacity: 1;
+        /* Increased max-height for longer menus */
     }
-    
+
     .dropdown-content a {
         text-align: left;
         padding: 10px 15px;
         margin-bottom: 0;
         border-radius: 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         display: flex;
         align-items: center;
     }
-    
+
     .dropdown-icon {
         width: 30px;
         height: 30px;
         margin-right: 10px;
         font-size: 16px;
     }
-    
+
     .dropdown-content a:last-child {
         border-bottom: none;
     }
-    
+
     .dropbtn {
         width: 100%;
         justify-content: space-between;
         padding: 0.5rem 0;
     }
-    
+
     .mobile-menu-btn {
         display: flex !important;
         align-items: center;
@@ -364,11 +369,11 @@ body {
         visibility: visible !important;
         opacity: 1 !important;
     }
-    
+
     .mobile-menu-btn.active i:before {
         content: "\f00d";
     }
-    
+
     .mobile-menu-btn i {
         display: inline-block !important;
         font-size: 1.5rem !important;
@@ -377,16 +382,16 @@ body {
         visibility: visible !important;
         opacity: 1 !important;
     }
-    
+
     .mobile-menu-btn:hover i,
     .mobile-menu-btn.active i {
         color: var(--primary-color) !important;
     }
-    
+
     .social-links {
         justify-content: center;
     }
-    
+
     .dropdown-content::before {
         display: none;
     }
@@ -396,18 +401,18 @@ body {
     .product-container {
         max-width: 98%;
     }
-    
+
     .product-grid {
         padding: 0.25rem;
     }
-    
+
     .product-card {
         min-width: 100%;
         width: 100%;
         flex: none;
         margin-bottom: 1.5rem;
     }
-    
+
     .product-nav {
         display: none;
     }
@@ -415,7 +420,7 @@ body {
     .products {
         padding: 3rem 1rem;
     }
-    
+
     .product-image {
         height: 200px;
     }
@@ -425,7 +430,7 @@ body {
 .hero {
     min-height: 100vh;
     height: 100vh;
-  display: flex;
+    display: flex;
     align-items: flex-start;
     justify-content: center;
     padding: 0;
@@ -434,7 +439,7 @@ body {
     background: linear-gradient(135deg, #f8faff 0%, #edf6ff 100%);
     margin: 0;
     width: 100%;
-  position: relative;
+    position: relative;
     overflow: visible;
     box-sizing: border-box;
 }
@@ -531,14 +536,14 @@ body {
 }
 
 .hero-stats {
-  display: flex;
+    display: flex;
     gap: clamp(1.5rem, 3vw, 3rem);
     flex-wrap: wrap;
 }
 
 .stat-item {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .stat-number {
@@ -549,7 +554,7 @@ body {
 }
 
 .stat-label {
-  font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
     color: var(--light-text);
     margin-top: clamp(0.3rem, 0.5vh, 0.5rem);
 }
@@ -564,7 +569,7 @@ body {
 }
 
 .image-wrapper {
-  position: relative;
+    position: relative;
     z-index: 3;
 }
 
@@ -656,13 +661,13 @@ body {
 .products {
     padding: 4rem 2rem;
     background: var(--light-background);
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .products::before {
     content: '';
-  position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -686,11 +691,11 @@ body {
 
 /* Product Container Styles */
 .product-container {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .product-card {
@@ -705,143 +710,143 @@ body {
 }
 
 .product-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s, transform 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s;
 }
 
 .product-nav.disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .prev-product {
-  left: -25px;
+    left: -25px;
 }
 
 .next-product {
-  right: -25px;
+    right: -25px;
 }
 
 .product-nav:hover {
-  background: var(--primary-dark);
-  transform: translateY(-50%) scale(1.1);
+    background: var(--primary-dark);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .product-nav:focus {
-  outline: none;
+    outline: none;
 }
 
 .product-nav i {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 
 @media (max-width: 1280px) {
-  .product-container {
-    max-width: 1000px;
-  }
+    .product-container {
+        max-width: 1000px;
+    }
 }
 
 @media (max-width: 1080px) {
-  .product-container {
-    max-width: 800px;
-  }
-  
-  .product-card {
-    min-width: 300px;
-    flex: 0 0 300px;
-  }
+    .product-container {
+        max-width: 800px;
+    }
+
+    .product-card {
+        min-width: 300px;
+        flex: 0 0 300px;
+    }
 }
 
 @media (max-width: 876px) {
-  .product-container {
-    max-width: 680px;
-  }
-  
-  .product-card {
-    min-width: 280px;
-    flex: 0 0 280px;
-  }
+    .product-container {
+        max-width: 680px;
+    }
+
+    .product-card {
+        min-width: 280px;
+        flex: 0 0 280px;
+    }
 }
 
 @media (max-width: 768px) {
-  .product-container {
-    max-width: 95%;
-  }
-  
-  .product-grid {
-    display: block;
-    overflow-x: visible;
-    padding: 0.5rem 0;
-  }
-  
-  .product-card {
-    min-width: 100%;
-    width: 100%;
-    flex: none;
-    margin-bottom: 2rem;
-  }
-  
-  .product-nav {
-    display: none;
-  }
+    .product-container {
+        max-width: 95%;
+    }
 
-  .product-info {
-    padding: 1.5rem 1.5rem;
-  }
-  
-  .product-image {
-    height: 220px;
-  }
+    .product-grid {
+        display: block;
+        overflow-x: visible;
+        padding: 0.5rem 0;
+    }
 
-  .product-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.8rem;
-  }
+    .product-card {
+        min-width: 100%;
+        width: 100%;
+        flex: none;
+        margin-bottom: 2rem;
+    }
+
+    .product-nav {
+        display: none;
+    }
+
+    .product-info {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .product-info h3 {
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+    }
 }
 
 @media (max-width: 576px) {
-  .product-container {
-    max-width: 98%;
-  }
-  
-  .product-grid {
-    padding: 0.25rem;
-  }
-  
-  .product-card {
-    min-width: 100%;
-    width: 100%;
-    flex: none;
-    margin-bottom: 1.5rem;
-  }
-  
-  .product-nav {
-    display: none;
-  }
+    .product-container {
+        max-width: 98%;
+    }
 
-  .products {
-    padding: 3rem 1rem;
-  }
-  
-  .product-image {
-    height: 200px;
-  }
+    .product-grid {
+        padding: 0.25rem;
+    }
+
+    .product-card {
+        min-width: 100%;
+        width: 100%;
+        flex: none;
+        margin-bottom: 1.5rem;
+    }
+
+    .product-nav {
+        display: none;
+    }
+
+    .products {
+        padding: 3rem 1rem;
+    }
+
+    .product-image {
+        height: 200px;
+    }
 }
 
 .product-image {
@@ -863,15 +868,15 @@ body {
 }
 
 .product-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -922,6 +927,7 @@ body {
     color: var(--light-text);
     margin-bottom: 1.5rem;
 }
+
 .godrej {
     max-height: 90%;
     max-width: 90%;
@@ -929,6 +935,7 @@ body {
     object-fit: contain;
     margin: 0 auto;
 }
+
 /* About Section */
 .about {
     padding: 4rem 2rem;
@@ -1002,7 +1009,7 @@ body {
 }
 
 .about-image img {
-  width: 100%;
+    width: 100%;
     max-height: 60vh;
     object-fit: cover;
     border-radius: 16px;
@@ -1082,7 +1089,7 @@ body {
 
 .feature-card::before {
     content: '';
-  position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 4px;
@@ -1206,7 +1213,8 @@ body {
     height: 40px;
     margin: 0;
     object-fit: contain;
-    opacity: 1; /* Changed from 0.85 to 1 */
+    opacity: 1;
+    /* Changed from 0.85 to 1 */
     transition: opacity 0.3s ease, transform 0.3s ease;
     background: transparent !important;
     flex-shrink: 0;
@@ -1216,7 +1224,8 @@ body {
     width: auto;
     position: relative;
     z-index: 1;
-    filter: contrast(1.1) brightness(1); /* Added to enhance visibility */
+    filter: contrast(1.1) brightness(1);
+    /* Added to enhance visibility */
 }
 
 
@@ -1240,18 +1249,21 @@ img[alt="Daikin"] {
 .client-logo.featured {
     opacity: 1;
     background: transparent !important;
-    filter: contrast(1.2) brightness(1.05); /* Make featured logos stand out */
+    filter: contrast(1.2) brightness(1.05);
+    /* Make featured logos stand out */
 }
 
 .client-logo:hover {
     opacity: 1;
     transform: scale(1.05);
-    filter: contrast(1.2) brightness(1.05); /* Enhanced contrast on hover */
+    filter: contrast(1.2) brightness(1.05);
+    /* Enhanced contrast on hover */
 }
 
 .client-logo.featured:hover {
     transform: scale(1.05);
-    filter: contrast(1.3) brightness(1.1); /* Enhanced contrast on hover for featured logos */
+    filter: contrast(1.3) brightness(1.1);
+    /* Enhanced contrast on hover for featured logos */
 }
 
 /* Target specific logos for individual adjustments */
@@ -1305,7 +1317,8 @@ img[alt="Daikin"] {
 }
 
 @media (max-width: 992px) {
-    .client-logo, 
+
+    .client-logo,
     .client-logo.featured {
         height: 36px;
         margin: 0 !important;
@@ -1313,35 +1326,36 @@ img[alt="Daikin"] {
         min-width: 100px;
         max-width: 150px;
     }
-    
+
     .samsung-logo {
         height: 40px !important;
         margin: 0 !important;
         min-width: 100px;
         max-width: 150px;
     }
-    
+
     img[alt="Daikin"] {
         margin: 0 !important;
         min-width: 100px;
         max-width: 150px;
     }
-    
+
     .clients-grid {
         padding: 1rem 2rem;
         gap: 1.5rem;
     }
-    
+
     .home-logo-wrapper {
         padding: 0 2rem;
     }
-    
+
     .home-logo-left-gradient {
         width: 120px;
     }
 }
 
 @media (max-width: 768px) {
+
     .client-logo,
     .client-logo.featured {
         height: 32px;
@@ -1350,39 +1364,40 @@ img[alt="Daikin"] {
         min-width: 90px;
         max-width: 130px;
     }
-    
+
     .samsung-logo {
         height: 36px !important;
         margin: 0 !important;
         min-width: 90px;
         max-width: 130px;
     }
-    
+
     img[alt="Daikin"] {
         margin: 0 !important;
         min-width: 90px;
         max-width: 130px;
     }
-    
+
     .partners {
         padding: 5rem 1rem;
     }
-    
+
     .clients-grid {
         padding: 1rem 1.5rem;
         gap: 1.2rem;
     }
-    
+
     .home-logo-wrapper {
         padding: 0 1.5rem;
     }
-    
+
     .home-logo-left-gradient {
         width: 100px;
     }
 }
 
 @media (max-width: 576px) {
+
     .client-logo,
     .client-logo.featured {
         height: 28px;
@@ -1391,29 +1406,29 @@ img[alt="Daikin"] {
         min-width: 80px;
         max-width: 120px;
     }
-    
+
     .samsung-logo {
         height: 32px !important;
         margin: 0 !important;
         min-width: 80px;
         max-width: 120px;
     }
-    
+
     img[alt="Daikin"] {
         margin: 0 !important;
         min-width: 80px;
         max-width: 120px;
     }
-    
+
     .clients-grid {
         padding: 1rem;
         gap: 1rem;
     }
-    
+
     .home-logo-wrapper {
         padding: 0 1rem;
     }
-    
+
     .home-logo-left-gradient {
         width: 80px;
     }
@@ -1507,11 +1522,11 @@ img[alt="Daikin"] {
     .custom-solutions {
         padding: 70px 0;
     }
-    
+
     .solutions-grid {
         gap: 20px;
     }
-    
+
     .solution-card {
         padding: 30px 20px;
     }
@@ -1662,7 +1677,7 @@ img[alt="Daikin"] {
     left: 0;
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
     color: white;
     transform: translateY(100%);
     transition: transform 0.4s ease;
@@ -1700,7 +1715,9 @@ img[alt="Daikin"] {
 }
 
 @media (max-width: 1200px) {
-    .ems-capability, .moulding-container {
+
+    .ems-capability,
+    .moulding-container {
         max-width: 90%;
     }
 }
@@ -1711,15 +1728,15 @@ img[alt="Daikin"] {
         gap: 2rem;
         padding: 2rem;
     }
-    
+
     .capability-content {
         order: 1;
     }
-    
+
     .capability-image {
         order: 2;
     }
-    
+
     .grid-item {
         height: 200px;
     }
@@ -1729,27 +1746,27 @@ img[alt="Daikin"] {
     .ems-services {
         padding: 3rem 1.5rem;
     }
-    
+
     .ems-capability {
         padding: 1.5rem;
         max-width: 100%;
     }
-    
+
     .capability-content h3 {
         font-size: 1.6rem;
     }
-    
+
     .capability-content li {
         font-size: 1rem;
         margin-bottom: 0.8rem;
     }
-    
+
     .capability-content li i {
         width: 36px;
         height: 36px;
         font-size: 1rem;
     }
-    
+
     .grid-item {
         height: 180px;
     }
@@ -1764,7 +1781,7 @@ img[alt="Daikin"] {
         height: auto;
         margin-bottom: 1rem;
     }
-    
+
     .grid-item {
         height: 180px;
         margin-bottom: 0;
@@ -1772,28 +1789,28 @@ img[alt="Daikin"] {
         overflow: hidden;
         position: relative;
     }
-    
+
     .grid-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
     }
-    
+
     /* Fix z-index for captions */
     .grid-item .image-caption {
         z-index: 3;
     }
-    
+
     .ems-services {
         padding: 2rem 1rem;
     }
-    
+
     .ems-capability {
         padding: 1.25rem;
         margin: 1.5rem auto 0;
     }
-    
+
     .capability-content .btn {
         width: 100%;
     }
@@ -1801,16 +1818,19 @@ img[alt="Daikin"] {
 
 /* Add this new rule at the end of the CSS file to ensure consistent sizing */
 @media (max-width: 576px) {
-    .ems-capability, .moulding-container {
+
+    .ems-capability,
+    .moulding-container {
         border-radius: 16px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
-    
-    .grid-item, .video-container {
+
+    .grid-item,
+    .video-container {
         height: 180px;
         margin-bottom: 10px;
     }
-    
+
     /* Fix the grid layout */
     .image-grid {
         display: grid;
@@ -1818,8 +1838,9 @@ img[alt="Daikin"] {
         grid-auto-rows: 180px;
         gap: 10px;
     }
-    
-    .capability-content, .moulding-content {
+
+    .capability-content,
+    .moulding-content {
         padding-bottom: 0.5rem;
     }
 }
@@ -2065,7 +2086,7 @@ img[alt="Daikin"] {
         flex: 0 0 calc(50% - 1.25rem);
         max-width: calc(50% - 1.25rem);
     }
-    
+
     .blog-carousel-container {
         padding: 0 3rem;
     }
@@ -2076,16 +2097,16 @@ img[alt="Daikin"] {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
     }
-    
+
     .blog-carousel-track .blog-card {
         flex: 0 0 calc(50% - 1.25rem);
         max-width: calc(50% - 1.25rem);
     }
-    
+
     .blog-carousel-container {
         padding: 0 2.5rem;
     }
-    
+
     .blog-carousel-btn {
         width: 45px;
         height: 45px;
@@ -2096,38 +2117,38 @@ img[alt="Daikin"] {
     .blog-section {
         padding: 4rem 1.5rem;
     }
-    
+
     .blog-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
     .blog-carousel-track .blog-card {
         flex: 0 0 100%;
         max-width: 100%;
     }
-    
+
     .blog-carousel-container {
         padding: 0 3rem;
     }
-    
+
     .blog-carousel-btn {
         width: 40px;
         height: 40px;
     }
-    
+
     .blog-carousel-btn i {
         font-size: 1rem;
     }
-    
+
     .blog-image {
         height: 200px;
     }
-    
+
     .blog-content {
         padding: 1.5rem;
     }
-    
+
     .blog-content h3 {
         font-size: 1.3rem;
     }
@@ -2137,21 +2158,21 @@ img[alt="Daikin"] {
     .blog-section {
         padding: 3rem 1rem;
     }
-    
+
     .blog-carousel-container {
         padding: 0 2.5rem;
     }
-    
+
     .blog-carousel-btn {
         width: 35px;
         height: 35px;
     }
-    
+
     .blog-meta {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .blog-image {
         height: 180px;
     }
@@ -2162,26 +2183,26 @@ img[alt="Daikin"] {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     text-align: center;
-  position: relative;
+    position: relative;
     overflow: hidden;
 }
 
 .cta::before {
-  content: '';
-  position: absolute;
+    content: '';
+    position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
-  z-index: 0;
+    z-index: 0;
 }
 
 .cta-content {
     max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .cta-content h2 {
@@ -2207,8 +2228,8 @@ img[alt="Daikin"] {
     letter-spacing: 0.5px;
     border-radius: 50px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -2219,11 +2240,11 @@ img[alt="Daikin"] {
 
 .btn.glow::before {
     content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transform: translateX(-100%);
 }
@@ -2266,7 +2287,7 @@ img[alt="Daikin"] {
         gap: 2.5rem !important;
         align-items: start;
     }
-    
+
     .footer-column:first-child {
         grid-column: 1 !important;
         text-align: left !important;
@@ -2310,17 +2331,17 @@ img[alt="Daikin"] {
     margin-bottom: 1.5rem;
     font-size: 1.25rem;
     font-weight: 600;
-  position: relative;
+    position: relative;
     display: inline-block;
 }
 
 .footer-column h4::after {
-  content: '';
-  position: absolute;
+    content: '';
+    position: absolute;
     bottom: -8px;
-  left: 0;
+    left: 0;
     width: 40px;
-  height: 2px;
+    height: 2px;
     background: var(--primary-color);
 }
 
@@ -2351,13 +2372,13 @@ img[alt="Daikin"] {
 }
 
 .social-links {
-  display: flex;
+    display: flex;
     gap: 1rem;
 }
 
 .social-links a {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
@@ -2371,11 +2392,11 @@ img[alt="Daikin"] {
     border-radius: 50%;
     color: white;
     font-size: 1.2rem;
-  transition: all 0.3s ease;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  aspect-ratio: 1 / 1;
+    transition: all 0.3s ease;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
 }
 
 /* .social-links a:hover {
@@ -2385,12 +2406,14 @@ img[alt="Daikin"] {
 
 .social-links a:nth-of-type(1):hover i {
     color: #000000;
-    
-  }
+
+}
+
 .social-links a:nth-of-type(2):hover i {
-    color: #0077b5; 
-    
-  }
+    color: #0077b5;
+
+}
+
 .social-links a:nth-of-type(3):hover i {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     -webkit-background-clip: text;
@@ -2406,11 +2429,12 @@ img[alt="Daikin"] {
 .social-links a:nth-of-type(5):hover i {
     color: #FF0000;
 }
-  .social-links a:nth-of-type(1) img {
-        width: 24px;
-        height: 24px; 
-  }
-  
+
+.social-links a:nth-of-type(1) img {
+    width: 24px;
+    height: 24px;
+}
+
 
 .footer-bottom {
     text-align: center;
@@ -2419,17 +2443,163 @@ img[alt="Daikin"] {
     color: #9ca3af;
 }
 
+/* Mobile footer adjustments */
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    /* Contain content so text doesn't run edge-to-edge */
+    .footer-container {
+        padding: 0 0.75rem;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-column {
+        min-width: auto;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    /* First column (logo/description) spans both columns */
+    .footer-column:first-child {
+        grid-column: 1 / -1;
+        margin-bottom: 1rem;
+    }
+
+    /* Headings: stronger weight and centered accent */
+    .footer-column h4 {
+        font-size: 1.06rem;
+        font-weight: 700;
+        margin-bottom: 0.6rem;
+        position: relative;
+        display: inline-block;
+        color: white;
+    }
+
+    .footer-column h4::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 2px;
+        background: var(--primary-color);
+    }
+
+    .footer-column p,
+    .footer-column ul,
+    .certifications,
+    .certification-list {
+        text-align: center;
+        margin: 0;
+    }
+
+    /* List and spacing for good rhythm */
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0.25rem 0 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 0.9rem;
+        line-height: 1.8;
+    }
+
+    /* Make links easier to tap */
+    .footer-column a {
+        color: #9ca3af;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px 6px;
+        border-radius: 6px;
+    }
+
+    .footer-column a:focus,
+    .footer-column a:active {
+        outline: 2px dashed rgba(255, 255, 255, 0.15);
+        outline-offset: 2px;
+    }
+
+    .certification-list {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.5rem;
+    }
+
+    .certification-item {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        color: #9ca3af;
+    }
+
+    .social-links {
+        justify-content: center;
+        margin-top: 0.75rem;
+    }
+
+    /* Hide desktop social block and show mobile-only social block */
+    .social-links.desktop-social {
+        display: none !important;
+    }
+
+    .social-links.mobile-social {
+        display: flex;
+        gap: 1rem;
+        margin: 0.75rem auto;
+    }
+
+    /* Slightly larger touch targets for icons */
+    .social-links a {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.06);
+        border-radius: 50%;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .social-links.mobile-social {
+        display: none !important;
+    }
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
     padding: 0.9rem 2rem;
     border-radius: 50px;
-  text-decoration: none;
+    text-decoration: none;
     font-weight: 600;
     text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn.primary {
@@ -2452,7 +2622,7 @@ img[alt="Daikin"] {
 .btn.secondary:hover {
     background: var(--primary-color);
     color: white;
-  transform: translateY(-5px);
+    transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
 }
 
@@ -2479,20 +2649,20 @@ img[alt="Daikin"] {
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
     }
-    
+
     .hero-content h1 {
         font-size: clamp(2rem, 3.5vw, 2.8rem);
         margin-bottom: clamp(0.8rem, 1.2vh, 1.2rem);
     }
-    
+
     .hero-content p {
         font-size: clamp(1rem, 1.3vw, 1.2rem);
         margin-bottom: clamp(1rem, 1.8vh, 2rem);
     }
-    
+
     .hero-buttons {
         margin-bottom: clamp(1rem, 1.5vh, 1.5rem);
-  }
+    }
 }
 
 @media (max-width: 992px) {
@@ -2503,64 +2673,64 @@ img[alt="Daikin"] {
         padding-top: calc(30px + var(--navbar-height));
         padding-bottom: 30px;
     }
-    
+
     .hero-wrapper {
         flex-direction: column;
         padding: 0 2rem;
         gap: 2rem;
     }
-    
+
     .hero-slider {
         max-width: 100%;
         width: 100%;
         margin-top: 2rem;
     }
-    
+
     .slides-container {
         padding-left: 0;
         justify-content: center;
     }
-    
+
     .hero-content h1 {
         font-size: clamp(1.8rem, 3vw, 2.4rem);
         margin-bottom: clamp(0.6rem, 1vh, 1rem);
     }
-    
+
     .hero-content p {
         font-size: clamp(0.95rem, 1.2vw, 1.1rem);
         margin-bottom: clamp(0.8rem, 1.5vh, 1.5rem);
     }
-    
+
     .hero-buttons {
         margin-bottom: clamp(0.8rem, 1.2vh, 1.2rem);
     }
-    
+
     .stat-number {
         font-size: clamp(1.5rem, 2.5vw, 2rem);
     }
-    }
-    
-    .dropdown-content {
-        width: fit-content;
-        min-width: auto;
-        left: 0;
-        transform: translateX(0) translateY(20px);
-    }
-    
-    .dropdown:hover .dropdown-content {
-        transform: translateX(0) translateY(10px);
-    }
-    
-    .dropdown-content::before {
-        left: 20%;
-    }
 }
+
+.dropdown-content {
+    width: fit-content;
+    min-width: auto;
+    left: 0;
+    transform: translateX(0) translateY(20px);
+}
+
+.dropdown:hover .dropdown-content {
+    transform: translateX(0) translateY(10px);
+}
+
+.dropdown-content::before {
+    left: 20%;
+}
+
 
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
-    
+
     .mobile-menu-btn {
         display: flex !important;
         align-items: center;
@@ -2569,7 +2739,7 @@ img[alt="Daikin"] {
         visibility: visible !important;
         opacity: 1 !important;
     }
-    
+
     .mobile-menu-btn i {
         display: inline-block !important;
         font-size: 1.5rem !important;
@@ -2578,12 +2748,12 @@ img[alt="Daikin"] {
         visibility: visible !important;
         opacity: 1 !important;
     }
-    
+
     .mobile-menu-btn:hover i,
     .mobile-menu-btn.active i {
         color: var(--primary-color) !important;
     }
-    
+
     .hero {
         flex-direction: column;
         text-align: center;
@@ -2601,7 +2771,7 @@ img[alt="Daikin"] {
         position: relative;
         overflow: visible;
     }
-    
+
     .hero-wrapper {
         flex-direction: column;
         padding: 0 1.5rem;
@@ -2610,11 +2780,11 @@ img[alt="Daikin"] {
         position: relative;
         z-index: 5;
     }
-    
+
     .hero-slider {
         display: none !important;
     }
-    
+
     .hero::before {
         content: '';
         position: absolute;
@@ -2626,7 +2796,7 @@ img[alt="Daikin"] {
         z-index: 0;
         pointer-events: none;
     }
-    
+
     .hero::after {
         content: '';
         position: absolute;
@@ -2638,7 +2808,7 @@ img[alt="Daikin"] {
         border-radius: 50%;
         z-index: 0;
     }
-    
+
     .hero-content {
         padding-right: 0;
         padding-top: 20px;
@@ -2653,14 +2823,14 @@ img[alt="Daikin"] {
         flex-direction: column;
         justify-content: flex-start;
     }
-  
+
     .hero-badge {
         font-size: clamp(0.7rem, 1vw, 0.75rem);
         padding: clamp(0.35rem, 0.6vw, 0.4rem) clamp(0.8rem, 1.2vw, 0.9rem);
         margin-bottom: clamp(0.6rem, 1vh, 1rem);
         letter-spacing: 0.3px;
     }
-  
+
     .hero-content h1 {
         font-size: clamp(1.6rem, 2.8vw, 2.2rem);
         font-weight: 700;
@@ -2669,7 +2839,7 @@ img[alt="Daikin"] {
         letter-spacing: -0.5px;
         color: var(--dark-color);
     }
-    
+
     .hero-content p {
         font-size: clamp(0.9rem, 1.1vw, 1.1rem);
         line-height: 1.6;
@@ -2677,92 +2847,92 @@ img[alt="Daikin"] {
         max-width: 100%;
         color: var(--light-text);
     }
-    
+
     .hero-buttons {
         justify-content: center;
         margin-bottom: clamp(0.8rem, 1.2vh, 1.2rem);
     }
-    
+
     .hero-buttons .btn {
         padding: 1rem 2rem;
         font-size: 1rem;
         font-weight: 600;
     }
-  
+
     .hero-stats {
         justify-content: center;
         gap: 2.5rem;
         margin-top: 1rem;
     }
-    
+
     .stat-item {
         text-align: center;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
-    
+
     .stat-label {
         font-size: 0.9rem;
     }
 }
-    
-    .about-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-    
-    .about-content {
-        order: 2;
-        text-align: center;
-    }
-    
-    .stats {
-        justify-content: center;
-    }
-    
-    .about-content h2::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-        text-align: left;
-    }
-    
-    .footer-column:first-child {
-        grid-column: span 2;
-        text-align: center;
-    }
-    
-    .footer-column h4::after {
-        left: 0;
-        transform: none;
-    }
-    
-    .footer-column ul li {
-        margin-bottom: 0.75rem;
-    }
-    
-    .footer-column ul li a {
-        display: inline-block;
-        width: 100%;
-        padding: 0.25rem 0;
-        word-break: break-word;
-        font-size: 0.95rem;
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-    
-    .dropdown-content::before {
-        display: none;
-    }
+
+.about-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
 }
+
+.about-content {
+    order: 2;
+    text-align: center;
+}
+
+.stats {
+    justify-content: center;
+}
+
+.about-content h2::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    text-align: left;
+}
+
+.footer-column:first-child {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.footer-column h4::after {
+    left: 0;
+    transform: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-column ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 0.25rem 0;
+    word-break: break-word;
+    font-size: 0.95rem;
+}
+
+.social-links {
+    justify-content: center;
+}
+
+.dropdown-content::before {
+    display: none;
+}
+
 
 @media (max-width: 480px) {
     .hero {
@@ -2774,19 +2944,19 @@ img[alt="Daikin"] {
         margin-top: 0;
         overflow: visible;
     }
-    
+
     .hero-wrapper {
         padding: 0 1.5rem;
     }
-    
+
     .hero-slider {
         display: none !important;
     }
-    
+
     .hero::before {
         background: rgba(255, 255, 255, 0.95);
     }
-    
+
     .hero-content h1 {
         font-size: clamp(1.5rem, 2.5vw, 1.8rem);
         line-height: 1.2;
@@ -2794,93 +2964,93 @@ img[alt="Daikin"] {
         letter-spacing: -0.3px;
         color: var(--dark-color);
     }
-    
+
     .hero-content p {
         font-size: clamp(0.85rem, 1vw, 1rem);
         line-height: 1.55;
         margin-bottom: clamp(0.8rem, 1.2vh, 1.2rem);
         color: var(--light-text);
     }
-    
+
     .hero-badge {
         font-size: clamp(0.65rem, 0.9vw, 0.7rem);
         padding: clamp(0.3rem, 0.5vw, 0.35rem) clamp(0.7rem, 1vw, 0.8rem);
         margin-bottom: clamp(0.5rem, 0.8vh, 0.8rem);
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         width: 100%;
         gap: 0.75rem;
         margin-bottom: clamp(0.6rem, 1vh, 1rem);
     }
-    
+
     .hero-buttons .btn {
         width: 100%;
         padding: 0.9rem 1.5rem;
     }
-    
+
     .stats {
         grid-template-columns: 1fr;
     }
-    
+
     .hero-stats {
         flex-direction: column;
         gap: clamp(1rem, 1.5vw, 1.5rem);
         margin-top: clamp(0.3rem, 0.5vh, 0.5rem);
     }
-    
+
     .stat-number {
         font-size: clamp(1.4rem, 2vw, 1.75rem);
     }
-    
+
     .stat-label {
         font-size: clamp(0.75rem, 0.9vw, 0.85rem);
     }
-    
+
     .hero-slider {
         margin-top: 2.5rem;
         min-height: 350px;
     }
 }
-    
-    .cta-content h2 {
-        font-size: 2rem;
-    }
-    
-    .product-grid, .features-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer {
-        padding: 3rem 1.5rem 2rem;
-    }
-    
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .footer-column:first-child {
-        grid-column: 1;
-    }
-    
-    .footer-column h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .footer-column ul {
-        padding-left: 0;
-    }
-    
-    .footer-column ul li a {
-        font-size: 0.9rem;
-    }
-    
-    .footer-column:last-child ul li {
-        margin-bottom: 1rem;
-    }
+
+.cta-content h2 {
+    font-size: 2rem;
+}
+
+.product-grid,
+.features-grid {
+    grid-template-columns: 1fr;
+}
+
+.footer {
+    padding: 3rem 1.5rem 2rem;
+}
+
+.footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+.footer-column:first-child {
+    grid-column: 1;
+}
+
+.footer-column h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-column ul {
+    padding-left: 0;
+}
+
+.footer-column ul li a {
+    font-size: 0.9rem;
+}
+
+.footer-column:last-child ul li {
+    margin-bottom: 1rem;
 }
 
 /* Animations */
@@ -2889,6 +3059,7 @@ img[alt="Daikin"] {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2900,6 +3071,7 @@ img[alt="Daikin"] {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2910,15 +3082,20 @@ img[alt="Daikin"] {
     0% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-15px);
     }
+
     100% {
         transform: translateY(0px);
     }
 }
 
-.hero-content, .section-header, .product-card, .feature-card {
+.hero-content,
+.section-header,
+.product-card,
+.feature-card {
     animation: fadeIn 1s ease-out;
 }
 
@@ -2954,16 +3131,16 @@ img[alt="Daikin"] {
 }
 
 .slide {
-  position: absolute;
+    position: absolute;
     top: 0;
-  right: 0;
-  width: 100%;
+    right: 0;
+    width: 100%;
     height: 100%;
     opacity: 0;
     overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     transform: translateX(100px);
     transition: opacity 1s ease, transform 1s ease;
     z-index: 0;
@@ -3081,9 +3258,11 @@ img[alt="Daikin"] {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
+
     100% {
         transform: translateY(0);
     }
@@ -3160,10 +3339,10 @@ img[alt="Daikin"] {
 }
 
 .slider-navigation {
-  position: absolute;
+    position: absolute;
     bottom: 30px;
-  left: 0;
-  width: 100%;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3195,7 +3374,7 @@ img[alt="Daikin"] {
 }
 
 .slider-pagination {
-  display: flex;
+    display: flex;
     gap: 12px;
 }
 
@@ -3206,13 +3385,13 @@ img[alt="Daikin"] {
     background: white;
     cursor: pointer;
     transition: all 0.3s ease;
-  position: relative;
+    position: relative;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .pagination-dot::after {
-  content: '';
-  position: absolute;
+    content: '';
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0);
@@ -3238,11 +3417,11 @@ img[alt="Daikin"] {
     .hero-slider {
         height: 550px;
     }
-    
+
     .slide-text {
         padding-right: 2rem;
     }
-    
+
     .slide-text h2 {
         font-size: 2.8rem;
     }
@@ -3252,37 +3431,37 @@ img[alt="Daikin"] {
     .hero-slider {
         height: 600px;
     }
-    
+
     .slide {
         flex-direction: column-reverse;
     }
-    
+
     .slide-image {
         flex: 0 0 50%;
         padding: 0;
     }
-    
+
     .slide-text {
         flex: 0 0 50%;
         max-width: 100%;
         padding: 2rem 3rem;
         text-align: center;
     }
-    
+
     .slide-specs {
         justify-content: center;
     }
-    
+
     .slide-text h2 {
         font-size: 2.4rem;
-  }
+    }
 }
 
 @media (max-width: 768px) {
     .hero-slider {
         display: none !important;
     }
-    
+
     .slides-container {
         padding-left: 0;
         justify-content: center;
@@ -3292,7 +3471,7 @@ img[alt="Daikin"] {
         display: flex;
         align-items: center;
     }
-    
+
     .slide {
         position: absolute !important;
         flex-direction: column;
@@ -3307,7 +3486,7 @@ img[alt="Daikin"] {
         transition: opacity 0.5s ease, transform 0.5s ease;
         pointer-events: none;
     }
-    
+
     .slide.active {
         opacity: 1 !important;
         transform: translateX(0) !important;
@@ -3315,7 +3494,7 @@ img[alt="Daikin"] {
         z-index: 10 !important;
         pointer-events: auto;
     }
-    
+
     .slide-image {
         flex: 0 0 50%;
         padding: 1.5rem;
@@ -3324,7 +3503,7 @@ img[alt="Daikin"] {
         justify-content: center;
         min-height: 60%;
     }
-    
+
     .slide-image img {
         width: 100%;
         max-width: 100%;
@@ -3333,52 +3512,52 @@ img[alt="Daikin"] {
         object-fit: contain;
         filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.12));
     }
-    
+
     .slide-text {
         flex: 0 0 50%;
         padding: 1.5rem;
         text-align: center;
         max-width: 100%;
     }
-    
+
     .slide-badge {
         font-size: 0.75rem;
         padding: 0.4rem 0.9rem;
         margin-bottom: 1rem;
     }
-    
+
     .slide-text h2 {
         font-size: 1.75rem;
         line-height: 1.2;
         margin-bottom: 0.75rem;
     }
-    
+
     .slide-text p {
         font-size: 0.95rem;
         line-height: 1.5;
         margin-bottom: 1.25rem;
     }
-    
+
     .slide-specs {
         justify-content: center;
         gap: 1rem;
         flex-wrap: wrap;
     }
-    
+
     .slide-specs span {
         font-size: 0.85rem;
     }
-    
+
     .nav-btn {
         width: 40px;
         height: 40px;
         font-size: 0.9rem;
     }
-    
+
     .slider-navigation {
         bottom: 20px;
     }
-    
+
     .pagination-dot {
         width: 10px;
         height: 10px;
@@ -3389,7 +3568,7 @@ img[alt="Daikin"] {
     .hero-slider {
         display: none !important;
     }
-    
+
     .slide {
         position: absolute !important;
         opacity: 0;
@@ -3401,20 +3580,20 @@ img[alt="Daikin"] {
         transition: opacity 0.5s ease, transform 0.5s ease;
         pointer-events: none;
     }
-    
+
     .slide.active {
         opacity: 1 !important;
         transform: translateX(0) !important;
         position: absolute !important;
         pointer-events: auto;
     }
-    
+
     .slide-image {
         flex: 0 0 50%;
         padding: 1rem;
         min-height: 55%;
     }
-    
+
     .slide-image img {
         width: 100%;
         max-width: 100%;
@@ -3422,51 +3601,51 @@ img[alt="Daikin"] {
         max-height: 100%;
         object-fit: contain;
     }
-    
+
     .slide-text {
         flex: 0 0 55%;
         padding: 1.25rem;
     }
-    
+
     .slide-badge {
         font-size: 0.7rem;
         padding: 0.35rem 0.8rem;
         margin-bottom: 0.75rem;
     }
-    
+
     .slide-text h2 {
         font-size: 1.6rem;
         line-height: 1.2;
         margin-bottom: 0.6rem;
     }
-    
+
     .slide-text p {
         font-size: 0.9rem;
         line-height: 1.5;
         margin-bottom: 1rem;
     }
-    
+
     .slide-specs {
         flex-direction: column;
         gap: 0.6rem;
         align-items: center;
     }
-    
+
     .slide-specs span {
         font-size: 0.8rem;
     }
-    
+
     .nav-btn {
         width: 36px;
         height: 36px;
         font-size: 0.85rem;
     }
-    
+
     .pagination-dot {
         width: 9px;
         height: 9px;
     }
-    
+
     .pagination-dot.active {
         width: 20px;
     }
@@ -3636,7 +3815,7 @@ img[alt="Daikin"] {
     left: 0;
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
     color: white;
     transform: translateY(100%);
     transition: transform 0.4s ease;
@@ -3653,15 +3832,15 @@ img[alt="Daikin"] {
         gap: 2rem;
         padding: 2rem;
     }
-    
+
     .moulding-content {
         order: 1;
     }
-    
+
     .moulding-video {
         order: 2;
     }
-    
+
     .video-container {
         height: 350px;
     }
@@ -3671,27 +3850,27 @@ img[alt="Daikin"] {
     .moulding-services {
         padding: 3rem 1.5rem;
     }
-    
+
     .moulding-container {
         padding: 1.5rem;
         max-width: 100%;
     }
-    
+
     .moulding-content h3 {
         font-size: 1.6rem;
     }
-    
+
     .moulding-content li {
         font-size: 1rem;
         margin-bottom: 0.8rem;
     }
-    
+
     .moulding-content li i {
         width: 36px;
         height: 36px;
         font-size: 1rem;
     }
-    
+
     .video-container {
         height: 300px;
     }
@@ -3701,16 +3880,16 @@ img[alt="Daikin"] {
     .moulding-services {
         padding: 2rem 1rem;
     }
-    
+
     .moulding-container {
         padding: 1.25rem;
         margin: 1.5rem auto 0;
     }
-    
+
     .moulding-content .btn {
         width: 100%;
     }
-    
+
     .video-container {
         height: 220px;
     }
@@ -3718,16 +3897,19 @@ img[alt="Daikin"] {
 
 /* Add this new rule at the end of the CSS file to ensure consistent sizing */
 @media (max-width: 576px) {
-    .ems-capability, .moulding-container {
+
+    .ems-capability,
+    .moulding-container {
         border-radius: 16px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
-    
-    .grid-item, .video-container {
+
+    .grid-item,
+    .video-container {
         height: 180px;
         margin-bottom: 10px;
     }
-    
+
     /* Fix the grid layout */
     .image-grid {
         display: grid;
@@ -3735,199 +3917,205 @@ img[alt="Daikin"] {
         grid-auto-rows: 180px;
         gap: 10px;
     }
-    
-    .capability-content, .moulding-content {
+
+    .capability-content,
+    .moulding-content {
         padding-bottom: 0.5rem;
     }
 }
 
 /* Add certification styles */
 .certifications {
-  padding: 1.5rem 0;
-  margin-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
 }
 
 .certifications h4 {
-  margin-bottom: 1.25rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #fff;
-  position: relative;
-  display: inline-block;
+    margin-bottom: 1.25rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    display: inline-block;
 }
 
 .certifications h4::after {
-  content: '';
-  width: 50%;
-  height: 2px;
-  background: var(--primary-color);
-  position: absolute;
-  bottom: -8px;
-  left: 25%;
-  border-radius: 2px;
+    content: '';
+    width: 50%;
+    height: 2px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -8px;
+    left: 25%;
+    border-radius: 2px;
 }
 
 .certification-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .certification-item {
-  padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .certification-item:hover {
-  background: rgba(59, 130, 246, 0.2);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .certification-item i {
-  color: var(--primary-color);
-  font-size: 1.1rem;
-  margin-right: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
 }
 
 .certification-item span {
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 @media (max-width: 768px) {
-  .certification-list {
-    gap: 1rem;
-  }
-  
-  .certification-item {
-    padding: 0.4rem 0.8rem;
-  }
-  
-  .certification-item span {
-    font-size: 0.8rem;
-  }
+    .certification-list {
+        gap: 1rem;
+    }
+
+    .certification-item {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .certification-item span {
+        font-size: 0.8rem;
+    }
 }
 
 @media (max-width: 576px) {
-  .certification-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .certification-item {
-    width: 80%;
-    justify-content: center;
-  }
+    .certification-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .certification-item {
+        width: 80%;
+        justify-content: center;
+    }
 }
 
 /* Add this new rule at the end of the CSS file to ensure consistent sizing */
 @media (max-width: 576px) {
-  .ems-capability, .moulding-container {
-    border-radius: 16px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-  }
-  
-  .grid-item, .video-container {
-    height: 180px;
-    margin-bottom: 10px;
-  }
-  
-  /* Fix the grid layout */
-  .image-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 180px;
-    gap: 10px;
-  }
-  
-  .capability-content, .moulding-content {
-    padding-bottom: 0.5rem;
-  }
+
+    .ems-capability,
+    .moulding-container {
+        border-radius: 16px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .grid-item,
+    .video-container {
+        height: 180px;
+        margin-bottom: 10px;
+    }
+
+    /* Fix the grid layout */
+    .image-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 180px;
+        gap: 10px;
+    }
+
+    .capability-content,
+    .moulding-content {
+        padding-bottom: 0.5rem;
+    }
 }
 
 /* Coming Soon Popup Styles */
 .popup-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
 }
 
 .popup-content {
-  position: relative;
-  background-color: #fff;
-  width: 90%;
-  max-width: 450px;
-  border-radius: 8px;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-  padding: 25px;
-  text-align: center;
-  animation: popupFadeIn 0.4s ease-in-out;
+    position: relative;
+    background-color: #fff;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    text-align: center;
+    animation: popupFadeIn 0.4s ease-in-out;
 }
 
 @keyframes popupFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .close-popup {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  color: #777;
-  cursor: pointer;
-  transition: color 0.2s;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #777;
+    cursor: pointer;
+    transition: color 0.2s;
 }
 
 .close-popup:hover {
-  color: #333;
+    color: #333;
 }
 
 .popup-body {
-  padding: 20px 0;
+    padding: 20px 0;
 }
 
 .popup-icon {
-  font-size: 48px;
-  color: var(--primary-color, #1e3a8a);
-  margin-bottom: 15px;
+    font-size: 48px;
+    color: var(--primary-color, #1e3a8a);
+    margin-bottom: 15px;
 }
 
 .popup-body h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
 }
 
 .popup-body p {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.5;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
 }
 
 /* Loader */
@@ -3941,7 +4129,7 @@ img[alt="Daikin"] {
     justify-content: center;
     align-items: center;
     background-color: white;
-    background-image: 
+    background-image:
         radial-gradient(circle at 25% 25%, rgba(31, 98, 204, 0.02) 0%, transparent 50%),
         radial-gradient(circle at 75% 75%, rgba(31, 98, 204, 0.02) 0%, transparent 50%);
     z-index: 9999;
@@ -4061,28 +4249,59 @@ img[alt="Daikin"] {
 
 /* Modern animations */
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 @keyframes pulse-modern {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.1); opacity: 0.8; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
 }
 
 @keyframes loading {
-    0% { width: 0; }
-    100% { width: 100%; }
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 @keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes rotate-reverse {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(-360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
 }
 
 .loader-hidden {
@@ -4105,9 +4324,10 @@ img[alt="Daikin"] {
         left: 0;
         width: 100vw;
         height: 100vh;
-        height: 100dvh; /* Dynamic viewport height for mobile */
+        height: 100dvh;
+        /* Dynamic viewport height for mobile */
     }
-    
+
     .loader {
         position: relative;
         display: flex;
@@ -4116,17 +4336,17 @@ img[alt="Daikin"] {
         transform: translateY(0);
         margin: 0;
     }
-    
+
     .loader-logo {
         width: 120px;
         height: 120px;
     }
-    
+
     .loader::before {
         width: 150px;
         height: 150px;
     }
-    
+
     .loader-spinner {
         width: 240px;
         height: 240px;
@@ -4138,12 +4358,12 @@ img[alt="Daikin"] {
         width: 100px;
         height: 100px;
     }
-    
+
     .loader::before {
         width: 130px;
         height: 130px;
     }
-    
+
     .loader-spinner {
         width: 200px;
         height: 200px;
@@ -4164,13 +4384,16 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-img, video {
+img,
+video {
     max-width: 100%;
     height: auto;
 }
 
 /* Ensure all containers are responsive */
-.container, .section-container, .content-container {
+.container,
+.section-container,
+.content-container {
     width: 100%;
     max-width: 100%;
     padding-left: 1rem;
@@ -4184,19 +4407,19 @@ img, video {
         font-size: 16px;
         line-height: 1.6;
     }
-    
+
     h1 {
         font-size: clamp(1.75rem, 5vw, 2.5rem);
     }
-    
+
     h2 {
         font-size: clamp(1.5rem, 4vw, 2rem);
     }
-    
+
     h3 {
         font-size: clamp(1.25rem, 3.5vw, 1.75rem);
     }
-    
+
     p {
         font-size: clamp(0.9rem, 2.5vw, 1rem);
     }
@@ -4207,25 +4430,25 @@ img, video {
     .navbar {
         padding: 1rem 1.5rem;
     }
-    
+
     .navbar.scrolled {
         padding: 0.75rem 1.5rem;
     }
-    
+
     .nav-container {
         padding: 0;
     }
-    
+
     .logo img {
         height: 32px;
     }
-    
+
     .nav-links {
         max-height: calc(100vh - 80px);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
-    
+
     .nav-links a,
     .nav-links .dropdown {
         padding: 0.75rem 2rem;
@@ -4238,9 +4461,10 @@ img, video {
     .btn {
         padding: 0.875rem 1.5rem;
         font-size: 0.95rem;
-        min-height: 44px; /* Touch target size */
+        min-height: 44px;
+        /* Touch target size */
     }
-    
+
     .btn.primary,
     .btn.glow {
         width: 100%;
@@ -4250,6 +4474,7 @@ img, video {
 
 /* Responsive grids */
 @media (max-width: 1024px) {
+
     .grid-3,
     .grid-4 {
         grid-template-columns: repeat(2, 1fr);
@@ -4257,6 +4482,7 @@ img, video {
 }
 
 @media (max-width: 768px) {
+
     .grid-2,
     .grid-3,
     .grid-4 {
@@ -4269,7 +4495,7 @@ img, video {
     .carousel-container {
         padding: 0 2rem;
     }
-    
+
     .carousel-arrow {
         width: 36px;
         height: 36px;
@@ -4279,6 +4505,7 @@ img, video {
 
 /* Responsive modals */
 @media (max-width: 768px) {
+
     .modal-content,
     .remote-modal-content {
         max-width: 95vw;
@@ -4289,7 +4516,7 @@ img, video {
         touch-action: pan-y;
         overscroll-behavior: contain;
     }
-    
+
     .modal-body,
     .remote-modal-body {
         padding: 1rem;
@@ -4298,14 +4525,14 @@ img, video {
         touch-action: pan-y;
         max-height: calc(100vh - 8rem);
     }
-    
+
     .modal,
     .remote-modal {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
     }
-    
+
     .modal.active,
     .remote-modal.active {
         overflow-y: auto;
@@ -4315,6 +4542,7 @@ img, video {
 }
 
 @media (max-width: 480px) {
+
     .modal-content,
     .remote-modal-content {
         max-width: 98vw;
@@ -4324,7 +4552,7 @@ img, video {
         -webkit-overflow-scrolling: touch;
         touch-action: pan-y;
     }
-    
+
     .modal-body,
     .remote-modal-body {
         padding: 0.75rem;
@@ -4352,16 +4580,22 @@ body {
 
 /* Touch-friendly interactive elements */
 @media (max-width: 768px) {
-    a, button, input, select, textarea {
+
+    a,
+    button,
+    input,
+    select,
+    textarea {
         min-height: 44px;
         min-width: 44px;
     }
-    
+
     input[type="text"],
     input[type="email"],
     input[type="tel"],
     textarea {
-        font-size: 16px; /* Prevents zoom on iOS */
+        font-size: 16px;
+        /* Prevents zoom on iOS */
     }
 }
 
@@ -4370,11 +4604,11 @@ body {
     section {
         padding: 3rem 1.5rem;
     }
-    
+
     .section-header {
         margin-bottom: 2rem;
     }
-    
+
     .section-header h2 {
         margin-bottom: 1rem;
     }
@@ -4382,6 +4616,7 @@ body {
 
 /* Responsive images in cards */
 @media (max-width: 768px) {
+
     .card-image,
     .product-image,
     .collection-card-image-wrapper {
@@ -4395,11 +4630,11 @@ body {
     .form-group {
         margin-bottom: 1.5rem;
     }
-    
+
     .form-row {
         flex-direction: column;
     }
-    
+
     .form-row .form-group {
         width: 100%;
         margin-right: 0;
@@ -4412,7 +4647,7 @@ body {
         padding-left: 2rem;
         padding-right: 2rem;
     }
-    
+
     section {
         padding: 4rem 2rem;
     }
@@ -4431,22 +4666,21 @@ body {
         padding-left: 1rem;
         padding-right: 1rem;
     }
-    
+
     section {
         padding: 2rem 1rem;
     }
-    
+
     h1 {
         font-size: 1.75rem;
     }
-    
+
     h2 {
         font-size: 1.5rem;
     }
-    
+
     .btn {
         padding: 0.75rem 1.25rem;
         font-size: 0.9rem;
     }
 }
-
