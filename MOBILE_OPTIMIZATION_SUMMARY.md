@@ -28,17 +28,17 @@
 
 ### 4. Our Partners (REFINED)
 - **Fix**: The top marquee row was appearing larger than the bottom row.
-- **Solution**: 
-    - Forced `height: 40px` (down from 50px) for *all* logos.
-    - Capped `max-width` at `100px` (down from 120px) to rein in wider logos.
-    - Adjusted margin to `0 1rem` for uniform spacing.
-    - Explicitly targeted `.client-logo.featured` with these same rules to override any lingering desktop specificity.
+- **Solution**: Forced uniform `height: 40px` and `max-width: 100px` for all logos, including featured ones, to ensure uniformity.
 
-### 5. Mobile Menu
-- **Fixes**:
-    - Reliable expand/collapse logic for sub-items.
-    - Added bottom padding to navigation list.
+### 5. Mobile Menu (FIXED)
+- **Issue**: 
+    1. Dropdowns wouldn't collapse on tap (sticky hover).
+    2. Arrow icon didn't rotate when active.
+- **Fix**: 
+    - Moved desktop hover logic to `min-width` query.
+    - Removed mobile hover logic.
+    - Added specific `transform: rotate(180deg) !important` rule in `mobile-enhancements.css` targeting `.dropdown.active` and `dropdown-open` to force the arrow to flip on mobile when the menu opens.
 
 ## Verification
-- **Partners Section**: Check that the TOP row of logos (Samsung, etc.) is now the same size and spacing as the bottom row.
-- **Alignment**: Everything else should remain symmetrical and centered.
+- **Icon Rotation**: Open "Products". The arrow should point UP. Close it. The arrow should point DOWN.
+- **Menu Interaction**: Single-click toggles should work perfectly.

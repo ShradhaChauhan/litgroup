@@ -104,7 +104,13 @@
         transform: translateY(0) !important;
     }
 
-    /* Ensure last menu item has padding */
+    /* ===== MOBILE MENU FIXES ===== */
+    .dropdown.active .dropbtn i,
+    .dropdown.dropdown-open .dropbtn i {
+        transform: rotate(180deg) !important;
+    }
+
+    /* Ensure link text is consistent */
     .nav-links {
         padding-bottom: 50px !important;
     }
