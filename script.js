@@ -1,24 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Modern loader functionality with exact 3-second timing
     const loader = document.getElementById('loader');
-    
+
     // Show loader initially
     if (loader) {
         document.body.style.overflow = 'hidden'; // Prevent scrolling while loading
-        
+
         // Ensure the circular loader is visible immediately
         const loaderSpinner = document.querySelector('.loader-spinner');
         if (loaderSpinner) {
             loaderSpinner.style.opacity = '1';
         }
-        
+
         // Hide loader after exactly 3 seconds
-        setTimeout(function() {
+        setTimeout(function () {
             loader.classList.add('loader-hidden');
             document.body.style.overflow = ''; // Re-enable scrolling
-            
+
             // Remove loader from DOM after animation completes
-            loader.addEventListener('transitionend', function(e) {
+            loader.addEventListener('transitionend', function (e) {
                 // Only process the main container transition, not child elements
                 if (e.target === loader && loader.classList.contains('loader-hidden')) {
                     loader.style.display = 'none';
@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }, 2000); // Exactly 3 seconds
     }
-    
+
     // Mobile menu functionality and other initialization code below
     // Removed the custom popup code
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -43,39 +43,39 @@ document.addEventListener('DOMContentLoaded', function() {
     // Dropdown Menu Improvements
     const dropdowns = document.querySelectorAll('.dropdown');
     let dropdownTimeout;
-    
+
     dropdowns.forEach(dropdown => {
         // For mouse interactions
-        dropdown.addEventListener('mouseenter', function() {
+        dropdown.addEventListener('mouseenter', function () {
             clearTimeout(dropdownTimeout);
             closeAllDropdowns();
             this.classList.add('dropdown-open');
         });
-        
-        dropdown.addEventListener('mouseleave', function() {
+
+        dropdown.addEventListener('mouseleave', function () {
             const self = this;
-            dropdownTimeout = setTimeout(function() {
+            dropdownTimeout = setTimeout(function () {
                 self.classList.remove('dropdown-open');
             }, 300); // Delay before closing
         });
-        
+
         // For touch devices
-        dropdown.addEventListener('touchstart', function(e) {
+        dropdown.addEventListener('touchstart', function (e) {
             if (!this.classList.contains('dropdown-open')) {
                 e.preventDefault();
                 closeAllDropdowns();
                 this.classList.add('dropdown-open');
             }
-        }, {passive: false});
+        }, { passive: false });
     });
-    
+
     // Close dropdowns when clicking outside
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (!e.target.closest('.dropdown')) {
             closeAllDropdowns();
         }
     });
-    
+
     function closeAllDropdowns() {
         dropdowns.forEach(d => d.classList.remove('dropdown-open'));
     }
@@ -91,48 +91,48 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the slider
     function initSlider() {
         if (slides.length === 0) return;
-        
+
         // Make sure first slide is active
         resetSlides();
         slides[0].classList.add('active');
         dots[0].classList.add('active');
-        
+
         // Start auto-sliding
         startSlideInterval();
-        
+
         // Add event listeners for manual controls
         prevBtn?.addEventListener('click', goPrevSlide);
         nextBtn?.addEventListener('click', goNextSlide);
-        
+
         // Add click events to dots
         dots.forEach(dot => {
-            dot.addEventListener('click', function() {
+            dot.addEventListener('click', function () {
                 const slideIndex = parseInt(this.getAttribute('data-index'));
                 goToSlide(slideIndex);
             });
         });
-        
+
         // Pause auto-sliding on hover
         const sliderContainer = document.querySelector('.hero-slider');
         if (sliderContainer) {
             sliderContainer.addEventListener('mouseenter', stopSlideInterval);
             sliderContainer.addEventListener('mouseleave', startSlideInterval);
-            
+
             // Touch swipe support for mobile
             let touchStartX = 0;
             let touchEndX = 0;
-            
-            sliderContainer.addEventListener('touchstart', function(e) {
+
+            sliderContainer.addEventListener('touchstart', function (e) {
                 touchStartX = e.changedTouches[0].screenX;
                 stopSlideInterval();
             }, { passive: true });
-            
-            sliderContainer.addEventListener('touchend', function(e) {
+
+            sliderContainer.addEventListener('touchend', function (e) {
                 touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
                 startSlideInterval();
             }, { passive: true });
-            
+
             function handleSwipe() {
                 const swipeThreshold = 50;
                 if (touchEndX < touchStartX - swipeThreshold) {
@@ -144,11 +144,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        
+
         // Initialize first slide
         goToSlide(0);
     }
-    
+
     // Reset all slides
     function resetSlides() {
         slides.forEach(slide => {
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.classList.remove('active');
         });
     }
-    
+
     // Go to a specific slide
     function goToSlide(index) {
         if (index < 0) {
@@ -168,31 +168,31 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (index >= slides.length) {
             index = 0;
         }
-        
+
         // Determine direction (1 for forward, -1 for backward)
         const direction = index > currentSlide ? 1 : -1;
-        
+
         // Remove active class from all slides and dots
         resetSlides();
-        
+
         // Set the incoming slide to start from the side
         slides[index].style.transform = `translateX(${100 * direction}%)`;
-        
+
         // Force a reflow to ensure the transform is applied before the transition
         slides[index].offsetHeight;
-        
+
         // Add active class to current slide and dot
         slides[index].classList.add('active');
         dots[index].classList.add('active');
-        
+
         // Move the slide into view with a transition
         slides[index].style.transition = 'transform 0.8s ease-in-out';
         slides[index].style.transform = 'translateX(0)';
-        
+
         // Update current slide index
         currentSlide = index;
     }
-    
+
     // Go to next slide
     function goNextSlide() {
         let nextIndex = currentSlide + 1;
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         goToSlide(nextIndex);
     }
-    
+
     // Go to previous slide
     function goPrevSlide() {
         let prevIndex = currentSlide - 1;
@@ -210,33 +210,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         goToSlide(prevIndex);
     }
-    
+
     // Start auto-sliding
     function startSlideInterval() {
         stopSlideInterval(); // Clear any existing interval
         slideInterval = setInterval(goNextSlide, 3000); // Change slide every 3 seconds
     }
-    
+
     // Stop auto-sliding
     function stopSlideInterval() {
         if (slideInterval) {
             clearInterval(slideInterval);
         }
     }
-    
+
     // Initialize the slider if it exists on the page
     initSlider();
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') {
                 // Previously showed popup, now just return
                 return;
             }
-            
+
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
@@ -247,32 +247,41 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animation on scroll
-    const animateElements = document.querySelectorAll('.product-card, .feature-card, .solution-card, .about-image');
-    
-    const animateOnScroll = function() {
+    // Updated selector for more comprehensive animations (Excluding Partners Section)
+    const animateElements = document.querySelectorAll(
+        '.product-card, .feature-card, .solution-card, .about-image, ' +
+        'section:not(.partners) .section-header h2, section:not(.partners) .section-header p, ' +
+        '.hero-content h1, .hero-content p, .hero-buttons, .hero-stats'
+    );
+
+    // Add the base class for CSS transitions
+    animateElements.forEach(el => {
+        el.classList.add('animate-on-scroll');
+    });
+
+    const animateOnScroll = function () {
         animateElements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
+            const elementVisible = 100; // Trigger a bit earlier
+
             if (elementTop < window.innerHeight - elementVisible) {
                 element.classList.add('animate');
             }
         });
     };
-    
+
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll();
 
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    
+
     if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.addEventListener('click', function () {
             navLinks.classList.toggle('active');
             this.classList.toggle('active');
-            
+
             // Toggle body overflow when mobile menu is open/closed
             if (navLinks.classList.contains('active')) {
                 document.body.style.overflow = 'hidden';
@@ -281,10 +290,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
+
     // Close mobile menu when clicking on a link
     document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             if (navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
@@ -292,62 +301,42 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Mobile dropdown toggle
     const dropdownBtns = document.querySelectorAll('.dropdown .dropbtn');
-    
+
     dropdownBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        // Unified click handler for mobile dropdowns
+        btn.addEventListener('click', function (e) {
+            // Only trigger on mobile/tablet view
             if (window.innerWidth <= 768) {
                 e.preventDefault();
                 e.stopPropagation();
-                const dropdown = this.parentElement;
-                
-                // Close this dropdown if it's already active (toggle behavior)
-                if (dropdown.classList.contains('active')) {
-                    dropdown.classList.remove('active');
-                    dropdown.classList.remove('dropdown-open'); // Also remove dropdown-open class for arrow rotation
-                } else {
-                    // Close other open dropdowns
-                    dropdownBtns.forEach(otherBtn => {
-                        otherBtn.parentElement.classList.remove('active');
-                        otherBtn.parentElement.classList.remove('dropdown-open'); // Remove dropdown-open from all others
-                    });
-                    // Open this dropdown
+
+                const dropdown = this.closest('.dropdown');
+                const isOpen = dropdown.classList.contains('active');
+
+                // Close all dropdowns first
+                dropdownBtns.forEach(otherBtn => {
+                    const otherDropdown = otherBtn.closest('.dropdown');
+                    otherDropdown.classList.remove('active');
+                    otherDropdown.classList.remove('dropdown-open');
+                });
+
+                // If it wasn't open before, open it now
+                if (!isOpen) {
                     dropdown.classList.add('active');
-                    dropdown.classList.add('dropdown-open'); // Add dropdown-open class for arrow rotation
+                    dropdown.classList.add('dropdown-open');
                 }
             }
         });
-        
-        // Add touchstart listener for better mobile support
-        btn.addEventListener('touchstart', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                const dropdown = this.parentElement;
-                
-                // Close this dropdown if it's already active (toggle behavior)
-                if (dropdown.classList.contains('active')) {
-                    dropdown.classList.remove('active');
-                    dropdown.classList.remove('dropdown-open'); // Also remove dropdown-open class for arrow rotation
-                } else {
-                    // Close other open dropdowns
-                    dropdownBtns.forEach(otherBtn => {
-                        otherBtn.parentElement.classList.remove('active');
-                        otherBtn.parentElement.classList.remove('dropdown-open'); // Remove dropdown-open from all others
-                    });
-                    // Open this dropdown
-                    dropdown.classList.add('active');
-                    dropdown.classList.add('dropdown-open'); // Add dropdown-open class for arrow rotation
-                }
-            }
-        }, {passive: false});
+
+        // Removed separate touchstart listener to prevent double-firing events
     });
-    
+
     // Add click handler for dropdown content links to close dropdown after clicking a link
     document.querySelectorAll('.dropdown-content a').forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             if (window.innerWidth <= 768) {
                 // Find parent dropdown and close it
                 const dropdown = this.closest('.dropdown');
@@ -355,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     dropdown.classList.remove('active');
                     dropdown.classList.remove('dropdown-open'); // Remove dropdown-open to reset arrow direction
                 }
-                
+
                 // If this is an anchor link, allow smooth scrolling
                 if (this.getAttribute('href').startsWith('#')) {
                     e.preventDefault();
@@ -364,13 +353,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Previously showed popup, now just return
                         return;
                     }
-                    
+
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
                         // Also close the mobile menu
                         document.querySelector('.nav-links').classList.remove('active');
                         document.querySelector('.mobile-menu-btn').classList.remove('active');
-                        
+
                         window.scrollTo({
                             top: targetElement.offsetTop - 100,
                             behavior: 'smooth'
@@ -380,9 +369,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Close dropdowns when clicking outside in mobile view
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (window.innerWidth <= 768 && !e.target.closest('.dropdown')) {
             dropdownBtns.forEach(btn => {
                 btn.parentElement.classList.remove('active');
@@ -390,19 +379,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    
+
     // Product image hover effect enhancement
     const productCards = document.querySelectorAll('.product-card');
-    
+
     productCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             const img = this.querySelector('img');
             if (img) {
                 img.style.transform = 'scale(1.1)';
             }
         });
-        
-        card.addEventListener('mouseleave', function() {
+
+        card.addEventListener('mouseleave', function () {
             const img = this.querySelector('img');
             if (img) {
                 img.style.transform = 'scale(1)';
@@ -469,14 +458,14 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 prevProductBtn.style.display = 'flex';
                 nextProductBtn.style.display = 'flex';
-                
+
                 // Reset disabled state
                 if (productGrid.scrollLeft <= 10) {
                     prevProductBtn.classList.add('disabled');
                 } else {
                     prevProductBtn.classList.remove('disabled');
                 }
-                
+
                 if (productGrid.scrollLeft >= productGrid.scrollWidth - productGrid.clientWidth - 10) {
                     nextProductBtn.classList.add('disabled');
                 } else {
@@ -492,19 +481,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Coming Soon Popup Functionality
     const popup = document.getElementById('coming-soon-popup');
     const closeBtn = document.querySelector('.close-popup');
-    
+
     // Close popup when clicking the close button
-    closeBtn.addEventListener('click', function() {
+    closeBtn.addEventListener('click', function () {
         popup.style.display = 'none';
     });
-    
+
     // Close popup when clicking outside of it
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', function (event) {
         if (event.target === popup) {
             popup.style.display = 'none';
         }
     });
-    
+
     // Power Solutions links
     const powerSolutionLinks = document.querySelectorAll('a[href="#"]');
     powerSolutionLinks.forEach(link => {
@@ -512,14 +501,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (linkText === 'power solutions' || linkText === 'learn more') {
             const cardTitle = link.closest('.product-info')?.querySelector('h3')?.textContent.trim();
             if (cardTitle === 'Power Solutions' || !cardTitle) {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
                     popup.style.display = 'flex';
                 });
             }
         }
     });
-    
+
     // "View Details" button in Power Solutions card
     const viewDetailsLinks = document.querySelectorAll('.product-overlay .view-btn');
     viewDetailsLinks.forEach(link => {
@@ -528,18 +517,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (productCard) {
             const cardTitle = productCard.querySelector('.product-info h3')?.textContent.trim();
             if (cardTitle === 'Power Solutions') {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     e.preventDefault();
                     popup.style.display = 'flex';
                 });
             }
         }
     });
-    
+
     // Moulding Process link
     const mouldingLink = document.querySelector('.moulding-content .btn.primary');
     if (mouldingLink) {
-        mouldingLink.addEventListener('click', function(e) {
+        mouldingLink.addEventListener('click', function (e) {
             e.preventDefault();
             popup.style.display = 'flex';
         });
