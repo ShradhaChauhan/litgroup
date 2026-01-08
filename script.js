@@ -282,11 +282,11 @@ document.addEventListener('DOMContentLoaded', function () {
             navLinks.classList.toggle('active');
             this.classList.toggle('active');
 
-            // Toggle body overflow when mobile menu is open/closed
+            // Toggle body overflow using class
             if (navLinks.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
+                document.body.classList.add('no-scroll');
             } else {
-                document.body.style.overflow = '';
+                document.body.classList.remove('no-scroll');
             }
         });
     }
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (navLinks.classList.contains('active')) {
                 navLinks.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
-                document.body.style.overflow = '';
+                document.body.classList.remove('no-scroll');
             }
         });
     });
@@ -313,20 +313,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 e.stopPropagation();
 
-                const dropdown = this.closest('.dropdown');
-                const isOpen = dropdown.classList.contains('active');
+                const currentDropdown = this.closest('.dropdown');
+                const wasActive = currentDropdown.classList.contains('active');
 
-                // Close all dropdowns first
-                dropdownBtns.forEach(otherBtn => {
-                    const otherDropdown = otherBtn.closest('.dropdown');
-                    otherDropdown.classList.remove('active');
-                    otherDropdown.classList.remove('dropdown-open');
+                // Force close ALL dropdowns first (accordion behavior)
+                document.querySelectorAll('.dropdown').forEach(el => {
+                    el.classList.remove('active');
+                    el.classList.remove('dropdown-open');
                 });
 
-                // If it wasn't open before, open it now
-                if (!isOpen) {
-                    dropdown.classList.add('active');
-                    dropdown.classList.add('dropdown-open');
+                // Re-open this one if it wasn't already open
+                if (!wasActive) {
+                    currentDropdown.classList.add('active');
+                    currentDropdown.classList.add('dropdown-open');
                 }
             }
         });

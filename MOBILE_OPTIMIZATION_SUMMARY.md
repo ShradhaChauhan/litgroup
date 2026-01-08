@@ -7,37 +7,27 @@
 - **Changes**: 
     - Forced `min-height: 100vh`.
     - Centered all content.
-    - **Spacing**: Increased `padding-top` to `calc(var(--navbar-height, 80px) + 5rem)` to explicitly account for iPhone safe areas and the fixed navbar, ensuring no text is cut off at the top.
+    - **Vertical Alignment Fix**: Switched form `justify-content: center` to `justify-content: flex-start` with explicit `padding-top`. This prevents the top-most content (the "Premium Quality" badge) from being clipped off the top of the screen on smaller devices.
+    - **Badge Visibility**: Added explicit `visibility: visible`, `display: inline-block`, and `z-index` rules for `.hero-badge` to ensure it is never hidden.
 
-### 2. Scroll Animations (ENHANCED)
-- **Files**: `script.js` & `mobile-enhancements.css`
-- **Fixes**:
-    - **Visibility**: Forced initial state to `opacity: 0 !important` and `transform: translateY(50px)` to ensure elements start hidden and have a more noticeable "move up" effect.
-    - **Exclusions**: Updated JS selector to explicitly **exclude** any elements within the "Our Partners" section, preventing conflicting animations on the marquee.
+### 2. General Mobile Improvements
+- **Scroll Animations**: Enhanced visibility (50px move up) and fixed `opacity` logic.
+- **Scroll Lock**: Implemented `.no-scroll` class to freeze background content when mobile menu is open.
+- **Visuals**: Justified text in "About Us", consistent product card gradients, and strict container widths (`max-width: 100vw`) to prevent horizontal scrolling.
 
-### 3. Layout, Alignment & Spacing (FIXED)
-- **File**: `mobile-enhancements.css` & `index.html`
-- **Container Fix**: Identified the "white bar" issue caused by unrestricted width overflow. Added `max-width: 100vw` and `overflow-x: hidden` to both `html` and `body`.
-- **Global Reset**: Removed the aggressive `* { max-width: 100% }` rule which was breaking layout calculations, and replaced it with targeted image/iframe containment.
-- **Centering**: Applied `text-align: center` to standard sections and centered product cards.
-- **Symmetry**: Ensured all mobile sections have equal left/right padding.
-- **Partners Protection**: Changed the global `section` selector to `section:not(.partners)` ensuring the "Our Partners" section retains its original full-width marquee layout without unwanted padding or alignment shifts.
-- **About Us Alignment**: Explicitly set the "About LIT Group" descriptive text to `text-align: justify` for a cleaner block appearance on mobile.
-- **Product Range Styling**: Applied the premium "Power Supply" gradient to **all** product card images in mobile view.
+### 3. Our Partners
+- **Fix**: Standardized all logos to `height: 40px` and `max-width: 100px`.
+- **Marquee**: Smoothed out animations and ensured uniform spacing.
 
-### 4. Our Partners (REFINED)
-- **Fix**: The top marquee row was appearing larger than the bottom row.
-- **Solution**: Forced uniform `height: 40px` and `max-width: 100px` for all logos, including featured ones, to ensure uniformity.
-
-### 5. Mobile Menu (FIXED)
-- **Issue**: 
-    1. Dropdowns wouldn't collapse on tap (sticky hover).
-    2. Arrow icon didn't rotate when active.
-- **Fix**: 
-    - Moved desktop hover logic to `min-width` query.
-    - Removed mobile hover logic.
-    - Added specific `transform: rotate(180deg) !important` rule in `mobile-enhancements.css` targeting `.dropdown.active` and `dropdown-open` to force the arrow to flip on mobile when the menu opens.
+### 4. Mobile Menu (PREMIUM UPGRADE)
+- **Structure**: Fixed Full-Screen Overlay.
+- **Visuals**:
+    - **Removed Blue Underline**: Set `.nav-links a::after { display: none }` on mobile.
+    - **Active State**: Now uses a subtle background tint and primary text color only.
+    - **Glassmorphism**: Backdrop blur and transparency.
+    - **Typography**: Bold, clear font.
+- **Logic**: Strict accordion toggle behavior (Reset All -> Toggle Current).
 
 ## Verification
-- **Hero Section**: Reload on iPhone. The "Premium Remote Manufacturer..." text should start cleanly below the navbar, not hidden behind it.
-- **Menu Interaction**: Single-click toggles should work perfectly.
+- **Badge**: Look at the "Premium Quality" badge above the main headline. It should now be clearly visible and not cut off.
+- **Spacing**: The headline should still be comfortably below the navbar.
