@@ -138,6 +138,8 @@ body {
     transition: transform 0.3s ease;
     font-size: 12px;
     margin-left: 3px;
+    pointer-events: none;
+    /* Prevent icon from capturing clicks */
 }
 
 @media (min-width: 769px) {
@@ -2723,7 +2725,6 @@ img[alt="Daikin"] {
 .dropdown-content::before {
     left: 20%;
 }
-}
 
 @media (max-width: 768px) {
     .nav-links {
@@ -2931,7 +2932,6 @@ img[alt="Daikin"] {
 .dropdown-content::before {
     display: none;
 }
-}
 
 @media (max-width: 480px) {
     .hero {
@@ -3050,7 +3050,6 @@ img[alt="Daikin"] {
 
 .footer-column:last-child ul li {
     margin-bottom: 1rem;
-}
 }
 
 /* Animations */

@@ -36,24 +36,106 @@
     }
 
     /* ===== HERO SECTION FIX ===== */
-    .hero {
-        padding-top: calc(var(--navbar-height, 80px) + 3rem) !important;
-        /* Adjusted back to 3rem + naturally flowing content */
-        min-height: 100vh !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        /* Prevent top clipping */
-        align-items: center !important;
+    /* Unified hero sections to start below fixed navbar */
+    .hero,
+    .ac-hero,
+    .fan-hero,
+    .smart-tv-hero,
+    .stb-hero,
+    .about-hero,
+    .contact-hero,
+    .products-hero,
+    .service-hero,
+    .blog-hero,
+    .events-hero {
+        padding: 0 !important;
+        padding-top: var(--navbar-height, 80px) !important;
+        /* Base navbar clearance */
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        /* Block layout for natural flow */
+        position: relative !important;
+        background: linear-gradient(135deg, #f8faff 0%, #edf6ff 100%) !important;
+        overflow: visible !important;
     }
 
-    .hero-wrapper {
+    /* Unified hero wrapper/content containers */
+    .hero-wrapper,
+    .ac-hero-content,
+    .hero-content-wrapper-new,
+    .tv-hero-content,
+    .hero-content-wrapper-t4h,
+    .about-hero-content,
+    .contact-hero-content,
+    .service-hero-content,
+    .products-hero-content,
+    .blog-hero-content,
+    .events-hero-content {
         display: flex !important;
         flex-direction: column !important;
-        gap: 2rem !important;
-        width: 100% !important;
+        justify-content: center !important;
         align-items: center !important;
-        /* Ensure horizontal centering */
+        text-align: center !important;
+        width: 100% !important;
+        padding: 2.5rem 1.5rem !important;
+        /* Slightly reduced padding */
+        gap: 1.25rem !important;
+        /* Reduced gap for compact feel */
+        box-sizing: border-box !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    /* Sub-containers alignment */
+    .hero-content,
+    .hero-title-centered,
+    .hero-two-column,
+    .hero-bottom-section,
+    .hero-image-column,
+    .hero-text-column,
+    .hero-left-remotes,
+    .hero-right-details,
+    .hero-right-column,
+    .hero-headline-top,
+    .events-hero-media,
+    .events-hero-actions {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2rem !important;
+        /* Increased from 0.75rem to prevent overlap */
+    }
+
+    /* Ensure images in hero are well-behaved */
+    .hero-mobile-image,
+    .hero-image-container-t4h img,
+    .hero-image-container-new img {
+        max-width: 280px !important;
+        height: auto !important;
+        margin: 0.75rem auto !important;
+        display: block !important;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    }
+
+    /* Targeted zoom for Hero images (Fan & Power Supply) to fill white space */
+    .remote-image-new,
+    .remote-image-t4h {
+        max-width: 380px !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 1.5rem auto !important;
+        /* Positive margin for spacing */
+        display: block !important;
+        filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));
+        transform: scale(1.15) !important;
+        /* More conservative zoom */
+        z-index: 5 !important;
     }
 
     /* Force Badge Visibility */
@@ -61,34 +143,59 @@
         display: inline-block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        margin-bottom: 1rem !important;
-        z-index: 10 !important;
+        margin-bottom: 0.25rem !important;
+        z-index: 100 !important;
         position: relative !important;
+        color: var(--primary-color) !important;
+        font-weight: 700 !important;
     }
 
-    .hero-content {
+    /* Heading consistency */
+    .hero-content h1,
+    .ac-hero-content h1,
+    .tv-hero-content h1,
+    .about-hero-content h1,
+    .contact-hero-content h1,
+    .service-hero-content h1,
+    .blog-hero-content h1,
+    .events-hero-content h1,
+    .hero-headline-centered,
+    .hero-headline-t4h {
+        font-size: clamp(1.8rem, 8vw, 2.3rem) !important;
+        line-height: 1.25 !important;
+        margin-bottom: 0.5rem !important;
         text-align: center !important;
-        padding: 0 1rem !important;
-        width: 100% !important;
+        color: #1a1a1a !important;
+        font-weight: 700 !important;
+    }
+
+    /* Paragraph consistency */
+    .hero-content p,
+    .ac-hero-content p,
+    .tv-hero-content p,
+    .about-hero-content p,
+    .contact-hero-content p,
+    .service-hero-content p,
+    .blog-hero-content p,
+    .events-hero-content p,
+    .hero-description-new,
+    .hero-description-t4h,
+    .hero-subheadline-t4h {
+        font-size: 0.9rem !important;
+        max-width: 95% !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+        line-height: 1.6 !important;
+        color: #4a4a4a !important;
+    }
+
+    .hero-buttons,
+    .events-hero-actions {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(2rem, 8vw, 2.5rem) !important;
-        line-height: 1.2 !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .hero-content p {
-        font-size: 1rem !important;
-        max-width: 100% !important;
-        margin-bottom: 1.5rem !important;
-    }
-
-    .hero-buttons {
+        gap: 1rem !important;
         justify-content: center !important;
+        width: 100% !important;
     }
 
     .hero-stats {

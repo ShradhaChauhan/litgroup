@@ -314,16 +314,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.stopPropagation();
 
                 const currentDropdown = this.closest('.dropdown');
-                const wasActive = currentDropdown.classList.contains('active');
+                const isCurrentlyActive = currentDropdown.classList.contains('active');
 
-                // Force close ALL dropdowns first (accordion behavior)
-                document.querySelectorAll('.dropdown').forEach(el => {
-                    el.classList.remove('active');
-                    el.classList.remove('dropdown-open');
+                // 1. Close ALL dropdowns first (clean slate)
+                dropdownBtns.forEach(btn => {
+                    const dropdown = btn.closest('.dropdown');
+                    dropdown.classList.remove('active');
+                    dropdown.classList.remove('dropdown-open');
                 });
 
-                // Re-open this one if it wasn't already open
-                if (!wasActive) {
+                // 2. If it WASN'T active, open it now
+                if (!isCurrentlyActive) {
                     currentDropdown.classList.add('active');
                     currentDropdown.classList.add('dropdown-open');
                 }
