@@ -37,7 +37,8 @@
 
     /* ===== HERO SECTION FIX ===== */
     .hero {
-        padding-top: calc(var(--navbar-height, 80px) + 3rem) !important;
+        padding-top: calc(var(--navbar-height, 80px) + 5rem) !important;
+        /* Increased spacing */
         min-height: 100vh !important;
         /* Make it take full viewport height */
         display: flex !important;

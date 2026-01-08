@@ -2,13 +2,12 @@
 
 ## Changes Made
 
-### 1. Hero Section Mobile Layout
+### 1. Hero Section Mobile Layout (UPDATED)
 - **File**: `mobile-enhancements.css`
 - **Changes**: 
-    - Forced `min-height: 100vh` for a full-screen impactful look.
-    - Centered all content (text, buttons, stats) using flexbox.
-    - increased styling of headings (`h1`) and paragraphs for readability.
-    - Added significant `padding-top` to account for the fixed navbar, ensuring no content is hidden.
+    - Forced `min-height: 100vh`.
+    - Centered all content.
+    - **Spacing**: Increased `padding-top` to `calc(var(--navbar-height, 80px) + 5rem)` to explicitly account for iPhone safe areas and the fixed navbar, ensuring no text is cut off at the top.
 
 ### 2. Scroll Animations (ENHANCED)
 - **Files**: `script.js` & `mobile-enhancements.css`
@@ -24,7 +23,7 @@
 - **Symmetry**: Ensured all mobile sections have equal left/right padding.
 - **Partners Protection**: Changed the global `section` selector to `section:not(.partners)` ensuring the "Our Partners" section retains its original full-width marquee layout without unwanted padding or alignment shifts.
 - **About Us Alignment**: Explicitly set the "About LIT Group" descriptive text to `text-align: justify` for a cleaner block appearance on mobile.
-- **Product Range Styling**: Applied the premium "Power Supply" gradient (`linear-gradient(135deg, #99a4be 0%, #eef1f5 100%)`) to **all** product card images in mobile view for a consistent, high-end look.
+- **Product Range Styling**: Applied the premium "Power Supply" gradient to **all** product card images in mobile view.
 
 ### 4. Our Partners (REFINED)
 - **Fix**: The top marquee row was appearing larger than the bottom row.
@@ -40,5 +39,5 @@
     - Added specific `transform: rotate(180deg) !important` rule in `mobile-enhancements.css` targeting `.dropdown.active` and `dropdown-open` to force the arrow to flip on mobile when the menu opens.
 
 ## Verification
-- **Icon Rotation**: Open "Products". The arrow should point UP. Close it. The arrow should point DOWN.
+- **Hero Section**: Reload on iPhone. The "Premium Remote Manufacturer..." text should start cleanly below the navbar, not hidden behind it.
 - **Menu Interaction**: Single-click toggles should work perfectly.
