@@ -857,3 +857,173 @@
     overflow: hidden !important;
     height: 100vh !important;
 }
+
+/* =========================================
+   EMS MOBILE OVERLAP — HARD OVERRIDE FIX
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Kill ALL transforms from all files */
+  .ems-services *,
+  .ems-capability *,
+  .image-grid *,
+  .grid-item,
+  .grid-item img {
+    transform: none !important;
+  }
+
+  /* Force clean stacking */
+  .image-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    height: auto !important;
+  }
+
+  /* Let content decide height */
+  .grid-item {
+    height: auto !important;
+    min-height: 200px !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .grid-item img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* Safety spacing */
+  .grid-item:not(:last-child) {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* =========================================
+   MOBILE HERO – ELEGANT BACKGROUND
+   Home page only
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Base hero background */
+  .hero {
+    position: relative !important;
+    background:
+      radial-gradient(
+        120% 60% at 50% 0%,
+        rgba(59, 130, 246, 0.12) 0%,
+        rgba(59, 130, 246, 0.04) 35%,
+        transparent 60%
+      ),
+      linear-gradient(
+        180deg,
+        #f8fbff 0%,
+        #eef4ff 45%,
+        #ffffff 100%
+      ) !important;
+    overflow: hidden !important;
+  }
+
+  /* Soft glass layer */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.65),
+        rgba(255, 255, 255, 0.35)
+      );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 0;
+  }
+
+  /* Decorative accent blobs */
+  .hero::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.18),
+      rgba(59, 130, 246, 0) 70%
+    );
+    top: -160px;
+    right: -140px;
+    z-index: 0;
+  }
+
+  /* Keep content above background layers */
+  .hero-wrapper,
+  .hero-content,
+  .hero-slider {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  /* Improve text contrast slightly */
+  .hero-content h1 {
+    color: #0f172a !important;
+  }
+
+  .hero-content p {
+    color: #475569 !important;
+  }
+
+  .hero-badge {
+    background: rgba(59, 130, 246, 0.12) !important;
+    color: #1d4ed8 !important;
+    backdrop-filter: blur(6px);
+  }
+}
+
+/* ================================
+   MOBILE HERO BACKGROUND FIX
+   ================================ */
+@media (max-width: 768px) {
+
+  .hero {
+    position: relative !important;
+    min-height: calc(100vh - var(--navbar-height)) !important;
+    background: linear-gradient(
+      180deg,
+      #eef5ff 0%,
+      #f8fbff 40%,
+      #ffffff 100%
+    ) !important;
+    overflow: hidden !important;
+  }
+
+  /* Soft premium glow layer */
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.18) 0%,
+      rgba(59, 130, 246, 0.08) 35%,
+      rgba(59, 130, 246, 0) 70%
+    );
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-wrapper {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .hero-content {
+    background: transparent !important;
+  }
+}

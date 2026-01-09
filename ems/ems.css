@@ -1065,4 +1065,20 @@
     font-size: 0.8rem;
     padding: 6px 12px;
   }
-} 
+}
+
+/* ===============================
+   EMS CAPABILITY TAGS – MOBILE CENTER
+   =============================== */
+@media (max-width: 576px) {
+  .capability-tags {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .capability-tags span {
+    text-align: center;
+    white-space: nowrap;
+  }
+}

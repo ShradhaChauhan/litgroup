@@ -1753,6 +1753,18 @@ img[alt="Daikin"] {
 }
 
 @media (max-width: 768px) {
+  .capability-content h3::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .moulding-content h3::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
     .ems-services {
         padding: 3rem 1.5rem;
     }
@@ -2933,6 +2945,18 @@ img[alt="Daikin"] {
     display: none;
 }
 
+@media (max-width: 768px) {
+  .hero-badge {
+    margin-top: 12px; /* adds breathing space from navbar */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-badge {
+    margin-top: 16px; /* slightly more space on very small screens */
+  }
+}
+
 @media (max-width: 480px) {
     .hero {
         min-height: auto;
@@ -3903,6 +3927,10 @@ img[alt="Daikin"] {
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
 
+    .grid-item {
+        border-radius: 14px; /* softer mobile look */
+    }
+
     .grid-item,
     .video-container {
         height: 180px;
@@ -3914,7 +3942,8 @@ img[alt="Daikin"] {
         display: grid;
         grid-template-columns: 1fr;
         grid-auto-rows: 180px;
-        gap: 10px;
+        gap: 16px;           /* more breathing space */
+        margin-top: 1rem;
     }
 
     .capability-content,
@@ -4682,4 +4711,38 @@ body {
         padding: 0.75rem 1.25rem;
         font-size: 0.9rem;
     }
+}
+
+/* =====================================
+   FIX EMS IMAGE OVERLAP ON MOBILE
+   ===================================== */
+
+/* Disable hover scaling on touch devices */
+@media (max-width: 768px) {
+
+  .grid-item,
+  .grid-item:hover {
+    transform: none !important;
+  }
+
+  .grid-item img,
+  .grid-item:hover img {
+    transform: none !important;
+  }
+
+  /* Ensure proper stacking */
+  .image-grid {
+    row-gap: 16px;
+  }
+
+  /* Force each item to reserve its space */
+  .grid-item {
+    position: relative;
+    overflow: hidden;
+  }
+}
+@media (max-width: 768px) {
+  .grid-item:active {
+    opacity: 0.92;
+  }
 }
