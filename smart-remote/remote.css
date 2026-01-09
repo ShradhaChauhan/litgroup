@@ -4,6 +4,34 @@
 }
 
 @media (max-width: 768px) {
+  .interaction-section .interaction-description {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+
+  .interaction-features {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .interaction-feature {
+    display: flex;
+    align-items: center;      /* 👈 vertical alignment fix */
+    gap: 12px;                /* 👈 consistent spacing */
+    text-align: left;
+  }
+
+  .interaction-feature i,
+  .interaction-feature img {
+    flex-shrink: 0;           /* 👈 prevents icon drift */
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
   :root {
     --navbar-height: 80px;
   }
@@ -1081,8 +1109,6 @@ html {
     .bluetooth-icon:hover {
         transform: translate(-50%, 50%) scale(1.1);
     }
-
-}
 
 @media (max-width: 576px) {
     .interaction-graphic {
