@@ -28,16 +28,27 @@
   box-sizing: border-box;
 }
 
-.events-hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: 
-    "badge media"
-    "heading media"
-    "text text"
-    "actions actions";
-  gap: 1.5rem;
-  align-items: start;
+@media (min-width: 1200px) {
+  .events-hero-content h1,
+  .events-hero-content p,
+  .events-hero-actions {
+    max-width: 520px;
+  }
+}
+
+/* Desktop refinement */
+@media (min-width: 1200px) {
+  .events-hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    grid-template-areas:
+      "badge media"
+      "heading media"
+      "text media"
+      "actions media";
+    gap: 2rem 3rem;
+    align-items: center;
+  }
 }
 
 .events-hero-content .hero-badge {
