@@ -2,6 +2,76 @@
     --navbar-height: 90px;
 }
 
+/* Final authoritative mobile hero override to ensure a dark, cohesive appearance */
+@media (max-width: 768px) {
+    .blog-hero {
+        background: linear-gradient(180deg, rgba(3,10,25,0.88) 0%, rgba(6,18,36,0.88) 60%, rgba(8,26,46,0.92) 100%),
+                                url('images/Blog%20Cover%201%20(1).webp') center/cover no-repeat !important;
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-blend-mode: multiply !important;
+        color: #ffffff !important;
+    }
+
+    .blog-hero::before {
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55)) !important;
+        opacity: 1 !important;
+        z-index: 2 !important;
+    }
+
+    .blog-hero::after {
+        opacity: 0.18 !important;
+    }
+
+    .blog-hero-content,
+    .blog-hero-content h1,
+    .blog-hero-content p,
+    .hero-badge {
+        z-index: 3 !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-shadow: 0 8px 20px rgba(0,0,0,0.75) !important;
+    }
+}
+
+
+/* Mobile hero: match card image tones with a darker bluish gradient */
+@media (max-width: 768px) {
+    .blog-hero {
+        /* use mobile-optimized image and a bluish multiply gradient for richer tones */
+        background: linear-gradient(180deg, rgba(4,12,28,0.65) 0%, rgba(6,24,44,0.65) 60%, rgba(10,34,56,0.75) 100%),
+                    url('images/Blog%20Cover%201%20(1).webp') center/cover no-repeat;
+        background-attachment: scroll;
+        background-blend-mode: multiply;
+        color: #ffffff;
+    }
+
+    .blog-hero::before {
+        /* subtle bluish highlights instead of a full gray overlay */
+        background: radial-gradient(circle at 18% 40%, rgba(59,130,246,0.12) 0%, transparent 35%),
+                    radial-gradient(circle at 82% 80%, rgba(99,102,241,0.06) 0%, transparent 35%);
+        opacity: 1;
+        z-index: 1;
+        mix-blend-mode: screen;
+    }
+
+    .blog-hero::after {
+        opacity: 0.18;
+    }
+
+    .blog-hero-content h1,
+    .blog-hero-content p,
+    .hero-badge {
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-shadow: 0 6px 18px rgba(2,6,12,0.7);
+    }
+
+    .blog-hero-content {
+        z-index: 2;
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --navbar-height: 80px;
@@ -866,21 +936,36 @@ body {
 
 .blog-single-image {
     width: 100%;
-    height: 500px;
+    /* allow the image to determine height for responsive scaling */
+    height: auto;
     overflow: hidden;
     background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 30px 30px 0 30px;
 }
 
 .blog-single-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     object-position: center top;
     border-radius: 8px;
+    display: block;
+    max-width: 100%;
+}
+
+/* Keep a fixed visual height on larger screens while remaining responsive */
+@media (min-width: 992px) {
+    .blog-single-image {
+        height: 500px;
+        padding: 30px;
+    }
+
+    .blog-single-image img {
+        height: 100%;
+    }
 }
 
 .blog-single-article {
@@ -1227,6 +1312,35 @@ body {
         font-size: 1.3rem;
     }
 
+    /* Stronger dark overlay and text contrast on smaller screens */
+    .blog-hero::before {
+        /* add a dark linear overlay on top of the existing decorative gradients */
+        background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                    radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 20%, rgba(147, 197, 253, 0.05) 0%, transparent 50%);
+        z-index: 1;
+        opacity: 1;
+    }
+
+    .blog-hero::after {
+        opacity: 0.35;
+    }
+
+    /* Ensure hero text is solid white on small screens for legibility */
+    .blog-hero-content h1 {
+        -webkit-text-fill-color: #ffffff !important;
+        -webkit-background-clip: initial !important;
+        background: none !important;
+        color: #ffffff !important;
+        text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    }
+
+    .blog-hero-content p,
+    .hero-badge {
+        color: rgba(255,255,255,0.95) !important;
+    }
+
     .blog-single-image {
         height: 300px;
         padding: 20px;
@@ -1354,6 +1468,55 @@ body {
     }
 }
 
+/* Ensure blog card images are flexible on mobile and strengthen hero gradient */
+@media (max-width: 768px) {
+    /* let the card image flow naturally instead of forcing a fixed aspect */
+    .blog-card-image {
+        aspect-ratio: unset;
+        height: auto;
+        padding: 0;
+        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    }
+
+    .blog-card-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        max-width: 100%;
+    }
+
+    /* ensure carousel centers single card and cards occupy available width */
+    .blog-card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    /* stronger dark background for hero on mobile (higher contrast) */
+    .blog-hero {
+        background: linear-gradient(180deg, rgba(2,6,23,0.98), rgba(12,16,22,0.98)),
+                                url('images/Blog Cover 1 (1).webp') center/cover no-repeat;
+        background-attachment: scroll;
+        background-blend-mode: overlay;
+    }
+
+    .blog-hero::before {
+        background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.7));
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .blog-hero::after {
+        opacity: 0.25;
+    }
+
+    .blog-hero-content {
+        z-index: 3;
+    }
+}
+
+
     .section-header h2 {
         font-size: 1.75rem;
     }
@@ -1379,7 +1542,7 @@ body {
     .cta-content h2 {
         font-size: 1.75rem;
     }
-}
+
 
 /* ============================================
    COMPREHENSIVE MOBILE RESPONSIVE ENHANCEMENTS
@@ -1439,3 +1602,87 @@ body, html {
     padding: 1.25rem 0.875rem;
   }
 }
+
+/* Mobile hero: ensure a dark, high-contrast gradient over the background image */
+@media (max-width: 768px) {
+    .blog-hero {
+        background: linear-gradient(180deg, rgba(6,8,15,0.96), rgba(20,24,30,0.96)),
+                                url('images/Blog Cover 1 (1).webp') center/cover no-repeat;
+        background-attachment: scroll;
+        background-blend-mode: multiply;
+    }
+
+    .blog-hero::before {
+        /* solid dark overlay to ensure text contrast */
+        background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55));
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .blog-hero::after {
+        opacity: 0.25;
+    }
+
+    /* ensure content sits above the overlay */
+    .blog-hero-content {
+        z-index: 3;
+    }
+
+    /* Force the mobile card image to use the mobile-optimized file as a background
+       and hide the inline <img> so the mobile image is always used on small viewports. */
+    .blog-card-image {
+        /* use encoded filename to avoid parsing issues and force cover */
+        background-image: url('images/Blog%20Cover%201%20(1).webp') !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+
+    .blog-card-image img {
+        display: none !important;
+        visibility: hidden !important;
+        width: 0 !important;
+        height: 0 !important;
+        opacity: 0 !important;
+    }
+}
+
+/* Justify article text on small screens for better reading flow */
+@media (max-width: 768px) {
+    .blog-article-content,
+    .blog-article-content p,
+    .blog-article-content ul,
+    .blog-article-content ol {
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+    /* prevent extremely long words from breaking layout */
+    .blog-article-content img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Final mobile override: make blog card images cover their container and be clipped */
+@media (max-width: 768px) {
+    .blog-card-image {
+        height: 200px; /* fixed visual height for consistent cards */
+        overflow: hidden;
+        padding: 0;
+        border-radius: 12px 12px 0 0;
+        background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+        display: block;
+    }
+
+    /* smaller screens use 180px height (defined earlier) */
+
+    .blog-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* crop to fill without distortion */
+        object-position: center center;
+        display: block;
+    }
+}
+
