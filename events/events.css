@@ -40,13 +40,13 @@
 @media (min-width: 1200px) {
   .events-hero-content {
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* balanced */
     grid-template-areas:
       "badge media"
       "heading media"
       "text media"
       "actions media";
-    gap: 2rem 3rem;
+    gap: 2rem 1.5rem; /* 👈 reduced horizontal gap */
     align-items: center;
   }
 }
@@ -63,7 +63,7 @@
   grid-area: media;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-height: 100%;
 }
@@ -82,8 +82,8 @@
   gap: 1.75rem;
   width: 100%;
   max-width: 520px;
-  align-self: center;
-  margin: 0 auto;
+  margin-left: 0;     /* 👈 remove auto centering */
+  margin-right: 0;
 }
 
 .hero-card {
@@ -96,6 +96,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 4 / 5; 
 }
 
 .hero-card img {
@@ -203,6 +204,13 @@
 }
 
 @media (max-width: 768px) {
+  .grid-2x2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 16px;
+  }
+
   .events-hero {
     min-height: auto;
     height: auto;

@@ -66,6 +66,12 @@ html {
 
 /* Responsive adjustments for navbar padding */
 @media (max-width: 768px) {
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 16px;
+  }
   .scroll-snap-container {
     padding-top: 0;
     /* Padding handled by hero section */

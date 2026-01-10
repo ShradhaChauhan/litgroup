@@ -55,6 +55,13 @@ body {
 
 /* Responsive adjustments for navbar padding */
 @media (max-width: 768px) {
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 16px;
+  }
+  
   .scroll-snap-container {
     padding-top: 80px;
     /* Smaller navbar on mobile */
@@ -135,7 +142,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: calc(90px + 30px);
+  padding-top: calc(50px);
   padding-bottom: 80px;
   padding-left: 0;
   padding-right: 0;

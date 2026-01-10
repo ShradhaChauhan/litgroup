@@ -426,6 +426,12 @@
 }
 
 @media (max-width: 768px) {
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 16px;
+  }
   .contact-hero {
     min-height: calc(100vh - 80px);
     height: calc(100vh - 80px);

@@ -154,7 +154,7 @@
               OEMs and service providers with scalable manufacturing, consistent quality, and customized control
               designs.
             </p>
-            <a href="#stb-remotes" class="hero-cta-new">Learn More</a>
+            <a href="#stb-remote-collection" class="hero-cta-new">Learn More</a>
           </div>
         </div>
       </div>
@@ -303,7 +303,7 @@
   </section>
 
   <!-- STB Remotes Collection Section -->
-  <section class="stb-collection-section">
+  <section id="stb-remote-collection" class="stb-collection-section">
     <div class="collection-container">
       <h2 class="collection-title">Our STB Remotes Collection</h2>
 
@@ -370,7 +370,7 @@
           </div>
 
           <!-- Card 6 -->
-          <div class="collection-card carousel-card" data-original="true">
+          <!-- <div class="collection-card carousel-card" data-original="true">
             <div class="collection-card-image-wrapper">
               <img src="images/STB Remote 6/STB Remote  (1).webp" alt="STB Remote 6" class="collection-card-image" />
             </div>
@@ -378,10 +378,10 @@
               <h3 class="collection-card-title">STB R6</h3>
               <p class="collection-card-subtitle">Compact Design</p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Card 7 -->
-          <div class="collection-card carousel-card" data-original="true">
+          <!-- <div class="collection-card carousel-card" data-original="true">
             <div class="collection-card-image-wrapper">
               <img src="images/STB Remote 7/STB Remote 2 (5).webp" alt="STB Remote 7" class="collection-card-image" />
             </div>
@@ -389,10 +389,10 @@
               <h3 class="collection-card-title">STB R7</h3>
               <p class="collection-card-subtitle">Streamlined Control</p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Card 8 -->
-          <div class="collection-card carousel-card" data-original="true">
+          <!-- <div class="collection-card carousel-card" data-original="true">
             <div class="collection-card-image-wrapper">
               <img src="images/STB Remote 8/STB Remote 3 (2).webp" alt="STB Remote 8" class="collection-card-image" />
             </div>
@@ -400,10 +400,10 @@
               <h3 class="collection-card-title">STB R8</h3>
               <p class="collection-card-subtitle">Professional Grade</p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Card 9 -->
-          <div class="collection-card carousel-card" data-original="true">
+          <!-- <div class="collection-card carousel-card" data-original="true">
             <div class="collection-card-image-wrapper">
               <img src="images/STB Remote 9/STB Remote 4 (5).webp" alt="STB Remote 9" class="collection-card-image" />
             </div>
@@ -411,10 +411,10 @@
               <h3 class="collection-card-title">STB R9</h3>
               <p class="collection-card-subtitle">Enhanced Navigation</p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Card 10 -->
-          <div class="collection-card carousel-card" data-original="true">
+          <!-- <div class="collection-card carousel-card" data-original="true">
             <div class="collection-card-image-wrapper">
               <img src="images/STB Remote 10/STB Remote 5 (5).webp" alt="STB Remote 10" class="collection-card-image" />
             </div>
@@ -422,7 +422,7 @@
               <h3 class="collection-card-title">STB R10</h3>
               <p class="collection-card-subtitle">Ultimate Control</p>
             </div>
-          </div>
+          </div> -->
         </div>
 
         <button class="carousel-btn carousel-arrow carousel-arrow-right" aria-label="Next cards">
@@ -491,7 +491,7 @@
           }
 
           .logo-animate {
-            animation: slide 80s infinite linear;
+            animation: slide 20s infinite linear;
             will-change: transform;
             display: flex;
             gap: 2rem;
@@ -509,7 +509,7 @@
           }
 
           .logo-animate-alt {
-            animation: slidealt 80s infinite linear;
+            animation: slidealt 20s infinite linear;
             will-change: transform;
             animation-direction: reverse;
             display: flex;
@@ -588,7 +588,7 @@
 
         <div class="footer-column">
           <h4>Products</h4>
-          <ul>
+          <ul class="grid-2x2">
             <li><a href="../ac-remotes/">HVAC Remotes</a></li>
             <li><a href="../smart-remote/">Smart Remotes</a></li>
             <li><a href="../fan-remotes/">Fan Remotes</a></li>
@@ -605,7 +605,7 @@
 
         <div class="footer-column">
           <h4>Company</h4>
-          <ul>
+          <ul class="grid-2x2">
             <li><a href="../about/">About Us</a></li>
             <li><a href="../blog/">Blogs</a></li>
             <!-- <li><a href="#">Careers</a></li> -->
@@ -627,7 +627,7 @@
 
         <div class="footer-column">
           <h4>Contact Us</h4>
-          <ul>
+          <ul class="grid-2x2">
             <li>LIT INDIA PVT. LTD</li>
             <li>
               <a href="mailto:contact@litgroup.in">contact@litgroup.in</a>
@@ -650,7 +650,7 @@
 
       <div class="certifications">
         <h4>Certifications</h4>
-        <div class="certification-list">
+        <div class="certification-list grid-2x2">
           <div class="certification-item">
             <i class="fas fa-certificate"></i>
             <span>ISO 9001:2015</span>
@@ -782,7 +782,7 @@
       if (!carouselContainer || !carouselTrack || !leftArrow || !rightArrow || allCards.length === 0) return;
 
       // Constants
-      const ORIGINAL_CARD_COUNT = 10;
+      const ORIGINAL_CARD_COUNT = 5;
       const CARD_GAP = 24;
       const EASING = 'cubic-bezier(0.22, 0.61, 0.36, 1)'; // Apple easing
       const SCROLL_DURATION = 600; // Smooth scroll duration in ms
@@ -1467,116 +1467,116 @@
             { label: 'Features', value: 'BLE, Google Assist Features, Modern and Ergonomic Design, Light Weight, Smooth and Accurate Navigation, Long Battery Life' },
           ]
         },
-        'STB R6': {
-          image: 'images/STB Remote 6/STB Remote  (1).webp',
-          images: [
-            'images/STB Remote 6/STB Remote  (1).webp',
-            'images/STB Remote 6/STB Remote  (2).webp',
-            'images/STB Remote 6/STB Remote  (3).webp',
-            'images/STB Remote 6/STB Remote  (4).webp',
-            'images/STB Remote 6/STB Remote  (5).webp'
-          ],
-          title: 'STB R6',
-          subtitle: 'Compact Design',
-          description: 'Perfect for space-conscious setups, STB R6 combines compact dimensions with full-featured control. Its streamlined design ensures all essential functions are easily accessible without compromising on comfort.',
-          specs: [
-            { label: 'Type of Device Controlled', value: 'TV' },
-            { label: 'No. of Keys', value: '44' },
-            { label: 'Color', value: 'Black' },
-            { label: 'Material', value: 'ABS' },
-            { label: 'Finish', value: 'Matt' },
-            { label: 'Power Source', value: 'AAA Battery' },
-            { label: 'Features', value: 'BLE, Google Assist Features, Compact Design, Light Weight, Smooth Navigation, Long Battery Life' },
-          ]
-        },
-        'STB R7': {
-          image: 'images/STB Remote 7/STB Remote 2 (1).webp',
-          images: [
-            'images/STB Remote 7/STB Remote 2 (1).webp',
-            'images/STB Remote 7/STB Remote 2 (2).webp',
-            'images/STB Remote 7/STB Remote 2 (3).webp',
-            'images/STB Remote 7/STB Remote 2 (4).webp',
-            'images/STB Remote 7/STB Remote 2 (5).webp'
-          ],
-          title: 'STB R7',
-          subtitle: 'Streamlined Control',
-          description: 'Experience seamless control with STB R7. Its streamlined interface and intuitive button layout make navigation effortless, while premium materials ensure durability and a premium feel.',
-          specs: [
-            { label: 'Type of Device Controlled', value: 'TV' },
-            { label: 'No. of Keys', value: '38' },
-            { label: 'Color', value: 'Black' },
-            { label: 'Material', value: 'ABS' },
-            { label: 'Finish', value: 'Matt with Gloss Accents' },
-            { label: 'Power Source', value: 'AAA Battery' },
-            { label: 'Features', value: 'BLE, Google Assist Features, Streamlined Design, Light Weight, Smooth Navigation, Long Battery Life' },
-          ]
-        },
-        'STB R8': {
-          image: 'images/STB Remote 8/STB Remote 3 (1).webp',
-          images: [
-            'images/STB Remote 8/STB Remote 3 (3).webp',
-            'images/STB Remote 8/STB Remote 3 (2).webp',
-            'images/STB Remote 8/STB Remote 3 (1).webp',
-            'images/STB Remote 8/STB Remote 3 (4).webp',
-            'images/STB Remote 8/STB Remote 3 (5).webp'
-          ],
-          title: 'STB R8',
-          subtitle: 'Professional Grade',
-          description: 'Built for professional entertainment systems, STB R8 delivers exceptional performance and reliability. With enhanced button responsiveness and premium construction, it meets the demands of commercial and residential installations.',
-          specs: [
-            { label: 'Type of Device Controlled', value: 'TV' },
-            { label: 'No. of Keys', value: '48' },
-            { label: 'Color', value: 'Black' },
-            { label: 'Material', value: 'ABS' },
-            { label: 'Finish', value: 'Matt with Side Grip' },
-            { label: 'Power Source', value: 'AAA Battery' },
-            { label: 'Features', value: 'BLE, Google Assist Features, Professional Grade Design, Enhanced Durability, Smooth Navigation, Long Battery Life' },
-          ]
-        },
-        'STB R9': {
-          image: 'images/STB Remote 9/STB Remote 4 (1).webp',
-          images: [
-            'images/STB Remote 9/STB Remote 4 (2).webp',
-            'images/STB Remote 9/STB Remote 4 (1).webp',
-            'images/STB Remote 9/STB Remote 4 (3).webp',
-            'images/STB Remote 9/STB Remote 4 (4).webp',
-            'images/STB Remote 9/STB Remote 4 (5).webp'
-          ],
-          title: 'STB R9',
-          subtitle: 'Enhanced Navigation',
-          description: 'Navigate with precision using STB R9. Featuring enhanced navigation controls and optimized button placement, this remote provides superior control accuracy for complex entertainment setups.',
-          specs: [
-            { label: 'Type of Device Controlled', value: 'TV' },
-            { label: 'No. of Keys', value: '45' },
-            { label: 'Color', value: 'Black' },
-            { label: 'Material', value: 'ABS' },
-            { label: 'Finish', value: 'Matt with Etching' },
-            { label: 'Power Source', value: 'AAA Battery' },
-            { label: 'Features', value: 'BLE, Google Assist Features, Enhanced Navigation, Ergonomic Design, Light Weight, Smooth Control, Long Battery Life' },
-          ]
-        },
-        'STB R10': {
-          image: 'images/STB Remote 10/STB Remote 5 (1).webp',
-          images: [
-            'images/STB Remote 10/STB Remote 5 (1).webp',
-            'images/STB Remote 10/STB Remote 5 (2).webp',
-            'images/STB Remote 10/STB Remote 5 (3).webp',
-            'images/STB Remote 10/STB Remote 5 (4).webp',
-            'images/STB Remote 10/STB Remote 5 (5).webp'
-          ],
-          title: 'STB R10',
-          subtitle: 'Ultimate Control',
-          description: 'The pinnacle of remote control design, STB R10 combines advanced features with elegant aesthetics. Experience the ultimate in entertainment control with premium materials, intelligent design, and exceptional functionality.',
-          specs: [
-            { label: 'Type of Device Controlled', value: 'TV' },
-            { label: 'No. of Keys', value: '53' },
-            { label: 'Color', value: 'Black with Metallic Accents' },
-            { label: 'Material', value: 'ABS' },
-            { label: 'Finish', value: 'Premium Matt and Gloss with Etching' },
-            { label: 'Power Source', value: 'AAA Battery' },
-            { label: 'Features', value: 'BLE, Google Assist Features, Ultimate Design, Premium Materials, Enhanced Functionality, Smooth Navigation, Extended Battery Life' },
-          ]
-        }
+        // 'STB R6': {
+        //   image: 'images/STB Remote 6/STB Remote  (1).webp',
+        //   images: [
+        //     'images/STB Remote 6/STB Remote  (1).webp',
+        //     'images/STB Remote 6/STB Remote  (2).webp',
+        //     'images/STB Remote 6/STB Remote  (3).webp',
+        //     'images/STB Remote 6/STB Remote  (4).webp',
+        //     'images/STB Remote 6/STB Remote  (5).webp'
+        //   ],
+        //   title: 'STB R6',
+        //   subtitle: 'Compact Design',
+        //   description: 'Perfect for space-conscious setups, STB R6 combines compact dimensions with full-featured control. Its streamlined design ensures all essential functions are easily accessible without compromising on comfort.',
+        //   specs: [
+        //     { label: 'Type of Device Controlled', value: 'TV' },
+        //     { label: 'No. of Keys', value: '44' },
+        //     { label: 'Color', value: 'Black' },
+        //     { label: 'Material', value: 'ABS' },
+        //     { label: 'Finish', value: 'Matt' },
+        //     { label: 'Power Source', value: 'AAA Battery' },
+        //     { label: 'Features', value: 'BLE, Google Assist Features, Compact Design, Light Weight, Smooth Navigation, Long Battery Life' },
+        //   ]
+        // },
+        // 'STB R7': {
+        //   image: 'images/STB Remote 7/STB Remote 2 (1).webp',
+        //   images: [
+        //     'images/STB Remote 7/STB Remote 2 (1).webp',
+        //     'images/STB Remote 7/STB Remote 2 (2).webp',
+        //     'images/STB Remote 7/STB Remote 2 (3).webp',
+        //     'images/STB Remote 7/STB Remote 2 (4).webp',
+        //     'images/STB Remote 7/STB Remote 2 (5).webp'
+        //   ],
+        //   title: 'STB R7',
+        //   subtitle: 'Streamlined Control',
+        //   description: 'Experience seamless control with STB R7. Its streamlined interface and intuitive button layout make navigation effortless, while premium materials ensure durability and a premium feel.',
+        //   specs: [
+        //     { label: 'Type of Device Controlled', value: 'TV' },
+        //     { label: 'No. of Keys', value: '38' },
+        //     { label: 'Color', value: 'Black' },
+        //     { label: 'Material', value: 'ABS' },
+        //     { label: 'Finish', value: 'Matt with Gloss Accents' },
+        //     { label: 'Power Source', value: 'AAA Battery' },
+        //     { label: 'Features', value: 'BLE, Google Assist Features, Streamlined Design, Light Weight, Smooth Navigation, Long Battery Life' },
+        //   ]
+        // },
+        // 'STB R8': {
+        //   image: 'images/STB Remote 8/STB Remote 3 (1).webp',
+        //   images: [
+        //     'images/STB Remote 8/STB Remote 3 (3).webp',
+        //     'images/STB Remote 8/STB Remote 3 (2).webp',
+        //     'images/STB Remote 8/STB Remote 3 (1).webp',
+        //     'images/STB Remote 8/STB Remote 3 (4).webp',
+        //     'images/STB Remote 8/STB Remote 3 (5).webp'
+        //   ],
+        //   title: 'STB R8',
+        //   subtitle: 'Professional Grade',
+        //   description: 'Built for professional entertainment systems, STB R8 delivers exceptional performance and reliability. With enhanced button responsiveness and premium construction, it meets the demands of commercial and residential installations.',
+        //   specs: [
+        //     { label: 'Type of Device Controlled', value: 'TV' },
+        //     { label: 'No. of Keys', value: '48' },
+        //     { label: 'Color', value: 'Black' },
+        //     { label: 'Material', value: 'ABS' },
+        //     { label: 'Finish', value: 'Matt with Side Grip' },
+        //     { label: 'Power Source', value: 'AAA Battery' },
+        //     { label: 'Features', value: 'BLE, Google Assist Features, Professional Grade Design, Enhanced Durability, Smooth Navigation, Long Battery Life' },
+        //   ]
+        // },
+        // 'STB R9': {
+        //   image: 'images/STB Remote 9/STB Remote 4 (1).webp',
+        //   images: [
+        //     'images/STB Remote 9/STB Remote 4 (2).webp',
+        //     'images/STB Remote 9/STB Remote 4 (1).webp',
+        //     'images/STB Remote 9/STB Remote 4 (3).webp',
+        //     'images/STB Remote 9/STB Remote 4 (4).webp',
+        //     'images/STB Remote 9/STB Remote 4 (5).webp'
+        //   ],
+        //   title: 'STB R9',
+        //   subtitle: 'Enhanced Navigation',
+        //   description: 'Navigate with precision using STB R9. Featuring enhanced navigation controls and optimized button placement, this remote provides superior control accuracy for complex entertainment setups.',
+        //   specs: [
+        //     { label: 'Type of Device Controlled', value: 'TV' },
+        //     { label: 'No. of Keys', value: '45' },
+        //     { label: 'Color', value: 'Black' },
+        //     { label: 'Material', value: 'ABS' },
+        //     { label: 'Finish', value: 'Matt with Etching' },
+        //     { label: 'Power Source', value: 'AAA Battery' },
+        //     { label: 'Features', value: 'BLE, Google Assist Features, Enhanced Navigation, Ergonomic Design, Light Weight, Smooth Control, Long Battery Life' },
+        //   ]
+        // },
+        // 'STB R10': {
+        //   image: 'images/STB Remote 10/STB Remote 5 (1).webp',
+        //   images: [
+        //     'images/STB Remote 10/STB Remote 5 (1).webp',
+        //     'images/STB Remote 10/STB Remote 5 (2).webp',
+        //     'images/STB Remote 10/STB Remote 5 (3).webp',
+        //     'images/STB Remote 10/STB Remote 5 (4).webp',
+        //     'images/STB Remote 10/STB Remote 5 (5).webp'
+        //   ],
+        //   title: 'STB R10',
+        //   subtitle: 'Ultimate Control',
+        //   description: 'The pinnacle of remote control design, STB R10 combines advanced features with elegant aesthetics. Experience the ultimate in entertainment control with premium materials, intelligent design, and exceptional functionality.',
+        //   specs: [
+        //     { label: 'Type of Device Controlled', value: 'TV' },
+        //     { label: 'No. of Keys', value: '53' },
+        //     { label: 'Color', value: 'Black with Metallic Accents' },
+        //     { label: 'Material', value: 'ABS' },
+        //     { label: 'Finish', value: 'Premium Matt and Gloss with Etching' },
+        //     { label: 'Power Source', value: 'AAA Battery' },
+        //     { label: 'Features', value: 'BLE, Google Assist Features, Ultimate Design, Premium Materials, Enhanced Functionality, Smooth Navigation, Extended Battery Life' },
+        //   ]
+        // }
       };
 
       const modal = document.getElementById('remoteModal');
