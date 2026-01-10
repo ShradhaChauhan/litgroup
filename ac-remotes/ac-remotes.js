@@ -164,31 +164,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // For product section, handle special scrolling
-                if (targetId === '#eco-remotes') {
-                    window.scrollTo({
-                        top: targetElement.offsetTop,
-                        behavior: 'smooth'
-                    });
-                } else {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        });
+  anchor.addEventListener('click', function(e) {
+
+    // 🚫 DO NOT hijack navbar links
+    if (this.closest('.navbar')) return;
+
+    const targetId = this.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+
+    const targetElement = document.querySelector(targetId);
+    if (!targetElement) return;
+
+    e.preventDefault();
+
+    window.scrollTo({
+      top: targetElement.offsetTop - 80,
+      behavior: 'smooth'
     });
+  });
+});
+
     
     // Stagger animation is now handled by CSS classes (stagger-1, stagger-2, etc.)
     // Applied via HTML class attributes for cleaner separation of concerns
@@ -628,3 +623,87 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 }); 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+  const navLinks = document.querySelector(".nav-links");
+  const dropdowns = document.querySelectorAll(".dropdown");
+
+  /* ------------------------------
+     MOBILE MENU TOGGLE
+  -------------------------------- */
+mobileBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+
+  const isOpen = navLinks.classList.contains("open");
+
+  navLinks.classList.toggle("open", !isOpen);
+  document.body.classList.toggle("no-scroll", !isOpen);
+});
+
+
+  /* ------------------------------
+     DROPDOWN TOGGLE (MOBILE)
+  -------------------------------- */
+  dropdowns.forEach((dropdown) => {
+    const btn = dropdown.querySelector(".dropbtn");
+
+    btn.addEventListener("click", (e) => {
+      if (window.innerWidth > 768) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Close other dropdowns
+      dropdowns.forEach((d) => {
+        if (d !== dropdown) d.classList.remove("open");
+      });
+
+      dropdown.classList.toggle("open");
+    });
+  });
+
+  /* ------------------------------
+     CLOSE MENU ON LINK CLICK
+  -------------------------------- */
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove("open");
+        document.body.classList.remove("no-scroll");
+        dropdowns.forEach((d) => d.classList.remove("open"));
+      }
+    });
+  });
+
+  /* ------------------------------
+     CLOSE ON OUTSIDE CLICK
+  -------------------------------- */
+ /* ------------------------------
+   CLOSE ON OUTSIDE CLICK (FIXED)
+-------------------------------- */
+document.addEventListener("click", (e) => {
+  if (
+    navLinks.classList.contains("open") &&
+    !e.target.closest(".navbar") &&
+    !e.target.closest(".mobile-menu-btn")
+  ) {
+    navLinks.classList.remove("open");
+    dropdowns.forEach((d) => d.classList.remove("open"));
+    document.body.classList.remove("no-scroll");
+  }
+});
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPath = window.location.pathname;
+
+  document.querySelectorAll(".dropdown-content a").forEach(link => {
+    if (currentPath.includes(link.getAttribute("href"))) {
+      link.classList.add("active");
+      link.closest(".dropdown")?.classList.add("open");
+    }
+  });
+});
