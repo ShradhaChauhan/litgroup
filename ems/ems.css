@@ -62,7 +62,7 @@
 }
 
 .ems-hero-content h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 25px;
@@ -1088,4 +1088,105 @@
     text-align: center;
     white-space: nowrap;
   }
+}
+
+/* =====================================
+   MOBILE HERO TEXT ALIGNMENT – FINAL
+   ===================================== */
+
+@media (max-width: 768px) {
+
+  .ems-hero {
+    height: 100svh;
+    min-height: 100svh;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: flex-start; /* ⬅️ important */
+    justify-content: center;
+  }
+
+  .ems-hero-content {
+    max-width: 100%;
+    width: 100%;
+
+    /* ⬇️ natural flow, no forced centering */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    /* ✅ navbar-safe spacing */
+    padding-top: calc(var(--navbar-height, 80px) + 1.5rem);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 2rem;
+
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  /* Badge spacing fix */
+  .ems-hero .hero-badge {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Headline spacing */
+  .ems-hero-content h1 {
+    margin-bottom: 1.1rem;
+  }
+
+  /* Description spacing */
+  .ems-hero-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Feature chips spacing */
+  .hero-features {
+    margin-bottom: 1.75rem;
+  }
+
+  /* CTA button spacing */
+  .ems-hero .btn.primary {
+    margin-top: 0.5rem;
+  }
+
+  .ems-hero-content h1 .accent-text::after {
+    display: none;
+  }
+}
+
+/* ======================================
+   EMS – SCROLL ANIMATIONS
+====================================== */
+
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+[data-animate].animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional left / right variants */
+[data-animate="left"] {
+  transform: translateX(-60px);
+}
+
+[data-animate="right"] {
+  transform: translateX(60px);
+}
+
+[data-animate="left"].animate,
+[data-animate="right"].animate {
+  transform: translateX(0);
 }

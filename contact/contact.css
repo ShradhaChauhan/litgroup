@@ -432,7 +432,7 @@
     grid-template-rows: repeat(2, auto);
     gap: 16px;
   }
-  .contact-hero {
+  /* .contact-hero {
     min-height: calc(100vh - 80px);
     height: calc(100vh - 80px);
     padding: 8rem 1.5rem 4rem;
@@ -440,12 +440,37 @@
     align-items: center;
     justify-content: center;
     background-attachment: scroll;
-  }
+  } */
   
-  .contact-hero::before {
-    /* reduce overlay slightly on mobile so background image shows through */
-    background: rgba(0, 0, 0, 0.45);
-  }
+ .contact-hero {
+        /* Blend a bluish gradient with the mobile image for richer tones */
+        background: linear-gradient(180deg, rgba(6,24,44,0.78) 0%, rgba(9,34,60,0.78) 60%, rgba(8,28,50,0.86) 100%),
+                    url('./IMAGES/all remote 03.1632.webp') center/cover no-repeat !important;
+        background-attachment: scroll !important;
+        background-blend-mode: multiply !important;
+    }
+
+    .contact-hero::before {
+        /* reduce solid darkness, keep subtle depth */
+        background: rgba(2,6,12,0.35) !important;
+        opacity: 1 !important;
+        mix-blend-mode: multiply !important;
+        z-index: 1 !important;
+    }
+
+    .contact-hero::after {
+        /* decorative soft glow highlights */
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        background: radial-gradient(circle at 15% 30%, rgba(99,102,241,0.12) 0%, transparent 30%),
+                    radial-gradient(circle at 85% 70%, rgba(59,130,246,0.08) 0%, transparent 28%);
+        mix-blend-mode: screen;
+        filter: blur(14px);
+        opacity: 0.95;
+    }
   
   .contact-hero-content {
     width: 100%;
@@ -472,7 +497,7 @@
 
   /* Decorative highlights to make the hero look richer on mobile */
   .contact-hero {
-    background-image: linear-gradient(180deg, rgba(6,24,40,0.6), rgba(4,12,28,0.5)), url('./IMAGES/all remote 03.1632.webp');
+    background-image: url('./IMAGES/all remote 03.1632.webp');
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
@@ -656,3 +681,38 @@ body, html {
   }
 }
 
+/* ===================================== */
+/* FIX: MOBILE HERO FULL VIEWPORT (FINAL) */
+/* ===================================== */
+
+@media (max-width: 768px) {
+
+  /* 🔥 Override desktop hero rules */
+  .contact-hero {
+    height: 100svh !important;
+    min-height: 100svh !important;
+
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+  }
+
+  /* ✅ Give space for navbar INSIDE content */
+  .contact-hero-content {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: var(--navbar-height); /* ONLY place navbar offset lives */
+    box-sizing: border-box;
+  }
+}

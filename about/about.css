@@ -2558,3 +2558,39 @@ body, html {
     box-sizing: border-box;
   }
 }
+
+/* ============================= */
+/* Mobile Scroll Animations */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
+  }
+
+  .animate-on-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Optional variations */
+  .slide-left {
+    transform: translateX(-40px);
+  }
+
+  .slide-right {
+    transform: translateX(40px);
+  }
+
+  .fade-scale {
+    transform: scale(0.95);
+  }
+
+  .fade-scale.in-view {
+    transform: scale(1);
+  }
+}

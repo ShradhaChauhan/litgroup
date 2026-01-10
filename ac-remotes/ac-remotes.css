@@ -363,8 +363,8 @@ html {
         padding-top: calc(80px + 30px);
         flex-direction: column;
         text-align: center;
-        min-height: auto;
-        height: auto;
+        /* min-height: auto;
+        height: auto; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -477,8 +477,8 @@ html {
     .ac-hero {
         padding: calc(80px + 25px) 1.25rem 3.5rem;
         padding-top: calc(80px + 25px);
-        min-height: auto;
-        height: auto;
+        /* min-height: auto;
+        height: auto; */
     }
     
     .ac-hero-content {
@@ -540,8 +540,8 @@ html {
     .ac-hero {
         padding: calc(80px + 20px) 1rem 3rem;
         padding-top: calc(80px + 20px);
-        min-height: auto;
-        height: auto;
+        /* min-height: auto;
+        height: auto; */
     }
     
     .ac-hero-content h1 {
@@ -3702,5 +3702,183 @@ body, html {
   
   .premium-features-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===============================
+   Mobile Scroll Animations
+================================ */
+
+@media (max-width: 768px) {
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .scroll-animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Direction variants */
+  .scroll-animate.fade-left {
+    transform: translateX(-40px);
+  }
+
+  .scroll-animate.fade-right {
+    transform: translateX(40px);
+  }
+
+  .scroll-animate.fade-left.in-view,
+  .scroll-animate.fade-right.in-view {
+    transform: translateX(0);
+  }
+
+  /* Stagger delay support */
+  .scroll-delay-1 { transition-delay: 0.1s; }
+  .scroll-delay-2 { transition-delay: 0.2s; }
+  .scroll-delay-3 { transition-delay: 0.3s; }
+  .scroll-delay-4 { transition-delay: 0.4s; }
+}
+
+@media (max-width: 768px) {
+  .ac-hero {
+    height: 100vh;
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 0;
+    overflow: hidden;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .ac-hero-content {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+  }
+
+  .hero-badge,
+  .ac-hero-content h1 {
+    flex-shrink: 0;
+  }
+
+  .hero-mobile-image {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    object-fit: contain;
+    display: block;
+  }
+
+  .ac-hero-content p,
+  .hero-features {
+    display: none !important;
+  }
+}
+
+/* =====================================================
+   MOBILE HERO – FORCE FULL VIEWPORT (AC REMOTES)
+===================================================== */
+@media (max-width: 768px) {
+  .ac-hero {
+    height: 100vh !important;
+    min-height: 100vh !important;
+
+    padding-top: var(--navbar-height, 80px);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .ac-hero-content {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* Keep badge & title fixed */
+  .ac-hero .hero-badge,
+  .ac-hero-content h1 {
+    flex-shrink: 0;
+  }
+
+  /* Image fills remaining space */
+  .hero-image-fill,
+  .hero-mobile-image {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-mobile-image {
+    object-fit: contain;
+  }
+
+  /* CTA visible inside hero */
+  .ac-hero-content .btn {
+    flex-shrink: 0;
+    margin-top: 1rem;
+  }
+}
+.ac-hero.scroll-snap-section:first-child {
+  padding-top: 0 !important;
+}
+@media (max-width: 768px) {
+  .ac-hero {
+    min-height: 100vh;
+    height: 100vh;
+    padding-top: calc(30px + var(--navbar-height));
+    padding-bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .ac-hero-content {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-mobile-image {
+    display: block;
+    max-width: 400px;
+    margin: 1.5rem auto;
   }
 }

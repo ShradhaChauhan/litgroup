@@ -281,8 +281,8 @@ html {
     width: 100%;
     max-width: 400px;
     margin: 1.5rem auto 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    /* border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
 }
 
 .tv-hero-content p {
@@ -865,18 +865,7 @@ html {
 }
 
 @media (max-width: 768px) {
-    .tv-hero {
-        min-height: auto;
-        height: auto;
-        padding: 0 1.5rem;
-        padding-top: calc(var(--navbar-height) + 30px);
-        padding-bottom: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f8faff;
-        position: relative;
-    }
+    
     
     .tv-hero::before {
         top: 0;
@@ -949,8 +938,8 @@ html {
         width: 100%;
         max-width: 400px;
         margin: 1.5rem auto 1.5rem;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        /* border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
     }
     
     .tv-hero-content p {
@@ -1555,13 +1544,7 @@ html {
 }
 
 @media (max-width: 576px) {
-    .tv-hero {
-        min-height: auto;
-        height: auto;
-        padding: 0 1.25rem;
-        padding-top: calc(var(--navbar-height) + 25px);
-        padding-bottom: 2rem;
-    }
+   
     
     .tv-hero::before {
         top: 0;
@@ -1642,13 +1625,7 @@ html {
 }
 
 @media (max-width: 480px) {
-    .tv-hero {
-        min-height: auto;
-        height: auto;
-        padding: 0 1rem;
-        padding-top: calc(var(--navbar-height) + 20px);
-        padding-bottom: 2rem;
-    }
+    
     
     .tv-hero-content h1 {
         font-size: 1.85rem;
@@ -3129,5 +3106,122 @@ body, html {
   .carousel-btn.carousel-arrow.carousel-arrow-right {
     width: 1rem !important;
     height: 1rem !important;
+  }
+}
+
+/* =====================================================
+   MOBILE HERO: ONLY BADGE + TITLE + IMAGE (FULL VIEW)
+===================================================== */
+
+/* =====================================================
+   MOBILE HERO: BADGE + TITLE + IMAGE (FINAL)
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .tv-hero-content {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+  }
+
+  .hero-badge {
+    flex-shrink: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .tv-hero-content h1 {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+  }
+
+  .hero-mobile-image {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+
+    object-fit: contain;
+    display: block;
+  }
+
+  
+}
+
+/* =====================================================
+   MOBILE HERO – FINAL FIX
+===================================================== */
+@media (max-width: 768px) {
+  .tv-hero {
+    height: 100vh;
+    min-height: 100vh;
+    padding-top: var(--navbar-height);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 0;
+    overflow: hidden;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .tv-hero-content {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    text-align: center;
+  }
+
+  .hero-badge,
+  .tv-hero-content h1 {
+    flex-shrink: 0;
+  }
+
+  .hero-mobile-image {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    object-fit: contain;
+    display: block;
+  }
+
+  .tv-hero-content p,
+  .hero-features {
+    display: none !important;
+  }
+}
+/* =====================================================
+   MOBILE CTA AFTER HERO (EXPLORE REMOTES BUTTON)
+===================================================== */
+
+@media (max-width: 768px) {
+  .mobile-hero-cta {
+    padding: 2rem 1.25rem;
+    background: #ffffff;
+    text-align: center;
+  }
+
+  .mobile-hero-cta .btn {
+    display: block !important;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
   }
 }

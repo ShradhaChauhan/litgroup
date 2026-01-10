@@ -1,23 +1,20 @@
-// EMS Page JavaScript
+document.addEventListener('DOMContentLoaded', () => {
+  const animatedElements = document.querySelectorAll('[data-animate]');
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Animation on scroll for elements
-    const animateOnScroll = () => {
-        const elementsToAnimate = document.querySelectorAll('.feature-card, .category-card, .application-card');
-        
-        elementsToAnimate.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.2;
-            
-            if (elementPosition < screenPosition) {
-                element.classList.add('animate');
-            }
-        });
-    };
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          obs.unobserve(entry.target); // animate once
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: '0px 0px -10% 0px'
+    }
+  );
 
-    // Initial check on page load
-    animateOnScroll();
-    
-    // Check animations on scroll
-    window.addEventListener('scroll', animateOnScroll);
-}); 
+  animatedElements.forEach(el => observer.observe(el));
+});
