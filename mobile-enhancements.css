@@ -1027,3 +1027,72 @@
     background: transparent !important;
   }
 }
+
+/* ============================= */
+/* Mobile Navbar – Products Submenu */
+/* ============================= */
+@media (max-width: 768px) {
+
+  .dropdown-content {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 14px;
+    margin-top: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  .dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #374151;
+    background: #ffffff;
+    transition: all 0.25s ease;
+  }
+
+  .dropdown-content a:last-child {
+    margin-bottom: 0;
+  }
+
+  .dropdown-content a i {
+    font-size: 16px;
+    color: #2563eb;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  /* Hover / Tap feedback */
+  .dropdown-content a:active {
+    transform: scale(0.98);
+  }
+
+ /* ACTIVE submenu item – refined */
+  .dropdown-content a.active {
+    background: #eef4ff; /* soft blue surface */
+    color: #1e40af;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15);
+    position: relative;
+    font-weight: 600;
+  }
+
+  /* Left accent indicator */
+  .dropdown-content a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 4px;
+    background: linear-gradient(180deg, #2563eb, #1e40af);
+    border-radius: 4px;
+  }
+
+  .dropdown-content a.active i {
+    color: #2563eb;
+  }
+}

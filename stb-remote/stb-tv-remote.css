@@ -1013,6 +1013,12 @@ html {
 }
 
 @media (max-width: 768px) {
+  .features-carousel-btn.features-carousel-arrow.features-carousel-arrow-right,
+  .features-carousel-btn.features-carousel-arrow.features-carousel-arrow-left {
+    position: absolute;
+    top: 5rem;
+  }
+
   .premium-hero-section {
     padding: 50px 0 40px;
     min-height: 400px;
@@ -1723,6 +1729,7 @@ html {
     width: auto;
     min-width: 100%;
     position: relative;
+    
   }
 
   .features-carousel-card {
@@ -5492,7 +5499,6 @@ footer.footer.scroll-snap-section {
   }
 
   .premium-hero-content-wrapper {
-    padding-left: 0;
     text-align: center;
     max-width: 100%;
     margin: 0 auto;
@@ -6371,4 +6377,19 @@ transform: none !important;
   .animate-delay-2 { transition-delay: 0.2s; }
   .animate-delay-3 { transition-delay: 0.3s; }
   .animate-delay-4 { transition-delay: 0.4s; }
+}
+
+@media (max-width: 768px) {
+
+  .carousel-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+    will-change: transform;
+  }
 }

@@ -2079,8 +2079,7 @@ html {
   }
   
   .premium-hero-content-wrapper {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 20px;
     max-width: 100%;
   }
   
@@ -3880,5 +3879,19 @@ body, html {
     display: block;
     max-width: 400px;
     margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .carousel-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    will-change: transform;
   }
 }

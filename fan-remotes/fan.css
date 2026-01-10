@@ -2390,3 +2390,18 @@ img[src*="RR.webp"] {
 transform: scale(1.8);
 }
 }
+
+@media (max-width: 768px) {
+
+  .carousel-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+    will-change: transform;
+  }
+}

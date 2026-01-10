@@ -2559,13 +2559,16 @@ body, html {
   }
 }
 
-/* ============================= */
-/* Mobile Scroll Animations */
-/* ============================= */
-
 @media (max-width: 768px) {
 
+  /* Default: visible */
   .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Only hide when JS adds this class */
+  .animate-on-scroll[data-animate="true"] {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -2577,20 +2580,35 @@ body, html {
     transform: translateY(0);
   }
 
-  /* Optional variations */
-  .slide-left {
+  .slide-left[data-animate="true"] {
     transform: translateX(-40px);
   }
 
-  .slide-right {
+  .slide-right[data-animate="true"] {
     transform: translateX(40px);
   }
 
-  .fade-scale {
+  .fade-scale[data-animate="true"] {
     transform: scale(0.95);
   }
 
   .fade-scale.in-view {
     transform: scale(1);
   }
+}
+
+/* ============================= */
+/* Active submenu item */
+/* ============================= */
+
+.mobile-menu .dropdown-content a.active,
+.mobile-menu .dropdown-content a:focus {
+  background-color: #eef4ff;        /* soft blue */
+  color: #1f62cc;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.mobile-menu .dropdown-content a.active i {
+  color: #1f62cc;
 }
