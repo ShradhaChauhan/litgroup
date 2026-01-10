@@ -2674,22 +2674,7 @@ html {
 }
 
 /* Premium Badge */
-.hero-badge {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  color: #1e40af;
-  padding: 9px 16px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06),
-    0 0 0 1px rgba(255, 255, 255, 0.2) inset;
-  letter-spacing: 0.3px;
-}
+
 
 /* Glassmorphism Feature Badges - Rounded-xl with Frosted Glass */
 .hero-features {
@@ -6311,4 +6296,54 @@ html {
     min-width: 300px;
     width: 300px;
   }
+}
+
+@media (max-width: 768px) {
+  .arrow-icon {
+    font-size: 0.5rem !important;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-left {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-right {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+/* Ensure card clips its contents */
+.collection-card {
+overflow: hidden; /* KEY FIX */
+}
+
+
+/* Ensure image wrapper never overflows */
+.collection-card-image-wrapper {
+overflow: hidden; /* KEY FIX */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+/* Disable aggressive hover scale on mobile */
+.collection-card-image {
+transform: none !important;
+}
+/* If hover is still triggered (some devices), keep it contained */
+.collection-card:hover .collection-card-image {
+transform: scale(1.02); /* subtle & safe */
+}
+}
+
+
+@media (hover: none) {
+/* Fully neutralize hover on touch devices */
+.collection-card:hover .collection-card-image {
+transform: none !important;
+}
 }

@@ -2358,3 +2358,35 @@ body, html {
     max-width: 120px;
   }
 }
+
+@media (max-width: 768px) {
+  .arrow-icon {
+    font-size: 0.5rem !important;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-left {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-right {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+}
+
+/* Target ONLY RR logo */
+img[src$="/RR.webp"],
+img[src*="RR.webp"] {
+transform: scale(1.85); /* increase size */
+transform-origin: center;
+}
+
+
+/* Optional: slightly bigger on mobile for visual balance */
+@media (max-width: 768px) {
+img[src$="/RR.webp"],
+img[src*="RR.webp"] {
+transform: scale(1.8);
+}
+}

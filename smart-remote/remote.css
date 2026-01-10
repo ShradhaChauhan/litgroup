@@ -3115,3 +3115,19 @@ body, html {
     width: 300px;
   }
 }
+
+@media (max-width: 768px) {
+  .arrow-icon {
+    font-size: 0.5rem !important;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-left {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-right {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+}

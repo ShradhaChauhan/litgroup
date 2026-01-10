@@ -1449,3 +1449,81 @@ body, html {
   }
 }
 
+/* =====================================================
+   EVENTS HERO – DESKTOP CENTER ALIGN FIX
+   Goal: Keep BOTH text + images perfectly centered
+   Scope: Desktop only (>=1200px)
+   ===================================================== */
+
+@media (min-width: 1200px) {
+  /* Center the entire hero grid within viewport */
+  .events-hero {
+    display: flex;
+    align-items: center;        /* vertical center */
+    justify-content: center;    /* horizontal center */
+  }
+
+  /* Limit width and center content block */
+  .events-hero-content {
+    width: 100%;
+    max-width: 1200px;          /* balanced desktop width */
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "badge media"
+      "heading media"
+      "text media"
+      "actions media";
+    align-items: center;        /* vertical centering between text & images */
+    justify-items: center;      /* horizontal centering */
+    column-gap: 3rem;
+  }
+
+  /* Center text content */
+  .events-hero-content h1,
+  .events-hero-content p,
+  .events-hero-actions {
+    text-align: center;
+    justify-self: center;
+  }
+
+  .events-hero-content p {
+    max-width: 520px;
+  }
+
+  /* Center the media/gallery block */
+  .events-hero-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-gallery {
+    margin: 0 auto;             /* center gallery itself */
+  }
+}
+
+/* ================= END FIX ================= */
+
+/* =====================================
+   HERO CTA ALIGNMENT FIX (DESKTOP)
+   ===================================== */
+@media (min-width: 1200px) {
+  .events-hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 520px;
+    margin: 2.5rem auto 0;
+  }
+
+  .events-hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

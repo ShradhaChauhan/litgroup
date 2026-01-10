@@ -262,6 +262,13 @@
 
 /* Final mobile hero enhancements: richer bluish gradient, soft highlights and readable text */
 @media (max-width: 768px) {
+      .grid-2x2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 16px;
+        }
+
     .about-hero {
         /* Blend a bluish gradient with the mobile image for richer tones */
         background: linear-gradient(180deg, rgba(6,24,44,0.78) 0%, rgba(9,34,60,0.78) 60%, rgba(8,28,50,0.86) 100%),

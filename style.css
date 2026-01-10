@@ -2946,6 +2946,12 @@ img[alt="Daikin"] {
 }
 
 @media (max-width: 768px) {
+    .grid-2x2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 16px;
+    }
   .hero-badge {
     margin-top: 12px; /* adds breathing space from navbar */
   }

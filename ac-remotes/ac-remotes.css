@@ -3559,6 +3559,20 @@ body, html {
 
 /* Touch-friendly interactive elements */
 @media (max-width: 768px) {
+  .arrow-icon {
+    font-size: 0.5rem !important;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-left {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-right {
+    width: 1rem;
+    height: 1rem;
+  }
+
   /* Ensure touch targets are at least 44x44px */
   button, a, input, select, textarea, .carousel-btn, .modal-close-btn {
     min-height: 44px;
