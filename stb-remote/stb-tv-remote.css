@@ -5651,7 +5651,7 @@ footer.footer.scroll-snap-section {
   }
 
   .collection-container {
-    padding: 0 4%;
+    padding: 0 1rem !important;
   }
 
   .collection-title {
@@ -5668,32 +5668,43 @@ footer.footer.scroll-snap-section {
   }
 
   .carousel-container {
-    padding: 0 60px;
-    /* Add padding to center cards between arrows (40px arrow + 20px spacing) */
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
     position: relative;
   }
 
+  .carousel-btn.carousel-arrow {
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 10;
+  }
+
   .carousel-arrow-left {
-    left: 8px;
+    left: 10px;
     z-index: 15;
   }
 
   .carousel-arrow-right {
-    right: 8px;
+    right: 10px;
     z-index: 15;
   }
 
   .carousel-track {
+    display: flex !important;
     padding: 0;
     margin: 0;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    padding-left: calc((100% - 280px) / 2) !important;
+    padding-right: calc((100% - 280px) / 2) !important;
   }
 
   .collection-card {
     padding: 0;
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 280px;
+    width: 280px;
+    max-width: 280px;
     box-sizing: border-box;
     scroll-snap-align: center;
     flex-shrink: 0;
@@ -5971,9 +5982,42 @@ footer.footer.scroll-snap-section {
     font-weight: 600;
   }
 
+  .collection-container {
+    padding: 0 1rem !important;
+  }
+
+  .carousel-container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .carousel-btn.carousel-arrow {
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 10;
+  }
+
+  .carousel-arrow-left {
+    left: 10px;
+  }
+
+  .carousel-arrow-right {
+    right: 10px;
+  }
+
+  .carousel-track {
+    display: flex !important;
+    padding-left: calc((100% - 260px) / 2) !important;
+    padding-right: calc((100% - 260px) / 2) !important;
+  }
+
   .collection-card {
     padding: 0;
     min-width: 260px;
+    width: 260px;
+    max-width: 260px;
   }
 
   .collection-card-image-wrapper {
@@ -6306,17 +6350,21 @@ html {
 
 @media (max-width: 768px) {
   .arrow-icon {
-    font-size: 0.5rem !important;
+    font-size: 18px !important;
+  }
+
+  .carousel-btn.carousel-arrow {
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 10;
   }
 
   .carousel-btn.carousel-arrow.carousel-arrow-left {
-    width: 1rem !important;
-    height: 1rem !important;
+    left: 10px;
   }
 
   .carousel-btn.carousel-arrow.carousel-arrow-right {
-    width: 1rem !important;
-    height: 1rem !important;
+    right: 10px;
   }
 }
 
