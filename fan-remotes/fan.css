@@ -2078,11 +2078,49 @@
 
         .collection-title {
           font-size: 32px;
+          margin-bottom: 40px;
+        }
+
+        .collection-container {
+          padding: 0 1rem !important;
+        }
+
+        .carousel-container {
+          padding: 0;
+          margin: 0 auto;
+          max-width: 100%;
+          position: relative;
+        }
+
+        .carousel-btn.carousel-arrow {
+          width: 44px !important;
+          height: 44px !important;
+          z-index: 10;
+        }
+
+        .carousel-btn.carousel-arrow.carousel-arrow-left {
+          left: 10px;
+        }
+
+        .carousel-btn.carousel-arrow.carousel-arrow-right {
+          right: 10px;
+        }
+
+        .carousel-track {
+          display: flex !important;
+          padding-left: calc((100% - 280px) / 2) !important;
+          padding-right: calc((100% - 280px) / 2) !important;
         }
 
         .carousel-card {
           min-width: 280px;
           width: 280px;
+          max-width: 280px;
+        }
+
+        .collection-card-image-wrapper {
+          height: 280px;
+          padding: 12px;
         }
         
         .modal-image-carousel {
@@ -2252,11 +2290,44 @@ body, html {
 @media (max-width: 480px) {
   .collection-title {
     font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .collection-container {
+    padding: 0 1rem !important;
+  }
+
+  .carousel-container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .carousel-btn.carousel-arrow {
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 10;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-left {
+    left: 10px;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-right {
+    right: 10px;
+  }
+
+  .carousel-track {
+    display: flex !important;
+    padding-left: calc((100% - 260px) / 2) !important;
+    padding-right: calc((100% - 260px) / 2) !important;
   }
   
   .carousel-card {
     min-width: 260px;
     width: 260px;
+    max-width: 260px;
   }
   
   .remote-modal {
@@ -2364,14 +2435,9 @@ body, html {
     font-size: 0.5rem !important;
   }
 
-  .carousel-btn.carousel-arrow.carousel-arrow-left {
-    width: 1rem !important;
-    height: 1rem !important;
-  }
-
-  .carousel-btn.carousel-arrow.carousel-arrow-right {
-    width: 1rem !important;
-    height: 1rem !important;
+  .carousel-btn.carousel-arrow {
+    width: 44px !important;
+    height: 44px !important;
   }
 }
 

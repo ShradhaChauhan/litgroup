@@ -2343,8 +2343,35 @@ html {
     margin-bottom: 40px;
   }
 
+  .collection-container {
+    padding: 0 1rem !important;
+  }
+
   .carousel-container {
-    padding: 0 50px;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .carousel-btn.carousel-arrow {
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 10;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-left {
+    left: 10px;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-right {
+    right: 10px;
+  }
+
+  .carousel-track {
+    display: flex !important;
+    padding-left: calc((100% - 280px) / 2) !important;
+    padding-right: calc((100% - 280px) / 2) !important;
   }
 
   .carousel-card {
@@ -2365,8 +2392,35 @@ html {
     margin-bottom: 30px;
   }
 
+  .collection-container {
+    padding: 0 1rem !important;
+  }
+
   .carousel-container {
-    padding: 0 40px;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+  }
+
+  .carousel-btn.carousel-arrow {
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 10;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-left {
+    left: 10px;
+  }
+
+  .carousel-btn.carousel-arrow.carousel-arrow-right {
+    right: 10px;
+  }
+
+  .carousel-track {
+    display: flex !important;
+    padding-left: calc((100% - 260px) / 2) !important;
+    padding-right: calc((100% - 260px) / 2) !important;
   }
 
   .carousel-card {
@@ -3079,17 +3133,21 @@ body, html {
 
 @media (max-width: 768px) {
   .arrow-icon {
-    font-size: 0.5rem !important;
+    font-size: 18px !important;
+  }
+
+  .carousel-btn.carousel-arrow {
+    width: 44px !important;
+    height: 44px !important;
+    z-index: 10;
   }
 
   .carousel-btn.carousel-arrow.carousel-arrow-left {
-    width: 1rem !important;
-    height: 1rem !important;
+    left: 10px;
   }
 
   .carousel-btn.carousel-arrow.carousel-arrow-right {
-    width: 1rem !important;
-    height: 1rem !important;
+    right: 10px;
   }
 }
 
@@ -3206,7 +3264,7 @@ body, html {
   }
 
   .carousel-track {
-    display: flex;    
+    display: flex;
     transition: transform 0.4s ease;
     will-change: transform;
   }
