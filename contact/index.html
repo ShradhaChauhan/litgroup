@@ -177,7 +177,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="contact-container">
         <div class="contact-form-wrapper">
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Your Name</label>
@@ -233,7 +233,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               ></textarea>
             </div>
 
-            <button type="submit" class="button p">Send Message</button>
+            <button type="button" id="submitBtn" class="button p">
+  Send Message
+</button>
+
           </form>
           <div
             id="formSubmitMessage"
@@ -494,5 +497,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script src="../script.js"></script>
     <script src="contact.js"></script>
+    <div id="toast" class="toast"></div>
   </body>
 </html>

@@ -45,39 +45,40 @@ document.addEventListener('DOMContentLoaded', function () {
     let dropdownTimeout;
 
     dropdowns.forEach(dropdown => {
-        // For mouse interactions
+        // For mouse interactions (desktop only)
         dropdown.addEventListener('mouseenter', function () {
-            clearTimeout(dropdownTimeout);
-            closeAllDropdowns();
-            this.classList.add('dropdown-open');
-        });
-
-        dropdown.addEventListener('mouseleave', function () {
-            const self = this;
-            dropdownTimeout = setTimeout(function () {
-                self.classList.remove('dropdown-open');
-            }, 300); // Delay before closing
-        });
-
-        // For touch devices
-        dropdown.addEventListener('touchstart', function (e) {
-            if (!this.classList.contains('dropdown-open')) {
-                e.preventDefault();
+            // Only handle mouse events on desktop
+            if (window.innerWidth > 768) {
+                clearTimeout(dropdownTimeout);
                 closeAllDropdowns();
                 this.classList.add('dropdown-open');
             }
-        }, { passive: false });
+        });
+
+        dropdown.addEventListener('mouseleave', function () {
+            // Only handle mouse events on desktop
+            if (window.innerWidth > 768) {
+                const self = this;
+                dropdownTimeout = setTimeout(function () {
+                    self.classList.remove('dropdown-open');
+                }, 300); // Delay before closing
+            }
+        });
     });
 
-    // Close dropdowns when clicking outside
+    // Close dropdowns when clicking outside (desktop only)
     document.addEventListener('click', function (e) {
-        if (!e.target.closest('.dropdown')) {
+        // Only handle desktop clicks here, mobile is handled separately
+        if (window.innerWidth > 768 && !e.target.closest('.dropdown')) {
             closeAllDropdowns();
         }
     });
 
     function closeAllDropdowns() {
-        dropdowns.forEach(d => d.classList.remove('dropdown-open'));
+        dropdowns.forEach(d => {
+            d.classList.remove('dropdown-open');
+            d.classList.remove('active');
+        });
     }
 
     // Hero Slider functionality
@@ -312,26 +313,33 @@ document.addEventListener('DOMContentLoaded', function () {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
                 e.stopPropagation();
+                e.stopImmediatePropagation(); // Prevent other handlers from firing
 
                 const currentDropdown = this.closest('.dropdown');
-                const isCurrentlyActive = currentDropdown.classList.contains('active');
+                const isCurrentlyActive = currentDropdown.classList.contains('active') || 
+                                         currentDropdown.classList.contains('dropdown-open');
 
-                // 1. Close ALL dropdowns first (clean slate)
-                dropdownBtns.forEach(btn => {
-                    const dropdown = btn.closest('.dropdown');
-                    dropdown.classList.remove('active');
-                    dropdown.classList.remove('dropdown-open');
-                });
-
-                // 2. If it WASN'T active, open it now
-                if (!isCurrentlyActive) {
+                // Toggle: if active, close it; if not active, open it
+                if (isCurrentlyActive) {
+                    // Close this dropdown
+                    currentDropdown.classList.remove('active');
+                    currentDropdown.classList.remove('dropdown-open');
+                } else {
+                    // Close all other dropdowns first
+                    dropdownBtns.forEach(otherBtn => {
+                        const otherDropdown = otherBtn.closest('.dropdown');
+                        if (otherDropdown !== currentDropdown) {
+                            otherDropdown.classList.remove('active');
+                            otherDropdown.classList.remove('dropdown-open');
+                        }
+                    });
+                    
+                    // Open this dropdown
                     currentDropdown.classList.add('active');
                     currentDropdown.classList.add('dropdown-open');
                 }
             }
         });
-
-        // Removed separate touchstart listener to prevent double-firing events
     });
 
     // Add click handler for dropdown content links to close dropdown after clicking a link
@@ -372,11 +380,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Close dropdowns when clicking outside in mobile view
     document.addEventListener('click', function (e) {
-        if (window.innerWidth <= 768 && !e.target.closest('.dropdown')) {
-            dropdownBtns.forEach(btn => {
-                btn.parentElement.classList.remove('active');
-                btn.parentElement.classList.remove('dropdown-open'); // Also remove dropdown-open when clicking outside
-            });
+        if (window.innerWidth <= 768) {
+            // Don't close if clicking on dropdown button or dropdown content
+            const clickedDropdown = e.target.closest('.dropdown');
+            const clickedButton = e.target.closest('.dropbtn');
+            
+            // Only close if clicking outside any dropdown
+            if (!clickedDropdown && !clickedButton) {
+                dropdownBtns.forEach(btn => {
+                    const dropdown = btn.closest('.dropdown');
+                    dropdown.classList.remove('active');
+                    dropdown.classList.remove('dropdown-open');
+                });
+            }
         }
     });
 

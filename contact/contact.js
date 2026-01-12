@@ -1,11 +1,38 @@
 // Simple form submission handling
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Here you would typically handle the form submission with AJAX
-    // For now, just showing the success message
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSubmitMessage').style.display = 'flex';
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const toast = document.getElementById('toast');
+
+  function showToast(message, type = 'success') {
+    toast.textContent = message;
+    toast.className = `toast show ${type}`;
+    setTimeout(() => (toast.className = 'toast'), 3000);
+  }
+
+  submitBtn.addEventListener('click', async () => {
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch('http://localhost:3000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+
+      if (res.ok && result.success) {
+        showToast('Message sent successfully!', 'success');
+        form.reset();
+      } else {
+        showToast('Submission failed. Try again.', 'error');
+      }
+    } catch {
+      showToast('Server error. Please try later.', 'error');
+    }
   });
+});
 
   // Location tabs functionality
   document.addEventListener('DOMContentLoaded', function() {
