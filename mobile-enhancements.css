@@ -1096,3 +1096,18 @@
     color: #2563eb;
   }
 }
+
+@media (max-width: 768px) {
+  .video-caption {
+    display: none !important;
+  }
+
+  .video-caption:hover {
+    display: block !important;
+  }
+
+  .video-container:hover video,
+.video-container:hover img {
+    transform: scale(0.85);    /* 🔑 controlled zoom */
+}
+}
