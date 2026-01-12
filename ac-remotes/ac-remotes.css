@@ -160,15 +160,21 @@ html {
 
 .ac-hero .hero-badge {
     display: inline-block;
-    background-color: rgba(31, 98, 204, 0.1);
-    color: var(--primary-color);
-    padding: 8px 16px;
-    border-radius: 50px;
-    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.95);
+    background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.25) 100%);
+    color: #3b82f6;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
     font-weight: 600;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
+    margin-bottom: 1.2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
 }
+
 
 .ac-hero-content h1 {
     font-size: 48px;

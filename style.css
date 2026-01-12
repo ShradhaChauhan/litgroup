@@ -493,15 +493,19 @@ body {
 
 .hero-badge {
     display: inline-block;
-    width: fit-content;
-    background: rgba(59, 130, 246, 0.1);
-    color: var(--primary-color);
-    padding: clamp(0.4rem, 0.8vw, 0.5rem) clamp(0.8rem, 1.5vw, 1rem);
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: clamp(0.75rem, 1vw, 0.9rem);
-    margin-bottom: clamp(0.8rem, 1.5vh, 1.5rem);
-    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.95);
+    background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.25) 100%);
+    color: #3b82f6;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
 }
 
 .hero-content h1 {
@@ -2836,13 +2840,20 @@ img[alt="Daikin"] {
         justify-content: flex-start;
     }
 
-    .hero-badge {
-        font-size: clamp(0.7rem, 1vw, 0.75rem);
-        padding: clamp(0.35rem, 0.6vw, 0.4rem) clamp(0.8rem, 1.2vw, 0.9rem);
-        margin-bottom: clamp(0.6rem, 1vh, 1rem);
-        letter-spacing: 0.3px;
+   .hero-badge {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.5px;
+        background-color: rgba(255, 255, 255, 0.95);
+        background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.25) 100%);
+        color: #3b82f6;
+        border: 1px solid rgba(59, 130, 246, 0.4);
+        display: inline-block;
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 3;
     }
-
     .hero-content h1 {
         font-size: clamp(1.6rem, 2.8vw, 2.2rem);
         font-weight: 700;
@@ -2945,6 +2956,34 @@ img[alt="Daikin"] {
     display: none;
 }
 
+.ac-hero .hero-badge {
+  display: inline-flex;          /* better than inline-block */
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;            /* 🔑 key fix */
+  max-width: max-content;        /* prevents stretch */
+  white-space: nowrap;           /* keeps text on one line */
+
+  padding: 8px 16px;
+  border-radius: 999px;
+}
+
+@media (max-width: 576px) {
+.hero-badge {
+        font-size: 0.7rem;
+        padding: 0.45rem 0.9rem;
+        margin-bottom: 1.25rem;
+        letter-spacing: 0.4px;
+        background-color: rgba(255, 255, 255, 0.95);
+        background-image: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.25) 100%);
+        border: 1px solid rgba(59, 130, 246, 0.4);
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 3;
+    }
+}
+
 @media (max-width: 768px) {
     .grid-2x2 {
         display: grid;
@@ -2952,8 +2991,18 @@ img[alt="Daikin"] {
         grid-template-rows: repeat(2, auto);
         gap: 16px;
     }
-  .hero-badge {
-    margin-top: 12px; /* adds breathing space from navbar */
+   .hero-badge {
+    margin-top: 0;
+    flex-shrink: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 5;
+  }
+
+  .hero-badge,
+  .tv-hero-content h1 {
+    flex-shrink: 0;
   }
 }
 
@@ -4752,4 +4801,20 @@ body {
   .moulding-content-subtext {
     text-align: justify;
   }
+}
+
+/* ===== HERO BADGE WIDTH FIX (DESKTOP ONLY) ===== */
+@media (min-width: 769px) {
+
+  .hero-content {
+    align-items: flex-start;
+  }
+
+  .hero-badge {
+    /* align-self: flex-start; */
+    width: auto;
+    max-width: max-content;
+    white-space: nowrap;
+  }
+
 }
