@@ -3,6 +3,65 @@ let currentGalleryImages = [];
 let currentGalleryIndex = 0;
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Mobile hero-card toggle with back navigation
+const heroCards = document.querySelectorAll(".hero-card[data-toggle]");
+const backButtons = document.querySelectorAll(".mobile-back-btn");
+
+let currentlyOpenSection = null;
+let lastClickedCard = null;
+
+heroCards.forEach(card => {
+  card.addEventListener("click", () => {
+    if (window.innerWidth > 768) return;
+
+    const targetId = card.dataset.toggle;
+    const targetSection = document.getElementById(targetId);
+    if (!targetSection) return;
+
+    lastClickedCard = card;
+
+    // Close previous section
+    if (currentlyOpenSection && currentlyOpenSection !== targetSection) {
+      currentlyOpenSection.classList.remove("is-open");
+    }
+
+    const isOpen = targetSection.classList.contains("is-open");
+    targetSection.classList.toggle("is-open");
+
+    currentlyOpenSection = isOpen ? null : targetSection;
+
+    if (!isOpen) {
+      setTimeout(() => {
+        targetSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 150);
+    }
+  });
+});
+
+// Back button handler
+backButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (window.innerWidth > 768) return;
+
+    if (currentlyOpenSection) {
+      currentlyOpenSection.classList.remove("is-open");
+      currentlyOpenSection = null;
+    }
+
+    if (lastClickedCard) {
+      setTimeout(() => {
+        lastClickedCard.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 150);
+    }
+  });
+});
+
   const categoryCards = document.querySelectorAll(".category-card");
   const heroScrollButtons = document.querySelectorAll(
     ".events-hero [data-scroll-target]"

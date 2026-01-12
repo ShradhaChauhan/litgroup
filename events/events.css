@@ -1527,3 +1527,63 @@ body, html {
     text-align: center;
   }
 }
+
+/* Mobile accordion behavior for hero cards */
+@media (max-width: 768px) {
+  .workshops-list-section {
+    display: none;
+    overflow: hidden;
+    animation: fadeSlide 0.35s ease;
+  }
+
+  .workshops-list-section.is-open {
+    display: block;
+  }
+
+  .hero-card {
+    cursor: pointer;
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-back-btn {
+    position: sticky;
+    top: var(--navbar-height, 80px);
+    z-index: 50;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    margin: 0 auto 1rem;
+    padding: 0.55rem 1.1rem;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1f62cc;
+
+    background: #ffffff;
+    border: 1px solid rgba(31, 98, 204, 0.25);
+    border-radius: 999px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Push content down below sticky back button */
+  .workshops-list-section.is-open .section-header-wrapper {
+    margin-top: 3rem;
+  }
+}
