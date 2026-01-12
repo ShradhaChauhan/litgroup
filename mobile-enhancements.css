@@ -279,6 +279,20 @@
         width: 100% !important;
         border-bottom: 1px solid rgba(0, 0, 0, 0.04) !important;
         text-align: left !important;
+        display: flex !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Ensure dropdown button aligns properly */
+    .nav-links .dropdown .dropbtn {
+        justify-content: space-between !important;
+        text-align: left !important;
+    }
+    
+    /* Ensure regular links align properly */
+    .nav-links>a {
+        justify-content: flex-start !important;
     }
 
     /* Active Highlight */
@@ -296,16 +310,38 @@
     .nav-links .dropdown {
         width: 100% !important;
         margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 0 !important;
+    }
+    
+    /* Override any conflicting styles from style.css */
+    .nav-links a,
+    .nav-links .dropdown {
+        margin: 0 !important;
+        width: 100% !important;
+        padding: 0 !important;
     }
 
     /* Dropdown Arrow */
-    .dropbtn {
+    .nav-links .dropbtn {
         justify-content: space-between !important;
+        align-items: center !important;
+        background: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        font-family: inherit !important;
+        font-size: inherit !important;
+        text-align: left !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
-    .dropbtn i {
+    .nav-links .dropbtn i {
         font-size: 0.9rem !important;
         color: #888 !important;
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
     }
 
     /* Submenu Styling */
