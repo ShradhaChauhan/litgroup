@@ -335,66 +335,60 @@ const blogData = {
 };
 
 // Show single blog article
-function showBlogArticle(blogId) {
-  const blog = blogData[blogId];
-  if (!blog) return;
+// function showBlogArticle(blogId) {
+//   const blog = blogData[blogId];
+//   if (!blog) return;
 
-  const cardsView = document.getElementById('blogCardsView');
-  const singleView = document.getElementById('blogSingleView');
-  const singleContent = document.getElementById('blogSingleContent');
+//   const cardsView = document.getElementById('blogCardsView');
+//   const singleView = document.getElementById('blogSingleView');
+//   const singleContent = document.getElementById('blogSingleContent');
 
-  // Hide cards view and show single view
-  cardsView.style.display = 'none';
-  singleView.style.display = 'block';
+//   // Hide cards view and show single view
+//   cardsView.style.display = 'none';
+//   singleView.style.display = 'block';
 
-  // Populate single blog content
-  singleContent.innerHTML = `
-    <div class="blog-single-image">
-      <img src="${blog.image}" alt="${blog.fullTitle || blog.title}" />
-    </div>
-    <div class="blog-single-article">
-      <div class="blog-single-meta">
-        <span><i class="far fa-calendar"></i> ${blog.date}</span>
-        <span><i class="far fa-user"></i> ${blog.author}</span>
-        <span class="tag">${blog.tag}</span>
-      </div>
-      <h2>${blog.fullTitle || blog.title}</h2>
-      <div class="blog-article-content">
-        ${blog.content}
-      </div>
-      <div class="blog-single-cta">
-        <a href="${blog.ctaLink}" class="btn primary">${blog.ctaText} <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  `;
+//   // Populate single blog content
+//   singleContent.innerHTML = `
+//     <div class="blog-single-image">
+//       <img src="${blog.image}" alt="${blog.fullTitle || blog.title}" />
+//     </div>
+//     <div class="blog-single-article">
+//       <div class="blog-single-meta">
+//         <span><i class="far fa-calendar"></i> ${blog.date}</span>
+//         <span><i class="far fa-user"></i> ${blog.author}</span>
+//         <span class="tag">${blog.tag}</span>
+//       </div>
+//       <h2>${blog.fullTitle || blog.title}</h2>
+//       <div class="blog-article-content">
+//         ${blog.content}
+//       </div>
+//       <div class="blog-single-cta">
+//         <a href="${blog.ctaLink}" class="btn primary">${blog.ctaText} <i class="fas fa-arrow-right"></i></a>
+//       </div>
+//     </div>
+//   `;
 
-  // Scroll to top of the section
-  document.getElementById('articles').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+//   // Scroll to top of the section
+//   document.getElementById('articles').scrollIntoView({ behavior: 'smooth', block: 'start' });
+// }
 
 // Show blog cards view
-function showBlogCards() {
-  const cardsView = document.getElementById('blogCardsView');
-  const singleView = document.getElementById('blogSingleView');
+// function showBlogCards() {
+//   const cardsView = document.getElementById('blogCardsView');
+//   const singleView = document.getElementById('blogSingleView');
 
-  // Hide single view and show cards view
-  singleView.style.display = 'none';
-  cardsView.style.display = 'block';
+//   // Hide single view and show cards view
+//   singleView.style.display = 'none';
+//   cardsView.style.display = 'block';
 
-  // Scroll to top of the section
-  document.getElementById('articles').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
+//   // Scroll to top of the section
+//   document.getElementById('articles').scrollIntoView({ behavior: 'smooth', block: 'start' });
+// }
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function() {
   // Add click event to blog cards
   const blogCards = document.querySelectorAll('.blog-card');
-  blogCards.forEach(card => {
-    card.addEventListener('click', function() {
-      const blogId = this.getAttribute('data-blog-id');
-      showBlogArticle(blogId);
-    });
-  });
 
   // Back button event listener
   const backBtn = document.getElementById('blogBackBtn');

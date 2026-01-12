@@ -1732,3 +1732,60 @@ body, html {
     margin-bottom: 0 !important;
   }
 }
+
+/* Blog detail page fix for fixed navbar */
+.blog-single-view,
+.blog-hero {
+  padding-top: calc(var(--navbar-height) + 20px);
+}
+
+/* ===== SMART CENTERING FOR BLOG META ON MOBILE ===== */
+@media (max-width: 768px) {
+
+    .blog-card-content p {
+        display: none;
+    }
+
+    .blog-card-content h3 {
+       font-size: 1rem !important;
+    }
+
+  .blog-single-meta {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;        /* center when wrapping */
+    gap: 8px 14px;
+    margin-bottom: 14px !important;
+    text-align: center;             /* key for wrapped lines */
+  }
+
+  .blog-single-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    line-height: 1.35;
+    white-space: normal;            /* allow wrapping */
+    justify-content: center;
+  }
+
+  /* Tag pill centered and compact */
+  .blog-single-meta .tag {
+    flex-basis: auto;
+    padding: 4px 14px;
+    font-size: 0.7rem;
+    border-radius: 999px;
+    margin-top: 6px;
+  }
+}
+
+/* Remove underline from clickable blog cards */
+.blog-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.blog-card-link * {
+  text-decoration: none !important;
+}

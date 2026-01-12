@@ -274,7 +274,7 @@
     order: 4;
   }
   
-  .events-hero-actions {
+  /* .events-hero-actions {
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -287,7 +287,7 @@
     flex: 1 1 auto;
     min-width: fit-content;
     text-align: center;
-  }
+  } */
   
   .hero-gallery {
     grid-template-columns: 1fr;
@@ -1557,7 +1557,20 @@ body, html {
 }
 
 @media (max-width: 768px) {
+  .category-card{
+    align-items: center;
+  }
+
+  .events-hero-actions{
+    display: none !important;
+  }
+
+  .event-categories {
+    display: none !important;
+  }
+
   .mobile-back-btn {
+    display: block !important; 
     position: sticky;
     top: var(--navbar-height, 80px);
     z-index: 50;
@@ -1581,9 +1594,60 @@ body, html {
   }
 }
 
+.mobile-back-btn {
+  display: none;  
+}
+
 @media (max-width: 768px) {
   /* Push content down below sticky back button */
   .workshops-list-section.is-open .section-header-wrapper {
     margin-top: 3rem;
   }
+}
+
+@media (max-width: 768px) {
+  .hero-card {
+    cursor: pointer;
+  }
+
+  .hero-card figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .tap-hint {
+    display: block !important;
+    align-self: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.85);
+
+    background: rgba(31, 98, 204, 0.85);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+
+    animation: tapPulse 1.8s ease-in-out infinite;
+  }
+
+  @keyframes tapPulse {
+    0% {
+      opacity: 0.6;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+    100% {
+      opacity: 0.6;
+      transform: translateY(0);
+    }
+  }
+}
+
+.tap-hint {
+  display: none;
 }
