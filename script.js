@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Footer Accordion Functionality (Mobile Only)
     const footerToggles = document.querySelectorAll('.footer-toggle');
-    
+    const footerCollapsibles = document.querySelectorAll('.footer-collapsible');
+
     footerToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
             // Only work on mobile
@@ -9,7 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 const footerColumn = this.closest('.footer-collapsible');
                 if (footerColumn) {
-                    // Toggle the clicked section
+                    // Close all other sections first
+                    footerCollapsibles.forEach(section => {
+                        if (section !== footerColumn) {
+                            section.classList.remove('active');
+                        }
+                    });
+                    // Then toggle the clicked section
                     footerColumn.classList.toggle('active');
                 }
             }
@@ -21,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', function() {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function() {
-            const footerCollapsibles = document.querySelectorAll('.footer-collapsible');
             if (window.innerWidth > 768) {
                 // Desktop: ensure all sections are visible
                 footerCollapsibles.forEach(section => {

@@ -3922,10 +3922,13 @@ img[alt="Daikin"] {
 
 /* Moulding Section */
 .moulding-services {
-    padding: 3rem 1.5rem;
+    padding: clamp(2rem, 4vw, 3rem) clamp(1rem, 3vw, 1.5rem);
     background: linear-gradient(135deg, #f8faff 0%, #edf6ff 100%);
-    overflow: hidden;
+    
+    
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .moulding-services::before {
@@ -3942,18 +3945,21 @@ img[alt="Daikin"] {
 
 .moulding-container {
     max-width: 1200px;
+    width: 100%;
     margin: 2rem auto 0;
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
-    gap: 2rem;
+    gap: clamp(1.5rem, 3vw, 2rem);
     align-items: center;
     background-color: white;
     border-radius: 24px;
-    padding: 2.5rem;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
     box-shadow: var(--hover-shadow);
     position: relative;
     z-index: 1;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-sizing: border-box;
+    overflow: visible;
 }
 
 .moulding-container:hover {
@@ -3962,8 +3968,8 @@ img[alt="Daikin"] {
 }
 
 .moulding-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
     color: var(--dark-color);
     position: relative;
     font-weight: 700;
@@ -3981,9 +3987,10 @@ img[alt="Daikin"] {
 }
 
 .moulding-content p {
-    margin-bottom: 1.2rem;
+    margin-bottom: clamp(0.8rem, 1.5vw, 1.2rem);
     color: var(--text-color);
     line-height: 1.6;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
 }
 
 .moulding-content ul {
@@ -3992,10 +3999,10 @@ img[alt="Daikin"] {
 }
 
 .moulding-content li {
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
     transition: transform 0.3s ease;
 }
 
@@ -4006,16 +4013,17 @@ img[alt="Daikin"] {
 
 .moulding-content li i {
     color: var(--primary-color);
-    margin-right: 1rem;
-    font-size: 1.2rem;
+    margin-right: clamp(0.75rem, 1.5vw, 1rem);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
     background: rgba(59, 130, 246, 0.1);
-    width: 40px;
-    height: 40px;
+    width: clamp(32px, 3vw, 40px);
+    height: clamp(32px, 3vw, 40px);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     transition: background 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
 }
 
 .moulding-content li:hover i {
@@ -4025,8 +4033,8 @@ img[alt="Daikin"] {
 }
 
 .moulding-content .btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: clamp(0.6rem, 1.2vw, 0.75rem) clamp(1.2rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
 }
 
 .moulding-video {
@@ -4037,7 +4045,8 @@ img[alt="Daikin"] {
 .video-container {
     border-radius: 16px;
     overflow: hidden;
-    height: 400px;
+    height: clamp(300px, 35vw, 400px);
+    min-height: 300px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -4067,6 +4076,7 @@ img[alt="Daikin"] {
     width: 100%;
     height: 100%;
     object-fit: contain;       /* 🔑 no cropping */
+    object-position: center;
     transition: transform 0.5s ease;
 }
 
@@ -4075,6 +4085,7 @@ img[alt="Daikin"] {
     transform: scale(1.05);    /* 🔑 controlled zoom */
 }
 
+/* Default: caption visible (for mobile/tablet where hover is not available) */
 .video-caption {
     position: absolute;
     bottom: 0;
@@ -4083,13 +4094,123 @@ img[alt="Daikin"] {
     padding: 1rem;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
     color: white;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
     z-index: 2;
 }
 
-.video-container:hover .video-caption {
-    transform: translateY(0);
+/* Desktop: show caption only on hover over the image */
+@media (min-width: 993px) {
+    .video-caption {
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        pointer-events: none;
+        font-size: clamp(0.85rem, 1.1vw, 1rem);
+        padding: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    .video-container:hover .video-caption {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* Small desktop screens - adjust layout to prevent cropping and reduce size */
+@media (min-width: 993px) and (max-width: 1400px) {
+    .moulding-services {
+        padding: clamp(1.5rem, 3vw, 2.5rem) clamp(0.75rem, 2vw, 1.25rem);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .moulding-container {
+        max-width: calc(100% - clamp(1.5rem, 4vw, 2.5rem));
+        width: 100%;
+        padding: clamp(1rem, 2vw, 1.5rem);
+        gap: clamp(0.75rem, 1.5vw, 1.25rem);
+        margin: clamp(1rem, 2vw, 1.5rem) auto 0;
+        box-sizing: border-box;
+    }
+
+    .moulding-content {
+        min-width: 0; /* Prevent flex item from overflowing */
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        box-sizing: border-box;
+    }
+
+    .moulding-content h3 {
+        font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+        margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
+    }
+
+    .moulding-content h3::after {
+        width: clamp(60px, 6vw, 80px);
+        height: 3px;
+        bottom: -8px;
+    }
+
+    .moulding-content p {
+        font-size: clamp(0.85rem, 1.1vw, 0.95rem);
+        margin-bottom: clamp(0.6rem, 1.2vw, 0.9rem);
+        line-height: 1.5;
+    }
+
+    .moulding-content li {
+        font-size: clamp(0.85rem, 1.2vw, 1rem);
+        margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+    }
+
+    .moulding-content li i {
+        width: clamp(28px, 2.5vw, 36px);
+        height: clamp(28px, 2.5vw, 36px);
+        font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+        margin-right: clamp(0.6rem, 1.2vw, 0.85rem);
+    }
+
+    .moulding-content ul {
+        margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    .moulding-content .btn {
+        padding: clamp(0.5rem, 1vw, 0.65rem) clamp(1rem, 2vw, 1.25rem);
+        font-size: clamp(0.85rem, 1vw, 0.95rem);
+    }
+
+    .moulding-video {
+        min-width: 0; /* Prevent flex item from overflowing */
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .video-container {
+        height: clamp(250px, 28vw, 320px);
+        max-height: clamp(250px, 28vw, 320px);
+    }
+}
+
+/* Very small desktop screens */
+@media (min-width: 993px) and (max-width: 1100px) {
+    .moulding-services {
+        padding: clamp(1.25rem, 2.5vw, 2rem) clamp(0.5rem, 1.5vw, 1rem);
+    }
+
+    .moulding-container {
+        max-width: calc(100% - clamp(1rem, 3vw, 2rem));
+        width: 100%;
+        grid-template-columns: 0.75fr 1.25fr;
+        gap: clamp(0.75rem, 1.5vw, 1.25rem);
+        padding: clamp(0.875rem, 1.75vw, 1.25rem);
+        box-sizing: border-box;
+    }
+
+    .video-container {
+        height: clamp(220px, 25vw, 280px);
+        max-height: clamp(220px, 25vw, 280px);
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 @media (max-width: 992px) {
@@ -4108,7 +4229,16 @@ img[alt="Daikin"] {
     }
 
     .video-container {
-        height: 350px;
+        height: auto;
+        min-height: 300px;
+        aspect-ratio: 16/9;
+    }
+
+    .video-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
     }
 }
 
@@ -4138,7 +4268,16 @@ img[alt="Daikin"] {
     }
 
     .video-container {
-        height: 300px;
+        height: auto;
+        min-height: 250px;
+        aspect-ratio: 4/3;
+    }
+
+    .video-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
     }
 }
 

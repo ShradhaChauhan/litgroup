@@ -189,13 +189,14 @@ html {
     display: flex;
     min-height: 100vh;
     height: 100vh;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #f8faff;
     overflow: hidden;
-    padding: 0 50px;
-    padding-top: calc(30px + var(--navbar-height));
+    padding-top: var(--navbar-height, 80px);
+    padding-left: 5%;
+    padding-right: 5%;
     padding-bottom: 0;
-    align-items: center;
+    align-items: flex-start;
     box-sizing: border-box;
 }
 
@@ -233,10 +234,12 @@ html {
     position: relative;
     z-index: 2;
     max-width: 650px;
-    margin: 0 auto;
+    margin: 0;
     color: #222020;
     padding-bottom: 0;
-    text-align: center;
+    padding-top: 20px;
+    padding-left: 5%;
+    text-align: left;
 }
 
 .tv-hero-content h1 {
@@ -289,12 +292,14 @@ html {
         justify-content: flex-start;
         background-size: cover;
         background-position: center;
+        align-items: flex-start;
     }
 
     .tv-hero-content {
         margin-left: 0;
         margin-right: auto;
         text-align: left;
+        padding-left: 5%;
     }
 
     .tv-hero-content p {
@@ -812,25 +817,42 @@ html {
 }
 
 /* Tablet optimizations (768px - 1199px) */
-@media (min-width: 768px) and (max-width: 1199px) {
+/* Small desktop screens */
+@media (min-width: 993px) and (max-width: 1400px) {
     .tv-hero {
         min-height: 100vh;
         height: 100vh;
-        padding: 0 40px;
-        padding-top: calc(var(--navbar-height) + 24px);
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-top: var(--navbar-height, 80px);
+        padding-left: clamp(3%, 5vw, 5%);
+        padding-right: clamp(3%, 5vw, 5%);
+        padding-bottom: 0;
+        align-items: flex-start;
+    }
+    
+    .tv-hero-content {
+        padding-left: clamp(3%, 5vw, 5%);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .tv-hero {
+        min-height: 100vh;
+        height: 100vh;
+        padding-top: var(--navbar-height, 80px);
+        padding-left: 4%;
+        padding-right: 4%;
         padding-bottom: 40px;
         display: flex;
         align-items: flex-start; /* badge always starts below navbar */
-        justify-content: center;
+        justify-content: flex-start;
         box-sizing: border-box;
         background-size: cover;
         background-position: center;
     }
-    
+
     .tv-hero-content {
         max-width: 600px;
+        padding-left: 4%;
     }
     
     .tv-hero-content h1 {

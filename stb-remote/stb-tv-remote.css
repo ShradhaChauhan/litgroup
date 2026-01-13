@@ -135,9 +135,14 @@ html {
   display: flex;
   align-items: center;
   min-height: 100vh;
+  height: 100vh;
   overflow: hidden;
-  padding: 130px 5% 80px;
+  padding-top: var(--navbar-height, 80px);
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 80px;
   background-color: transparent;
+  box-sizing: border-box;
 }
 
 /* .ac-hero::before {
@@ -178,11 +183,27 @@ html {
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease;
 }
 
+/* Small desktop screens */
+@media (min-width: 993px) and (max-width: 1400px) {
+  .ac-hero {
+    min-height: 100vh;
+    height: 100vh;
+    padding-top: var(--navbar-height, 80px);
+    padding-left: clamp(3%, 5vw, 5%);
+    padding-right: clamp(3%, 5vw, 5%);
+    padding-bottom: clamp(60px, 8vw, 80px);
+  }
+}
+
 /* Add media query for large screens to make video more prominent */
 @media (min-width: 1400px) {
   .ac-hero {
-    min-height: 90vh;
-    padding: 180px 5% 140px;
+    min-height: 100vh;
+    height: 100vh;
+    padding-top: var(--navbar-height, 80px);
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 140px;
     align-items: center;
   }
 
@@ -202,6 +223,7 @@ html {
   text-align: left;
   padding-left: 5%;
   padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 .ac-hero .hero-badge {
@@ -262,19 +284,24 @@ html {
   color: var(--text-color);
 }
 
-/* Media Queries */
-@media (max-width: 1100px) {
+/* Small desktop screens */
+@media (min-width: 993px) and (max-width: 1100px) {
   .ac-hero {
-    padding: 120px 40px 70px;
+    min-height: calc(100vh - var(--navbar-height, 80px));
+    height: calc(100vh - var(--navbar-height, 80px));
+    margin-top: var(--navbar-height, 80px);
+    padding: clamp(20px, 3vw, 30px) clamp(3%, 4vw, 40px) clamp(50px, 7vw, 70px);
   }
 }
 
 @media (max-width: 768px) {
   .ac-hero {
-    padding: 8rem 1.5rem 4rem;
+    min-height: calc(100vh - var(--navbar-height, 80px));
+    height: calc(100vh - var(--navbar-height, 80px));
+    margin-top: var(--navbar-height, 80px);
+    padding: 30px 1.5rem 4rem;
     flex-direction: column;
     text-align: center;
-    min-height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
