@@ -1,4 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Footer Accordion Functionality (Mobile Only)
+    const footerToggles = document.querySelectorAll('.footer-toggle');
+    
+    footerToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            // Only work on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const footerColumn = this.closest('.footer-collapsible');
+                if (footerColumn) {
+                    // Toggle the clicked section
+                    footerColumn.classList.toggle('active');
+                }
+            }
+        });
+    });
+
+    // Handle window resize - ensure accordion only works on mobile
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            const footerCollapsibles = document.querySelectorAll('.footer-collapsible');
+            if (window.innerWidth > 768) {
+                // Desktop: ensure all sections are visible
+                footerCollapsibles.forEach(section => {
+                    section.classList.add('active');
+                });
+            } else {
+                // Mobile: collapse all sections by default
+                footerCollapsibles.forEach(section => {
+                    section.classList.remove('active');
+                });
+            }
+        }, 250);
+    });
+
     // Modern loader functionality with exact 3-second timing
     const loader = document.getElementById('loader');
 
@@ -24,11 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     loader.style.display = 'none';
                 }
             });
-        }, 2000); // Exactly 3 seconds
+        }, 3000); // Exactly 3 seconds
     }
 
     // Mobile menu functionality and other initialization code below
-    // Removed the custom popup code
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
@@ -49,19 +85,19 @@ document.addEventListener('DOMContentLoaded', function () {
         dropdown.addEventListener('mouseenter', function () {
             // Only handle mouse events on desktop
             if (window.innerWidth > 768) {
-                clearTimeout(dropdownTimeout);
-                closeAllDropdowns();
-                this.classList.add('dropdown-open');
+            clearTimeout(dropdownTimeout);
+            closeAllDropdowns();
+            this.classList.add('dropdown-open');
             }
         });
 
         dropdown.addEventListener('mouseleave', function () {
             // Only handle mouse events on desktop
             if (window.innerWidth > 768) {
-                const self = this;
-                dropdownTimeout = setTimeout(function () {
-                    self.classList.remove('dropdown-open');
-                }, 300); // Delay before closing
+            const self = this;
+            dropdownTimeout = setTimeout(function () {
+                self.classList.remove('dropdown-open');
+            }, 300); // Delay before closing
             }
         });
     });
@@ -234,7 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') {
-                // Previously showed popup, now just return
                 return;
             }
 
@@ -248,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Updated selector for more comprehensive animations (Excluding Partners Section)
+    // Animation selector for scroll-triggered animations (Excluding Partners Section)
     const animateElements = document.querySelectorAll(
         '.product-card, .feature-card, .solution-card, .about-image, ' +
         'section:not(.partners) .section-header h2, section:not(.partners) .section-header p, ' +
@@ -332,8 +367,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             otherDropdown.classList.remove('active');
                             otherDropdown.classList.remove('dropdown-open');
                         }
-                    });
-                    
+                });
+
                     // Open this dropdown
                     currentDropdown.classList.add('active');
                     currentDropdown.classList.add('dropdown-open');
@@ -358,7 +393,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') {
-                        // Previously showed popup, now just return
                         return;
                     }
 
@@ -387,11 +421,11 @@ document.addEventListener('DOMContentLoaded', function () {
             
             // Only close if clicking outside any dropdown
             if (!clickedDropdown && !clickedButton) {
-                dropdownBtns.forEach(btn => {
+            dropdownBtns.forEach(btn => {
                     const dropdown = btn.closest('.dropdown');
                     dropdown.classList.remove('active');
                     dropdown.classList.remove('dropdown-open');
-                });
+            });
             }
         }
     });

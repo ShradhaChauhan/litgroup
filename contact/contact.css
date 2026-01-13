@@ -432,94 +432,73 @@
     grid-template-rows: repeat(2, auto);
     gap: 16px;
   }
-  /* .contact-hero {
-    min-height: calc(100vh - 80px);
-    height: calc(100vh - 80px);
-    padding: 8rem 1.5rem 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-attachment: scroll;
-  } */
   
- .contact-hero {
-        /* Blend a bluish gradient with the mobile image for richer tones */
-        background: linear-gradient(180deg, rgba(6,24,44,0.78) 0%, rgba(9,34,60,0.78) 60%, rgba(8,28,50,0.86) 100%),
-                    url('./IMAGES/all remote 03.1632.webp') center/cover no-repeat !important;
-        background-attachment: scroll !important;
-        background-blend-mode: multiply !important;
-    }
-
-    .contact-hero::before {
-        /* reduce solid darkness, keep subtle depth */
-        background: rgba(2,6,12,0.35) !important;
-        opacity: 1 !important;
-        mix-blend-mode: multiply !important;
-        z-index: 1 !important;
-    }
-
-    .contact-hero::after {
-        /* decorative soft glow highlights */
-        content: '';
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        z-index: 1;
-        background: radial-gradient(circle at 15% 30%, rgba(99,102,241,0.12) 0%, transparent 30%),
-                    radial-gradient(circle at 85% 70%, rgba(59,130,246,0.08) 0%, transparent 28%);
-        mix-blend-mode: screen;
-        filter: blur(14px);
-        opacity: 0.95;
-    }
-  
-  .contact-hero-content {
-    width: 100%;
-    max-width: 100%;
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .contact-hero-content h1 {
-    font-size: 2.75rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.5px;
-    color: #ffffff !important;
-  }
-  
-  .contact-hero-content p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    max-width: 100%;
-    color: rgba(255,255,255,0.95) !important;
-  }
-
-  /* Decorative highlights to make the hero look richer on mobile */
   .contact-hero {
-    background-image: url('./IMAGES/all remote 03.1632.webp');
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-position: center;
+    min-height: calc(100vh - var(--navbar-height, 80px)) !important;
+    height: calc(100vh - var(--navbar-height, 80px)) !important;
+    padding: calc(var(--navbar-height, 80px) + 2rem) 1.5rem 3rem !important;
+    margin-top: var(--navbar-height, 80px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-image: none !important; /* Remove from main element */
+    background-color: #0f172a !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
   .contact-hero::after {
     content: '';
     position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: radial-gradient(circle at 18% 30%, rgba(99,102,241,0.14) 0%, transparent 30%),
-                radial-gradient(circle at 82% 70%, rgba(59,130,246,0.08) 0%, transparent 28%);
-    mix-blend-mode: screen;
-    filter: blur(18px);
-    opacity: 0.95;
+    top: 50%;
+    left: 50%;
+    /* Use min() to ensure it fits within viewport after rotation */
+    width: min(100vh, 100vw);
+    height: min(100vw, 100vh);
+    background: url('./IMAGES/all remote 03.1632.webp') center center/cover no-repeat;
+    transform: translate(-50%, -50%) rotate(-90deg); /* Rotate 90deg left */
+    z-index: 0;
+    /* Ensure it doesn't overflow */
+    box-sizing: border-box;
+  }
+  
+  .contact-hero::before {
+    background: rgba(0, 0, 0, 0.45) !important; /* Dark overlay for text readability */
+    opacity: 1 !important;
+    z-index: 1 !important;
+  }
+  
+  .contact-hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1rem !important;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .contact-hero-content h1 {
+    font-size: clamp(2rem, 6vw, 2.5rem) !important;
+    font-weight: 700;
+    line-height: 1.2 !important;
+    margin-bottom: clamp(1rem, 3vh, 1.25rem) !important;
+    letter-spacing: -0.3px;
+    color: #ffffff !important;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.7), 0 2px 8px rgba(0,0,0,0.5) !important;
+  }
+  
+  .contact-hero-content p {
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem) !important;
+    line-height: 1.6 !important;
+    margin-bottom: clamp(1.5rem, 4vh, 2rem) !important;
+    max-width: 100%;
+    color: rgba(255,255,255,0.95) !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.4) !important;
   }
 
-  /* Slightly stronger text shadow for contrast */
-  .contact-hero-content h1,
-  .contact-hero-content p {
-    text-shadow: 0 8px 22px rgba(0,0,0,0.6) !important;
+  .contact-hero-content .accent-text {
+    color: #fbbf24 !important;
+    text-shadow: 0 4px 16px rgba(251, 191, 36, 0.4), 0 2px 8px rgba(0,0,0,0.5) !important;
   }
 
   .contact-info-grid {
@@ -552,23 +531,34 @@
 
 @media (max-width: 480px) {
   .contact-hero {
-    padding: 7rem 1.25rem 3.5rem;
-    min-height: calc(100vh - 80px);
-    height: calc(100vh - 80px);
-    background-attachment: scroll;
+    padding: calc(var(--navbar-height, 80px) + 1.5rem) 1.25rem 2.5rem !important;
+    min-height: calc(100vh - var(--navbar-height, 80px)) !important;
+    height: calc(100vh - var(--navbar-height, 80px)) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  
+  .contact-hero::after {
+    width: min(100vh, 100vw);
+    height: min(100vw, 100vh);
+    background-color: #0f172a !important;
+  }
+  
+  .contact-hero-content {
+    padding: 0 0.75rem !important;
   }
   
   .contact-hero-content h1 {
-    font-size: 2.25rem;
-    line-height: 1.2;
-    margin-bottom: 1rem;
-    letter-spacing: -0.3px;
+    font-size: clamp(1.75rem, 7vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: clamp(0.75rem, 2vh, 1rem) !important;
+    letter-spacing: -0.2px;
   }
   
   .contact-hero-content p {
-    font-size: 1rem;
-    line-height: 1.55;
-    margin-bottom: 1.75rem;
+    font-size: clamp(0.9rem, 3.5vw, 1rem) !important;
+    line-height: 1.55 !important;
+    margin-bottom: clamp(1.25rem, 3vh, 1.75rem) !important;
   }
   
   .contact-form-section {
@@ -593,6 +583,39 @@
     font-size: 1.8rem;
   }
 } 
+
+/* Rotate hero image vertically on mobile to cover full viewport */
+@media (max-width: 768px) {
+  .contact-hero {
+    /* Remove direct background image; use pseudo-element instead */
+    background-image: none !important;
+    background-color: #0f172a !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vh;  /* swap for rotation */
+    height: 100vw;
+    background: url('./IMAGES/all remote 03.1632.webp') center center / cover no-repeat;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .contact-hero::before {
+    z-index: 1;
+  }
+
+  .contact-hero-content {
+    position: relative;
+    z-index: 2;
+  }
+}
 
 .button {
   display: inline-block;
@@ -686,33 +709,13 @@ body, html {
 /* ===================================== */
 
 @media (max-width: 768px) {
-
-  /* 🔥 Override desktop hero rules */
-  .contact-hero {
-    height: 100svh !important;
-    min-height: 100svh !important;
-
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    margin: 0 !important;
-  }
-
-  /* ✅ Give space for navbar INSIDE content */
+  /* Ensure hero content is properly centered and visible */
   .contact-hero-content {
-    height: 100%;
-    width: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    padding-top: var(--navbar-height); /* ONLY place navbar offset lives */
+    text-align: center;
     box-sizing: border-box;
   }
 }
@@ -748,6 +751,18 @@ body, html {
 
 .toast.error {
   background: #dc2626;
+}
+
+/* Animation for hero content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* 🔥 FORCE TOAST TO VIEWPORT (FINAL OVERRIDE) */

@@ -1,6 +1,7 @@
 import os
 
-root_dir = r"c:\Users\shrad\OneDrive\Desktop\litGroup"
+# Get the directory where this script is located
+root_dir = os.path.dirname(os.path.abspath(__file__))
 
 def update_file(file_path):
     try:

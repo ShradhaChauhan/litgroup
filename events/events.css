@@ -448,6 +448,56 @@
   gap: 1rem;
 }
 
+/* Events page buttons - white outlined with white text for dark background */
+.events-hero-actions .btn {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.9) !important;
+  padding: 0.85rem 1.75rem !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.02em;
+}
+
+.events-hero-actions .btn.primary {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+}
+
+.events-hero-actions .btn.outline {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.7) !important;
+}
+
+.events-hero-actions .btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.35) !important;
+}
+
+.events-hero-actions .btn.primary:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.35) !important;
+}
+
+.events-hero-actions .btn:active {
+  transform: translateY(0) !important;
+}
+
 .events-hero-meta {
   display: flex;
   gap: 1.5rem;
